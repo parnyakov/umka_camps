@@ -224,13 +224,23 @@ def api_booking():
     telegram = data.get('telegram', '')
     child_age = data.get('child_age', '')
     comment = data.get('comment', '')
+    session_start = data.get('session_start', '')
+    session_end = data.get('session_end', '')
+    session_price = data.get('session_price', '')
 
     if not parent_name or not phone:
         return jsonify({'ok': False, 'error': 'Укажите имя и телефон'}), 400
 
+    session_line = ''
+    if session_start or session_end:
+        session_line = f'\nСмена: {session_start} — {session_end}'
+        if session_price:
+            session_line += f' ({int(float(session_price)):,} ₽)'.replace(',', ' ')
+
     text = (
         f'🏕️ Новая заявка!\n'
-        f'Лагерь: {camp_name}\n'
+        f'Лагерь: {camp_name}'
+        f'{session_line}\n'
         f'Родитель: {parent_name}\n'
         f'Телефон: {phone}\n'
         f'Telegram: {telegram or "—"}\n'
