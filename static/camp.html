@@ -1,3 +1,5 @@
+
+</html>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -135,6 +137,33 @@
   .modal-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
   .modal-success p { font-size: 14px; color: var(--text2); }
 
+  /* REVIEWS */
+  .review-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 16px; margin-bottom: 12px;
+  }
+  .review-card:last-child { margin-bottom: 0; }
+  .review-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  .review-author { font-weight: 600; font-size: 13px; color: var(--text); }
+  .review-date { font-size: 12px; color: var(--text3); }
+  .review-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
+
+  /* SESSION SELECT */
+  .form-group select {
+    width: 100%; padding: 10px 12px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text); font-size: 14px; outline: none; font-family: inherit;
+    transition: border-color 0.2s; cursor: pointer;
+    appearance: none; -webkit-appearance: none;
+  }
+  .form-group select:focus { border-color: var(--em); }
+  .session-row-btn {
+    padding: 4px 10px; background: var(--em-glow); border: 1px solid var(--em);
+    border-radius: 6px; color: var(--em); font-size: 12px; font-weight: 600;
+    cursor: pointer; transition: background 0.2s;
+  }
+  .session-row-btn:hover { background: var(--em); color: #000; }
+
   .not-found { text-align: center; padding: 80px 20px; }
   .not-found h2 { font-size: 24px; margin-bottom: 10px; }
   .not-found p { color: var(--text2); margin-bottom: 20px; }
@@ -168,6 +197,7 @@
       <div class="form-group"><label>Телефон *</label><input type="tel" id="fPhone" placeholder="+7 900 000 00 00"></div>
       <div class="form-group"><label>Telegram</label><input type="text" id="fTelegram" placeholder="@username"></div>
       <div class="form-group"><label>Возраст ребёнка</label><input type="text" id="fAge" placeholder="9 лет"></div>
+      <div class="form-group" id="sessionGroup" style="display:none"><label>Смена</label><select id="fSession"></select></div>
       <div class="form-group"><label>Комментарий</label><textarea id="fComment" placeholder="Вопросы, пожелания..."></textarea></div>
       <button class="btn-submit" id="btnSubmit">Отправить заявку</button>
       <div class="modal-note">Мы свяжемся с вами в течение 2 часов</div>
@@ -183,12 +213,39 @@
 <script>
 const campId = location.pathname.replace('/camp/', '').replace(/\//g, '');
 let campName = '';
+let campSessions = [];
 
 function fmt(n) { return n ? Number(n).toLocaleString('ru-RU') : ''; }
 function fmtDate(d) {
   if (!d) return '';
-  try { return new Date(d).toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' }); }
-  catch { return d; }
+  // Already a human-readable Russian string like "22 июн" — return as-is
+  if (/[а-яёА-ЯЁ]/.test(d)) return d;
+  try {
+    const dt = new Date(d);
+    if (!isNaN(dt.getTime())) return dt.toLocaleDateString('ru-RU', { day: 'numeric', month: 'long' });
+  } catch {}
+  return d;
+}
+
+function parseReviews(raw) {
+  if (!raw) return [];
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  const dateRe = /^\d{1,2}\s+(?:января|февраля|марта|апреля|мая|июня|июля|августа|сентября|октября|ноября|декабря)\s+\d{4}/i;
+  const statRe = /\d+\s+отзыв/i;
+  const reviews = [];
+  let i = 0;
+  // Skip intro + aggregate stats
+  while (i < lines.length && (lines[i].includes('отдыхали') || statRe.test(lines[i]))) i++;
+  while (i < lines.length) {
+    if (dateRe.test(lines[i])) {
+      const date = lines[i]; i++;
+      const author = (i < lines.length && !dateRe.test(lines[i]) && lines[i].split(' ').length <= 4) ? lines[i++] : '';
+      const textLines = [];
+      while (i < lines.length && !dateRe.test(lines[i])) { textLines.push(lines[i]); i++; }
+      reviews.push({ date, author, text: textLines.join(' ') });
+    } else { i++; }
+  }
+  return reviews;
 }
 
 async function load() {
@@ -201,6 +258,7 @@ async function load() {
     }
     const c = await res.json();
     campName = c.name;
+    campSessions = c.sessions || [];
     document.title = `${c.name} — Лагеря 2026`;
     render(c);
   } catch (e) {
@@ -241,14 +299,15 @@ function render(c) {
     <div class="section">
       <div class="section-title">Смены и цены</div>
       <table class="sessions-table">
-        <thead><tr><th>Начало</th><th>Конец</th><th>Дней</th><th>Цена</th></tr></thead>
+        <thead><tr><th>Начало</th><th>Конец</th><th>Дней</th><th>Цена</th><th></th></tr></thead>
         <tbody>
-          ${sessions.map(s => `
+          ${sessions.map((s, i) => `
             <tr>
-              <td>${fmtDate(s.date_start) || s.date_start || '—'}</td>
-              <td>${fmtDate(s.date_end) || s.date_end || '—'}</td>
+              <td>${fmtDate(s.date_start) || '—'}</td>
+              <td>${fmtDate(s.date_end) || '—'}</td>
               <td>${s.duration_days || '—'}</td>
               <td class="price-td">${s.price ? fmt(s.price) + ' ₽' : '—'}</td>
+              <td><button class="session-row-btn" data-idx="${i}">Выбрать</button></td>
             </tr>
           `).join('')}
         </tbody>
@@ -266,10 +325,19 @@ function render(c) {
     </div>
   ` : '';
 
-  const reviewsHtml = c.reviews ? `
+  const parsedReviews = parseReviews(c.reviews);
+  const reviewsHtml = parsedReviews.length ? `
     <div class="section">
       <div class="section-title">Отзывы</div>
-      <div class="section-body">${c.reviews}</div>
+      ${parsedReviews.slice(0, 5).map(r => `
+        <div class="review-card">
+          <div class="review-meta">
+            ${r.author ? `<span class="review-author">${r.author}</span>` : ''}
+            <span class="review-date">${r.date}</span>
+          </div>
+          <div class="review-text">${r.text}</div>
+        </div>
+      `).join('')}
     </div>
   ` : '';
 
@@ -299,19 +367,40 @@ function render(c) {
           <button class="btn-book-big" id="btnBook">Забронировать место</button>
           <div class="price-note">Мы свяжемся с вами в течение 2 часов</div>
         </div>
-        ${c.url ? `<a href="${c.url}" target="_blank" style="display:block;text-align:center;font-size:12px;color:var(--text3);text-decoration:none;margin-top:8px;">Открыть на vlagere.ru ↗</a>` : ''}
       </div>
     </div>
   `;
 
   document.getElementById('btnBook').addEventListener('click', () => openModal(c.name));
+
+  // Session row "Выбрать" buttons
+  document.querySelectorAll('.session-row-btn').forEach(btn => {
+    btn.addEventListener('click', () => openModal(c.name, parseInt(btn.dataset.idx)));
+  });
 }
 
-function openModal(name) {
+function openModal(name, sessionIdx) {
   document.getElementById('modalCampName').textContent = name;
   document.getElementById('modalForm').style.display = 'block';
   document.getElementById('modalSuccess').style.display = 'none';
   ['fName','fPhone','fTelegram','fAge','fComment'].forEach(id => document.getElementById(id).value = '');
+
+  // Populate session selector
+  const sel = document.getElementById('fSession');
+  const grp = document.getElementById('sessionGroup');
+  if (campSessions.length) {
+    sel.innerHTML = campSessions.map((s, i) => {
+      const label = [fmtDate(s.date_start), fmtDate(s.date_end)].filter(Boolean).join(' — ')
+        + (s.duration_days ? `, ${s.duration_days} дн.` : '')
+        + (s.price ? `, ${fmt(s.price)} ₽` : '');
+      return `<option value="${i}">${label}</option>`;
+    }).join('');
+    if (sessionIdx !== undefined) sel.value = sessionIdx;
+    grp.style.display = 'block';
+  } else {
+    grp.style.display = 'none';
+  }
+
   document.getElementById('modalOverlay').classList.add('open');
 }
 
@@ -329,6 +418,8 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
   const btn = document.getElementById('btnSubmit');
   btn.disabled = true; btn.textContent = 'Отправляем...';
   try {
+    const selEl = document.getElementById('fSession');
+    const selSession = campSessions.length ? campSessions[parseInt(selEl.value) || 0] : null;
     const res = await fetch('/api/booking', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -336,6 +427,9 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
         telegram: document.getElementById('fTelegram').value.trim(),
         child_age: document.getElementById('fAge').value.trim(),
         comment: document.getElementById('fComment').value.trim(),
+        session_start: selSession?.date_start || '',
+        session_end: selSession?.date_end || '',
+        session_price: selSession?.price || '',
       })
     });
     const d = await res.json();
