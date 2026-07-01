@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Лагеря 2026 — Каталог летних лагерей</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0D1117;
+    --bg2: #161B22;
+    --bg3: #1C2128;
+    --border: #30363D;
+    --em: #10B981;
+    --em-dark: #059669;
+    --em-glow: rgba(16,185,129,0.15);
+    --text: #E6EDF3;
+    --text2: #8B949E;
+    --text3: #6E7681;
+    --radius: 12px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 60px;
+    display: flex; align-items: center; gap: 20px;
+  }
+  .nav-logo { font-size: 18px; font-weight: 700; color: var(--em); white-space: nowrap; text-decoration: none; }
+  .nav-logo span { color: var(--text); }
+  .search-wrap { flex: 1; max-width: 480px; position: relative; }
+  .search-wrap input {
+    width: 100%; padding: 8px 16px 8px 40px;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-wrap input:focus { border-color: var(--em); }
+  .search-wrap input::placeholder { color: var(--text3); }
+  .search-icon {
+    position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+    color: var(--text3); pointer-events: none;
+  }
+  .nav-count { margin-left: auto; font-size: 13px; color: var(--text2); white-space: nowrap; }
+
+  /* LAYOUT */
+  .layout { display: flex; gap: 0; min-height: calc(100vh - 60px); }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 280px; flex-shrink: 0;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    padding: 20px 16px;
+    overflow-y: auto;
+    position: sticky; top: 60px; height: calc(100vh - 60px);
+  }
+  .filter-title { font-size: 11px; font-weight: 600; color: var(--text3); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 16px; }
+  .filter-group { margin-bottom: 22px; }
+  .filter-group-label { font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 10px; display: block; }
+
+  /* Range slider */
+  .range-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .range-row input[type=number] {
+    width: 80px; padding: 5px 8px; background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 6px; color: var(--text);
+    font-size: 12px; outline: none;
+  }
+  .range-row input[type=number]:focus { border-color: var(--em); }
+  .range-sep { color: var(--text3); font-size: 12px; }
+
+  /* Checkboxes */
+  .check-item { display: flex; align-items: center; gap: 8px; padding: 5px 0; cursor: pointer; }
+  .check-item input[type=checkbox] { accent-color: var(--em); width: 14px; height: 14px; cursor: pointer; }
+  .check-item label { font-size: 13px; color: var(--text2); cursor: pointer; }
+  .check-item:hover label { color: var(--text); }
+
+  /* Radio */
+  .radio-item { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; }
+  .radio-item input[type=radio] { accent-color: var(--em); cursor: pointer; }
+  .radio-item label { font-size: 13px; color: var(--text2); cursor: pointer; }
+
+  /* Toggle */
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; }
+  .toggle-row span { font-size: 13px; color: var(--text2); }
+  .toggle { position: relative; width: 36px; height: 20px; }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle-track {
+    position: absolute; inset: 0; background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 20px; cursor: pointer; transition: 0.2s;
+  }
+  .toggle-track::after {
+    content: ''; position: absolute; top: 2px; left: 2px;
+    width: 14px; height: 14px; background: var(--text3);
+    border-radius: 50%; transition: 0.2s;
+  }
+  .toggle input:checked + .toggle-track { background: var(--em-glow); border-color: var(--em); }
+  .toggle input:checked + .toggle-track::after { transform: translateX(16px); background: var(--em); }
+
+  /* Star rating filter */
+  .star-select { display: flex; gap: 6px; flex-wrap: wrap; }
+  .star-btn {
+    padding: 4px 10px; background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 6px; color: var(--text2); font-size: 12px; cursor: pointer; transition: 0.15s;
+  }
+  .star-btn:hover, .star-btn.active { background: var(--em-glow); border-color: var(--em); color: var(--em); }
+
+  .btn-apply {
+    width: 100%; padding: 10px; background: var(--em); border: none;
+    border-radius: 8px; color: #000; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: background 0.2s; margin-top: 4px;
+  }
+  .btn-apply:hover { background: var(--em-dark); }
+  .btn-reset {
+    width: 100%; padding: 8px; background: transparent; border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text2); font-size: 12px; cursor: pointer;
+    transition: 0.2s; margin-top: 8px;
+  }
+  .btn-reset:hover { border-color: var(--text2); color: var(--text); }
+
+  /* MAIN */
+  .main { flex: 1; padding: 24px; min-width: 0; }
+
+  /* GRID */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+
+  /* CARD */
+  .card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
+  }
+  .card:hover { border-color: var(--em); transform: translateY(-2px); box-shadow: var(--shadow), 0 0 0 1px var(--em-glow); }
+  .card-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--bg3); display: block; }
+  .card-photo-placeholder { width: 100%; aspect-ratio: 16/9; background: var(--bg3); display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: 32px; }
+  .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .card-name { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .card-rating { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+  .card-rating .star { color: var(--em); font-size: 13px; }
+  .card-rating .val { font-size: 13px; font-weight: 600; color: var(--em); }
+  .card-rating .cnt { font-size: 11px; color: var(--text3); }
+  .card-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge {
+    padding: 2px 8px; border-radius: 20px; font-size: 11px; font-weight: 500;
+    border: 1px solid var(--border); color: var(--text2);
+  }
+  .badge-age { border-color: #2D3748; background: #1A2030; color: #90CDF4; }
+  .badge-pool { border-color: #1A3A4A; background: #0D2535; color: #4FC3F7; }
+  .badge-cat { border-color: var(--border); background: var(--bg3); }
+  .card-desc { font-size: 12px; color: var(--text2); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid var(--border); }
+  .card-price { font-size: 16px; font-weight: 700; color: var(--em); }
+  .card-price small { font-size: 11px; font-weight: 400; color: var(--text3); }
+  .card-actions { display: flex; gap: 6px; }
+  .btn-detail {
+    padding: 6px 12px; background: transparent; border: 1px solid var(--border);
+    border-radius: 6px; color: var(--text2); font-size: 12px; cursor: pointer;
+    text-decoration: none; transition: 0.15s;
+  }
+  .btn-detail:hover { border-color: var(--text2); color: var(--text); }
+  .btn-book {
+    padding: 6px 12px; background: var(--em); border: none;
+    border-radius: 6px; color: #000; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.15s;
+  }
+  .btn-book:hover { background: var(--em-dark); }
+
+  /* LOAD MORE */
+  .load-more-wrap { text-align: center; padding: 32px 0; }
+  .btn-load-more {
+    padding: 12px 32px; background: transparent; border: 1px solid var(--em);
+    border-radius: 8px; color: var(--em); font-size: 14px; cursor: pointer; transition: 0.2s;
+  }
+  .btn-load-more:hover { background: var(--em-glow); }
+  .btn-load-more:disabled { opacity: 0.4; cursor: default; }
+
+  /* EMPTY / SKELETON */
+  .empty { text-align: center; padding: 80px 20px; color: var(--text2); }
+  .empty h3 { font-size: 18px; margin-bottom: 8px; }
+  .skeleton { background: linear-gradient(90deg, var(--bg2) 25%, var(--bg3) 50%, var(--bg2) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px; width: 100%; max-width: 440px;
+    box-shadow: var(--shadow); animation: slideUp 0.2s ease;
+  }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .modal-title { font-size: 18px; font-weight: 700; }
+  .modal-close { background: none; border: none; color: var(--text3); font-size: 22px; cursor: pointer; line-height: 1; padding: 4px; }
+  .modal-close:hover { color: var(--text); }
+  .modal-camp-name { font-size: 13px; color: var(--em); margin-bottom: 20px; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 6px; font-weight: 500; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 10px 12px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.2s; font-family: inherit;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--em); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text3); }
+  .form-group textarea { resize: none; height: 72px; }
+  .btn-submit {
+    width: 100%; padding: 12px; background: var(--em); border: none;
+    border-radius: 8px; color: #000; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; margin-top: 4px;
+  }
+  .btn-submit:hover { background: var(--em-dark); }
+  .btn-submit:disabled { opacity: 0.5; cursor: default; }
+  .modal-note { text-align: center; font-size: 11px; color: var(--text3); margin-top: 10px; }
+  .modal-success { text-align: center; padding: 20px 0; }
+  .modal-success .check { font-size: 48px; margin-bottom: 12px; }
+  .modal-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .modal-success p { font-size: 14px; color: var(--text2); }
+
+  /* MOBILE */
+  .sidebar-toggle { display: none; }
+  @media (max-width: 768px) {
+    .sidebar { display: none; position: fixed; z-index: 150; top: 60px; left: 0; height: calc(100vh - 60px); width: 280px; }
+    .sidebar.open { display: block; }
+    .sidebar-toggle {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 12px; background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text2); font-size: 13px; cursor: pointer;
+    }
+    .main { padding: 16px; }
+    .grid { grid-template-columns: 1fr; }
+    nav { padding: 0 12px; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">Лагеря<span> 2026</span></a>
+  <div class="search-wrap">
+    <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Поиск по названию...">
+  </div>
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    Фильтры
+  </button>
+  <div class="nav-count" id="navCount">Загрузка...</div>
+</nav>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="filter-title">Фильтры</div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Возраст ребёнка</span>
+      <div class="range-row">
+        <input type="number" id="ageMin" min="4" max="18" placeholder="от" value="">
+        <span class="range-sep">—</span>
+        <input type="number" id="ageMax" min="4" max="18" placeholder="до" value="">
+        <span class="range-sep" style="font-size:11px;color:var(--text3)">лет</span>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Цена (₽)</span>
+      <div class="range-row">
+        <input type="number" id="priceMin" min="0" placeholder="от" value="" style="width:90px">
+        <span class="range-sep">—</span>
+        <input type="number" id="priceMax" min="0" placeholder="до" value="" style="width:90px">
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Тип лагеря</span>
+      <div class="radio-item"><input type="radio" name="type" value="" id="typeAll" checked><label for="typeAll">Все</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="загородный" id="typeZag"><label for="typeZag">Загородный</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="городской" id="typeGor"><label for="typeGor">Городской</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="выездной" id="typeVyez"><label for="typeVyez">Выездной</label></div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Категория</span>
+      <div class="check-item"><input type="checkbox" id="catLang" value="языковой"><label for="catLang">Языковой</label></div>
+      <div class="check-item"><input type="checkbox" id="catSport" value="спортивный"><label for="catSport">Спортивный</label></div>
+      <div class="check-item"><input type="checkbox" id="catIT" value="IT"><label for="catIT">IT / технологии</label></div>
+      <div class="check-item"><input type="checkbox" id="catArt" value="творческий"><label for="catArt">Творческий</label></div>
+      <div class="check-item"><input type="checkbox" id="catSci" value="научный"><label for="catSci">Научный</label></div>
+      <div class="check-item"><input type="checkbox" id="catMath" value="математика"><label for="catMath">Математика</label></div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Рейтинг</span>
+      <div class="star-select" id="ratingSelect">
+        <button class="star-btn" data-val="">Любой</button>
+        <button class="star-btn" data-val="3">3★+</button>
+        <button class="star-btn" data-val="4">4★+</button>
+        <button class="star-btn" data-val="4.5">4.5★+</button>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Удобства</span>
+      <div class="toggle-row">
+        <span>Есть бассейн</span>
+        <label class="toggle"><input type="checkbox" id="hasPool"><span class="toggle-track"></span></label>
+      </div>
+    </div>
+
+    <button class="btn-apply" id="btnApply">Применить фильтры</button>
+    <button class="btn-reset" id="btnReset">Сбросить всё</button>
+  </aside>
+
+  <main class="main">
+    <div class="grid" id="grid"></div>
+    <div class="load-more-wrap" id="loadMoreWrap" style="display:none">
+      <button class="btn-load-more" id="btnLoadMore">Загрузить ещё</button>
+    </div>
+    <div class="empty" id="empty" style="display:none">
+      <h3>Ничего не найдено</h3>
+      <p>Попробуйте изменить фильтры или поисковый запрос</p>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div id="modalForm">
+      <div class="modal-header">
+        <div class="modal-title">Оставить заявку</div>
+        <button class="modal-close" id="modalClose">×</button>
+      </div>
+      <div class="modal-camp-name" id="modalCampName"></div>
+      <div class="form-group">
+        <label>Имя родителя *</label>
+        <input type="text" id="fName" placeholder="Иван Иванов">
+      </div>
+      <div class="form-group">
+        <label>Телефон *</label>
+        <input type="tel" id="fPhone" placeholder="+7 900 000 00 00">
+      </div>
+      <div class="form-group">
+        <label>Telegram</label>
+        <input type="text" id="fTelegram" placeholder="@username">
+      </div>
+      <div class="form-group">
+        <label>Возраст ребёнка</label>
+        <input type="text" id="fAge" placeholder="9 лет">
+      </div>
+      <div class="form-group">
+        <label>Комментарий</label>
+        <textarea id="fComment" placeholder="Вопросы, пожелания..."></textarea>
+      </div>
+      <button class="btn-submit" id="btnSubmit">Отправить заявку</button>
+      <div class="modal-note">Мы свяжемся с вами в течение 2 часов</div>
+    </div>
+    <div class="modal-success" id="modalSuccess" style="display:none">
+      <div class="check">✅</div>
+      <h3>Заявка отправлена!</h3>
+      <p>Мы свяжемся с вами в течение 2 часов</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = '/api';
+let page = 1;
+let totalPages = 1;
+let currentCampName = '';
+let currentRating = '';
+let searchTimer = null;
+
+// ─── FETCH ────────────────────────────────────────────────────────
+function getFilters() {
+  const cats = [...document.querySelectorAll('.check-item input:checked')].map(el => el.value);
+  return {
+    age_min: document.getElementById('ageMin').value || '',
+    age_max: document.getElementById('ageMax').value || '',
+    price_min: document.getElementById('priceMin').value || '',
+    price_max: document.getElementById('priceMax').value || '',
+    type: document.querySelector('input[name=type]:checked')?.value || '',
+    category: cats.join(','),
+    has_pool: document.getElementById('hasPool').checked ? '1' : '',
+    rating_min: currentRating,
+    search: document.getElementById('searchInput').value.trim(),
+  };
+}
+
+function buildQuery(extra = {}) {
+  const f = { ...getFilters(), ...extra };
+  const p = new URLSearchParams();
+  Object.entries(f).forEach(([k, v]) => { if (v !== '' && v !== null && v !== undefined) p.set(k, v); });
+  return p.toString();
+}
+
+async function loadCamps(reset = false) {
+  if (reset) { page = 1; document.getElementById('grid').innerHTML = ''; }
+
+  const q = buildQuery({ page, limit: 24 });
+  const res = await fetch(`${API}/camps?${q}`);
+  const data = await res.json();
+
+  totalPages = data.pages;
+  document.getElementById('navCount').textContent = `${data.total} лагерей`;
+
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  const lmw = document.getElementById('loadMoreWrap');
+
+  if (data.camps.length === 0 && page === 1) {
+    empty.style.display = 'block';
+    lmw.style.display = 'none';
+    return;
+  }
+  empty.style.display = 'none';
+
+  data.camps.forEach(c => grid.appendChild(makeCard(c)));
+
+  lmw.style.display = page < totalPages ? 'block' : 'none';
+}
+
+// ─── CARD ─────────────────────────────────────────────────────────
+function stars(r) {
+  if (!r) return '';
+  const full = Math.floor(r);
+  const half = r - full >= 0.5 ? 1 : 0;
+  return '★'.repeat(full) + (half ? '½' : '');
+}
+
+function fmt(n) {
+  if (!n) return '';
+  return Number(n).toLocaleString('ru-RU');
+}
+
+function makeCard(c) {
+  const div = document.createElement('div');
+  div.className = 'card';
+  const photo = c.main_photo
+    ? `<img class="card-photo" src="${c.main_photo}" alt="${c.name}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=card-photo-placeholder>🏕️</div>'">`
+    : `<div class="card-photo-placeholder">🏕️</div>`;
+
+  const cats = (c.categories || []).slice(0, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
+  const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
+  const ratingStr = c.rating ? `<span class="star">★</span><span class="val">${c.rating.toFixed(1)}</span><span class="cnt">(${c.reviews_count})</span>` : '';
+
+  div.innerHTML = `
+    ${photo}
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">${c.name}</div>
+        <div class="card-rating">${ratingStr}</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-age">${c.age_min || 6}–${c.age_max || 17} лет</span>
+        ${c.has_pool ? '<span class="badge badge-pool">🏊 Бассейн</span>' : ''}
+        ${cats}
+      </div>
+      ${c.tagline ? `<div class="card-desc">${c.tagline}</div>` : ''}
+      <div class="card-footer">
+        <div class="card-price">${priceStr}</div>
+        <div class="card-actions">
+          <a class="btn-detail" href="/camp/${c.id}">Подробнее</a>
+          <button class="btn-book" data-name="${c.name}">Забронировать</button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  div.querySelector('.btn-book').addEventListener('click', () => openModal(c.name));
+  return div;
+}
+
+// ─── MODAL ────────────────────────────────────────────────────────
+function openModal(campName) {
+  currentCampName = campName;
+  document.getElementById('modalCampName').textContent = campName;
+  document.getElementById('modalForm').style.display = 'block';
+  document.getElementById('modalSuccess').style.display = 'none';
+  document.getElementById('fName').value = '';
+  document.getElementById('fPhone').value = '';
+  document.getElementById('fTelegram').value = '';
+  document.getElementById('fAge').value = '';
+  document.getElementById('fComment').value = '';
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+document.getElementById('modalClose').addEventListener('click', () => {
+  document.getElementById('modalOverlay').classList.remove('open');
+});
+document.getElementById('modalOverlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+});
+
+document.getElementById('btnSubmit').addEventListener('click', async () => {
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  if (!name || !phone) { alert('Укажите имя и телефон'); return; }
+
+  const btn = document.getElementById('btnSubmit');
+  btn.disabled = true; btn.textContent = 'Отправляем...';
+
+  try {
+    const res = await fetch(`${API}/booking`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        camp_name: currentCampName,
+        parent_name: name,
+        phone,
+        telegram: document.getElementById('fTelegram').value.trim(),
+        child_age: document.getElementById('fAge').value.trim(),
+        comment: document.getElementById('fComment').value.trim(),
+      })
+    });
+    const d = await res.json();
+    if (d.ok) {
+      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('modalSuccess').style.display = 'block';
+    } else {
+      alert(d.error || 'Ошибка. Попробуйте ещё раз.');
+    }
+  } catch (e) {
+    alert('Ошибка сети. Проверьте соединение.');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Отправить заявку';
+  }
+});
+
+// ─── CONTROLS ─────────────────────────────────────────────────────
+document.getElementById('btnApply').addEventListener('click', () => loadCamps(true));
+document.getElementById('btnReset').addEventListener('click', () => {
+  document.getElementById('ageMin').value = '';
+  document.getElementById('ageMax').value = '';
+  document.getElementById('priceMin').value = '';
+  document.getElementById('priceMax').value = '';
+  document.getElementById('typeAll').checked = true;
+  document.querySelectorAll('.check-item input').forEach(el => el.checked = false);
+  document.getElementById('hasPool').checked = false;
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.star-btn[data-val=""]').classList.add('active');
+  currentRating = '';
+  loadCamps(true);
+});
+
+document.getElementById('btnLoadMore').addEventListener('click', () => {
+  page++;
+  loadCamps(false);
+});
+
+document.getElementById('searchInput').addEventListener('input', () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => loadCamps(true), 350);
+});
+
+// Rating buttons
+document.querySelectorAll('.star-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentRating = btn.dataset.val;
+  });
+});
+document.querySelector('.star-btn[data-val=""]').classList.add('active');
+
+// Mobile sidebar
+document.getElementById('sidebarToggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+
+// ─── INIT ─────────────────────────────────────────────────────────
+loadCamps(true);
+</script>
+</body>
+</html>
