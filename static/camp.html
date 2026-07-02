@@ -3,51 +3,65 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Лагерь — Лагеря 2026</title>
+<title>Лагерь — UMKA HUB</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #0D1117; --bg2: #161B22; --bg3: #1C2128;
-    --border: #30363D; --em: #10B981; --em-dark: #059669;
-    --em-glow: rgba(16,185,129,0.15);
-    --text: #E6EDF3; --text2: #8B949E; --text3: #6E7681;
-    --radius: 12px; --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    --bg: #F0F5FF;
+    --bg2: #FFFFFF;
+    --bg3: #E4EDFF;
+    --border: #C8D8EE;
+    --em: #3DC9C1;
+    --em-dark: #28B5AC;
+    --em-glow: rgba(61,201,193,0.12);
+    --text: #1A2B4A;
+    --text2: #4A6280;
+    --text3: #8A9CB8;
+    --radius: 14px;
+    --shadow: 0 4px 20px rgba(80,120,200,0.10);
   }
-  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  body {
+    background: linear-gradient(150deg, #EDF3FF 0%, #F5F0FF 50%, #EFF6FF 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
 
   nav {
     position: sticky; top: 0; z-index: 100;
-    background: rgba(13,17,23,0.95); backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
-    padding: 0 24px; height: 60px;
+    padding: 0 24px; height: 62px;
     display: flex; align-items: center; gap: 16px;
+    box-shadow: 0 2px 12px rgba(80,120,200,0.07);
   }
-  .nav-logo { font-size: 18px; font-weight: 700; color: var(--em); text-decoration: none; }
+  .nav-logo {
+    display: flex; align-items: center; gap: 9px;
+    font-size: 17px; font-weight: 800; color: var(--em);
+    white-space: nowrap; text-decoration: none; letter-spacing: -0.3px;
+  }
   .nav-logo span { color: var(--text); }
-  .nav-back { display: flex; align-items: center; gap: 6px; color: var(--text2); text-decoration: none; font-size: 14px; transition: color 0.15s; }
-  .nav-back:hover { color: var(--text); }
+  .nav-back { display: flex; align-items: center; gap: 6px; color: var(--text2); text-decoration: none; font-size: 14px; transition: color 0.15s; background: var(--bg3); padding: 6px 12px; border-radius: 8px; }
+  .nav-back:hover { color: var(--em); background: var(--em-glow); }
 
-  .container { max-width: 900px; margin: 0 auto; padding: 32px 24px 64px; }
+  .container { max-width: 920px; margin: 0 auto; padding: 32px 24px 80px; }
 
   /* HERO */
-  .hero { border-radius: var(--radius); overflow: hidden; margin-bottom: 28px; position: relative; }
+  .hero { border-radius: var(--radius); overflow: hidden; margin-bottom: 28px; box-shadow: var(--shadow); }
   .hero-img { width: 100%; max-height: 420px; object-fit: cover; display: block; }
-  .hero-placeholder { width: 100%; height: 260px; background: var(--bg2); display: flex; align-items: center; justify-content: center; font-size: 64px; }
+  .hero-placeholder { width: 100%; height: 260px; background: linear-gradient(135deg, var(--bg3), var(--bg)); display: flex; align-items: center; justify-content: center; font-size: 64px; }
 
   /* HEADER */
   .camp-header { margin-bottom: 24px; }
-  .camp-name { font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+  .camp-name { font-size: 28px; font-weight: 800; margin-bottom: 12px; color: var(--text); }
   .camp-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .badge {
-    padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;
-    border: 1px solid var(--border); color: var(--text2);
-  }
+  .badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; border: 1px solid var(--border); color: var(--text2); background: var(--bg3); }
   .badge-em { border-color: var(--em); color: var(--em); background: var(--em-glow); }
-  .badge-age { border-color: #2D3748; background: #1A2030; color: #90CDF4; }
-  .badge-pool { border-color: #1A3A4A; background: #0D2535; color: #4FC3F7; }
+  .badge-age { border-color: #BCD6F7; background: #EAF3FF; color: #2B72C8; }
+  .badge-pool { border-color: #B5E4EE; background: #E5F7FA; color: #1A92A8; }
   .rating { display: flex; align-items: center; gap: 6px; }
-  .rating .stars { color: var(--em); font-size: 16px; }
-  .rating .val { font-size: 18px; font-weight: 700; color: var(--em); }
+  .rating .stars { color: #F59E0B; font-size: 16px; }
+  .rating .val { font-size: 18px; font-weight: 700; color: var(--text); }
   .rating .cnt { font-size: 13px; color: var(--text3); }
 
   /* GRID LAYOUT */
@@ -57,24 +71,25 @@
   /* SECTIONS */
   .section { margin-bottom: 24px; }
   .section-title {
-    font-size: 14px; font-weight: 600; color: var(--text3);
-    letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: 11px; font-weight: 700; color: var(--text3);
+    letter-spacing: 0.1em; text-transform: uppercase;
     margin-bottom: 12px; padding-bottom: 8px;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 2px solid var(--border);
   }
-  .section-body { font-size: 14px; color: var(--text2); line-height: 1.7; white-space: pre-wrap; }
+  .section-body { font-size: 14px; color: var(--text2); line-height: 1.75; white-space: pre-wrap; }
 
   /* SIDEBAR */
   .camp-sidebar { position: sticky; top: 80px; }
   .price-card {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 20px; margin-bottom: 16px;
+    background: white; border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px; margin-bottom: 16px;
+    box-shadow: var(--shadow);
   }
-  .price-label { font-size: 12px; color: var(--text3); margin-bottom: 4px; }
-  .price-value { font-size: 28px; font-weight: 800; color: var(--em); margin-bottom: 16px; }
+  .price-label { font-size: 12px; color: var(--text3); margin-bottom: 4px; font-weight: 500; }
+  .price-value { font-size: 28px; font-weight: 800; color: var(--em); margin-bottom: 18px; }
   .btn-book-big {
     width: 100%; padding: 14px; background: var(--em); border: none;
-    border-radius: 10px; color: #000; font-size: 16px; font-weight: 700;
+    border-radius: 12px; color: white; font-size: 16px; font-weight: 700;
     cursor: pointer; transition: background 0.2s;
   }
   .btn-book-big:hover { background: var(--em-dark); }
@@ -82,49 +97,77 @@
 
   /* SESSIONS */
   .sessions-table { width: 100%; border-collapse: collapse; font-size: 13px; }
-  .sessions-table th { text-align: left; padding: 8px 10px; color: var(--text3); font-weight: 500; border-bottom: 1px solid var(--border); }
-  .sessions-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); color: var(--text2); }
+  .sessions-table th { text-align: left; padding: 8px 10px; color: var(--text3); font-weight: 600; border-bottom: 2px solid var(--border); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .sessions-table td { padding: 10px 10px; border-bottom: 1px solid var(--border); color: var(--text2); }
   .sessions-table tr:last-child td { border-bottom: none; }
   .sessions-table tr:hover td { background: var(--bg3); }
   .price-td { color: var(--em); font-weight: 600; }
+  .session-row-btn {
+    padding: 4px 12px; background: var(--em-glow); border: 1px solid var(--em);
+    border-radius: 8px; color: var(--em); font-size: 12px; font-weight: 600;
+    cursor: pointer; transition: 0.15s; white-space: nowrap;
+  }
+  .session-row-btn:hover { background: var(--em); color: white; }
+  .no-sessions { padding: 12px; background: var(--bg3); border-radius: 10px; color: var(--text3); font-size: 13px; text-align: center; }
 
   /* GALLERY */
   .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
-  .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); cursor: pointer; transition: opacity 0.2s; }
-  .gallery img:hover { opacity: 0.8; }
+  .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
+  .gallery img:hover { opacity: 0.85; transform: scale(1.02); }
+
+  /* REVIEWS */
+  .review-card {
+    background: white; border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px 18px; margin-bottom: 12px;
+    box-shadow: 0 2px 8px rgba(80,120,200,0.06);
+  }
+  .review-card:last-child { margin-bottom: 0; }
+  .review-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  .review-author { font-weight: 700; font-size: 13px; color: var(--text); }
+  .review-date { font-size: 12px; color: var(--text3); background: var(--bg3); padding: 2px 8px; border-radius: 10px; }
+  .review-text { font-size: 13px; color: var(--text2); line-height: 1.65; }
+
+  /* SESSION SELECT IN MODAL */
+  .form-group select {
+    width: 100%; padding: 10px 12px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.2s; cursor: pointer; appearance: none; font-family: inherit;
+  }
+  .form-group select:focus { border-color: var(--em); box-shadow: 0 0 0 3px var(--em-glow); }
 
   /* MODAL */
   .modal-overlay {
     display: none; position: fixed; inset: 0; z-index: 200;
-    background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+    background: rgba(30,50,100,0.45); backdrop-filter: blur(6px);
     align-items: center; justify-content: center; padding: 20px;
   }
   .modal-overlay.open { display: flex; }
   .modal {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 16px; padding: 28px; width: 100%; max-width: 440px;
-    box-shadow: var(--shadow); animation: slideUp 0.2s ease;
+    background: white; border: 1px solid var(--border);
+    border-radius: 18px; padding: 28px; width: 100%; max-width: 440px;
+    box-shadow: 0 20px 60px rgba(30,60,150,0.15); animation: slideUp 0.2s ease;
   }
   @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } }
   .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-  .modal-title { font-size: 18px; font-weight: 700; }
-  .modal-close { background: none; border: none; color: var(--text3); font-size: 22px; cursor: pointer; }
-  .modal-close:hover { color: var(--text); }
-  .modal-camp-name { font-size: 13px; color: var(--em); margin-bottom: 20px; }
+  .modal-title { font-size: 18px; font-weight: 700; color: var(--text); }
+  .modal-close { background: var(--bg3); border: none; color: var(--text2); font-size: 18px; cursor: pointer; padding: 6px 9px; border-radius: 8px; }
+  .modal-close:hover { background: var(--border); color: var(--text); }
+  .modal-camp-name { font-size: 13px; color: var(--em); margin-bottom: 20px; font-weight: 500; }
   .form-group { margin-bottom: 14px; }
-  .form-group label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 6px; font-weight: 500; }
+  .form-group label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 6px; font-weight: 600; }
   .form-group input, .form-group textarea {
     width: 100%; padding: 10px 12px;
     background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 8px; color: var(--text); font-size: 14px; outline: none; font-family: inherit;
-    transition: border-color 0.2s;
+    border-radius: 10px; color: var(--text); font-size: 14px; outline: none; font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .form-group input:focus, .form-group textarea:focus { border-color: var(--em); }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--em); box-shadow: 0 0 0 3px var(--em-glow); }
   .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text3); }
   .form-group textarea { resize: none; height: 72px; }
   .btn-submit {
-    width: 100%; padding: 12px; background: var(--em); border: none;
-    border-radius: 8px; color: #000; font-size: 15px; font-weight: 700;
+    width: 100%; padding: 13px; background: var(--em); border: none;
+    border-radius: 10px; color: white; font-size: 15px; font-weight: 700;
     cursor: pointer; transition: background 0.2s; margin-top: 4px;
   }
   .btn-submit:hover { background: var(--em-dark); }
@@ -132,38 +175,11 @@
   .modal-note { text-align: center; font-size: 11px; color: var(--text3); margin-top: 10px; }
   .modal-success { text-align: center; padding: 20px 0; }
   .modal-success .check { font-size: 48px; margin-bottom: 12px; }
-  .modal-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .modal-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
   .modal-success p { font-size: 14px; color: var(--text2); }
 
-  /* REVIEWS */
-  .review-card {
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 10px; padding: 14px 16px; margin-bottom: 12px;
-  }
-  .review-card:last-child { margin-bottom: 0; }
-  .review-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
-  .review-author { font-weight: 600; font-size: 13px; color: var(--text); }
-  .review-date { font-size: 12px; color: var(--text3); }
-  .review-text { font-size: 13px; color: var(--text2); line-height: 1.6; }
-
-  /* SESSION SELECT */
-  .form-group select {
-    width: 100%; padding: 10px 12px;
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 8px; color: var(--text); font-size: 14px; outline: none; font-family: inherit;
-    transition: border-color 0.2s; cursor: pointer;
-    appearance: none; -webkit-appearance: none;
-  }
-  .form-group select:focus { border-color: var(--em); }
-  .session-row-btn {
-    padding: 4px 10px; background: var(--em-glow); border: 1px solid var(--em);
-    border-radius: 6px; color: var(--em); font-size: 12px; font-weight: 600;
-    cursor: pointer; transition: background 0.2s;
-  }
-  .session-row-btn:hover { background: var(--em); color: #000; }
-
   .not-found { text-align: center; padding: 80px 20px; }
-  .not-found h2 { font-size: 24px; margin-bottom: 10px; }
+  .not-found h2 { font-size: 24px; margin-bottom: 10px; color: var(--text); }
   .not-found p { color: var(--text2); margin-bottom: 20px; }
   .not-found a { color: var(--em); }
 </style>
@@ -171,9 +187,28 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="/">Лагеря<span> 2026</span></a>
+  <a class="nav-logo" href="/">
+    <svg viewBox="0 0 36 36" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="18" fill="#3DC9C1"/>
+      <circle cx="10.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="25.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="10.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="25.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="18" cy="20" r="11.5" fill="white"/>
+      <circle cx="14" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="22" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="14.6" cy="17.3" r="0.7" fill="white"/>
+      <circle cx="22.6" cy="17.3" r="0.7" fill="white"/>
+      <ellipse cx="18" cy="22.5" rx="4" ry="3" fill="#D6EFEE"/>
+      <ellipse cx="18" cy="21" rx="2.2" ry="1.6" fill="#1A3050"/>
+      <path d="M15.5 24Q18 26.5 20.5 24" stroke="#1A3050" stroke-width="1.2" stroke-linecap="round"/>
+      <ellipse cx="30" cy="15.5" rx="3" ry="4.5" fill="white" transform="rotate(-28 30 15.5)"/>
+      <ellipse cx="7" cy="22.5" rx="3" ry="4" fill="white" transform="rotate(18 7 22.5)"/>
+    </svg>
+    <span>UMKA HUB</span>
+  </a>
   <a class="nav-back" href="/">
-    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
     Все лагеря
   </a>
 </nav>
@@ -191,11 +226,14 @@
         <button class="modal-close" id="modalClose">×</button>
       </div>
       <div class="modal-camp-name" id="modalCampName"></div>
+      <div class="form-group" id="sessionGroup" style="display:none">
+        <label>Смена</label>
+        <select id="fSession"></select>
+      </div>
       <div class="form-group"><label>Имя родителя *</label><input type="text" id="fName" placeholder="Иван Иванов"></div>
       <div class="form-group"><label>Телефон *</label><input type="tel" id="fPhone" placeholder="+7 900 000 00 00"></div>
       <div class="form-group"><label>Telegram</label><input type="text" id="fTelegram" placeholder="@username"></div>
       <div class="form-group"><label>Возраст ребёнка</label><input type="text" id="fAge" placeholder="9 лет"></div>
-      <div class="form-group" id="sessionGroup" style="display:none"><label>Смена</label><select id="fSession"></select></div>
       <div class="form-group"><label>Комментарий</label><textarea id="fComment" placeholder="Вопросы, пожелания..."></textarea></div>
       <button class="btn-submit" id="btnSubmit">Отправить заявку</button>
       <div class="modal-note">Мы свяжемся с вами в течение 2 часов</div>
@@ -213,10 +251,25 @@ const campId = location.pathname.replace('/camp/', '').replace(/\//g, '');
 let campName = '';
 let campSessions = [];
 
+// ─── DATE HELPERS ─────────────────────────────────────────────────
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+const RU_MON = {
+  'янв':0,'фев':1,'мар':2,'апр':3,'май':4,'июн':5,
+  'июл':6,'авг':7,'сен':8,'окт':9,'ноя':10,'дек':11
+};
+function parseRuDate(s) {
+  if (!s) return null;
+  const p = String(s).trim().split(/\s+/);
+  const d = parseInt(p[0]), m = RU_MON[p[1]?.toLowerCase()];
+  return (!isNaN(d) && m !== undefined) ? new Date(TODAY.getFullYear(), m, d) : null;
+}
+function isFuture(s) {
+  const d = parseRuDate(s.date_start);
+  return !d || d >= TODAY;
+}
 function fmt(n) { return n ? Number(n).toLocaleString('ru-RU') : ''; }
 function fmtDate(d) {
   if (!d) return '';
-  // Already a human-readable Russian string like "22 июн" — return as-is
   if (/[а-яёА-ЯЁ]/.test(d)) return d;
   try {
     const dt = new Date(d);
@@ -225,6 +278,17 @@ function fmtDate(d) {
   return d;
 }
 
+// ─── CONTENT CLEANUP ──────────────────────────────────────────────
+function cleanText(text) {
+  if (!text || !text.trim()) return '';
+  const t = text.trim();
+  if (/[.!?»")’”]$/.test(t)) return t;
+  const lastIdx = Math.max(t.lastIndexOf('.'), t.lastIndexOf('!'), t.lastIndexOf('?'));
+  if (lastIdx > 0 && lastIdx > t.length * 0.3) return t.slice(0, lastIdx + 1);
+  return t;
+}
+
+// ─── REVIEWS PARSER ───────────────────────────────────────────────
 function parseReviews(raw) {
   if (!raw) return [];
   const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
@@ -232,7 +296,6 @@ function parseReviews(raw) {
   const statRe = /\d+\s+отзыв/i;
   const reviews = [];
   let i = 0;
-  // Skip intro + aggregate stats
   while (i < lines.length && (lines[i].includes('отдыхали') || statRe.test(lines[i]))) i++;
   while (i < lines.length) {
     if (dateRe.test(lines[i])) {
@@ -240,12 +303,14 @@ function parseReviews(raw) {
       const author = (i < lines.length && !dateRe.test(lines[i]) && lines[i].split(' ').length <= 4) ? lines[i++] : '';
       const textLines = [];
       while (i < lines.length && !dateRe.test(lines[i])) { textLines.push(lines[i]); i++; }
-      reviews.push({ date, author, text: textLines.join(' ') });
+      const text = cleanText(textLines.join(' '));
+      if (text) reviews.push({ date, author, text });
     } else { i++; }
   }
   return reviews;
 }
 
+// ─── LOAD ─────────────────────────────────────────────────────────
 async function load() {
   const app = document.getElementById('app');
   try {
@@ -256,8 +321,8 @@ async function load() {
     }
     const c = await res.json();
     campName = c.name;
-    campSessions = c.sessions || [];
-    document.title = `${c.name} — Лагеря 2026`;
+    campSessions = (c.sessions || []).filter(s => isFuture(s));
+    document.title = `${c.name} — UMKA HUB`;
     render(c);
   } catch (e) {
     app.innerHTML = `<div class="not-found"><h2>Ошибка загрузки</h2><p>${e.message}</p></div>`;
@@ -267,7 +332,7 @@ async function load() {
 function render(c) {
   const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
   const photo = c.main_photo
-    ? `<img class="hero-img" src="${c.main_photo}" alt="${c.name}">`
+    ? `<img class="hero-img" src="${c.main_photo}" alt="${c.name}" onerror="this.parentNode.innerHTML='<div class=hero-placeholder>🏕️</div>'">`
     : `<div class="hero-placeholder">🏕️</div>`;
 
   const cats = (c.categories || []).map(ct => `<span class="badge badge-em">${ct}</span>`).join('');
@@ -288,40 +353,45 @@ function render(c) {
   ].filter(([_, v]) => v && v.trim()).map(([title, body]) => `
     <div class="section">
       <div class="section-title">${title}</div>
-      <div class="section-body">${body}</div>
+      <div class="section-body">${cleanText(body)}</div>
     </div>
   `).join('');
 
-  const sessions = (c.sessions || []);
-  const sessionsHtml = sessions.length ? `
-    <div class="section">
-      <div class="section-title">Смены и цены</div>
-      <table class="sessions-table">
-        <thead><tr><th>Начало</th><th>Конец</th><th>Дней</th><th>Цена</th><th></th></tr></thead>
-        <tbody>
-          ${sessions.map((s, i) => `
-            <tr>
-              <td>${fmtDate(s.date_start) || '—'}</td>
-              <td>${fmtDate(s.date_end) || '—'}</td>
-              <td>${s.duration_days || '—'}</td>
-              <td class="price-td">${s.price ? fmt(s.price) + ' ₽' : '—'}</td>
-              <td><button class="session-row-btn" data-idx="${i}">Выбрать</button></td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  ` : '';
+  // Sessions — only future
+  const sessionsHtml = (() => {
+    if (!c.sessions || c.sessions.length === 0) return '';
+    const future = c.sessions.filter(s => isFuture(s));
+    if (future.length === 0) return `
+      <div class="section">
+        <div class="section-title">Смены и цены</div>
+        <div class="no-sessions">Ближайшие смены завершились. Следите за обновлениями!</div>
+      </div>`;
+    return `
+      <div class="section">
+        <div class="section-title">Смены и цены</div>
+        <table class="sessions-table">
+          <thead><tr><th>Начало</th><th>Конец</th><th>Дней</th><th>Цена</th><th></th></tr></thead>
+          <tbody>
+            ${future.map((s, i) => `
+              <tr>
+                <td>${fmtDate(s.date_start) || '—'}</td>
+                <td>${fmtDate(s.date_end) || '—'}</td>
+                <td>${s.duration_days || '—'}</td>
+                <td class="price-td">${s.price ? fmt(s.price) + ' ₽' : '—'}</td>
+                <td><button class="session-row-btn" data-idx="${i}">Выбрать</button></td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+      </div>`;
+  })();
 
   const photos = (c.photos || []).filter(p => p && p !== c.main_photo).slice(0, 9);
   const galleryHtml = photos.length ? `
     <div class="section">
       <div class="section-title">Галерея</div>
-      <div class="gallery">
-        ${photos.map(p => `<img src="${p}" loading="lazy" alt="Фото">`).join('')}
-      </div>
-    </div>
-  ` : '';
+      <div class="gallery">${photos.map(p => `<img src="${p}" loading="lazy" alt="Фото">`).join('')}</div>
+    </div>` : '';
 
   const parsedReviews = parseReviews(c.reviews);
   const reviewsHtml = parsedReviews.length ? `
@@ -336,8 +406,7 @@ function render(c) {
           <div class="review-text">${r.text}</div>
         </div>
       `).join('')}
-    </div>
-  ` : '';
+    </div>` : '';
 
   document.getElementById('app').innerHTML = `
     <div class="hero">${photo}</div>
@@ -370,8 +439,6 @@ function render(c) {
   `;
 
   document.getElementById('btnBook').addEventListener('click', () => openModal(c.name));
-
-  // Session row "Выбрать" buttons
   document.querySelectorAll('.session-row-btn').forEach(btn => {
     btn.addEventListener('click', () => openModal(c.name, parseInt(btn.dataset.idx)));
   });
@@ -383,7 +450,6 @@ function openModal(name, sessionIdx) {
   document.getElementById('modalSuccess').style.display = 'none';
   ['fName','fPhone','fTelegram','fAge','fComment'].forEach(id => document.getElementById(id).value = '');
 
-  // Populate session selector
   const sel = document.getElementById('fSession');
   const grp = document.getElementById('sessionGroup');
   if (campSessions.length) {
@@ -398,7 +464,6 @@ function openModal(name, sessionIdx) {
   } else {
     grp.style.display = 'none';
   }
-
   document.getElementById('modalOverlay').classList.add('open');
 }
 
@@ -415,9 +480,9 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
   if (!name || !phone) { alert('Укажите имя и телефон'); return; }
   const btn = document.getElementById('btnSubmit');
   btn.disabled = true; btn.textContent = 'Отправляем...';
+  const selEl = document.getElementById('fSession');
+  const selSession = campSessions.length ? campSessions[parseInt(selEl.value) || 0] : null;
   try {
-    const selEl = document.getElementById('fSession');
-    const selSession = campSessions.length ? campSessions[parseInt(selEl.value) || 0] : null;
     const res = await fetch('/api/booking', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
