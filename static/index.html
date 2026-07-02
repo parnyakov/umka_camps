@@ -477,7 +477,9 @@ async function loadCamps(reset = false) {
 // ─── CARD ─────────────────────────────────────────────────────────
 function fmt(n) { return n ? Number(n).toLocaleString('ru-RU') : ''; }
 
-const LOC_RE = /область|Подмосковье|Московск|Ленинград|Санкт-Петербург|Петербург|Краснодар|Сочи|Крым|бассейн|за границ|зарубеж|загородн|городской|выездной|дневной|международн|^лагерь$/i;
+const SEA_LOC = /Краснодар|Сочи|Крым|Анапа|Геленджик|Туапсе|Ялта|Севастополь|Евпатория|Абхазия|Черное море/i;
+const BASE_FILTER = /область|Подмосковье|Московск|Ленинград|Санкт-Петербург|Петербург|за границ|зарубеж|загородн|городской|выездной|дневной|международн|^лагерь$/i;
+const EXTRA_FILTER = /бассейн|на море|у моря|на черном/i;
 
 function makeCard(c) {
   const div = document.createElement('div');
@@ -488,7 +490,10 @@ function makeCard(c) {
   const photo = c.main_photo
     ? `<img class="card-photo" src="${c.main_photo}" alt="${c.name}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=card-photo-placeholder>🏕️</div>'">`
     : `<div class="card-photo-placeholder">🏕️</div>`;
-  const cats = (c.categories || []).filter(ct => !LOC_RE.test(ct)).slice(0, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
+  const nearSea = SEA_LOC.test(c.location || '');
+  const cats = (c.categories || [])
+    .filter(ct => !BASE_FILTER.test(ct) && (nearSea || !EXTRA_FILTER.test(ct)))
+    .slice(0, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
   const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
   const ratingStr = c.rating ? `<span class="star">★</span><span class="val">${c.rating.toFixed(1)}</span><span class="cnt">(${c.reviews_count})</span>` : '';
   div.innerHTML = `
