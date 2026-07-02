@@ -313,9 +313,10 @@
     <div class="filter-group">
       <span class="filter-group-label">Тип лагеря</span>
       <div class="radio-item"><input type="radio" name="type" value="" id="typeAll" checked><label for="typeAll">Все</label></div>
-      <div class="radio-item"><input type="radio" name="type" value="загородный" id="typeZag"><label for="typeZag">Загородный</label></div>
-      <div class="radio-item"><input type="radio" name="type" value="городской" id="typeGor"><label for="typeGor">Городской</label></div>
-      <div class="radio-item"><input type="radio" name="type" value="выездной" id="typeVyez"><label for="typeVyez">Выездной</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Городской" id="typeGor"><label for="typeGor">Городской</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Дневной" id="typeDay"><label for="typeDay">Дневного пребывания</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Круглосуточный" id="typeKrug"><label for="typeKrug">Круглосуточный</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Выездной" id="typeVyez"><label for="typeVyez">Выездной</label></div>
     </div>
 
     <div class="filter-group">
@@ -339,14 +340,6 @@
         <button class="star-btn" data-val="3">3★+</button>
         <button class="star-btn" data-val="4">4★+</button>
         <button class="star-btn" data-val="4.5">4.5★+</button>
-      </div>
-    </div>
-
-    <div class="filter-group">
-      <span class="filter-group-label">Удобства</span>
-      <div class="toggle-row">
-        <span>Есть бассейн</span>
-        <label class="toggle"><input type="checkbox" id="hasPool"><span class="toggle-track"></span></label>
       </div>
     </div>
 
@@ -447,7 +440,6 @@ function getFilters() {
     price_max: document.getElementById('priceMax').value || '',
     type: document.querySelector('input[name=type]:checked')?.value || '',
     category: cats.join(','),
-    has_pool: document.getElementById('hasPool').checked ? '1' : '',
     rating_min: currentRating,
     search: document.getElementById('searchInput').value.trim(),
   };
@@ -617,7 +609,6 @@ document.getElementById('btnReset').addEventListener('click', () => {
   document.getElementById('priceMax').value = '';
   document.getElementById('typeAll').checked = true;
   document.querySelectorAll('.check-item input').forEach(el => el.checked = false);
-  document.getElementById('hasPool').checked = false;
   document.getElementById('searchInput').value = '';
   document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
   document.querySelector('.star-btn[data-val=""]').classList.add('active');
@@ -634,6 +625,7 @@ document.querySelectorAll('.star-btn').forEach(btn => {
     document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentRating = btn.dataset.val;
+    loadCamps(true);
   });
 });
 document.querySelector('.star-btn[data-val=""]').classList.add('active');
