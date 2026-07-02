@@ -335,7 +335,8 @@ function render(c) {
     ? `<img class="hero-img" src="${c.main_photo}" alt="${c.name}" onerror="this.parentNode.innerHTML='<div class=hero-placeholder>🏕️</div>'">`
     : `<div class="hero-placeholder">🏕️</div>`;
 
-  const cats = (c.categories || []).map(ct => `<span class="badge badge-em">${ct}</span>`).join('');
+  const LOC_RE = /область|Подмосковье|Московск|Ленинград|Санкт-Петербург|Петербург|Краснодар|Сочи|Крым/i;
+  const cats = (c.categories || []).filter(ct => !LOC_RE.test(ct)).map(ct => `<span class="badge badge-em">${ct}</span>`).join('');
   const ratingHtml = c.rating ? `
     <div class="rating">
       <span class="stars">★★★★★</span>
@@ -396,7 +397,7 @@ function render(c) {
   const parsedReviews = parseReviews(c.reviews);
   const reviewsHtml = parsedReviews.length ? `
     <div class="section">
-      <div class="section-title">Отзывы</div>
+      <div class="section-title">Последние отзывы</div>
       ${parsedReviews.slice(0, 5).map(r => `
         <div class="review-card">
           <div class="review-meta">
