@@ -143,6 +143,7 @@
     transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
     display: flex; flex-direction: column;
     box-shadow: 0 2px 10px rgba(80,120,200,0.06);
+    cursor: pointer;
   }
   .card:hover { border-color: var(--em); transform: translateY(-3px); box-shadow: var(--shadow), 0 0 0 1px var(--em-glow); }
   .card-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--bg3); display: block; }
@@ -476,13 +477,18 @@ async function loadCamps(reset = false) {
 // ─── CARD ─────────────────────────────────────────────────────────
 function fmt(n) { return n ? Number(n).toLocaleString('ru-RU') : ''; }
 
+const LOC_RE = /область|Подмосковье|Московск|Ленинград|Санкт-Петербург|Петербург|Краснодар|Сочи|Крым/i;
+
 function makeCard(c) {
   const div = document.createElement('div');
   div.className = 'card';
+  div.addEventListener('click', (e) => {
+    if (!e.target.closest('button, a')) window.location.href = `/camp/${c.id}`;
+  });
   const photo = c.main_photo
     ? `<img class="card-photo" src="${c.main_photo}" alt="${c.name}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=card-photo-placeholder>🏕️</div>'">`
     : `<div class="card-photo-placeholder">🏕️</div>`;
-  const cats = (c.categories || []).slice(0, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
+  const cats = (c.categories || []).filter(ct => !LOC_RE.test(ct)).slice(0, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
   const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
   const ratingStr = c.rating ? `<span class="star">★</span><span class="val">${c.rating.toFixed(1)}</span><span class="cnt">(${c.reviews_count})</span>` : '';
   div.innerHTML = `
