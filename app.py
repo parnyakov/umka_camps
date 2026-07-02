@@ -156,8 +156,15 @@ def api_camps():
         query += ' AND location LIKE ?'
         params.append(f'%{location}%')
     if category:
-        query += ' AND categories LIKE ?'
-        params.append(f'%{category}%')
+        # Support multi-term OR matching: comma separates selected filters,
+        # pipe separates synonym patterns within one filter
+        all_terms = []
+        for group in category.split(','):
+            all_terms.extend([t.strip() for t in group.split('|') if t.strip()])
+        if all_terms:
+            subclauses = ' OR '.join(['categories LIKE ?' for _ in all_terms])
+            query += f' AND ({subclauses})'
+            params.extend([f'%{t}%' for t in all_terms])
     if camp_type:
         query += ' AND type LIKE ?'
         params.append(f'%{camp_type}%')
