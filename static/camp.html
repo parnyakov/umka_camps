@@ -335,7 +335,7 @@ function render(c) {
     ? `<img class="hero-img" src="${c.main_photo}" alt="${c.name}" onerror="this.parentNode.innerHTML='<div class=hero-placeholder>🏕️</div>'">`
     : `<div class="hero-placeholder">🏕️</div>`;
 
-  const LOC_RE = /область|Подмосковье|Московск|Ленинград|Санкт-Петербург|Петербург|Краснодар|Сочи|Крым/i;
+  const LOC_RE = /область|Подмосковье|Московск|Ленинград|Санкт-Петербург|Петербург|Краснодар|Сочи|Крым|бассейн|за границ|зарубеж|загородн|городской|выездной|дневной|международн|^лагерь$/i;
   const cats = (c.categories || []).filter(ct => !LOC_RE.test(ct)).map(ct => `<span class="badge badge-em">${ct}</span>`).join('');
   const ratingHtml = c.rating ? `
     <div class="rating">
