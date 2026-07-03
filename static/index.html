@@ -146,7 +146,7 @@
     cursor: pointer;
   }
   .card:hover { border-color: var(--em); transform: translateY(-3px); box-shadow: var(--shadow), 0 0 0 1px var(--em-glow); }
-  .card-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; background: var(--bg3); display: block; }
+  .card-photo { width: 100%; aspect-ratio: 16/9; background-size: cover; background-position: center; background-color: var(--bg3); display: block; }
   .card-photo-placeholder { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, var(--bg3), var(--bg)); display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: 32px; }
   .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
   .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
@@ -483,10 +483,10 @@ function makeCard(c) {
   div.addEventListener('click', (e) => {
     if (!e.target.closest('button, a')) window.location.href = `/camp/${c.id}`;
   });
-  const localPhoto = `/static/photos/${c.id}_main.jpg`;
-  const fallbackPhoto = c.main_photo || '';
-  const photo = `<img class="card-photo" src="${localPhoto}" alt="${c.name}" loading="lazy"
-    onerror="if(this.dataset.tried){this.parentNode.innerHTML='<div class=card-photo-placeholder>🏕️</div>'}else{this.dataset.tried=1;this.src='${fallbackPhoto}'}">`;
+  const photoUrl = c.main_photo || '';
+  const photo = photoUrl
+    ? `<div class="card-photo" style="background-image:url('${photoUrl}')"></div>`
+    : `<div class="card-photo-placeholder">🏕️</div>`;
   const nearSea = SEA_LOC.test(c.location || '');
   const cats = (c.categories || [])
     .filter(ct => !BASE_FILTER.test(ct) && (nearSea || !EXTRA_FILTER.test(ct)))
