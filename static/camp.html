@@ -48,7 +48,7 @@
 
   /* HERO */
   .hero { border-radius: var(--radius); overflow: hidden; margin-bottom: 28px; box-shadow: var(--shadow); }
-  .hero-img { width: 100%; max-height: 420px; object-fit: cover; display: block; }
+  .hero-img { width: 100%; height: 380px; background-size: cover; background-position: center; display: block; }
   .hero-placeholder { width: 100%; height: 260px; background: linear-gradient(135deg, var(--bg3), var(--bg)); display: flex; align-items: center; justify-content: center; font-size: 64px; }
 
   /* HEADER */
@@ -112,8 +112,8 @@
 
   /* GALLERY */
   .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px; }
-  .gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
-  .gallery img:hover { opacity: 0.85; transform: scale(1.02); }
+  .gallery-item { aspect-ratio: 4/3; background-size: cover; background-position: center; border-radius: 10px; border: 1px solid var(--border); cursor: pointer; transition: opacity 0.2s, transform 0.2s; }
+  .gallery-item:hover { opacity: 0.85; transform: scale(1.02); }
 
   /* REVIEWS */
   .review-card {
@@ -331,10 +331,10 @@ async function load() {
 
 function render(c) {
   const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
-  const localPhoto = `/static/photos/${c.id}_main.jpg`;
-  const fallbackPhoto = c.main_photo || '';
-  const photo = `<img class="hero-img" src="${localPhoto}" alt="${c.name}"
-    onerror="if(this.dataset.tried){this.parentNode.innerHTML='<div class=hero-placeholder>🏕️</div>'}else{this.dataset.tried=1;this.src='${fallbackPhoto}'}">`;
+  const photoUrl = c.main_photo || '';
+  const photo = photoUrl
+    ? `<div class="hero-img" style="background-image:url('${photoUrl}')"></div>`
+    : `<div class="hero-placeholder">🏕️</div>`;
 
   const SEA_LOC = /Краснодар|Сочи|Крым|Анапа|Геленджик|Туапсе|Ялта|Севастополь|Евпатория|Абхазия|Черное море/i;
   const BASE_FILTER = /область|Подмосковье|Московск|^Москва$|Ленинград|Санкт-Петербург|Петербург|за границ|зарубеж|загородн|городской|выездной|дневной|международн|^лагерь$/i;
@@ -397,11 +397,9 @@ function render(c) {
   const galleryHtml = photos.length ? `
     <div class="section">
       <div class="section-title">Галерея</div>
-      <div class="gallery">${photos.map((p, i) => {
-        const local = `/static/photos/${c.id}_${i}.jpg`;
-        return `<img src="${local}" loading="lazy" alt="Фото"
-          onerror="if(this.dataset.tried)this.style.display='none';else{this.dataset.tried=1;this.src='${p}'}">`;
-      }).join('')}</div>
+      <div class="gallery">${photos.map(p =>
+        `<div class="gallery-item" style="background-image:url('${p}')"></div>`
+      ).join('')}</div>
     </div>` : '';
 
   const parsedReviews = parseReviews(c.reviews);
