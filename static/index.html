@@ -483,9 +483,10 @@ function makeCard(c) {
   div.addEventListener('click', (e) => {
     if (!e.target.closest('button, a')) window.location.href = `/camp/${c.id}`;
   });
-  const photo = c.main_photo
-    ? `<img class="card-photo" src="${c.main_photo}" alt="${c.name}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=card-photo-placeholder>🏕️</div>'">`
-    : `<div class="card-photo-placeholder">🏕️</div>`;
+  const localPhoto = `/static/photos/${c.id}_main.jpg`;
+  const fallbackPhoto = c.main_photo || '';
+  const photo = `<img class="card-photo" src="${localPhoto}" alt="${c.name}" loading="lazy"
+    onerror="if(this.dataset.tried){this.parentNode.innerHTML='<div class=card-photo-placeholder>🏕️</div>'}else{this.dataset.tried=1;this.src='${fallbackPhoto}'}">`;
   const nearSea = SEA_LOC.test(c.location || '');
   const cats = (c.categories || [])
     .filter(ct => !BASE_FILTER.test(ct) && (nearSea || !EXTRA_FILTER.test(ct)))
@@ -501,7 +502,6 @@ function makeCard(c) {
       </div>
       <div class="card-badges">
         <span class="badge badge-age">${c.age_min || 6}–${c.age_max || 17} лет</span>
-        ${c.has_pool ? '<span class="badge badge-pool">🏊 Бассейн</span>' : ''}
         ${cats}
       </div>
       ${c.tagline ? `<div class="card-desc">${c.tagline}</div>` : ''}
