@@ -413,6 +413,12 @@ let currentRating = '';
 let searchTimer = null;
 let _sessions = [];
 
+// Photo URL helper
+function fixPhoto(url) {
+  if (!url) return '';
+  return url.replace('https://vlagere.ru/upload', 'https://umkahub.s3.cloud.ru');
+}
+
 // Date helpers for filtering expired sessions
 const TODAY = new Date(); TODAY.setHours(0,0,0,0);
 const RU_MON = {
@@ -483,7 +489,7 @@ function makeCard(c) {
   div.addEventListener('click', (e) => {
     if (!e.target.closest('button, a')) window.location.href = `/camp/${c.id}`;
   });
-  const photoUrl = c.main_photo || '';
+  const photoUrl = fixPhoto(c.main_photo);
   const photo = photoUrl
     ? `<div class="card-photo" style="background-image:url('${photoUrl}')"></div>`
     : `<div class="card-photo-placeholder">🏕️</div>`;
