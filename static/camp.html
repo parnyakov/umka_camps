@@ -329,9 +329,14 @@ async function load() {
   }
 }
 
+function fixPhoto(url) {
+  if (!url) return '';
+  return url.replace('https://vlagere.ru/upload', 'https://umkahub.s3.cloud.ru');
+}
+
 function render(c) {
   const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
-  const photoUrl = c.main_photo || '';
+  const photoUrl = fixPhoto(c.main_photo);
   const photo = photoUrl
     ? `<div class="hero-img" style="background-image:url('${photoUrl}')"></div>`
     : `<div class="hero-placeholder">🏕️</div>`;
@@ -398,7 +403,7 @@ function render(c) {
     <div class="section">
       <div class="section-title">Галерея</div>
       <div class="gallery">${photos.map(p =>
-        `<div class="gallery-item" style="background-image:url('${p}')"></div>`
+        `<div class="gallery-item" style="background-image:url('${fixPhoto(p)}')"></div>`
       ).join('')}</div>
     </div>` : '';
 
