@@ -259,6 +259,7 @@
     background: linear-gradient(90deg, #2bbfb7 0%, #3DC9C1 60%, #45d4c4 100%);
     padding: 10px 28px;
     gap: 16px;
+    position: sticky; top: 62px; z-index: 99;
   }
   .urgency-left {
     display: flex; align-items: center; gap: 10px;
@@ -286,6 +287,68 @@
     transition: opacity 0.15s;
   }
   .urgency-label { font-size: 12px; line-height: 1.35; opacity: 0.92; }
+  .urgency-cta {
+    background: none; border: none; cursor: pointer; padding: 0;
+    color: #fff; font-size: 14px; font-weight: 700;
+    text-decoration: underline; text-decoration-style: dotted;
+    text-underline-offset: 3px; opacity: 0.95;
+    transition: opacity 0.15s;
+  }
+  .urgency-cta:hover { opacity: 1; text-decoration-style: solid; }
+
+  /* LEAD MODAL */
+  .lead-overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: rgba(20,40,80,0.45); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .lead-overlay.open { display: flex; }
+  .lead-modal {
+    background: var(--bg2); border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(20,40,80,0.18);
+    padding: 32px 28px; width: 100%; max-width: 420px;
+    position: relative; animation: modalIn 0.22s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: none; }
+  }
+  .lead-close {
+    position: absolute; top: 16px; right: 18px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text3); font-size: 22px; line-height: 1; padding: 4px;
+  }
+  .lead-close:hover { color: var(--text); }
+  .lead-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .lead-sub { font-size: 13px; color: var(--text2); margin-bottom: 22px; }
+  .lead-field { margin-bottom: 14px; }
+  .lead-field label { display: block; font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 5px; letter-spacing: 0.3px; }
+  .lead-field input, .lead-field textarea {
+    width: 100%; padding: 10px 14px; border-radius: 10px;
+    border: 1.5px solid var(--border); background: var(--bg);
+    color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.15s;
+    font-family: inherit;
+  }
+  .lead-field input:focus, .lead-field textarea:focus { border-color: var(--em); }
+  .lead-field textarea { resize: none; height: 80px; }
+  .lead-submit {
+    width: 100%; padding: 13px; border-radius: 12px;
+    background: var(--em); border: none; color: #fff;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    margin-top: 4px;
+  }
+  .lead-submit:hover { background: var(--em-dark); }
+  .lead-submit:active { transform: scale(0.98); }
+  .lead-submit:disabled { opacity: 0.6; cursor: default; }
+  .lead-success {
+    text-align: center; padding: 20px 0 8px;
+    display: none;
+  }
+  .lead-success .check { font-size: 48px; margin-bottom: 12px; }
+  .lead-success h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .lead-success p { font-size: 14px; color: var(--text2); }
 </style>
 </head>
 <body>
@@ -325,11 +388,44 @@
 <div class="urgency-bar">
   <div class="urgency-left">
     <div class="urgency-pulse"></div>
-    <span>Смены с 14, 21 и 28 июля&nbsp;— места ещё есть. Успейте до конца лета!</span>
+    <span>Смены с 14, 21 и 28 июля&nbsp;— места ещё есть.&nbsp;<button class="urgency-cta" id="urgencyBtn">Успейте до конца лета!</button></span>
   </div>
   <div class="urgency-counter">
     <span class="urgency-num" id="urgencyNum">4</span>
     <span class="urgency-label">семьям сегодня<br>помогли с выбором</span>
+  </div>
+</div>
+
+<!-- LEAD MODAL -->
+<div class="lead-overlay" id="leadOverlay">
+  <div class="lead-modal">
+    <button class="lead-close" id="leadClose">×</button>
+    <div id="leadForm">
+      <div class="lead-title">Подберём лагерь для вашего ребёнка</div>
+      <div class="lead-sub">Оставьте заявку — лагерь свяжется с вами напрямую</div>
+      <div class="lead-field">
+        <label>Ваше имя</label>
+        <input type="text" id="leadName" placeholder="Иван Иванов">
+      </div>
+      <div class="lead-field">
+        <label>Телефон</label>
+        <input type="tel" id="leadPhone" placeholder="+7 900 000-00-00">
+      </div>
+      <div class="lead-field">
+        <label>Возраст ребёнка</label>
+        <input type="number" id="leadAge" placeholder="9" min="4" max="18">
+      </div>
+      <div class="lead-field">
+        <label>Пожелания</label>
+        <textarea id="leadWishes" placeholder="Тип лагеря, даты, бюджет и что важно для ребёнка..."></textarea>
+      </div>
+      <button class="lead-submit" id="leadSubmit">Отправить заявку</button>
+    </div>
+    <div class="lead-success" id="leadSuccess">
+      <div class="check">🎉</div>
+      <h3>Заявка отправлена!</h3>
+      <p>Мы передадим её в подходящий лагерь.<br>Ожидайте звонка в ближайшее время.</p>
+    </div>
   </div>
 </div>
 
@@ -465,6 +561,57 @@ function fixPhoto(url) {
   if (!url) return '';
   return url.replace('https://vlagere.ru/upload', 'https://umkahub.s3.cloud.ru');
 }
+
+// Lead modal
+(function() {
+  const overlay = document.getElementById('leadOverlay');
+  const openBtn = document.getElementById('urgencyBtn');
+  const closeBtn = document.getElementById('leadClose');
+  const submitBtn = document.getElementById('leadSubmit');
+  const formEl = document.getElementById('leadForm');
+  const successEl = document.getElementById('leadSuccess');
+
+  function openModal() { overlay.classList.add('open'); }
+  function closeModal() {
+    overlay.classList.remove('open');
+    // Reset after close animation
+    setTimeout(() => {
+      formEl.style.display = '';
+      successEl.style.display = 'none';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Отправить заявку';
+    }, 200);
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  submitBtn.addEventListener('click', async () => {
+    const name = document.getElementById('leadName').value.trim();
+    const phone = document.getElementById('leadPhone').value.trim();
+    const age = document.getElementById('leadAge').value.trim();
+    const wishes = document.getElementById('leadWishes').value.trim();
+    if (!name || !phone) {
+      document.getElementById('leadName').style.borderColor = name ? '' : '#e55';
+      document.getElementById('leadPhone').style.borderColor = phone ? '' : '#e55';
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправляем...';
+    try {
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ parent_name: name, phone, child_age: age, wishes })
+      });
+    } catch(e) {}
+    formEl.style.display = 'none';
+    successEl.style.display = 'block';
+    setTimeout(closeModal, 3500);
+  });
+})();
 
 // Urgency counter — slow organic tick like a water meter
 (function() {
