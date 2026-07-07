@@ -270,6 +270,38 @@ def api_booking():
     return jsonify({'ok': True})
 
 
+@app.route('/api/lead', methods=['POST'])
+def api_lead():
+    data = request.json or {}
+    parent_name = data.get('parent_name', '').strip()
+    phone = data.get('phone', '').strip()
+    child_age = data.get('child_age', '')
+    wishes = data.get('wishes', '').strip()
+
+    if not parent_name or not phone:
+        return jsonify({'ok': False, 'error': 'Укажите имя и телефон'}), 400
+
+    text = (
+        f'🎯 Новая заявка с главной страницы!\n'
+        f'Родитель: {parent_name}\n'
+        f'Телефон: {phone}\n'
+        f'Возраст ребёнка: {child_age or "—"}\n'
+        f'Пожелания: {wishes or "—"}'
+    )
+
+    if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID:
+        try:
+            requests.post(
+                f'https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage',
+                json={'chat_id': TELEGRAM_CHAT_ID, 'text': text},
+                timeout=5
+            )
+        except Exception as e:
+            print('Telegram send failed:', e)
+
+    return jsonify({'ok': True})
+
+
 # ─── STATIC FILES ────────────────────────────────────────────────────────────
 
 @app.route('/')
