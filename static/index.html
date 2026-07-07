@@ -249,7 +249,43 @@
     .main { padding: 16px; }
     .grid { grid-template-columns: 1fr; }
     nav { padding: 0 12px; gap: 10px; }
+    .urgency-bar { flex-direction: column; gap: 6px; padding: 10px 16px; text-align: center; }
+    .urgency-counter { border-left: none; padding-left: 0; }
   }
+
+  /* URGENCY BAR */
+  .urgency-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(90deg, #2bbfb7 0%, #3DC9C1 60%, #45d4c4 100%);
+    padding: 10px 28px;
+    gap: 16px;
+  }
+  .urgency-left {
+    display: flex; align-items: center; gap: 10px;
+    color: #fff; font-size: 14px; font-weight: 500;
+  }
+  .urgency-pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #fff; flex-shrink: 0;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+  .urgency-counter {
+    display: flex; align-items: center; gap: 8px;
+    border-left: 1px solid rgba(255,255,255,0.35);
+    padding-left: 16px;
+    color: #fff; font-size: 13px; white-space: nowrap;
+  }
+  .urgency-num {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+    min-width: 28px; text-align: right;
+    transition: opacity 0.15s;
+  }
+  .urgency-label { font-size: 12px; line-height: 1.35; opacity: 0.92; }
 </style>
 </head>
 <body>
@@ -285,6 +321,17 @@
   </button>
   <div class="nav-count" id="navCount">Загрузка...</div>
 </nav>
+
+<div class="urgency-bar">
+  <div class="urgency-left">
+    <div class="urgency-pulse"></div>
+    <span>Смены с 14, 21 и 28 июля&nbsp;— места ещё есть. Успейте до конца лета!</span>
+  </div>
+  <div class="urgency-counter">
+    <span class="urgency-num" id="urgencyNum">4</span>
+    <span class="urgency-label">семьям сегодня<br>помогли с выбором</span>
+  </div>
+</div>
 
 <div class="layout">
 
@@ -418,6 +465,31 @@ function fixPhoto(url) {
   if (!url) return '';
   return url.replace('https://vlagere.ru/upload', 'https://umkahub.s3.cloud.ru');
 }
+
+// Urgency counter — slow organic tick like a water meter
+(function() {
+  const el = document.getElementById('urgencyNum');
+  if (!el) return;
+  const TARGET = 14;
+  let current = 4;
+  // Irregular delays between ticks (seconds): feels human, not robotic
+  const delays = [38, 52, 29, 61, 44, 33, 57, 41, 48, 36];
+  let step = 0;
+  function tick() {
+    if (current >= TARGET) return;
+    current++;
+    el.style.opacity = '0.5';
+    setTimeout(() => {
+      el.textContent = current;
+      el.style.opacity = '1';
+    }, 120);
+    const next = (delays[step % delays.length] + Math.random() * 18 - 9) * 1000;
+    step++;
+    setTimeout(tick, next);
+  }
+  // Start first tick after ~38 seconds
+  setTimeout(tick, 38000);
+})();
 
 // Date helpers for filtering expired sessions
 const TODAY = new Date(); TODAY.setHours(0,0,0,0);
