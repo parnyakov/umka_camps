@@ -410,6 +410,50 @@
   .lead-success .check { font-size: 48px; margin-bottom: 12px; }
   .lead-success h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
   .lead-success p { font-size: 14px; color: var(--text2); }
+
+  /* Q&A BUTTON */
+  .btn-qa {
+    padding: 6px 14px; background: var(--bg3); border: 1.5px solid var(--border);
+    border-radius: 8px; color: var(--text2); font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; transition: 0.15s;
+  }
+  .btn-qa:hover { border-color: var(--em); color: var(--em); background: var(--em-glow); }
+
+  /* Q&A MODAL */
+  .qa-overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: rgba(20,40,80,0.45); backdrop-filter: blur(4px);
+    align-items: flex-start; justify-content: center; padding: 80px 20px 20px;
+  }
+  .qa-overlay.open { display: flex; }
+  .qa-modal {
+    background: var(--bg2); border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(20,40,80,0.18);
+    padding: 32px 28px; width: 100%; max-width: 600px;
+    position: relative; animation: modalIn 0.22s ease;
+    max-height: calc(100vh - 100px); overflow-y: auto;
+  }
+  .qa-close {
+    position: absolute; top: 16px; right: 18px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text3); font-size: 22px; line-height: 1; padding: 4px;
+  }
+  .qa-close:hover { color: var(--text); }
+  .qa-section-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 18px; }
+
+  /* HOW STEPS inside modal */
+  .qa-steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .qa-step {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--bg); border-radius: 12px; padding: 14px 16px;
+  }
+  .qa-step-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--em-glow); display: flex; align-items: center;
+    justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  .qa-step-text h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+  .qa-step-text p { font-size: 13px; color: var(--text2); line-height: 1.5; }
 </style>
 </head>
 <body>
@@ -443,8 +487,60 @@
     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     Фильтры
   </button>
+  <button class="btn-qa" id="btnQA">Q&amp;A</button>
   <div class="nav-count" id="navCount">Загрузка...</div>
 </nav>
+
+<!-- Q&A MODAL -->
+<div class="qa-overlay" id="qaOverlay">
+  <div class="qa-modal">
+    <button class="qa-close" id="qaClose">×</button>
+
+    <div class="qa-section-title">Как это работает</div>
+    <div class="qa-steps">
+      <div class="qa-step">
+        <div class="qa-step-icon">🔍</div>
+        <div class="qa-step-text">
+          <h4>Выберите лагерь</h4>
+          <p>Используйте фильтры по направлению, возрасту и цене. 200+ проверенных вариантов в Москве и Подмосковье.</p>
+        </div>
+      </div>
+      <div class="qa-step">
+        <div class="qa-step-icon">📋</div>
+        <div class="qa-step-text">
+          <h4>Оставьте заявку</h4>
+          <p>Нажмите "Забронировать" на странице лагеря. Заявка уходит напрямую — без посредников и скрытых комиссий.</p>
+        </div>
+      </div>
+      <div class="qa-step">
+        <div class="qa-step-icon">📞</div>
+        <div class="qa-step-text">
+          <h4>Лагерь свяжется с вами</h4>
+          <p>Представитель лагеря перезвонит и уточнит детали. Обычно в течение нескольких часов.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-section-title">Частые вопросы</div>
+
+    <div class="faq-item">
+      <button class="faq-q">Нужно ли платить комиссию?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Нет. Умка Хаб — бесплатный сервис для родителей. Вы бронируете напрямую у лагеря по официальным ценам без каких-либо наценок.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Как быстро ответит лагерь?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Можно ли вернуть деньги если передумали?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Условия возврата устанавливает каждый лагерь индивидуально. Обычно при отказе за 30+ дней возвращают полную сумму. Уточняйте при бронировании.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Все лагеря на сайте проверены?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Мы собираем информацию только о лицензированных детских лагерях с официальными сайтами и реальными отзывами родителей.</div>
+    </div>
+  </div>
+</div>
 
 <div class="urgency-bar">
   <div class="urgency-left">
@@ -559,58 +655,6 @@
     <div class="empty" id="empty" style="display:none">
       <h3>Ничего не найдено</h3>
       <p>Попробуйте изменить фильтры или поисковый запрос</p>
-    </div>
-
-    <!-- КАК ЭТО РАБОТАЕТ -->
-    <div class="how-section">
-      <div class="how-title">Как это работает</div>
-      <div class="how-steps">
-        <div class="how-step">
-          <div class="how-icon">🔍</div>
-          <h3>Выберите лагерь</h3>
-          <p>Используйте фильтры по направлению, возрасту, цене и рейтингу. 200+ проверенных вариантов в Москве и Подмосковье.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-icon">📋</div>
-          <h3>Оставьте заявку</h3>
-          <p>Нажмите "Забронировать" на странице лагеря. Заявка уходит напрямую — без посредников и скрытых комиссий.</p>
-        </div>
-        <div class="how-step">
-          <div class="how-icon">📞</div>
-          <h3>Лагерь свяжется с вами</h3>
-          <p>Представитель лагеря перезвонит и уточнит детали: смену, документы, оплату. Обычно в течение нескольких часов.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <div class="faq-section">
-      <div class="faq-title">Частые вопросы</div>
-
-      <div class="faq-item">
-        <button class="faq-q">Нужно ли платить комиссию?<span class="faq-arrow">⌄</span></button>
-        <div class="faq-a">Нет. Умка Хаб — бесплатный сервис для родителей. Вы бронируете напрямую у лагеря по официальным ценам без каких-либо наценок.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Как быстро ответит лагерь?<span class="faq-arrow">⌄</span></button>
-        <div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Можно ли вернуть деньги если передумали?<span class="faq-arrow">⌄</span></button>
-        <div class="faq-a">Условия возврата устанавливает каждый лагерь индивидуально. Обычно при отказе за 30+ дней возвращают полную сумму. Уточняйте у лагеря при бронировании.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Все лагеря на сайте проверены?<span class="faq-arrow">⌄</span></button>
-        <div class="faq-a">Мы собираем информацию только о лицензированных детских лагерях с официальными сайтами и реальными отзывами. Каждый лагерь можно проверить по рейтингу и отзывам родителей.</div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-q">Есть ли лагеря с местами прямо сейчас?<span class="faq-arrow">⌄</span></button>
-        <div class="faq-a">Да — смены с 14, 21 и 28 июля ещё доступны. Используйте фильтр по датам или оставьте заявку, и лагерь подтвердит наличие мест.</div>
-      </div>
     </div>
 
   </main>
@@ -956,6 +1000,17 @@ document.getElementById('btnReset').addEventListener('click', () => {
   loadCamps(true);
 });
 document.getElementById('btnLoadMore').addEventListener('click', () => { page++; loadCamps(false); });
+
+// Q&A modal
+(function() {
+  const overlay = document.getElementById('qaOverlay');
+  const openBtn = document.getElementById('btnQA');
+  const closeBtn = document.getElementById('qaClose');
+  openBtn.addEventListener('click', () => overlay.classList.add('open'));
+  closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+})();
 
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(btn => {
