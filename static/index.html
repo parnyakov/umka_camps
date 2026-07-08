@@ -419,6 +419,33 @@
   }
   .btn-qa:hover { border-color: var(--em); color: var(--em); background: var(--em-glow); }
 
+  /* CONTACT BUTTON + TOOLTIP */
+  .btn-contact {
+    padding: 6px 14px; background: var(--em); border: none;
+    border-radius: 8px; color: #fff; font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; transition: 0.15s; position: relative;
+  }
+  .btn-contact:hover { background: var(--em-dark); }
+  .contact-tooltip {
+    display: none; position: absolute; top: calc(100% + 10px); right: 0;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 18px; width: 240px;
+    box-shadow: 0 8px 30px rgba(20,40,80,0.14); z-index: 300;
+    text-align: left;
+  }
+  .btn-contact:focus .contact-tooltip,
+  .btn-contact.active .contact-tooltip { display: block; }
+  .contact-tooltip-title { font-size: 12px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 0; text-decoration: none; color: var(--text);
+    font-size: 13px; font-weight: 500; border-bottom: 1px solid var(--border);
+    transition: color 0.15s;
+  }
+  .contact-link:last-child { border-bottom: none; }
+  .contact-link:hover { color: var(--em); }
+  .contact-link-icon { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
+
   /* Q&A MODAL */
   .qa-overlay {
     display: none; position: fixed; inset: 0; z-index: 500;
@@ -488,6 +515,18 @@
     Фильтры
   </button>
   <button class="btn-qa" id="btnQA">Q&amp;A</button>
+  <div style="position:relative">
+    <button class="btn-contact" id="btnContact">Связаться</button>
+    <div class="contact-tooltip" id="contactTooltip">
+      <div class="contact-tooltip-title">По любым вопросам</div>
+      <a class="contact-link" href="mailto:alex.umkahub@gmail.com">
+        <span class="contact-link-icon">✉️</span>alex.umkahub@gmail.com
+      </a>
+      <a class="contact-link" href="https://t.me/alex_umkahub" target="_blank">
+        <span class="contact-link-icon">✈️</span>@alex_umkahub
+      </a>
+    </div>
+  </div>
   <div class="nav-count" id="navCount">Загрузка...</div>
 </nav>
 
@@ -1000,6 +1039,21 @@ document.getElementById('btnReset').addEventListener('click', () => {
   loadCamps(true);
 });
 document.getElementById('btnLoadMore').addEventListener('click', () => { page++; loadCamps(false); });
+
+// Contact tooltip
+(function() {
+  const btn = document.getElementById('btnContact');
+  const tip = document.getElementById('contactTooltip');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    btn.classList.toggle('active');
+    tip.style.display = btn.classList.contains('active') ? 'block' : 'none';
+  });
+  document.addEventListener('click', () => {
+    btn.classList.remove('active');
+    tip.style.display = 'none';
+  });
+})();
 
 // Q&A modal
 (function() {
