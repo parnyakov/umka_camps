@@ -189,6 +189,55 @@
   }
   .btn-book:hover { background: var(--em-dark); }
 
+  /* HOW IT WORKS */
+  .how-section { margin: 48px 0 0; }
+  .how-title, .faq-title {
+    font-size: 22px; font-weight: 800; color: var(--text);
+    margin-bottom: 20px; letter-spacing: -0.3px;
+  }
+  .how-steps {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .how-step {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .how-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--em-glow); display: flex; align-items: center;
+    justify-content: center; font-size: 22px; flex-shrink: 0;
+  }
+  .how-step h3 { font-size: 15px; font-weight: 700; color: var(--text); }
+  .how-step p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+  /* FAQ */
+  .faq-section { margin: 40px 0 48px; }
+  .faq-item {
+    border: 1px solid var(--border); border-radius: var(--radius);
+    background: var(--bg2); margin-bottom: 8px; overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; text-align: left; padding: 16px 20px;
+    background: none; border: none; cursor: pointer;
+    font-size: 14px; font-weight: 600; color: var(--text);
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  }
+  .faq-q:hover { color: var(--em); }
+  .faq-arrow { font-size: 18px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); color: var(--em); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.28s ease, padding 0.2s;
+    font-size: 13px; color: var(--text2); line-height: 1.6;
+    padding: 0 20px;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding: 0 20px 16px; }
+
+  @media (max-width: 768px) {
+    .how-steps { grid-template-columns: 1fr; }
+  }
+
   /* LOAD MORE */
   .load-more-wrap { text-align: center; padding: 32px 0; }
   .btn-load-more {
@@ -511,6 +560,59 @@
       <h3>Ничего не найдено</h3>
       <p>Попробуйте изменить фильтры или поисковый запрос</p>
     </div>
+
+    <!-- КАК ЭТО РАБОТАЕТ -->
+    <div class="how-section">
+      <div class="how-title">Как это работает</div>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-icon">🔍</div>
+          <h3>Выберите лагерь</h3>
+          <p>Используйте фильтры по направлению, возрасту, цене и рейтингу. 200+ проверенных вариантов в Москве и Подмосковье.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-icon">📋</div>
+          <h3>Оставьте заявку</h3>
+          <p>Нажмите "Забронировать" на странице лагеря. Заявка уходит напрямую — без посредников и скрытых комиссий.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-icon">📞</div>
+          <h3>Лагерь свяжется с вами</h3>
+          <p>Представитель лагеря перезвонит и уточнит детали: смену, документы, оплату. Обычно в течение нескольких часов.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+      <div class="faq-title">Частые вопросы</div>
+
+      <div class="faq-item">
+        <button class="faq-q">Нужно ли платить комиссию?<span class="faq-arrow">⌄</span></button>
+        <div class="faq-a">Нет. Умка Хаб — бесплатный сервис для родителей. Вы бронируете напрямую у лагеря по официальным ценам без каких-либо наценок.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Как быстро ответит лагерь?<span class="faq-arrow">⌄</span></button>
+        <div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Можно ли вернуть деньги если передумали?<span class="faq-arrow">⌄</span></button>
+        <div class="faq-a">Условия возврата устанавливает каждый лагерь индивидуально. Обычно при отказе за 30+ дней возвращают полную сумму. Уточняйте у лагеря при бронировании.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Все лагеря на сайте проверены?<span class="faq-arrow">⌄</span></button>
+        <div class="faq-a">Мы собираем информацию только о лицензированных детских лагерях с официальными сайтами и реальными отзывами. Каждый лагерь можно проверить по рейтингу и отзывам родителей.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Есть ли лагеря с местами прямо сейчас?<span class="faq-arrow">⌄</span></button>
+        <div class="faq-a">Да — смены с 14, 21 и 28 июля ещё доступны. Используйте фильтр по датам или оставьте заявку, и лагерь подтвердит наличие мест.</div>
+      </div>
+    </div>
+
   </main>
 </div>
 
@@ -854,6 +956,16 @@ document.getElementById('btnReset').addEventListener('click', () => {
   loadCamps(true);
 });
 document.getElementById('btnLoadMore').addEventListener('click', () => { page++; loadCamps(false); });
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 document.getElementById('searchInput').addEventListener('input', () => {
   clearTimeout(searchTimer);
   searchTimer = setTimeout(() => loadCamps(true), 350);
