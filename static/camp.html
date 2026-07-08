@@ -139,6 +139,41 @@
   .review-date { font-size: 12px; color: var(--text3); background: var(--bg3); padding: 2px 8px; border-radius: 10px; }
   .review-text { font-size: 13px; color: var(--text2); line-height: 1.65; }
 
+  /* HOW IT WORKS + FAQ on camp page */
+  .camp-info-block { margin-top: 8px; }
+  .camp-how-steps { display: flex; flex-direction: column; gap: 10px; }
+  .camp-how-step {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--bg); border-radius: 12px; padding: 12px 14px;
+  }
+  .camp-how-icon {
+    width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+    background: var(--em-glow); display: flex; align-items: center;
+    justify-content: center; font-size: 18px;
+  }
+  .camp-how-text h4 { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+  .camp-how-text p { font-size: 12px; color: var(--text2); line-height: 1.5; }
+  .camp-faq-item {
+    border: 1px solid var(--border); border-radius: 12px;
+    background: var(--bg2); margin-bottom: 8px; overflow: hidden;
+  }
+  .camp-faq-q {
+    width: 100%; text-align: left; padding: 13px 16px;
+    background: none; border: none; cursor: pointer;
+    font-size: 13px; font-weight: 600; color: var(--text);
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    font-family: inherit;
+  }
+  .camp-faq-q:hover { color: var(--em); }
+  .camp-faq-arrow { font-size: 16px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; }
+  .camp-faq-item.open .camp-faq-arrow { transform: rotate(180deg); color: var(--em); }
+  .camp-faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.28s ease, padding 0.2s;
+    font-size: 12px; color: var(--text2); line-height: 1.6; padding: 0 16px;
+  }
+  .camp-faq-item.open .camp-faq-a { max-height: 150px; padding: 0 16px 13px; }
+
   /* SESSION SELECT IN MODAL */
   .form-group select {
     width: 100%; padding: 10px 12px;
@@ -419,6 +454,44 @@ function render(c) {
       ).join('')}</div>
     </div>` : '';
 
+  const infoHtml = `
+    <div class="section camp-info-block">
+      <div class="section-title">Как это работает</div>
+      <div class="camp-how-steps">
+        <div class="camp-how-step">
+          <div class="camp-how-icon">📋</div>
+          <div class="camp-how-text"><h4>Оставьте заявку</h4><p>Нажмите "Забронировать" — заявка уйдёт напрямую в лагерь без посредников и скрытых комиссий.</p></div>
+        </div>
+        <div class="camp-how-step">
+          <div class="camp-how-icon">📞</div>
+          <div class="camp-how-text"><h4>Лагерь свяжется с вами</h4><p>Представитель перезвонит и уточнит детали: смену, документы, оплату. Обычно в течение нескольких часов.</p></div>
+        </div>
+        <div class="camp-how-step">
+          <div class="camp-how-icon">✅</div>
+          <div class="camp-how-text"><h4>Подтвердите место</h4><p>После звонка вы договариваетесь об оплате напрямую с лагерем по официальным ценам.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="section camp-info-block">
+      <div class="section-title">Частые вопросы</div>
+      <div class="camp-faq-item">
+        <button class="camp-faq-q">Платно ли пользоваться сервисом?<span class="camp-faq-arrow">⌄</span></button>
+        <div class="camp-faq-a">Нет. Умка Хаб — бесплатный сервис для родителей. Вы бронируете напрямую у лагеря по официальным ценам без наценок.</div>
+      </div>
+      <div class="camp-faq-item">
+        <button class="camp-faq-q">Как быстро ответит лагерь?<span class="camp-faq-arrow">⌄</span></button>
+        <div class="camp-faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div>
+      </div>
+      <div class="camp-faq-item">
+        <button class="camp-faq-q">Можно ли вернуть деньги если передумали?<span class="camp-faq-arrow">⌄</span></button>
+        <div class="camp-faq-a">Условия возврата устанавливает каждый лагерь индивидуально. Обычно при отказе за 30+ дней возвращают полную сумму. Уточняйте при бронировании.</div>
+      </div>
+      <div class="camp-faq-item">
+        <button class="camp-faq-q">Все лагеря на сайте проверены?<span class="camp-faq-arrow">⌄</span></button>
+        <div class="camp-faq-a">Мы собираем информацию только о лицензированных детских лагерях с официальными сайтами и реальными отзывами родителей.</div>
+      </div>
+    </div>`;
+
   const parsedReviews = parseReviews(c.reviews);
   const reviewsHtml = parsedReviews.length ? `
     <div class="section">
@@ -451,6 +524,7 @@ function render(c) {
         ${sessionsHtml}
         ${galleryHtml}
         ${reviewsHtml}
+        ${infoHtml}
       </div>
       <div class="camp-sidebar">
         <div class="price-card">
@@ -497,6 +571,16 @@ document.getElementById('modalClose').addEventListener('click', () => {
 });
 document.getElementById('modalOverlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modalOverlay')) document.getElementById('modalOverlay').classList.remove('open');
+});
+
+// Camp FAQ accordion (delegated — items rendered after render())
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.camp-faq-q');
+  if (!btn) return;
+  const item = btn.closest('.camp-faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.camp-faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
 });
 
 document.getElementById('btnSubmit').addEventListener('click', async () => {
