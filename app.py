@@ -109,6 +109,59 @@ def get_db():
     return conn
 
 
+def _clean_field(text):
+    """Remove scraping artifacts and legal boilerplate from text fields."""
+    import re
+    if not text:
+        return text
+
+    meta_labels = {'Год основания', 'Взрослых на группу', 'Детей в группе', 'Детей на программе'}
+    junk_lines = {'Запросить больше информации о программе', 'Запросить больше информации о лагере'}
+    junk_starts = (
+        'Информация с официального сайта',
+        'Смотрите также другие программы',
+        'Услуги предоставляет',
+    )
+
+    lines = text.split('\n')
+    result = []
+    skip_legal = False
+    i = 0
+    while i < len(lines):
+        stripped = lines[i].strip()
+        if stripped in meta_labels:
+            # Skip label + its value line
+            j = i + 1
+            while j < len(lines) and lines[j].strip() == '':
+                j += 1
+            i = j + 1
+            continue
+        if stripped in junk_lines:
+            i += 1
+            continue
+        if any(stripped.startswith(p) for p in junk_starts):
+            if stripped.startswith('Услуги предоставляет'):
+                skip_legal = True
+            i += 1
+            continue
+        if skip_legal:
+            if (re.match(r'^КПП\b', stripped) or
+                    re.match(r'^ОГРН\b', stripped) or
+                    re.match(r'^\d{3,6},', stripped) or
+                    re.search(r'ИНН\s+\d', stripped) or
+                    re.search(r'ОГРН\s+\d', stripped)):
+                i += 1
+                continue
+            else:
+                skip_legal = False
+        result.append(lines[i])
+        i += 1
+
+    cleaned = '\n'.join(result)
+    cleaned = re.sub(r'\n{3,}', '\n\n', cleaned).strip()
+    return cleaned
+
+
 def row_to_dict(row):
     d = dict(row)
     for field in ('categories', 'photos', 'sessions'):
@@ -116,6 +169,9 @@ def row_to_dict(row):
             d[field] = json.loads(d[field] or '[]')
         except Exception:
             d[field] = []
+    for field in ('about_org', 'description', 'program', 'accommodation', 'safety'):
+        if d.get(field):
+            d[field] = _clean_field(d[field])
     return d
 
 
