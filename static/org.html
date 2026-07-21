@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UmkaHub</title>
+  <link rel="stylesheet" href="/static/orgs_style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="/orgs" class="back-btn">← Назад к каталогу</a>
+  <a href="/" class="logo" style="margin-left:auto">
+    <svg viewBox="0 0 36 36" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="18" fill="#3DC9C1"/>
+      <circle cx="10.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="25.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="10.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="25.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="18" cy="20" r="11.5" fill="white"/>
+      <circle cx="14" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="22" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="14.6" cy="17.3" r="0.7" fill="white"/>
+      <circle cx="22.6" cy="17.3" r="0.7" fill="white"/>
+      <ellipse cx="18" cy="22.5" rx="4" ry="3" fill="#D6EFEE"/>
+      <ellipse cx="18" cy="21" rx="2.2" ry="1.6" fill="#1A3050"/>
+      <path d="M15.5 24Q18 26.5 20.5 24" stroke="#1A3050" stroke-width="1.2" stroke-linecap="round"/>
+      <ellipse cx="30" cy="15.5" rx="3" ry="4.5" fill="white" transform="rotate(-28 30 15.5)"/>
+      <ellipse cx="7" cy="22.5" rx="3" ry="4" fill="white" transform="rotate(18 7 22.5)"/>
+    </svg>
+    <span>UMKA HUB</span>
+  </a>
+</header>
+
+<div id="orgContent" style="display:none">
+
+  <!-- Фото -->
+  <div class="org-hero" id="orgHero"></div>
+
+  <div class="org-content">
+
+    <!-- Категория + название + рейтинг -->
+    <span class="cat-badge" id="orgCat"></span>
+    <h1 class="org-title" id="orgName"></h1>
+
+    <div class="org-sub">
+      <div class="org-rating" id="orgRating"></div>
+      <div class="org-metro" id="orgMetro"></div>
+    </div>
+
+    <!-- Пробное занятие -->
+    <div class="trial-highlight" id="trialBlock" style="display:none">
+      ✅ Есть пробное занятие — можно попробовать перед записью
+    </div>
+
+    <!-- Ключевые параметры -->
+    <div class="info-grid" id="infoGrid"></div>
+
+    <!-- Программы -->
+    <div id="programsBlock" style="display:none">
+      <div class="section-title">Программы и направления</div>
+      <div class="programs-list" id="programsList"></div>
+    </div>
+
+    <!-- Описание -->
+    <div id="descBlock" style="display:none">
+      <div class="section-title">Об организации</div>
+      <div class="description" id="descText"></div>
+    </div>
+
+    <!-- Контакты -->
+    <div class="contact-row" id="contactRow"></div>
+
+  </div>
+</div>
+
+<div id="loadingState" style="text-align:center;padding:80px;color:var(--muted)">
+  Загрузка...
+</div>
+
+<div id="errorState" style="display:none;text-align:center;padding:80px;color:var(--muted)">
+  <div style="font-size:48px;margin-bottom:12px">🤷</div>
+  <p>Организация не найдена</p>
+  <a href="/orgs" style="color:var(--clr-primary);font-weight:600;margin-top:12px;display:inline-block">← В каталог</a>
+</div>
+
+<script>
+function esc(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+const CAT_FALLBACK = {
+  'IT': '💻', 'спорт': '⚽', 'творчество': '🎨',
+  'языки': '🌍', 'развитие': '🧠', '': '🏫'
+};
+
+async function init() {
+  // Извлекаем ID из URL: /org/123
+  const id = location.pathname.split('/').pop();
+
+  const res = await fetch(`/api/orgs/${id}`);
+  if (!res.ok) {
+    document.getElementById('loadingState').style.display = 'none';
+    document.getElementById('errorState').style.display = 'block';
+    return;
+  }
+
+  const org = await res.json();
+  document.title = `${org.name} — UmkaHub`;
+  render(org);
+}
+
+function render(org) {
+  document.getElementById('loadingState').style.display = 'none';
+  document.getElementById('orgContent').style.display = 'block';
+
+  // Фото
+  const hero = document.getElementById('orgHero');
+  if (org.photos && org.photos.length) {
+    hero.innerHTML = `<img src="${esc(org.photos[0])}" alt="${esc(org.name)}" onerror="this.parentElement.innerHTML='${CAT_FALLBACK[org.category] || '🏫'}'">`;
+  } else {
+    hero.textContent = CAT_FALLBACK[org.category] || '🏫';
+  }
+
+  // Категория
+  const catEl = document.getElementById('orgCat');
+  catEl.textContent = org.category || '';
+  catEl.dataset.cat = org.category || '';
+
+  // Название
+  document.getElementById('orgName').textContent = org.name;
+
+  // Рейтинг
+  if (org.rating) {
+    document.getElementById('orgRating').innerHTML =
+      `★ ${org.rating.toFixed(1)}${org.reviews_count ? ` <span style="font-size:13px;font-weight:400;color:var(--muted)">(${org.reviews_count} отзывов)</span>` : ''}`;
+  }
+
+  // Метро
+  if (org.metro) {
+    document.getElementById('orgMetro').textContent = '📍 ' + org.metro;
+  }
+  if (org.address) {
+    document.getElementById('orgMetro').title = org.address;
+  }
+
+  // Пробное занятие
+  if (org.has_trial) {
+    document.getElementById('trialBlock').style.display = 'flex';
+  }
+
+  // Info grid
+  const infoItems = [];
+  if (org.price)      infoItems.push({ label: 'Стоимость', value: org.price + (org.price_type ? ` <span style="font-size:12px;color:var(--muted)">/ ${org.price_type}</span>` : '') });
+  if (org.age_range)  infoItems.push({ label: 'Возраст', value: org.age_range });
+  if (org.group_size) infoItems.push({ label: 'Размер группы', value: org.group_size });
+  if (org.duration)   infoItems.push({ label: 'Длительность', value: org.duration });
+  if (org.schedule)   infoItems.push({ label: 'Расписание', value: org.schedule });
+  if (org.district)   infoItems.push({ label: 'Район', value: org.district });
+
+  const grid = document.getElementById('infoGrid');
+  infoItems.forEach(item => {
+    grid.insertAdjacentHTML('beforeend', `
+      <div class="info-card">
+        <div class="label">${esc(item.label)}</div>
+        <div class="value">${item.value}</div>
+      </div>`);
+  });
+
+  // Программы
+  if (org.programs && org.programs.length) {
+    document.getElementById('programsBlock').style.display = 'block';
+    const list = document.getElementById('programsList');
+    org.programs.forEach(p => {
+      list.insertAdjacentHTML('beforeend',
+        `<span class="program-tag">${esc(p)}</span>`);
+    });
+  }
+
+  // Описание
+  if (org.description) {
+    document.getElementById('descBlock').style.display = 'block';
+    document.getElementById('descText').textContent = org.description;
+  }
+
+  // Контакты
+  const contacts = document.getElementById('contactRow');
+  if (org.phone) {
+    contacts.insertAdjacentHTML('beforeend',
+      `<a href="tel:${esc(org.phone)}" class="btn-contact btn-primary">📞 ${esc(org.phone)}</a>`);
+  }
+  if (org.website) {
+    contacts.insertAdjacentHTML('beforeend',
+      `<a href="${esc(org.website)}" target="_blank" rel="noopener" class="btn-contact btn-outline">🌐 Сайт организации</a>`);
+  }
+}
+
+init();
+</script>
+
+</body>
+</html>
