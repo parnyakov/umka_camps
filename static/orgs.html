@@ -207,6 +207,7 @@ async function init() {
   const meta = await fetch('/api/orgs-meta').then(r => r.json());
   buildCatPills(meta.categories);
   buildMetroSelect(meta.metros);
+  addPillHoverBehavior();
 
   // Выставляем активную категорию
   if (state.category) {
@@ -244,13 +245,11 @@ function buildMetroSelect(metros) {
 }
 
 function setCat(el, cat) {
-  // If clicking the already-active category — just close popover and deselect
   if (state.category === cat && cat !== '') {
     state.category = '';
     state.subcategory = '';
     document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
     document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
-    closeSubPopover();
     fetchOrgs(false);
     return;
   }
@@ -259,7 +258,6 @@ function setCat(el, cat) {
   state.offset = 0;
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   el.classList.add('active');
-  renderSubPopover(cat, el);
   fetchOrgs(false);
 }
 
@@ -303,7 +301,29 @@ function setSub(el, val) {
   fetchOrgs(false);
 }
 
-// Close popover when clicking outside
+// ── Hover behaviour for sub-popover ─────────────────────────────────────────
+let _hideTimer = null;
+
+function _cancelHide() { clearTimeout(_hideTimer); _hideTimer = null; }
+function _scheduleHide() { _cancelHide(); _hideTimer = setTimeout(closeSubPopover, 200); }
+
+function addPillHoverBehavior() {
+  document.querySelectorAll('.cat-pill').forEach(pill => {
+    pill.addEventListener('mouseenter', () => {
+      _cancelHide();
+      const cat = pill.dataset.cat;
+      if (cat) renderSubPopover(cat, pill);
+      else closeSubPopover();
+    });
+    pill.addEventListener('mouseleave', _scheduleHide);
+  });
+
+  const pop = document.getElementById('subPopover');
+  pop.addEventListener('mouseenter', _cancelHide);
+  pop.addEventListener('mouseleave', _scheduleHide);
+}
+
+// Close on click outside
 document.addEventListener('click', e => {
   if (!e.target.closest('.cat-pill') && !e.target.closest('#subPopover')) {
     closeSubPopover();
