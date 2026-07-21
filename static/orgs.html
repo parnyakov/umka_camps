@@ -266,7 +266,10 @@ const CAT_LABELS = {
   'творчество': 'творчеству', 'языки': 'языкам'
 };
 
+let _currentPopoverCat = '';
+
 function renderSubPopover(cat, anchorEl) {
+  _currentPopoverCat = cat;
   const pop = document.getElementById('subPopover');
   const subs = SUB_PILLS[cat] || [];
   if (!subs.length) { closeSubPopover(); return; }
@@ -293,10 +296,17 @@ function closeSubPopover() {
 }
 
 function setSub(el, val) {
-  document.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
+  // Always apply the parent category when clicking anything in the popover
+  const cat = _currentPopoverCat;
+  state.category = cat;
   state.subcategory = val;
   state.offset = 0;
+
+  // Highlight the right cat-pill
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  const catPill = document.querySelector(`.cat-pill[data-cat="${cat}"]`);
+  if (catPill) catPill.classList.add('active');
+
   closeSubPopover();
   fetchOrgs(false);
 }
