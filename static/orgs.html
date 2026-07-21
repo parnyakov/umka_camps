@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кружки и секции — UmkaHub</title>
+  <link rel="stylesheet" href="/static/orgs_style.css">
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="logo">
+    <svg viewBox="0 0 36 36" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="18" fill="#3DC9C1"/>
+      <circle cx="10.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="25.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="10.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="25.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="18" cy="20" r="11.5" fill="white"/>
+      <circle cx="14" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="22" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="14.6" cy="17.3" r="0.7" fill="white"/>
+      <circle cx="22.6" cy="17.3" r="0.7" fill="white"/>
+      <ellipse cx="18" cy="22.5" rx="4" ry="3" fill="#D6EFEE"/>
+      <ellipse cx="18" cy="21" rx="2.2" ry="1.6" fill="#1A3050"/>
+      <path d="M15.5 24Q18 26.5 20.5 24" stroke="#1A3050" stroke-width="1.2" stroke-linecap="round"/>
+      <ellipse cx="30" cy="15.5" rx="3" ry="4.5" fill="white" transform="rotate(-28 30 15.5)"/>
+      <ellipse cx="7" cy="22.5" rx="3" ry="4" fill="white" transform="rotate(18 7 22.5)"/>
+    </svg>
+    <span>UMKA HUB</span>
+  </a>
+  <div class="header-search">
+    <span class="icon">🔍</span>
+    <input id="searchInput" type="text" placeholder="Поиск по названию или направлению...">
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- Sidebar фильтры -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="filter-group">
+      <label>Категория</label>
+      <div class="cat-pills" id="catPills">
+        <div class="cat-pill active" data-cat="" onclick="setCat(this, '')">
+          🗂 Все направления
+        </div>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <label>Станция метро</label>
+      <select id="metroFilter" onchange="applyFilters()">
+        <option value="">Любая станция</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label>Возраст ребёнка</label>
+      <input type="number" id="ageFilter" placeholder="Например: 7" min="2" max="18" onchange="applyFilters()">
+    </div>
+
+    <div class="filter-group">
+      <label>Макс. цена (₽)</label>
+      <input type="number" id="priceFilter" placeholder="Например: 3000" step="500" onchange="applyFilters()">
+    </div>
+
+    <div class="filter-group">
+      <div class="toggle-row" onclick="toggleTrial()">
+        <span>Только с пробным занятием</span>
+        <div class="toggle" id="trialToggle"></div>
+      </div>
+    </div>
+
+    <button onclick="resetFilters()" style="
+      margin-top:auto; padding:10px; border:1.5px solid var(--border);
+      border-radius:8px; background:none; cursor:pointer; font-size:14px;
+      color:var(--muted); transition: all .15s;
+    " onmouseover="this.style.borderColor='var(--text)'"
+       onmouseout="this.style.borderColor='var(--border)'">
+      Сбросить фильтры
+    </button>
+  </aside>
+
+  <!-- Основной контент -->
+  <main class="main">
+    <button class="filter-toggle" onclick="toggleSidebar()" style="display:none" id="filterToggleBtn">
+      ⚙️ Фильтры
+    </button>
+
+    <div class="results-bar" id="resultsBar">Загрузка...</div>
+
+    <div class="cards-grid" id="cardsGrid"></div>
+
+    <button class="load-more" id="loadMoreBtn" onclick="loadMore()" style="display:none">
+      Показать ещё
+    </button>
+
+    <div class="empty" id="emptyState" style="display:none">
+      <div class="emoji">🔍</div>
+      <p>Ничего не найдено. Попробуйте изменить фильтры.</p>
+    </div>
+  </main>
+</div>
+
+<script>
+const CAT_ICONS = {
+  'IT': '💻', 'спорт': '⚽', 'творчество': '🎨',
+  'языки': '🌍', 'развитие': '🧠'
+};
+
+const CAT_FALLBACK = {
+  'IT': '💻', 'спорт': '⚽', 'творчество': '🎨',
+  'языки': '🌍', 'развитие': '🧠', '': '🏫'
+};
+
+let state = {
+  category: '', metro: '', age: '', price_max: '',
+  has_trial: false, q: '',
+  offset: 0, limit: 24, total: 0, loading: false
+};
+
+// ── Init ────────────────────────────────────────────────────────────────────
+
+async function init() {
+  // Читаем URL params
+  const params = new URLSearchParams(location.search);
+  state.q        = params.get('q')        || '';
+  state.category = params.get('category') || '';
+  state.metro    = params.get('metro')    || '';
+
+  if (state.q) document.getElementById('searchInput').value = state.q;
+
+  // Загружаем мета (категории, метро)
+  const meta = await fetch('/api/orgs-meta').then(r => r.json());
+  buildCatPills(meta.categories);
+  buildMetroSelect(meta.metros);
+
+  // Выставляем активную категорию
+  if (state.category) {
+    document.querySelectorAll('.cat-pill').forEach(p => {
+      p.classList.toggle('active', p.dataset.cat === state.category);
+    });
+  }
+
+  await fetchOrgs(false);
+}
+
+// ── Filters ─────────────────────────────────────────────────────────────────
+
+function buildCatPills(categories) {
+  const container = document.getElementById('catPills');
+  categories.forEach(cat => {
+    const pill = document.createElement('div');
+    pill.className = 'cat-pill';
+    pill.dataset.cat = cat;
+    pill.innerHTML = `${CAT_ICONS[cat] || '📚'} ${cat.charAt(0).toUpperCase() + cat.slice(1)}`;
+    pill.onclick = () => setCat(pill, cat);
+    container.appendChild(pill);
+  });
+}
+
+function buildMetroSelect(metros) {
+  const sel = document.getElementById('metroFilter');
+  metros.forEach(m => {
+    const opt = document.createElement('option');
+    opt.value = m;
+    opt.textContent = m;
+    if (m === state.metro) opt.selected = true;
+    sel.appendChild(opt);
+  });
+}
+
+function setCat(el, cat) {
+  state.category = cat;
+  state.offset = 0;
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  fetchOrgs(false);
+}
+
+function applyFilters() {
+  state.metro    = document.getElementById('metroFilter').value;
+  state.age      = document.getElementById('ageFilter').value;
+  state.price_max= document.getElementById('priceFilter').value;
+  state.offset   = 0;
+  fetchOrgs(false);
+}
+
+function toggleTrial() {
+  state.has_trial = !state.has_trial;
+  document.getElementById('trialToggle').classList.toggle('on', state.has_trial);
+  state.offset = 0;
+  fetchOrgs(false);
+}
+
+function resetFilters() {
+  state = { ...state, category: '', metro: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
+  document.getElementById('searchInput').value = '';
+  document.getElementById('metroFilter').value = '';
+  document.getElementById('ageFilter').value = '';
+  document.getElementById('priceFilter').value = '';
+  document.getElementById('trialToggle').classList.remove('on');
+  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+  document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
+  fetchOrgs(false);
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// ── Search ───────────────────────────────────────────────────────────────────
+
+let searchTimer;
+document.getElementById('searchInput').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    state.q = e.target.value.trim();
+    state.offset = 0;
+    fetchOrgs(false);
+  }, 350);
+});
+
+// ── Fetch ────────────────────────────────────────────────────────────────────
+
+async function fetchOrgs(append = false) {
+  if (state.loading) return;
+  state.loading = true;
+
+  let url, data;
+  if (state.q) {
+    url = `/api/search?q=${encodeURIComponent(state.q)}&limit=${state.limit}&offset=${state.offset}`;
+    data = await fetch(url).then(r => r.json());
+    state.total = data.items.length + state.offset;
+  } else {
+    const p = new URLSearchParams();
+    if (state.category)  p.set('category', state.category);
+    if (state.metro)     p.set('metro', state.metro);
+    if (state.age)       p.set('age', state.age);
+    if (state.price_max) p.set('price_max', state.price_max);
+    if (state.has_trial) p.set('has_trial', '1');
+    p.set('limit', state.limit);
+    p.set('offset', state.offset);
+    data = await fetch('/api/orgs?' + p).then(r => r.json());
+    state.total = data.total;
+  }
+
+  renderCards(data.items, append);
+  state.loading = false;
+}
+
+// ── Render ───────────────────────────────────────────────────────────────────
+
+function renderCards(items, append) {
+  const grid   = document.getElementById('cardsGrid');
+  const bar    = document.getElementById('resultsBar');
+  const btn    = document.getElementById('loadMoreBtn');
+  const empty  = document.getElementById('emptyState');
+
+  if (!append) grid.innerHTML = '';
+
+  if (!items.length && !append) {
+    empty.style.display = 'block';
+    bar.textContent = 'Ничего не найдено';
+    btn.style.display = 'none';
+    return;
+  }
+
+  empty.style.display = 'none';
+  bar.textContent = `Найдено: ${state.total} организаций`;
+
+  items.forEach(org => {
+    grid.insertAdjacentHTML('beforeend', cardHTML(org));
+  });
+
+  const shown = grid.querySelectorAll('.card').length;
+  btn.style.display = shown < state.total ? 'block' : 'none';
+}
+
+function cardHTML(org) {
+  const photo = org.photos && org.photos.length
+    ? `<img src="${org.photos[0]}" alt="${esc(org.name)}" loading="lazy" onerror="this.parentElement.innerHTML='${CAT_FALLBACK[org.category] || '🏫'}'"/>`
+    : CAT_FALLBACK[org.category] || '🏫';
+
+  const rating = org.rating
+    ? `<span class="card-rating">★ ${org.rating.toFixed(1)}</span>` : '';
+
+  const trial = org.has_trial
+    ? `<span class="trial-badge">Пробное занятие</span>` : '';
+
+  const metro = org.metro ? `<span>📍 ${esc(org.metro)}</span>` : '';
+  const age   = org.age_range ? `<span class="dot">·</span><span>${esc(org.age_range)}</span>` : '';
+
+  return `
+    <div class="card" onclick="window.location='/org/${org.id}'">
+      <div class="card-photo">${photo}</div>
+      <div class="card-body">
+        <span class="cat-badge" data-cat="${esc(org.category)}">${esc(org.category)}</span>
+        <div class="card-name">${esc(org.name)}</div>
+        <div class="card-meta">${metro}${age}</div>
+        ${trial}
+        <div class="card-footer">
+          <span class="card-price">${esc(org.price || 'Цена по запросу')}</span>
+          ${rating}
+        </div>
+      </div>
+    </div>`;
+}
+
+function loadMore() {
+  state.offset += state.limit;
+  fetchOrgs(true);
+}
+
+function esc(str) {
+  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// Мобильная кнопка фильтров
+if (window.innerWidth <= 768) {
+  document.getElementById('filterToggleBtn').style.display = 'flex';
+}
+
+init();
+</script>
+
+</body>
+</html>
