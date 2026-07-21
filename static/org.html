@@ -1,30 +1,166 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UmkaHub</title>
-  <link rel="stylesheet" href="/static/orgs_style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Организация — UMKA HUB</title>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=110484022','ym');
+    ym(110484022,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110484022" style="position:absolute;left:-9999px" alt=""></div></noscript>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg:      #F0F5FF;
+    --bg2:     #FFFFFF;
+    --bg3:     #E4EDFF;
+    --border:  #C8D8EE;
+    --em:      #3DC9C1;
+    --em-d:    #28B5AC;
+    --em-glow: rgba(61,201,193,0.12);
+    --text:    #1A2B4A;
+    --text2:   #4A6280;
+    --text3:   #8A9CB8;
+    --radius:  14px;
+    --shadow:  0 4px 20px rgba(80,120,200,0.10);
+  }
+  body {
+    background: linear-gradient(150deg,#EDF3FF 0%,#F5F0FF 50%,#EFF6FF 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+  }
+
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px; height: 62px;
+    display: flex; align-items: center; gap: 16px;
+    box-shadow: 0 2px 12px rgba(80,120,200,0.07);
+  }
+  .nav-logo { display:flex;align-items:center;gap:9px;font-size:17px;font-weight:800;color:var(--em);white-space:nowrap;text-decoration:none;letter-spacing:-0.3px; }
+  .nav-logo span { color: var(--text); }
+  .nav-back { display:flex;align-items:center;gap:6px;color:var(--text2);text-decoration:none;font-size:14px;transition:color .15s;background:var(--bg3);padding:6px 12px;border-radius:8px; }
+  .nav-back:hover { color:var(--em);background:var(--em-glow); }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 24px 80px; }
+
+  .hero { border-radius: var(--radius); overflow: hidden; margin-bottom: 28px; box-shadow: var(--shadow); background: linear-gradient(135deg, var(--bg3), var(--bg)); }
+  .hero-img { width:100%;height:380px;object-fit:cover;display:block; }
+  .hero-placeholder { width:100%;height:260px;display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:700;letter-spacing:4px;color:var(--text3); }
+
+  .org-header { margin-bottom: 24px; }
+  .org-name { font-size:28px;font-weight:800;margin-bottom:12px;color:var(--text);letter-spacing:-0.5px; }
+  .org-meta { display:flex;flex-wrap:wrap;gap:10px;align-items:center; }
+  .badge { padding:4px 12px;border-radius:20px;font-size:12px;font-weight:500;border:1px solid var(--border);color:var(--text2);background:var(--bg3); }
+  .badge-em { border-color:var(--em);color:var(--em);background:var(--em-glow); }
+  .badge-age { border-color:#BCD6F7;background:#EAF3FF;color:#2B72C8; }
+  .badge-trial { border-color:#86EFAC;background:#F0FDF4;color:#16A34A; }
+  .rating { display:flex;align-items:center;gap:6px; }
+  .rating .stars { color:#F59E0B;font-size:16px; }
+  .rating .val { font-size:18px;font-weight:700;color:var(--text); }
+  .rating .cnt { font-size:13px;color:var(--text3); }
+
+  .content-grid { display:grid;grid-template-columns:1fr 300px;gap:24px; }
+  @media (max-width:720px) { .content-grid { grid-template-columns:1fr; } }
+
+  .section { margin-bottom: 24px; }
+  .section-title {
+    font-size:11px;font-weight:700;color:var(--text3);
+    letter-spacing:.1em;text-transform:uppercase;
+    margin-bottom:12px;padding-bottom:8px;
+    border-bottom:2px solid var(--border);
+  }
+  .section-body { font-size:14px;color:var(--text2);line-height:1.75; }
+
+  .facts-grid { display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px; }
+  .fact-card { background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:14px 16px; }
+  .fact-label { font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:4px; }
+  .fact-value { font-size:15px;font-weight:700;color:var(--text); }
+
+  .programs-wrap { display:flex;flex-wrap:wrap;gap:8px; }
+  .prog-tag { background:var(--em-glow);border:1px solid var(--em);color:var(--em-d);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:500; }
+
+  .skills-list { list-style:none;display:flex;flex-direction:column;gap:8px; }
+  .skills-list li { display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.5; }
+  .skills-list li::before { content:'✓';color:var(--em);font-weight:700;flex-shrink:0;margin-top:1px; }
+
+  .gallery { display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px; }
+  .gallery img { aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:opacity .2s,transform .2s;display:block; }
+  .gallery img:hover { opacity:.85;transform:scale(1.03); }
+
+  .org-sidebar { position:sticky;top:80px; }
+  .price-card { background:white;border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow); }
+  .price-label { font-size:12px;color:var(--text3);margin-bottom:4px;font-weight:500; }
+  .price-value { font-size:26px;font-weight:800;color:var(--em);margin-bottom:16px;line-height:1.1; }
+  .trial-callout { display:flex;align-items:center;gap:8px;background:#F0FDF4;border:1px solid #86EFAC;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:13px;font-weight:600;color:#16A34A; }
+  .btn-cta { width:100%;padding:14px;background:var(--em);border:none;border-radius:12px;color:white;font-size:16px;font-weight:700;cursor:pointer;transition:background .2s;font-family:inherit; }
+  .btn-cta:hover { background:var(--em-d); }
+  .btn-site { display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:10px;margin-top:10px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:14px;font-weight:600;text-decoration:none;transition:.15s; }
+  .btn-site:hover { border-color:var(--em);color:var(--em);background:var(--em-glow); }
+  .btn-phone { display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:10px;margin-top:8px;background:transparent;border:1px solid var(--border);border-radius:10px;color:var(--text2);font-size:14px;font-weight:600;text-decoration:none;transition:.15s; }
+  .btn-phone:hover { border-color:var(--em);color:var(--em); }
+  .price-note { font-size:11px;color:var(--text3);text-align:center;margin-top:10px; }
+
+  .how-steps { display:flex;flex-direction:column;gap:10px; }
+  .how-step { display:flex;align-items:flex-start;gap:12px;background:var(--bg);border-radius:12px;padding:12px 14px; }
+  .how-icon { width:36px;height:36px;border-radius:10px;flex-shrink:0;background:var(--em-glow);display:flex;align-items:center;justify-content:center;font-size:18px; }
+  .how-text h4 { font-size:13px;font-weight:700;color:var(--text);margin-bottom:2px; }
+  .how-text p { font-size:12px;color:var(--text2);line-height:1.5; }
+
+  .faq-item { border:1px solid var(--border);border-radius:12px;background:var(--bg2);margin-bottom:8px;overflow:hidden; }
+  .faq-q { width:100%;text-align:left;padding:13px 16px;background:none;border:none;cursor:pointer;font-size:13px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:inherit; }
+  .faq-q:hover { color:var(--em); }
+  .faq-arrow { font-size:16px;color:var(--text3);transition:transform .2s;flex-shrink:0; }
+  .faq-item.open .faq-arrow { transform:rotate(180deg);color:var(--em); }
+  .faq-a { max-height:0;overflow:hidden;transition:max-height .28s ease,padding .2s;font-size:12px;color:var(--text2);line-height:1.6;padding:0 16px; }
+  .faq-item.open .faq-a { max-height:200px;padding:0 16px 13px; }
+
+  .modal-overlay { display:none;position:fixed;inset:0;z-index:200;background:rgba(30,50,100,.45);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px; }
+  .modal-overlay.open { display:flex; }
+  .modal { background:white;border:1px solid var(--border);border-radius:18px;padding:28px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(30,60,150,.15);animation:slideUp .2s ease; }
+  @keyframes slideUp { from{opacity:0;transform:translateY(20px)} }
+  .modal-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:6px; }
+  .modal-title { font-size:18px;font-weight:700;color:var(--text); }
+  .modal-close { background:var(--bg3);border:none;color:var(--text2);font-size:18px;cursor:pointer;padding:6px 9px;border-radius:8px; }
+  .modal-close:hover { background:var(--border);color:var(--text); }
+  .modal-org-name { font-size:13px;color:var(--em);margin-bottom:20px;font-weight:500; }
+  .form-group { margin-bottom:14px; }
+  .form-group label { display:block;font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:600; }
+  .form-group input, .form-group textarea { width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s; }
+  .form-group input:focus, .form-group textarea:focus { border-color:var(--em);box-shadow:0 0 0 3px var(--em-glow); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color:var(--text3); }
+  .form-group textarea { resize:none;height:72px; }
+  .btn-submit { width:100%;padding:13px;background:var(--em);border:none;border-radius:10px;color:white;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;margin-top:4px;font-family:inherit; }
+  .btn-submit:hover { background:var(--em-d); }
+  .btn-submit:disabled { opacity:.5;cursor:default; }
+  .modal-note { text-align:center;font-size:11px;color:var(--text3);margin-top:10px; }
+  .modal-success { text-align:center;padding:20px 0; }
+  .modal-success .check { font-size:48px;margin-bottom:12px; }
+  .modal-success h3 { font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text); }
+  .modal-success p { font-size:14px;color:var(--text2); }
+
+  .not-found { text-align:center;padding:80px 20px; }
+</style>
 </head>
 <body>
 
-<header class="header">
-  <a href="/orgs" class="back-btn">
-    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 12L4 7L9 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    Каталог
-  </a>
-  <a href="/" class="logo" style="margin-left:auto">
-    <svg viewBox="0 0 36 36" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+<nav>
+  <a class="nav-logo" href="/">
+    <svg viewBox="0 0 36 36" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="18" cy="18" r="18" fill="#3DC9C1"/>
-      <circle cx="10.5" cy="11" r="4.5" fill="white"/>
-      <circle cx="25.5" cy="11" r="4.5" fill="white"/>
-      <circle cx="10.5" cy="11" r="2.5" fill="#B5E8E5"/>
-      <circle cx="25.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="10.5" cy="11" r="4.5" fill="white"/><circle cx="25.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="10.5" cy="11" r="2.5" fill="#B5E8E5"/><circle cx="25.5" cy="11" r="2.5" fill="#B5E8E5"/>
       <circle cx="18" cy="20" r="11.5" fill="white"/>
-      <circle cx="14" cy="18" r="1.8" fill="#1A3050"/>
-      <circle cx="22" cy="18" r="1.8" fill="#1A3050"/>
-      <circle cx="14.6" cy="17.3" r="0.7" fill="white"/>
-      <circle cx="22.6" cy="17.3" r="0.7" fill="white"/>
+      <circle cx="14" cy="18" r="1.8" fill="#1A3050"/><circle cx="22" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="14.6" cy="17.3" r="0.7" fill="white"/><circle cx="22.6" cy="17.3" r="0.7" fill="white"/>
       <ellipse cx="18" cy="22.5" rx="4" ry="3" fill="#D6EFEE"/>
       <ellipse cx="18" cy="21" rx="2.2" ry="1.6" fill="#1A3050"/>
       <path d="M15.5 24Q18 26.5 20.5 24" stroke="#1A3050" stroke-width="1.2" stroke-linecap="round"/>
@@ -33,64 +169,44 @@
     </svg>
     <span>UMKA HUB</span>
   </a>
-</header>
+  <a class="nav-back" href="/orgs">
+    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
+    Кружки и секции
+  </a>
+</nav>
 
-<div id="orgContent" style="display:none">
+<div class="container" id="app">
+  <div style="text-align:center;padding:60px;color:var(--text3)">Загрузка...</div>
+</div>
 
-  <!-- Фото -->
-  <div class="org-hero" id="orgHero"></div>
-
-  <div class="org-content">
-
-    <!-- Категория + название + рейтинг -->
-    <span class="cat-badge" id="orgCat"></span>
-    <h1 class="org-title" id="orgName"></h1>
-
-    <div class="org-sub">
-      <div class="org-rating" id="orgRating"></div>
-      <div class="org-metro" id="orgMetro"></div>
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div id="modalForm">
+      <div class="modal-header">
+        <div class="modal-title">Записаться на занятие</div>
+        <button class="modal-close" id="modalClose">×</button>
+      </div>
+      <div class="modal-org-name" id="modalOrgName"></div>
+      <div class="form-group"><label>Имя родителя *</label><input type="text" id="fName" placeholder="Иван Иванов"></div>
+      <div class="form-group"><label>Телефон *</label><input type="tel" id="fPhone" placeholder="+7 900 000 00 00"></div>
+      <div class="form-group"><label>Telegram</label><input type="text" id="fTelegram" placeholder="@username"></div>
+      <div class="form-group"><label>Возраст ребёнка</label><input type="text" id="fAge" placeholder="8 лет"></div>
+      <div class="form-group"><label>Интересующее направление</label><input type="text" id="fDirection" placeholder="Английский, программирование..."></div>
+      <div class="form-group"><label>Комментарий</label><textarea id="fComment" placeholder="Вопросы, пожелания..."></textarea></div>
+      <button class="btn-submit" id="btnSubmit">Отправить заявку</button>
+      <div class="modal-note">Мы свяжемся с вами в течение 2 часов</div>
     </div>
-
-    <!-- Пробное занятие -->
-    <div class="trial-highlight" id="trialBlock" style="display:none">
-      Есть пробное занятие — можно попробовать перед записью
+    <div class="modal-success" id="modalSuccess" style="display:none">
+      <div class="check">✅</div>
+      <h3>Заявка отправлена!</h3>
+      <p>Мы свяжемся с вами в течение 2 часов</p>
     </div>
-
-    <!-- Ключевые параметры -->
-    <div class="info-grid" id="infoGrid"></div>
-
-    <!-- Программы -->
-    <div id="programsBlock" style="display:none">
-      <div class="section-title">Программы и направления</div>
-      <div class="programs-list" id="programsList"></div>
-    </div>
-
-    <!-- Описание -->
-    <div id="descBlock" style="display:none">
-      <div class="section-title">Об организации</div>
-      <div class="description" id="descText"></div>
-    </div>
-
-    <!-- Контакты -->
-    <div class="contact-row" id="contactRow"></div>
-
   </div>
 </div>
 
-<div id="loadingState" style="text-align:center;padding:80px;color:var(--muted)">
-  Загрузка...
-</div>
-
-<div id="errorState" style="display:none;text-align:center;padding:80px;color:var(--muted)">
-  <div style="font-size:48px;margin-bottom:12px">🤷</div>
-  <p>Организация не найдена</p>
-  <a href="/orgs" style="color:var(--clr-primary);font-weight:600;margin-top:12px;display:inline-block">← В каталог</a>
-</div>
-
 <script>
-function esc(str) {
-  return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
+const orgId = location.pathname.replace('/org/','').replace(/\//g,'');
+let orgName = '';
 
 const CAT_BG = {
   'IT':         'linear-gradient(135deg,#EEF2FF,#C7D2FE)',
@@ -101,122 +217,216 @@ const CAT_BG = {
 };
 
 function initials(name) {
-  return (name || '').split(/[\s«»""]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+  return (name||'').split(/[\s«»""]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
 }
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
-async function init() {
-  // Извлекаем ID из URL: /org/123
-  const id = location.pathname.split('/').pop();
-
-  const res = await fetch(`/api/orgs/${id}`);
-  if (!res.ok) {
-    document.getElementById('loadingState').style.display = 'none';
-    document.getElementById('errorState').style.display = 'block';
-    return;
+async function load() {
+  const app = document.getElementById('app');
+  try {
+    const res = await fetch(`/api/orgs/${orgId}`);
+    if (!res.ok) {
+      app.innerHTML = `<div class="not-found"><h2 style="font-size:24px;margin-bottom:10px">Организация не найдена</h2><p style="color:var(--text2);margin-bottom:16px">Попробуйте вернуться в каталог</p><a href="/orgs" style="color:var(--em)">← Все кружки и секции</a></div>`;
+      return;
+    }
+    const org = await res.json();
+    orgName = org.name;
+    document.title = `${org.name} — UMKA HUB`;
+    render(org);
+  } catch(e) {
+    app.innerHTML = `<div class="not-found"><h2>Ошибка загрузки</h2><p>${e.message}</p></div>`;
   }
-
-  const org = await res.json();
-  document.title = `${org.name} — UmkaHub`;
-  render(org);
 }
 
 function render(org) {
-  document.getElementById('loadingState').style.display = 'none';
-  document.getElementById('orgContent').style.display = 'block';
-
-  // Фото / инициалы
-  const hero = document.getElementById('orgHero');
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
-  if (org.photos && org.photos.length) {
-    const img = document.createElement('img');
-    img.src = org.photos[0];
-    img.alt = org.name;
-    img.onerror = () => {
-      hero.style.background = bg;
-      hero.innerHTML = `<span class="hero-initials">${ini}</span>`;
-    };
-    hero.appendChild(img);
+  const photos = org.photos || [];
+
+  let heroHtml;
+  if (photos.length) {
+    heroHtml = `<img class="hero-img" src="${esc(photos[0])}" alt="${esc(org.name)}" loading="lazy"
+      onerror="this.outerHTML='<div class=hero-placeholder style=\\'background:${bg}\\'>${ini}</div>'">`;
   } else {
-    hero.style.background = bg;
-    hero.innerHTML = `<span class="hero-initials">${ini}</span>`;
+    heroHtml = `<div class="hero-placeholder" style="background:${bg}">${ini}</div>`;
   }
 
-  // Категория
-  const catEl = document.getElementById('orgCat');
-  catEl.textContent = org.category || '';
-  catEl.dataset.cat = org.category || '';
+  // Header
+  const ratingHtml = org.rating ? `
+    <div class="rating">
+      <span class="stars">★★★★★</span>
+      <span class="val">${org.rating.toFixed(1)}</span>
+      ${org.reviews_count ? `<span class="cnt">(${org.reviews_count} отзывов)</span>` : ''}
+    </div>` : '';
 
-  // Название
-  document.getElementById('orgName').textContent = org.name;
+  const badges = [
+    org.age_range   && `<span class="badge badge-age">${esc(org.age_range)}</span>`,
+    org.category    && `<span class="badge">${esc(org.category)}</span>`,
+    org.subcategory && `<span class="badge">${esc(org.subcategory)}</span>`,
+    org.metro       && `<span class="badge">м. ${esc(org.metro)}</span>`,
+    org.has_trial   && `<span class="badge badge-trial">Пробное занятие</span>`,
+  ].filter(Boolean).join('');
 
-  // Рейтинг
-  if (org.rating) {
-    document.getElementById('orgRating').innerHTML =
-      `★ ${org.rating.toFixed(1)}${org.reviews_count ? ` <span style="font-size:13px;font-weight:400;color:var(--muted)">(${org.reviews_count} отзывов)</span>` : ''}`;
-  }
+  // Key facts
+  const facts = [
+    org.price      && { l:'Стоимость',    v: org.price },
+    org.age_range  && { l:'Возраст',      v: org.age_range },
+    org.group_size && { l:'Размер группы',v: org.group_size },
+    org.duration   && { l:'Длительность', v: org.duration },
+    org.schedule   && { l:'Расписание',   v: org.schedule },
+    org.district   && { l:'Район',        v: org.district },
+  ].filter(Boolean);
+  const factsHtml = facts.length ? `
+    <div class="section">
+      <div class="section-title">Ключевая информация</div>
+      <div class="facts-grid">
+        ${facts.map(f=>`<div class="fact-card"><div class="fact-label">${esc(f.l)}</div><div class="fact-value">${esc(f.v)}</div></div>`).join('')}
+      </div>
+    </div>` : '';
 
-  // Метро
-  if (org.metro) {
-    document.getElementById('orgMetro').textContent = org.metro;
-  }
-  if (org.address) {
-    document.getElementById('orgMetro').title = org.address;
-  }
+  // Description
+  const descHtml = org.description ? `
+    <div class="section">
+      <div class="section-title">Об организации</div>
+      <div class="section-body">${esc(org.description)}</div>
+    </div>` : '';
 
-  // Пробное занятие
-  if (org.has_trial) {
-    document.getElementById('trialBlock').style.display = 'flex';
-  }
+  // Programs
+  const programs = org.programs || [];
+  const progsHtml = programs.length ? `
+    <div class="section">
+      <div class="section-title">Программы и направления</div>
+      <div class="programs-wrap">${programs.map(p=>`<span class="prog-tag">${esc(p)}</span>`).join('')}</div>
+    </div>` : '';
 
-  // Info grid
-  const infoItems = [];
-  if (org.price)      infoItems.push({ label: 'Стоимость', value: org.price + (org.price_type ? ` <span style="font-size:12px;color:var(--muted)">/ ${org.price_type}</span>` : '') });
-  if (org.age_range)  infoItems.push({ label: 'Возраст', value: org.age_range });
-  if (org.group_size) infoItems.push({ label: 'Размер группы', value: org.group_size });
-  if (org.duration)   infoItems.push({ label: 'Длительность', value: org.duration });
-  if (org.schedule)   infoItems.push({ label: 'Расписание', value: org.schedule });
-  if (org.district)   infoItems.push({ label: 'Район', value: org.district });
+  // Skills
+  const skills = (org.skills || []).filter(s => s && s.length > 10 && s.length < 220);
+  const skillsHtml = skills.length ? `
+    <div class="section">
+      <div class="section-title">Почему выбирают</div>
+      <ul class="skills-list">${skills.slice(0,6).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+    </div>` : '';
 
-  const grid = document.getElementById('infoGrid');
-  infoItems.forEach(item => {
-    grid.insertAdjacentHTML('beforeend', `
-      <div class="info-card">
-        <div class="label">${esc(item.label)}</div>
-        <div class="value">${item.value}</div>
-      </div>`);
-  });
+  // Gallery
+  const extra = photos.slice(1, 10);
+  const galleryHtml = extra.length ? `
+    <div class="section">
+      <div class="section-title">Галерея</div>
+      <div class="gallery">${extra.map(p=>`<img src="${esc(p)}" loading="lazy" alt="">`).join('')}</div>
+    </div>` : '';
 
-  // Программы
-  if (org.programs && org.programs.length) {
-    document.getElementById('programsBlock').style.display = 'block';
-    const list = document.getElementById('programsList');
-    org.programs.forEach(p => {
-      list.insertAdjacentHTML('beforeend',
-        `<span class="program-tag">${esc(p)}</span>`);
-    });
-  }
+  // How it works
+  const howHtml = `
+    <div class="section">
+      <div class="section-title">Как записаться</div>
+      <div class="how-steps">
+        <div class="how-step"><div class="how-icon">📋</div><div class="how-text"><h4>Оставьте заявку</h4><p>Нажмите «Записаться» — заявка уйдёт напрямую в организацию без посредников и скрытых комиссий.</p></div></div>
+        <div class="how-step"><div class="how-icon">📞</div><div class="how-text"><h4>Организация свяжется с вами</h4><p>Вам расскажут о расписании, ценах и пробном занятии. Обычно перезванивают в течение нескольких часов.</p></div></div>
+        <div class="how-step"><div class="how-icon">✅</div><div class="how-text"><h4>Приходите на пробный урок</h4><p>Большинство студий предлагают первое занятие бесплатно — чтобы вы и ребёнок точно не ошиблись с выбором.</p></div></div>
+      </div>
+    </div>`;
 
-  // Описание
-  if (org.description) {
-    document.getElementById('descBlock').style.display = 'block';
-    document.getElementById('descText').textContent = org.description;
-  }
+  // FAQ
+  const faqHtml = `
+    <div class="section">
+      <div class="section-title">Частые вопросы</div>
+      <div class="faq-item"><button class="faq-q">Платно ли пользоваться сервисом?<span class="faq-arrow">⌄</span></button><div class="faq-a">Нет. UMKA HUB — бесплатный сервис для родителей. Вы записываетесь напрямую в организацию по официальным ценам без наценок.</div></div>
+      <div class="faq-item"><button class="faq-q">Есть ли пробное занятие?<span class="faq-arrow">⌄</span></button><div class="faq-a">Уточните при записи — большинство хороших студий предлагают первое занятие бесплатно или со скидкой. Не стесняйтесь спрашивать.</div></div>
+      <div class="faq-item"><button class="faq-q">Как быстро ответит организация?<span class="faq-arrow">⌄</span></button><div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div></div>
+      <div class="faq-item"><button class="faq-q">Можно ли отменить запись?<span class="faq-arrow">⌄</span></button><div class="faq-a">Условия отмены устанавливает каждая организация. Если занятия ещё не начались и оплата не прошла — как правило, всё решается без проблем.</div></div>
+    </div>`;
 
-  // Контакты
-  const contacts = document.getElementById('contactRow');
-  if (org.phone) {
-    contacts.insertAdjacentHTML('beforeend',
-      `<a href="tel:${esc(org.phone)}" class="btn-contact btn-primary">📞 ${esc(org.phone)}</a>`);
-  }
-  if (org.website) {
-    contacts.insertAdjacentHTML('beforeend',
-      `<a href="${esc(org.website)}" target="_blank" rel="noopener" class="btn-contact btn-outline">🌐 Сайт организации</a>`);
-  }
+  // Sidebar
+  const trialCallout = org.has_trial ? `<div class="trial-callout"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#16A34A" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Есть пробное занятие</div>` : '';
+  const siteBtn  = org.website ? `<a href="${esc(org.website.split('?')[0])}" target="_blank" rel="noopener" class="btn-site">🌐 Сайт организации</a>` : '';
+  const phoneBtn = org.phone   ? `<a href="tel:${esc(org.phone)}" class="btn-phone">📞 ${esc(org.phone)}</a>` : '';
+
+  document.getElementById('app').innerHTML = `
+    <div class="hero">${heroHtml}</div>
+    <div class="org-header">
+      <div class="org-name">${esc(org.name)}</div>
+      <div class="org-meta">${ratingHtml}${badges}</div>
+    </div>
+    <div class="content-grid">
+      <div>
+        ${factsHtml}
+        ${descHtml}
+        ${progsHtml}
+        ${skillsHtml}
+        ${galleryHtml}
+        ${howHtml}
+        ${faqHtml}
+      </div>
+      <div class="org-sidebar">
+        <div class="price-card">
+          <div class="price-label">Стоимость</div>
+          <div class="price-value">${esc(org.price || 'Цена по запросу')}</div>
+          ${trialCallout}
+          <button class="btn-cta" id="btnCta">Записаться на занятие</button>
+          ${siteBtn}
+          ${phoneBtn}
+          <div class="price-note">Свяжемся с вами в течение 2 часов</div>
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById('btnCta').addEventListener('click', openModal);
 }
 
-init();
-</script>
+function openModal() {
+  document.getElementById('modalOrgName').textContent = orgName;
+  document.getElementById('modalForm').style.display = 'block';
+  document.getElementById('modalSuccess').style.display = 'none';
+  ['fName','fPhone','fTelegram','fAge','fDirection','fComment'].forEach(id => {
+    const el = document.getElementById(id); if (el) el.value = '';
+  });
+  document.getElementById('modalOverlay').classList.add('open');
+}
 
+document.getElementById('modalClose').addEventListener('click', () =>
+  document.getElementById('modalOverlay').classList.remove('open'));
+document.getElementById('modalOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('modalOverlay'))
+    document.getElementById('modalOverlay').classList.remove('open');
+});
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.faq-q');
+  if (!btn) return;
+  const item = btn.closest('.faq-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+});
+
+document.getElementById('btnSubmit').addEventListener('click', async () => {
+  const name  = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  if (!name || !phone) { alert('Укажите имя и телефон'); return; }
+  const btn = document.getElementById('btnSubmit');
+  btn.disabled = true; btn.textContent = 'Отправляем...';
+  try {
+    const res = await fetch('/api/lead', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        org_name: orgName, parent_name: name, phone,
+        telegram:  document.getElementById('fTelegram').value.trim(),
+        child_age: document.getElementById('fAge').value.trim(),
+        direction: document.getElementById('fDirection').value.trim(),
+        comment:   document.getElementById('fComment').value.trim(),
+      })
+    });
+    const d = await res.json();
+    if (d.ok) {
+      if (typeof ym !== 'undefined') ym(110484022,'reachGoal','org_lead');
+      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('modalSuccess').style.display = 'block';
+    } else alert(d.error || 'Ошибка');
+  } catch { alert('Ошибка сети'); }
+  finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
+});
+
+load();
+</script>
 </body>
 </html>
