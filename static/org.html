@@ -9,7 +9,10 @@
 <body>
 
 <header class="header">
-  <a href="/orgs" class="back-btn">← Назад к каталогу</a>
+  <a href="/orgs" class="back-btn">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 12L4 7L9 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Каталог
+  </a>
   <a href="/" class="logo" style="margin-left:auto">
     <svg viewBox="0 0 36 36" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="18" cy="18" r="18" fill="#3DC9C1"/>
@@ -50,7 +53,7 @@
 
     <!-- Пробное занятие -->
     <div class="trial-highlight" id="trialBlock" style="display:none">
-      ✅ Есть пробное занятие — можно попробовать перед записью
+      Есть пробное занятие — можно попробовать перед записью
     </div>
 
     <!-- Ключевые параметры -->
@@ -89,10 +92,17 @@ function esc(str) {
   return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-const CAT_FALLBACK = {
-  'IT': '💻', 'спорт': '⚽', 'творчество': '🎨',
-  'языки': '🌍', 'развитие': '🧠', '': '🏫'
+const CAT_BG = {
+  'IT':         'linear-gradient(135deg,#EEF2FF,#C7D2FE)',
+  'спорт':      'linear-gradient(135deg,#ECFDF5,#A7F3D0)',
+  'творчество': 'linear-gradient(135deg,#FFFBEB,#FDE68A)',
+  'языки':      'linear-gradient(135deg,#EFF6FF,#BFDBFE)',
+  'развитие':   'linear-gradient(135deg,#F5F3FF,#DDD6FE)',
 };
+
+function initials(name) {
+  return (name || '').split(/[\s«»""]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+}
 
 async function init() {
   // Извлекаем ID из URL: /org/123
@@ -114,12 +124,22 @@ function render(org) {
   document.getElementById('loadingState').style.display = 'none';
   document.getElementById('orgContent').style.display = 'block';
 
-  // Фото
+  // Фото / инициалы
   const hero = document.getElementById('orgHero');
+  const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
+  const ini = initials(org.name);
   if (org.photos && org.photos.length) {
-    hero.innerHTML = `<img src="${esc(org.photos[0])}" alt="${esc(org.name)}" onerror="this.parentElement.innerHTML='${CAT_FALLBACK[org.category] || '🏫'}'">`;
+    const img = document.createElement('img');
+    img.src = org.photos[0];
+    img.alt = org.name;
+    img.onerror = () => {
+      hero.style.background = bg;
+      hero.innerHTML = `<span class="hero-initials">${ini}</span>`;
+    };
+    hero.appendChild(img);
   } else {
-    hero.textContent = CAT_FALLBACK[org.category] || '🏫';
+    hero.style.background = bg;
+    hero.innerHTML = `<span class="hero-initials">${ini}</span>`;
   }
 
   // Категория
@@ -138,7 +158,7 @@ function render(org) {
 
   // Метро
   if (org.metro) {
-    document.getElementById('orgMetro').textContent = '📍 ' + org.metro;
+    document.getElementById('orgMetro').textContent = org.metro;
   }
   if (org.address) {
     document.getElementById('orgMetro').title = org.address;
