@@ -92,9 +92,22 @@
   .skills-list li { display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.5; }
   .skills-list li::before { content:'✓';color:var(--em);font-weight:700;flex-shrink:0;margin-top:1px; }
 
-  .gallery { display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px; }
-  .gallery img { aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:10px;border:1px solid var(--border);cursor:pointer;transition:opacity .2s,transform .2s;display:block; }
-  .gallery img:hover { opacity:.85;transform:scale(1.03); }
+  /* Gallery */
+  .gallery { display:grid;grid-template-columns:1fr 1fr;gap:8px; }
+  .gallery img { aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:12px;border:1px solid var(--border);cursor:pointer;transition:opacity .2s,transform .15s,box-shadow .2s;display:block; }
+  .gallery img:hover { opacity:.92;transform:scale(1.02);box-shadow:0 8px 24px rgba(80,120,200,0.18); }
+  .gallery-3 { grid-template-columns:1fr 1fr 1fr; }
+
+  /* Lightbox */
+  .lightbox { display:none;position:fixed;inset:0;z-index:400;background:rgba(10,20,50,.88);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:90vw;max-height:86vh;border-radius:14px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.4); }
+  .lightbox-close { position:absolute;top:20px;right:24px;background:rgba(255,255,255,.15);border:none;color:white;font-size:26px;cursor:pointer;padding:4px 10px;border-radius:8px;line-height:1; }
+  .lightbox-close:hover { background:rgba(255,255,255,.25); }
+  .lightbox-nav { position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.18);border:none;color:white;font-size:28px;cursor:pointer;padding:8px 14px;border-radius:10px;line-height:1; }
+  .lightbox-nav:hover { background:rgba(255,255,255,.3); }
+  #lbPrev { left:20px; }
+  #lbNext { right:20px; }
 
   .org-sidebar { position:sticky;top:80px; }
   .price-card { background:white;border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:16px;box-shadow:var(--shadow); }
@@ -238,14 +251,42 @@ async function load() {
   }
 }
 
+// ── Garbage filter for scraped programs ───────────────────────────────────
+function cleanPrograms(list) {
+  const BAD = /реклам|конфиденциальн|настройк|выбери|privacy|cookie|ваше имя|справочный|для компаний|оценивать|персонализир|управлени|перейти|узнать больше|g\.co\//i;
+  return (list || []).filter(p => {
+    if (!p) return false;
+    const s = String(p).trim();
+    if (s.length < 3 || s.length > 80) return false;
+    if (s.endsWith('*') || s.endsWith('.')) return false;
+    if (BAD.test(s)) return false;
+    // Catch concatenated nav text like "ФункцииЗвонкиОбмен"
+    if (/[а-яa-z][А-ЯA-Z]/.test(s)) return false;
+    return true;
+  });
+}
+
+function cleanSkills(list) {
+  const BAD = /реклам|конфиденциальн|настройк|частые вопрос|ваше имя|управлени|privacy/i;
+  return (list || []).filter(s => {
+    if (!s || s.length < 12 || s.length > 220) return false;
+    if (s.includes('?')) return false; // FAQ questions scraped from sites
+    if (BAD.test(s)) return false;
+    return true;
+  });
+}
+
 function render(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
-  const photos = org.photos || [];
+  // main_photo takes priority; fallback to first item in photos array
+  const mainPhoto = org.main_photo || (org.photos && org.photos[0]) || '';
+  const photos = (org.photos || []).filter(p => p && p !== mainPhoto);
 
   let heroHtml;
-  if (photos.length) {
-    heroHtml = `<img class="hero-img" src="${esc(photos[0])}" alt="${esc(org.name)}" loading="lazy"
+  if (mainPhoto) {
+    heroHtml = `<img class="hero-img" src="${esc(mainPhoto)}" alt="${esc(org.name)}" loading="lazy"
+      style="cursor:pointer" onclick="openLightbox(0)"
       onerror="this.outerHTML='<div class=hero-placeholder style=\\'background:${bg}\\'>${ini}</div>'">`;
   } else {
     heroHtml = `<div class="hero-placeholder" style="background:${bg}">${ini}</div>`;
@@ -291,28 +332,31 @@ function render(org) {
       <div class="section-body">${esc(org.description)}</div>
     </div>` : '';
 
-  // Programs
-  const programs = org.programs || [];
+  // Programs — filtered from garbage
+  const programs = cleanPrograms(org.programs);
   const progsHtml = programs.length ? `
     <div class="section">
       <div class="section-title">Программы и направления</div>
       <div class="programs-wrap">${programs.map(p=>`<span class="prog-tag">${esc(p)}</span>`).join('')}</div>
     </div>` : '';
 
-  // Skills
-  const skills = (org.skills || []).filter(s => s && s.length > 10 && s.length < 220);
+  // Skills — filtered from scraped FAQ/garbage
+  const skills = cleanSkills(org.skills);
   const skillsHtml = skills.length ? `
     <div class="section">
       <div class="section-title">Почему выбирают</div>
       <ul class="skills-list">${skills.slice(0,6).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
     </div>` : '';
 
-  // Gallery
-  const extra = photos.slice(1, 10);
-  const galleryHtml = extra.length ? `
+  // Gallery — all photos (hero is photos[0], gallery shows all for lightbox)
+  const allPhotos = org.photos || [];
+  const galleryExtra = allPhotos.slice(1, 9); // 2 extra after hero
+  const galleryClass = galleryExtra.length >= 3 ? 'gallery gallery-3' : 'gallery';
+  const galleryHtml = galleryExtra.length ? `
     <div class="section">
       <div class="section-title">Галерея</div>
-      <div class="gallery">${extra.map(p=>`<img src="${esc(p)}" loading="lazy" alt="">`).join('')}</div>
+      <div class="${galleryClass}">${galleryExtra.map((p,i)=>`<img src="${esc(p)}" loading="lazy" alt=""
+        onclick="openLightbox(${i+1})" onerror="this.closest('div').style.display='none'">`).join('')}</div>
     </div>` : '';
 
   // How it works
@@ -335,6 +379,9 @@ function render(org) {
       <div class="faq-item"><button class="faq-q">Как быстро ответит организация?<span class="faq-arrow">⌄</span></button><div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div></div>
       <div class="faq-item"><button class="faq-q">Можно ли отменить запись?<span class="faq-arrow">⌄</span></button><div class="faq-a">Условия отмены устанавливает каждая организация. Если занятия ещё не начались и оплата не прошла — как правило, всё решается без проблем.</div></div>
     </div>`;
+
+  // Store photos for lightbox navigation
+  window._orgPhotos = allPhotos;
 
   // Sidebar
   const trialCallout = org.has_trial ? `<div class="trial-callout"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#16A34A" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Есть пробное занятие</div>` : '';
@@ -421,7 +468,39 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
   finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
 });
 
+// ── Lightbox ──────────────────────────────────────────────────────────────
+let _lbPhotos = [], _lbIdx = 0;
+
+function openLightbox(idx) {
+  _lbPhotos = window._orgPhotos || [];
+  if (!_lbPhotos.length) return;
+  _lbIdx = idx;
+  document.getElementById('lbImg').src = _lbPhotos[_lbIdx];
+  document.getElementById('lightbox').classList.add('open');
+}
+
+function lbNav(dir) {
+  _lbIdx = (_lbIdx + dir + _lbPhotos.length) % _lbPhotos.length;
+  document.getElementById('lbImg').src = _lbPhotos[_lbIdx];
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowLeft')  lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+  if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('open');
+});
+
 load();
 </script>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)this.classList.remove('open')">
+  <button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('open')">×</button>
+  <button class="lightbox-nav" id="lbPrev" onclick="lbNav(-1)">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox-nav" id="lbNext" onclick="lbNav(1)">›</button>
+</div>
+
 </body>
 </html>
