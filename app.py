@@ -358,6 +358,107 @@ def api_lead():
     return jsonify({'ok': True})
 
 
+# ─── ORGS DB ─────────────────────────────────────────────────────────────────
+
+ORGS_DB   = os.path.join(os.path.dirname(__file__), 'orgs.db')
+ORGS_JSON = os.path.join(os.path.dirname(__file__), 'top250_cards.json')
+
+def init_orgs_db():
+    if os.path.exists(ORGS_DB):
+        return
+    if not os.path.exists(ORGS_JSON):
+        print('WARNING: top250_cards.json not found, orgs DB skipped')
+        return
+    print('Initializing orgs database...')
+    with open(ORGS_JSON, encoding='utf-8') as f:
+        cards = json.load(f)
+    conn = sqlite3.connect(ORGS_DB)
+    conn.execute('''CREATE TABLE IF NOT EXISTS organizations (
+        id INTEGER PRIMARY KEY, name TEXT, category TEXT, subcategory TEXT,
+        address TEXT, metro TEXT, district TEXT,
+        photos TEXT, photo_count INTEGER, programs TEXT, skills TEXT,
+        age_range TEXT, price TEXT, price_type TEXT, description TEXT,
+        schedule TEXT, group_size TEXT, duration TEXT,
+        phone TEXT, website TEXT, vk TEXT,
+        rating REAL, reviews_count INTEGER, has_trial INTEGER, data_quality INTEGER
+    )''')
+    for c in cards:
+        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+            c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
+            c.get('address',''), c.get('metro',''), c.get('district',''),
+            json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
+            json.dumps(c.get('programs',[]), ensure_ascii=False),
+            json.dumps(c.get('skills',[]), ensure_ascii=False),
+            c.get('age_range',''), c.get('price',''), c.get('price_type',''),
+            c.get('description',''), c.get('schedule',''), c.get('group_size',''),
+            c.get('duration',''), c.get('phone',''), c.get('website',''), c.get('vk',''),
+            c.get('rating',0) or 0, c.get('reviews_count',0) or 0,
+            1 if c.get('has_trial') else 0, c.get('data_quality',0) or 0,
+        ))
+    conn.commit()
+    conn.close()
+    print(f'Orgs DB ready: {len(cards)} organizations')
+
+def _orgs_conn():
+    conn = sqlite3.connect(ORGS_DB)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+def _parse_list(val):
+    try: return json.loads(val) if val else []
+    except: return []
+
+def _org_dict(row):
+    d = dict(row)
+    d['photos']   = _parse_list(d.get('photos'))
+    d['programs'] = _parse_list(d.get('programs'))
+    d['skills']   = _parse_list(d.get('skills'))
+    d['has_trial'] = bool(d.get('has_trial'))
+    return d
+
+# ─── ORGS API ─────────────────────────────────────────────────────────────────
+
+@app.route('/api/orgs')
+def api_orgs():
+    if not os.path.exists(ORGS_DB): return jsonify({'total':0,'items':[]})
+    conn = _orgs_conn()
+    category  = request.args.get('category','')
+    metro     = request.args.get('metro','')
+    has_trial = request.args.get('has_trial','')
+    q         = request.args.get('q','')
+    limit     = min(int(request.args.get('limit',50)), 200)
+    offset    = int(request.args.get('offset',0))
+    conds, params = [], []
+    if category:       conds.append('category=?');  params.append(category)
+    if metro:          conds.append('metro=?');      params.append(metro)
+    if has_trial=='1': conds.append('has_trial=1')
+    if q:
+        conds.append('(name LIKE ? OR description LIKE ? OR programs LIKE ?)')
+        params += [f'%{q}%']*3
+    where = ('WHERE ' + ' AND '.join(conds)) if conds else ''
+    total = conn.execute(f'SELECT COUNT(*) FROM organizations {where}', params).fetchone()[0]
+    rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC LIMIT ? OFFSET ?', params+[limit,offset]).fetchall()
+    conn.close()
+    return jsonify({'total': total, 'items': [_org_dict(r) for r in rows]})
+
+@app.route('/api/orgs/<int:org_id>')
+def api_org(org_id):
+    if not os.path.exists(ORGS_DB): return jsonify({'error':'not found'}), 404
+    conn = _orgs_conn()
+    row = conn.execute('SELECT * FROM organizations WHERE id=?', (org_id,)).fetchone()
+    conn.close()
+    if not row: return jsonify({'error':'not found'}), 404
+    return jsonify(_org_dict(row))
+
+@app.route('/api/orgs-meta')
+def api_orgs_meta():
+    if not os.path.exists(ORGS_DB): return jsonify({'categories':[],'metros':[]})
+    conn = _orgs_conn()
+    cats   = [r[0] for r in conn.execute("SELECT DISTINCT category FROM organizations WHERE category!='' ORDER BY category").fetchall()]
+    metros = [r[0] for r in conn.execute("SELECT DISTINCT metro FROM organizations WHERE metro!='' ORDER BY metro").fetchall()]
+    conn.close()
+    return jsonify({'categories': cats, 'metros': metros})
+
 # ─── STATIC FILES ────────────────────────────────────────────────────────────
 
 @app.route('/')
@@ -370,6 +471,16 @@ def camp_page(camp_id):
     return send_from_directory('static', 'camp.html')
 
 
+@app.route('/orgs')
+def orgs_page():
+    return send_from_directory('static', 'orgs.html')
+
+
+@app.route('/org/<int:org_id>')
+def org_page(org_id):
+    return send_from_directory('static', 'org.html')
+
+
 @app.route('/static/<path:filename>')
 def static_files(filename):
     return send_from_directory('static', filename)
@@ -379,5 +490,6 @@ def static_files(filename):
 
 if __name__ == '__main__':
     init_db()
+    init_orgs_db()
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port, debug=False)
