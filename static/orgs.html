@@ -45,6 +45,7 @@
       <div class="cat-pills" id="catPills">
         <div class="cat-pill active" data-cat="" onclick="setCat(this, '')">Все направления</div>
       </div>
+      <div class="sub-pills" id="subPills"></div>
     </div>
 
     <div class="filter-group">
@@ -102,6 +103,61 @@
   </main>
 </div>
 
+<style>
+.sub-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 6px;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.28s ease, opacity 0.22s ease, margin-top 0.22s ease;
+}
+.sub-pills.open {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 8px;
+}
+.sub-pill {
+  padding: 6px 10px 6px 20px;
+  border-radius: 7px;
+  font-size: 13px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all .15s;
+  position: relative;
+  background: transparent;
+}
+.sub-pill::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted);
+  opacity: 0.5;
+  transition: background .15s;
+}
+.sub-pill:hover {
+  background: var(--bg3);
+  color: var(--text);
+}
+.sub-pill:hover::before { opacity: 1; }
+.sub-pill.active {
+  background: var(--clr-primary-glow);
+  color: var(--clr-primary-d);
+  font-weight: 600;
+}
+.sub-pill.active::before {
+  background: var(--clr-primary);
+  opacity: 1;
+}
+</style>
+
 <script>
 const CAT_BG = {
   'IT':         'linear-gradient(135deg,#EEF2FF,#C7D2FE)',
@@ -115,8 +171,41 @@ function initials(name) {
   return (name || '').split(/[\s«»""]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
 }
 
+// ── Subcategory map ──────────────────────────────────────────────────────────
+const SUB_PILLS = {
+  'IT': [
+    { label: 'Программирование', val: 'школа программирования для детей' },
+    { label: 'Робототехника',    val: 'робототехника для детей' },
+    { label: 'Арифметика',       val: 'ментальная арифметика дети' },
+    { label: 'IT-школы',         val: 'IT школа для детей' },
+    { label: 'STEM',             val: 'STEM образование детский центр' },
+  ],
+  'развитие': [
+    { label: 'Шахматы',           val: 'шахматная школа для детей' },
+    { label: 'Подготовка к школе',val: 'подготовка к школе частная' },
+    { label: 'Логопед',           val: 'логопед детский центр частный' },
+    { label: 'Репетиторы',        val: 'репетитор для детей центр' },
+  ],
+  'спорт': [
+    { label: 'Гимнастика',    val: 'гимнастика для детей студия' },
+    { label: 'Плавание',      val: 'детская секция бассейн частный' },
+    { label: 'Единоборства',  val: 'единоборства для детей секция' },
+  ],
+  'творчество': [
+    { label: 'Музыка',     val: 'частная музыкальная школа для детей' },
+    { label: 'Танцы',      val: 'танцевальная студия для детей' },
+    { label: 'Рисование',  val: 'детская художественная студия' },
+    { label: 'Вокал',      val: 'вокальная студия для детей' },
+    { label: 'Театр',      val: 'театральная студия для детей' },
+  ],
+  'языки': [
+    { label: 'Английский',     val: 'курсы английского для детей' },
+    { label: 'Языковые школы', val: 'языковая школа для детей' },
+  ],
+};
+
 let state = {
-  category: '', metro: '', age: '', price_max: '',
+  category: '', subcategory: '', metro: '', age: '', price_max: '',
   has_trial: false, q: '',
   offset: 0, limit: 24, total: 0, loading: false
 };
@@ -174,9 +263,40 @@ function buildMetroSelect(metros) {
 
 function setCat(el, cat) {
   state.category = cat;
+  state.subcategory = '';
   state.offset = 0;
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   el.classList.add('active');
+  renderSubPills(cat);
+  fetchOrgs(false);
+}
+
+function renderSubPills(cat) {
+  const container = document.getElementById('subPills');
+  const subs = SUB_PILLS[cat] || [];
+  if (!subs.length) {
+    container.innerHTML = '';
+    container.classList.remove('open');
+    return;
+  }
+  container.innerHTML = subs.map(s =>
+    `<div class="sub-pill" data-val="${s.val}" onclick="setSub(this,'${s.val}')">${s.label}</div>`
+  ).join('');
+  // tiny delay so transition animates
+  requestAnimationFrame(() => container.classList.add('open'));
+}
+
+function setSub(el, val) {
+  const isActive = el.classList.contains('active');
+  document.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('active'));
+  if (isActive) {
+    // toggle off
+    state.subcategory = '';
+  } else {
+    el.classList.add('active');
+    state.subcategory = val;
+  }
+  state.offset = 0;
   fetchOrgs(false);
 }
 
@@ -196,7 +316,7 @@ function toggleTrial() {
 }
 
 function resetFilters() {
-  state = { ...state, category: '', metro: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
+  state = { ...state, category: '', subcategory: '', metro: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
   document.getElementById('searchInput').value = '';
   document.getElementById('metroFilter').value = '';
   document.getElementById('ageFilter').value = '';
@@ -204,6 +324,9 @@ function resetFilters() {
   document.getElementById('trialToggle').classList.remove('on');
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
+  const subPills = document.getElementById('subPills');
+  subPills.innerHTML = '';
+  subPills.classList.remove('open');
   fetchOrgs(false);
 }
 
@@ -236,11 +359,12 @@ async function fetchOrgs(append = false) {
     state.total = data.items.length + state.offset;
   } else {
     const p = new URLSearchParams();
-    if (state.category)  p.set('category', state.category);
-    if (state.metro)     p.set('metro', state.metro);
-    if (state.age)       p.set('age', state.age);
-    if (state.price_max) p.set('price_max', state.price_max);
-    if (state.has_trial) p.set('has_trial', '1');
+    if (state.category)    p.set('category', state.category);
+    if (state.subcategory) p.set('subcategory', state.subcategory);
+    if (state.metro)       p.set('metro', state.metro);
+    if (state.age)         p.set('age', state.age);
+    if (state.price_max)   p.set('price_max', state.price_max);
+    if (state.has_trial)   p.set('has_trial', '1');
     p.set('limit', state.limit);
     p.set('offset', state.offset);
     data = await fetch('/api/orgs?' + p).then(r => r.json());
