@@ -503,6 +503,11 @@ def index():
     return send_from_directory('static', 'index.html')
 
 
+@app.route('/camps')
+def camps_page():
+    return send_from_directory('static', 'camps.html')
+
+
 @app.route('/camp/<camp_id>')
 def camp_page(camp_id):
     return send_from_directory('static', 'camp.html')
