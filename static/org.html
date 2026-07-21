@@ -251,29 +251,52 @@ async function load() {
   }
 }
 
-// ── Garbage filter for scraped programs ───────────────────────────────────
+// ── Garbage filters for scraped data ──────────────────────────────────────
 function cleanPrograms(list) {
-  const BAD = /реклам|конфиденциальн|настройк|выбери|privacy|cookie|ваше имя|справочный|для компаний|оценивать|персонализир|управлени|перейти|узнать больше|g\.co\//i;
+  const BAD = /реклам|конфиденциальн|настройк|выбери|privacy|cookie|ваше имя|справочный|для компаний|оценивать|персонализир|управлени|перейти|узнать больше|g\.co\/|функции|звонки|каналы|whatsapp|meta\s?ai|безопасност|обмен сообщ|\bfaq\b|отзывы|\bблог\b|тренеры|документы|о клубе|сведения|для взрослых|корпоратив|расписани/i;
+  // Generic nav words / facility/service terms — never educational program names
+  const NAV_SINGLE = /^(направления|команды|о занятиях|акции|партнеры|контакты|о нас|главная|галерея|новости|тренеры|блог|отзывы|документы|сведения|преподаватели|медиа|услуги|портфолио|оплата|прокат|инструкторы|роллердром|вопрос-ответ|бассейн|секции|изучите)$/i;
+
   return (list || []).filter(p => {
     if (!p) return false;
     const s = String(p).trim();
-    if (s.length < 3 || s.length > 80) return false;
-    if (s.endsWith('*') || s.endsWith('.')) return false;
+    if (s.length < 4 || s.length > 50) return false;
+    if (/[!*;:]$/.test(s)) return false;               // promo / semicolons
+    if (s.endsWith('?')) return false;                   // FAQ questions
+    if (s.charCodeAt(0) > 9999) return false;           // starts with emoji
+    if (/^\d[\d,.\s]*[–—\-]\s*\d+\s*(год|лет)/i.test(s)) return false; // age ranges
+    if (/^от\s+\d+\s+лет/i.test(s)) return false;
+    if (/^для\s+/i.test(s)) return false;               // "Для мам...", "Для детей..."
+    if (/^(стоимость|оплата|цена)\s/i.test(s)) return false; // pricing
+    if (/^О\s+\S+$/i.test(s)) return false;             // "О комплексе", "О нас"
+    if (/^[А-ЯA-Z]+$/.test(s)) return false;            // ALL CAPS single word
     if (BAD.test(s)) return false;
-    // Catch concatenated nav text like "ФункцииЗвонкиОбмен"
-    if (/[а-яa-z][А-ЯA-Z]/.test(s)) return false;
+    if (NAV_SINGLE.test(s.split(/\s+/)[0])) return false; // starts with nav word
+    if (/[а-яa-z][А-ЯA-Z]/.test(s)) return false;      // concatenated CamelCase
+    // Nav menu dumps: 3+ words all starting with Cyrillic capital
+    const capWords = s.split(/\s+/).filter(w => /^[А-Я]/.test(w));
+    if (capWords.length >= 3) return false;
     return true;
   });
 }
 
 function cleanSkills(list) {
-  const BAD = /реклам|конфиденциальн|настройк|частые вопрос|ваше имя|управлени|privacy/i;
+  const BAD = /реклам|конфиденциальн|настройк|частые вопрос|ваше имя|управлени|privacy|узнать больше/i;
   return (list || []).filter(s => {
-    if (!s || s.length < 12 || s.length > 220) return false;
-    if (s.includes('?')) return false; // FAQ questions scraped from sites
+    if (!s || s.length < 12 || s.length > 180) return false;
+    if (s.includes('?')) return false;
+    if (/[!*]$/.test(s)) return false;
     if (BAD.test(s)) return false;
     return true;
   });
+}
+
+// Filter out zero/empty fact values
+function isValidFact(v) {
+  if (!v) return false;
+  const s = String(v).trim();
+  if (!s || s === '0' || s === '0 ч' || s === '0ч' || s === '-') return false;
+  return true;
 }
 
 function render(org) {
@@ -308,14 +331,14 @@ function render(org) {
     org.has_trial   && `<span class="badge badge-trial">Пробное занятие</span>`,
   ].filter(Boolean).join('');
 
-  // Key facts
+  // Key facts — skip zero/empty values
   const facts = [
-    org.price      && { l:'Стоимость',    v: org.price },
-    org.age_range  && { l:'Возраст',      v: org.age_range },
-    org.group_size && { l:'Размер группы',v: org.group_size },
-    org.duration   && { l:'Длительность', v: org.duration },
-    org.schedule   && { l:'Расписание',   v: org.schedule },
-    org.district   && { l:'Район',        v: org.district },
+    isValidFact(org.price)      && { l:'Стоимость',    v: org.price },
+    isValidFact(org.age_range)  && { l:'Возраст',      v: org.age_range },
+    isValidFact(org.group_size) && { l:'Размер группы',v: org.group_size },
+    isValidFact(org.duration)   && { l:'Длительность', v: org.duration },
+    isValidFact(org.schedule)   && { l:'Расписание',   v: org.schedule },
+    isValidFact(org.district)   && { l:'Район',        v: org.district },
   ].filter(Boolean);
   const factsHtml = facts.length ? `
     <div class="section">
