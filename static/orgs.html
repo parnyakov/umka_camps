@@ -45,7 +45,6 @@
       <div class="cat-pills" id="catPills">
         <div class="cat-pill active" data-cat="" onclick="setCat(this, '')">Все направления</div>
       </div>
-      <div class="sub-pills" id="subPills"></div>
     </div>
 
     <div class="filter-group">
@@ -104,57 +103,40 @@
 </div>
 
 <style>
-.sub-pills {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-top: 6px;
-  overflow: hidden;
-  max-height: 0;
+.sub-popover {
+  position: fixed;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 8px 28px rgba(80,120,200,0.16);
+  z-index: 300;
+  min-width: 190px;
   opacity: 0;
-  transition: max-height 0.28s ease, opacity 0.22s ease, margin-top 0.22s ease;
+  transform: translateX(-6px);
+  transition: opacity 0.16s ease, transform 0.16s ease;
+  pointer-events: none;
 }
-.sub-pills.open {
-  max-height: 400px;
+.sub-popover.open {
   opacity: 1;
-  margin-top: 8px;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 .sub-pill {
-  padding: 6px 10px 6px 20px;
-  border-radius: 7px;
+  display: block;
+  padding: 8px 14px;
+  border-radius: 8px;
   font-size: 13px;
   cursor: pointer;
-  color: var(--muted);
-  transition: all .15s;
-  position: relative;
-  background: transparent;
+  color: var(--text2);
+  transition: all .12s;
+  white-space: nowrap;
 }
-.sub-pill::before {
-  content: '';
-  position: absolute;
-  left: 9px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--muted);
-  opacity: 0.5;
-  transition: background .15s;
-}
-.sub-pill:hover {
-  background: var(--bg3);
-  color: var(--text);
-}
-.sub-pill:hover::before { opacity: 1; }
+.sub-pill:hover { background: var(--bg3); color: var(--text); }
 .sub-pill.active {
   background: var(--clr-primary-glow);
   color: var(--clr-primary-d);
   font-weight: 600;
-}
-.sub-pill.active::before {
-  background: var(--clr-primary);
-  opacity: 1;
 }
 </style>
 
@@ -262,43 +244,62 @@ function buildMetroSelect(metros) {
 }
 
 function setCat(el, cat) {
+  // If clicking the already-active category — just close popover and deselect
+  if (state.category === cat && cat !== '') {
+    state.category = '';
+    state.subcategory = '';
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
+    closeSubPopover();
+    fetchOrgs(false);
+    return;
+  }
   state.category = cat;
   state.subcategory = '';
   state.offset = 0;
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   el.classList.add('active');
-  renderSubPills(cat);
+  renderSubPopover(cat, el);
   fetchOrgs(false);
 }
 
-function renderSubPills(cat) {
-  const container = document.getElementById('subPills');
+function renderSubPopover(cat, anchorEl) {
+  const pop = document.getElementById('subPopover');
   const subs = SUB_PILLS[cat] || [];
-  if (!subs.length) {
-    container.innerHTML = '';
-    container.classList.remove('open');
-    return;
-  }
-  container.innerHTML = subs.map(s =>
+  if (!subs.length) { closeSubPopover(); return; }
+
+  pop.innerHTML = subs.map(s =>
     `<div class="sub-pill" data-val="${s.val}" onclick="setSub(this,'${s.val}')">${s.label}</div>`
   ).join('');
-  // tiny delay so transition animates
-  requestAnimationFrame(() => container.classList.add('open'));
+
+  // Position to the right of the anchor pill
+  const rect = anchorEl.getBoundingClientRect();
+  pop.style.top  = (rect.top - 4) + 'px';
+  pop.style.left = (rect.right + 10) + 'px';
+
+  pop.classList.remove('open');
+  requestAnimationFrame(() => pop.classList.add('open'));
+}
+
+function closeSubPopover() {
+  document.getElementById('subPopover').classList.remove('open');
 }
 
 function setSub(el, val) {
   const isActive = el.classList.contains('active');
   document.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('active'));
-  if (isActive) {
-    // toggle off
-    state.subcategory = '';
-  } else {
-    el.classList.add('active');
-    state.subcategory = val;
-  }
+  state.subcategory = isActive ? '' : val;
+  if (!isActive) el.classList.add('active');
   state.offset = 0;
   fetchOrgs(false);
 }
+
+// Close popover when clicking outside
+document.addEventListener('click', e => {
+  if (!e.target.closest('.cat-pill') && !e.target.closest('#subPopover')) {
+    closeSubPopover();
+  }
+}, true);
 
 function applyFilters() {
   state.metro    = document.getElementById('metroFilter').value;
@@ -324,9 +325,7 @@ function resetFilters() {
   document.getElementById('trialToggle').classList.remove('on');
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
-  const subPills = document.getElementById('subPills');
-  subPills.innerHTML = '';
-  subPills.classList.remove('open');
+  closeSubPopover();
   fetchOrgs(false);
 }
 
@@ -452,6 +451,8 @@ if (window.innerWidth <= 768) {
 
 init();
 </script>
+
+<div id="subPopover" class="sub-popover"></div>
 
 </body>
 </html>
