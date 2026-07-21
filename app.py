@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import sqlite3
 import requests
@@ -399,6 +400,26 @@ def init_orgs_db():
     conn.close()
     print(f'Orgs DB ready: {len(cards)} organizations')
 
+def _price_lte(price_str, max_val):
+    """Return True if first number in price_str <= max_val (or no number found)."""
+    if not price_str: return True
+    m = re.search(r'(\d[\d\s]*)', price_str)
+    if not m: return True
+    return int(m.group(1).replace(' ', '')) <= max_val
+
+def _age_includes(age_str, target):
+    """Return True if target age falls within age_str range."""
+    if not age_str: return True
+    m = re.search(r'(\d+)\s*[-–]\s*(\d+)', age_str)
+    if m: return int(m.group(1)) <= target <= int(m.group(2))
+    m = re.search(r'(\d+)\s*\+', age_str)
+    if m: return target >= int(m.group(1))
+    m = re.search(r'от\s*(\d+)', age_str)
+    if m: return target >= int(m.group(1))
+    m = re.search(r'(\d+)', age_str)
+    if m: return int(m.group(1)) <= target
+    return True
+
 def _orgs_conn():
     conn = sqlite3.connect(ORGS_DB)
     conn.row_factory = sqlite3.Row
@@ -426,8 +447,11 @@ def api_orgs():
     metro     = request.args.get('metro','')
     has_trial = request.args.get('has_trial','')
     q         = request.args.get('q','')
+    age       = request.args.get('age', type=int)
+    price_max = request.args.get('price_max', type=int)
     limit     = min(int(request.args.get('limit',50)), 200)
     offset    = int(request.args.get('offset',0))
+
     conds, params = [], []
     if category:       conds.append('category=?');  params.append(category)
     if metro:          conds.append('metro=?');      params.append(metro)
@@ -436,10 +460,23 @@ def api_orgs():
         conds.append('(name LIKE ? OR description LIKE ? OR programs LIKE ?)')
         params += [f'%{q}%']*3
     where = ('WHERE ' + ' AND '.join(conds)) if conds else ''
-    total = conn.execute(f'SELECT COUNT(*) FROM organizations {where}', params).fetchone()[0]
-    rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC LIMIT ? OFFSET ?', params+[limit,offset]).fetchall()
-    conn.close()
-    return jsonify({'total': total, 'items': [_org_dict(r) for r in rows]})
+
+    # Age and price need Python-side filtering (stored as text)
+    if age or price_max:
+        rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC', params).fetchall()
+        conn.close()
+        items = [_org_dict(r) for r in rows]
+        if age:       items = [o for o in items if _age_includes(o.get('age_range',''), age)]
+        if price_max: items = [o for o in items if _price_lte(o.get('price',''), price_max)]
+        total = len(items)
+        items = items[offset:offset+limit]
+    else:
+        total = conn.execute(f'SELECT COUNT(*) FROM organizations {where}', params).fetchone()[0]
+        rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC LIMIT ? OFFSET ?', params+[limit,offset]).fetchall()
+        conn.close()
+        items = [_org_dict(r) for r in rows]
+
+    return jsonify({'total': total, 'items': items})
 
 @app.route('/api/orgs/<int:org_id>')
 def api_org(org_id):
