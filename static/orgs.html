@@ -493,5 +493,152 @@ init();
 
 <div id="subPopover" class="sub-popover"></div>
 
+<!-- ── Floating buttons ─────────────────────────────────────────────────── -->
+<div style="
+  position: fixed; bottom: 28px; right: 28px;
+  display: flex; flex-direction: column; gap: 10px; z-index: 200;
+">
+  <button onclick="openQA()" style="
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 24px;
+    background: rgba(255,255,255,0.95); border: 1.5px solid var(--border);
+    box-shadow: 0 4px 16px rgba(80,120,200,0.14);
+    font-size: 13px; font-weight: 600; color: var(--text2);
+    cursor: pointer; font-family: inherit; transition: all .15s;
+    backdrop-filter: blur(8px);
+  " onmouseover="this.style.borderColor='var(--clr-primary)';this.style.color='var(--clr-primary)'"
+     onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text2)'">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r=".5" fill="currentColor"/></svg>
+    Частые вопросы
+  </button>
+  <button onclick="openContact()" style="
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 24px;
+    background: var(--clr-primary); border: none;
+    box-shadow: 0 4px 16px rgba(61,201,193,0.30);
+    font-size: 13px; font-weight: 600; color: white;
+    cursor: pointer; font-family: inherit; transition: all .15s;
+  " onmouseover="this.style.background='var(--clr-primary-d)'"
+     onmouseout="this.style.background='var(--clr-primary)'">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Связаться
+  </button>
+</div>
+
+<!-- ── Q&A Modal ────────────────────────────────────────────────────────── -->
+<div id="qaOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(30,50,100,.4);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:white;border-radius:18px;padding:28px;width:100%;max-width:480px;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(30,60,150,.15)">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+      <div style="font-size:18px;font-weight:700;color:var(--text)">Частые вопросы</div>
+      <button onclick="document.getElementById('qaOverlay').style.display='none'" style="background:var(--bg3);border:none;color:var(--text2);font-size:18px;cursor:pointer;padding:6px 9px;border-radius:8px">×</button>
+    </div>
+    <div id="qaList"></div>
+  </div>
+</div>
+
+<!-- ── Contact Modal ────────────────────────────────────────────────────── -->
+<div id="contactOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(30,50,100,.4);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:white;border-radius:18px;padding:28px;width:100%;max-width:420px;box-shadow:0 20px 60px rgba(30,60,150,.15)">
+    <div id="contactForm">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px">
+        <div style="font-size:18px;font-weight:700;color:var(--text)">Написать нам</div>
+        <button onclick="document.getElementById('contactOverlay').style.display='none'" style="background:var(--bg3);border:none;color:var(--text2);font-size:18px;cursor:pointer;padding:6px 9px;border-radius:8px">×</button>
+      </div>
+      <div style="font-size:13px;color:var(--muted);margin-bottom:20px">Ответим в течение нескольких часов</div>
+      <div style="margin-bottom:12px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px">Имя *</label>
+        <input id="cName" type="text" placeholder="Иван Иванов" style="width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;font-size:14px;outline:none;color:var(--text);font-family:inherit">
+      </div>
+      <div style="margin-bottom:12px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px">Телефон или Telegram *</label>
+        <input id="cPhone" type="text" placeholder="+7 900 000 00 00 или @username" style="width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;font-size:14px;outline:none;color:var(--text);font-family:inherit">
+      </div>
+      <div style="margin-bottom:16px">
+        <label style="display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px">Сообщение *</label>
+        <textarea id="cMessage" placeholder="Вопрос, предложение или обратная связь..." style="width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;font-size:14px;outline:none;resize:none;height:90px;color:var(--text);font-family:inherit"></textarea>
+      </div>
+      <button id="cSubmit" onclick="submitContact()" style="width:100%;padding:13px;background:var(--clr-primary);border:none;border-radius:10px;color:white;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit">Отправить</button>
+    </div>
+    <div id="contactSuccess" style="display:none;text-align:center;padding:20px 0">
+      <div style="font-size:48px;margin-bottom:12px">✅</div>
+      <div style="font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text)">Отправлено!</div>
+      <div style="font-size:14px;color:var(--muted)">Ответим в течение нескольких часов</div>
+    </div>
+  </div>
+</div>
+
+<style>
+#qaOverlay.open, #contactOverlay.open { display: flex !important; }
+.qa-item { border: 1px solid var(--border); border-radius: 12px; background: var(--bg2); margin-bottom: 8px; overflow: hidden; }
+.qa-q { width:100%;text-align:left;padding:13px 16px;background:none;border:none;cursor:pointer;font-size:13px;font-weight:600;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:inherit; }
+.qa-q:hover { color: var(--clr-primary); }
+.qa-arrow { font-size:16px;color:var(--muted);transition:transform .2s;flex-shrink:0; }
+.qa-item.open .qa-arrow { transform:rotate(180deg);color:var(--clr-primary); }
+.qa-a { max-height:0;overflow:hidden;transition:max-height .25s ease,padding .2s;font-size:13px;color:var(--text2);line-height:1.65;padding:0 16px; }
+.qa-item.open .qa-a { max-height:200px;padding:0 16px 14px; }
+</style>
+
+<script>
+const QA_ITEMS = [
+  { q: 'Бесплатно ли пользоваться каталогом?', a: 'Да, UMKA HUB полностью бесплатен для родителей. Вы выбираете организацию и записываетесь напрямую по официальным ценам без наценок и скрытых комиссий.' },
+  { q: 'Как записать ребёнка в кружок?', a: 'Откройте страницу интересующей организации и нажмите «Записаться на занятие». Мы передадим заявку, и организация свяжется с вами в течение нескольких часов.' },
+  { q: 'Как быстро мне ответят?', a: 'Обычно в течение нескольких часов в рабочее время. Если организация не вышла на связь больше суток — напишите нам через кнопку «Связаться».' },
+  { q: 'Есть ли пробные занятия?', a: 'У многих организаций есть пробное занятие — смотрите значок «Пробное занятие» на карточке. Уточняйте детали при записи.' },
+  { q: 'Как добавить свою организацию?', a: 'Напишите нам через кнопку «Связаться» с названием и контактами — разместим в каталоге.' },
+];
+
+function openQA() {
+  const list = document.getElementById('qaList');
+  list.innerHTML = QA_ITEMS.map((item, i) => `
+    <div class="qa-item">
+      <button class="qa-q" onclick="toggleQA(${i})">
+        ${item.q}<span class="qa-arrow">⌄</span>
+      </button>
+      <div class="qa-a">${item.a}</div>
+    </div>`).join('');
+  document.getElementById('qaOverlay').classList.add('open');
+}
+
+function toggleQA(i) {
+  const items = document.querySelectorAll('.qa-item');
+  const isOpen = items[i].classList.contains('open');
+  items.forEach(el => el.classList.remove('open'));
+  if (!isOpen) items[i].classList.add('open');
+}
+
+document.getElementById('qaOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('qaOverlay')) e.target.classList.remove('open');
+});
+
+function openContact() {
+  document.getElementById('contactForm').style.display = 'block';
+  document.getElementById('contactSuccess').style.display = 'none';
+  ['cName','cPhone','cMessage'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('contactOverlay').classList.add('open');
+}
+
+document.getElementById('contactOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('contactOverlay')) e.target.classList.remove('open');
+});
+
+async function submitContact() {
+  const name = document.getElementById('cName').value.trim();
+  const phone = document.getElementById('cPhone').value.trim();
+  const msg = document.getElementById('cMessage').value.trim();
+  if (!name || !phone || !msg) { alert('Заполните все поля'); return; }
+  const btn = document.getElementById('cSubmit');
+  btn.disabled = true; btn.textContent = 'Отправляем...';
+  try {
+    await fetch('/api/lead', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ org_name: 'UMKA HUB — Обратная связь', parent_name: name, phone, comment: msg })
+    });
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('contactSuccess').style.display = 'block';
+  } catch { alert('Ошибка сети'); }
+  finally { btn.disabled = false; btn.textContent = 'Отправить'; }
+}
+</script>
+
 </body>
 </html>
