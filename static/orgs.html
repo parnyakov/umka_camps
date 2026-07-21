@@ -263,14 +263,23 @@ function setCat(el, cat) {
   fetchOrgs(false);
 }
 
+const CAT_LABELS = {
+  'IT': 'IT', 'развитие': 'развитию', 'спорт': 'спорту',
+  'творчество': 'творчеству', 'языки': 'языкам'
+};
+
 function renderSubPopover(cat, anchorEl) {
   const pop = document.getElementById('subPopover');
   const subs = SUB_PILLS[cat] || [];
   if (!subs.length) { closeSubPopover(); return; }
 
-  pop.innerHTML = subs.map(s =>
-    `<div class="sub-pill" data-val="${s.val}" onclick="setSub(this,'${s.val}')">${s.label}</div>`
-  ).join('');
+  const allLabel = 'Все по ' + (CAT_LABELS[cat] || cat);
+  pop.innerHTML =
+    `<div class="sub-pill sub-pill-all active" onclick="setSub(this,'')">${allLabel}</div>` +
+    `<div style="height:1px;background:var(--border);margin:4px 2px"></div>` +
+    subs.map(s =>
+      `<div class="sub-pill" data-val="${s.val}" onclick="setSub(this,'${s.val}')">${s.label}</div>`
+    ).join('');
 
   // Position to the right of the anchor pill
   const rect = anchorEl.getBoundingClientRect();
@@ -286,11 +295,11 @@ function closeSubPopover() {
 }
 
 function setSub(el, val) {
-  const isActive = el.classList.contains('active');
   document.querySelectorAll('.sub-pill').forEach(p => p.classList.remove('active'));
-  state.subcategory = isActive ? '' : val;
-  if (!isActive) el.classList.add('active');
+  el.classList.add('active');
+  state.subcategory = val;
   state.offset = 0;
+  closeSubPopover();
   fetchOrgs(false);
 }
 
