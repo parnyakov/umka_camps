@@ -338,9 +338,6 @@ function render(org) {
 
   // Sidebar
   const trialCallout = org.has_trial ? `<div class="trial-callout"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#16A34A" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Есть пробное занятие</div>` : '';
-  const siteBtn  = org.website ? `<a href="${esc(org.website.split('?')[0])}" target="_blank" rel="noopener" class="btn-site">🌐 Сайт организации</a>` : '';
-  const phoneBtn = org.phone   ? `<a href="tel:${esc(org.phone)}" class="btn-phone">📞 ${esc(org.phone)}</a>` : '';
-
   document.getElementById('app').innerHTML = `
     <div class="hero">${heroHtml}</div>
     <div class="org-header">
@@ -363,8 +360,6 @@ function render(org) {
           <div class="price-value">${esc(org.price || 'Цена по запросу')}</div>
           ${trialCallout}
           <button class="btn-cta" id="btnCta">Записаться на занятие</button>
-          ${siteBtn}
-          ${phoneBtn}
           <div class="price-note">Свяжемся с вами в течение 2 часов</div>
         </div>
       </div>
