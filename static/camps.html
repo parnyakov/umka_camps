@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Летние лагеря — UMKA HUB</title>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110484022', 'ym');
+    ym(110484022, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/110484022" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F0F5FF;
+    --bg2: #FFFFFF;
+    --bg3: #E4EDFF;
+    --border: #C8D8EE;
+    --em: #3DC9C1;
+    --em-dark: #28B5AC;
+    --em-glow: rgba(61,201,193,0.12);
+    --text: #1A2B4A;
+    --text2: #4A6280;
+    --text3: #8A9CB8;
+    --radius: 14px;
+    --shadow: 0 4px 20px rgba(80,120,200,0.10);
+  }
+
+  body {
+    background: linear-gradient(150deg, #EDF3FF 0%, #F5F0FF 50%, #EFF6FF 100%);
+    background-attachment: fixed;
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    min-height: 100vh;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+    height: 62px;
+    display: flex; align-items: center; gap: 20px;
+    box-shadow: 0 2px 12px rgba(80,120,200,0.07);
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 9px;
+    font-size: 17px; font-weight: 800; color: var(--em);
+    white-space: nowrap; text-decoration: none; letter-spacing: -0.3px;
+  }
+  .nav-logo span { color: var(--text); }
+  .nav-logo svg { flex-shrink: 0; }
+  .search-wrap { flex: 1; max-width: 480px; position: relative; }
+  .search-wrap input {
+    width: 100%; padding: 9px 16px 9px 42px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .search-wrap input:focus { border-color: var(--em); box-shadow: 0 0 0 3px var(--em-glow); }
+  .search-wrap input::placeholder { color: var(--text3); }
+  .search-icon { position: absolute; left: 13px; top: 50%; transform: translateY(-50%); color: var(--text3); pointer-events: none; }
+  .nav-count { margin-left: auto; font-size: 13px; color: var(--text2); white-space: nowrap; background: var(--bg3); padding: 4px 12px; border-radius: 20px; }
+
+  /* LAYOUT */
+  .layout { display: flex; gap: 0; min-height: calc(100vh - 62px); }
+
+  /* SIDEBAR */
+  .sidebar {
+    width: 268px; flex-shrink: 0;
+    background: rgba(255,255,255,0.85);
+    border-right: 1px solid var(--border);
+    padding: 20px 16px;
+    overflow-y: auto;
+    position: sticky; top: 62px; height: calc(100vh - 62px);
+  }
+  .filter-title { font-size: 11px; font-weight: 700; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px; }
+  .filter-group { margin-bottom: 22px; }
+  .filter-group-label { font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 10px; display: block; }
+
+  .range-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .range-row input[type=number] {
+    width: 80px; padding: 6px 8px; background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 8px; color: var(--text);
+    font-size: 12px; outline: none;
+  }
+  .range-row input[type=number]:focus { border-color: var(--em); }
+  .range-sep { color: var(--text3); font-size: 12px; }
+
+  .check-item { display: flex; align-items: center; gap: 8px; padding: 5px 0; cursor: pointer; }
+  .check-item input[type=checkbox] { accent-color: var(--em); width: 14px; height: 14px; cursor: pointer; }
+  .check-item label { font-size: 13px; color: var(--text2); cursor: pointer; }
+  .check-item:hover label { color: var(--text); }
+
+  .radio-item { display: flex; align-items: center; gap: 8px; padding: 4px 0; cursor: pointer; }
+  .radio-item input[type=radio] { accent-color: var(--em); cursor: pointer; }
+  .radio-item label { font-size: 13px; color: var(--text2); cursor: pointer; }
+
+  .toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; }
+  .toggle-row span { font-size: 13px; color: var(--text2); }
+  .toggle { position: relative; width: 36px; height: 20px; }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle-track {
+    position: absolute; inset: 0; background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 20px; cursor: pointer; transition: 0.2s;
+  }
+  .toggle-track::after {
+    content: ''; position: absolute; top: 2px; left: 2px;
+    width: 14px; height: 14px; background: var(--text3);
+    border-radius: 50%; transition: 0.2s;
+  }
+  .toggle input:checked + .toggle-track { background: var(--em-glow); border-color: var(--em); }
+  .toggle input:checked + .toggle-track::after { transform: translateX(16px); background: var(--em); }
+
+  .star-select { display: flex; gap: 6px; flex-wrap: wrap; }
+  .star-btn {
+    padding: 5px 10px; background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text2); font-size: 12px; cursor: pointer; transition: 0.15s;
+  }
+  .star-btn:hover, .star-btn.active { background: var(--em-glow); border-color: var(--em); color: var(--em); }
+
+  .btn-apply {
+    width: 100%; padding: 10px; background: var(--em); border: none;
+    border-radius: 10px; color: white; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: background 0.2s; margin-top: 4px;
+  }
+  .btn-apply:hover { background: var(--em-dark); }
+  .btn-reset {
+    width: 100%; padding: 8px; background: transparent; border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text2); font-size: 12px; cursor: pointer;
+    transition: 0.2s; margin-top: 8px;
+  }
+  .btn-reset:hover { border-color: var(--text2); color: var(--text); }
+
+  /* MAIN */
+  .main { flex: 1; padding: 24px; min-width: 0; }
+
+  /* GRID */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 18px; }
+
+  /* CARD */
+  .card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    display: flex; flex-direction: column;
+    box-shadow: 0 2px 10px rgba(80,120,200,0.06);
+    cursor: pointer;
+  }
+  .card:hover { border-color: var(--em); transform: translateY(-3px); box-shadow: var(--shadow), 0 0 0 1px var(--em-glow); }
+  .card-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; background-color: var(--bg3); }
+  .card-photo-placeholder { width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, var(--bg3), var(--bg)); display: flex; align-items: center; justify-content: center; color: var(--text3); font-size: 32px; }
+  .card-body { padding: 14px; flex: 1; display: flex; flex-direction: column; gap: 8px; }
+  .card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .card-name { font-size: 15px; font-weight: 600; color: var(--text); line-height: 1.3; }
+  .card-rating { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+  .card-rating .star { color: #F59E0B; font-size: 13px; }
+  .card-rating .val { font-size: 13px; font-weight: 600; color: var(--text); }
+  .card-rating .cnt { font-size: 11px; color: var(--text3); }
+  .card-badges { display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge { padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid var(--border); color: var(--text2); background: var(--bg3); }
+  .badge-age { border-color: #BCD6F7; background: #EAF3FF; color: #2B72C8; }
+  .badge-pool { border-color: #B5E4EE; background: #E5F7FA; color: #1A92A8; }
+  .badge-cat { border-color: var(--border); background: var(--bg3); }
+  .card-desc { font-size: 12px; color: var(--text2); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .card-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid var(--border); }
+  .card-price { font-size: 16px; font-weight: 700; color: var(--em); }
+  .card-price small { font-size: 11px; font-weight: 400; color: var(--text3); }
+  .card-actions { display: flex; gap: 6px; }
+  .btn-detail {
+    padding: 6px 12px; background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text2); font-size: 12px; cursor: pointer;
+    text-decoration: none; transition: 0.15s;
+  }
+  .btn-detail:hover { border-color: var(--em); color: var(--em); background: var(--em-glow); }
+  .btn-book {
+    padding: 6px 12px; background: var(--em); border: none;
+    border-radius: 8px; color: white; font-size: 12px; font-weight: 600; cursor: pointer; transition: 0.15s;
+  }
+  .btn-book:hover { background: var(--em-dark); }
+
+  /* HOW IT WORKS */
+  .how-section { margin: 48px 0 0; }
+  .how-title, .faq-title {
+    font-size: 22px; font-weight: 800; color: var(--text);
+    margin-bottom: 20px; letter-spacing: -0.3px;
+  }
+  .how-steps {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  }
+  .how-step {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px 20px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .how-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: var(--em-glow); display: flex; align-items: center;
+    justify-content: center; font-size: 22px; flex-shrink: 0;
+  }
+  .how-step h3 { font-size: 15px; font-weight: 700; color: var(--text); }
+  .how-step p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+  /* FAQ */
+  .faq-section { margin: 40px 0 48px; }
+  .faq-item {
+    border: 1px solid var(--border); border-radius: var(--radius);
+    background: var(--bg2); margin-bottom: 8px; overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; text-align: left; padding: 16px 20px;
+    background: none; border: none; cursor: pointer;
+    font-size: 14px; font-weight: 600; color: var(--text);
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  }
+  .faq-q:hover { color: var(--em); }
+  .faq-arrow { font-size: 18px; color: var(--text3); transition: transform 0.2s; flex-shrink: 0; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); color: var(--em); }
+  .faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.28s ease, padding 0.2s;
+    font-size: 13px; color: var(--text2); line-height: 1.6;
+    padding: 0 20px;
+  }
+  .faq-item.open .faq-a { max-height: 200px; padding: 0 20px 16px; }
+
+  @media (max-width: 768px) {
+    .how-steps { grid-template-columns: 1fr; }
+  }
+
+  /* LOAD MORE */
+  .load-more-wrap { text-align: center; padding: 32px 0; }
+  .btn-load-more {
+    padding: 12px 32px; background: white; border: 1.5px solid var(--em);
+    border-radius: 10px; color: var(--em); font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s;
+  }
+  .btn-load-more:hover { background: var(--em-glow); }
+  .btn-load-more:disabled { opacity: 0.4; cursor: default; }
+
+  .empty { text-align: center; padding: 80px 20px; color: var(--text2); }
+  .empty h3 { font-size: 18px; margin-bottom: 8px; color: var(--text); }
+  .skeleton { background: linear-gradient(90deg, var(--bg3) 25%, var(--bg2) 50%, var(--bg3) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; }
+  @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(30,50,100,0.45); backdrop-filter: blur(6px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { display: flex; }
+  .modal {
+    background: white; border: 1px solid var(--border);
+    border-radius: 18px; padding: 28px; width: 100%; max-width: 440px;
+    box-shadow: 0 20px 60px rgba(30,60,150,0.15); animation: slideUp 0.2s ease;
+  }
+  @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .modal-title { font-size: 18px; font-weight: 700; color: var(--text); }
+  .modal-close { background: var(--bg3); border: none; color: var(--text2); font-size: 18px; cursor: pointer; line-height: 1; padding: 6px 9px; border-radius: 8px; }
+  .modal-close:hover { background: var(--border); color: var(--text); }
+  .modal-camp-name { font-size: 13px; color: var(--em); margin-bottom: 20px; font-weight: 500; }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 6px; font-weight: 600; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%; padding: 10px 12px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s; font-family: inherit;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--em); box-shadow: 0 0 0 3px var(--em-glow); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text3); }
+  .form-group textarea { resize: none; height: 72px; }
+  .form-group select { appearance: none; cursor: pointer; }
+  .btn-submit {
+    width: 100%; padding: 13px; background: var(--em); border: none;
+    border-radius: 10px; color: white; font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: background 0.2s; margin-top: 4px;
+  }
+  .btn-submit:hover { background: var(--em-dark); }
+  .btn-submit:disabled { opacity: 0.5; cursor: default; }
+  .modal-note { text-align: center; font-size: 11px; color: var(--text3); margin-top: 10px; }
+  .modal-success { text-align: center; padding: 20px 0; }
+  .modal-success .check { font-size: 48px; margin-bottom: 12px; }
+  .modal-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+  .modal-success p { font-size: 14px; color: var(--text2); }
+
+  .loading-spinner { text-align: center; padding: 8px; color: var(--text3); font-size: 12px; }
+
+  /* MOBILE */
+  .sidebar-toggle { display: none; }
+  @media (max-width: 768px) {
+    .sidebar { display: none; position: fixed; z-index: 150; top: 62px; left: 0; height: calc(100vh - 62px); width: 268px; box-shadow: 4px 0 20px rgba(0,0,0,0.1); }
+    .sidebar.open { display: block; }
+    .sidebar-toggle {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 12px; background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 8px; color: var(--text2); font-size: 13px; cursor: pointer;
+    }
+    .main { padding: 16px; }
+    .grid { grid-template-columns: 1fr; }
+    nav { padding: 0 12px; gap: 10px; }
+    .urgency-bar { flex-direction: column; gap: 6px; padding: 10px 16px; text-align: center; }
+    .urgency-counter { border-left: none; padding-left: 0; }
+  }
+
+  /* URGENCY BAR */
+  .urgency-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    background: linear-gradient(90deg, #2bbfb7 0%, #3DC9C1 60%, #45d4c4 100%);
+    padding: 10px 28px;
+    gap: 16px;
+    position: sticky; top: 62px; z-index: 99;
+  }
+  .urgency-left {
+    display: flex; align-items: center; gap: 10px;
+    color: #fff; font-size: 14px; font-weight: 500;
+  }
+  .urgency-pulse {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: #fff; flex-shrink: 0;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+  .urgency-counter {
+    display: flex; align-items: center; gap: 8px;
+    border-left: 1px solid rgba(255,255,255,0.35);
+    padding-left: 16px;
+    color: #fff; font-size: 13px; white-space: nowrap;
+  }
+  .urgency-num {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.5px;
+    font-variant-numeric: tabular-nums;
+    min-width: 28px; text-align: right;
+    transition: opacity 0.15s;
+  }
+  .urgency-label { font-size: 12px; line-height: 1.35; opacity: 0.92; }
+  .urgency-cta {
+    background: none; border: none; cursor: pointer; padding: 0;
+    color: #fff; font-size: 14px; font-weight: 700;
+    text-decoration: underline; text-decoration-style: dotted;
+    text-underline-offset: 3px; opacity: 0.95;
+    transition: opacity 0.15s;
+  }
+  .urgency-cta:hover { opacity: 1; text-decoration-style: solid; }
+
+  /* LEAD MODAL */
+  .lead-overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: rgba(20,40,80,0.45); backdrop-filter: blur(4px);
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .lead-overlay.open { display: flex; }
+  .lead-modal {
+    background: var(--bg2); border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(20,40,80,0.18);
+    padding: 32px 28px; width: 100%; max-width: 420px;
+    position: relative; animation: modalIn 0.22s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to   { opacity: 1; transform: none; }
+  }
+  .lead-close {
+    position: absolute; top: 16px; right: 18px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text3); font-size: 22px; line-height: 1; padding: 4px;
+  }
+  .lead-close:hover { color: var(--text); }
+  .lead-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 6px; }
+  .lead-sub { font-size: 13px; color: var(--text2); margin-bottom: 22px; }
+  .lead-field { margin-bottom: 14px; }
+  .lead-field label { display: block; font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 5px; letter-spacing: 0.3px; }
+  .lead-field input, .lead-field textarea {
+    width: 100%; padding: 10px 14px; border-radius: 10px;
+    border: 1.5px solid var(--border); background: var(--bg);
+    color: var(--text); font-size: 14px; outline: none;
+    transition: border-color 0.15s;
+    font-family: inherit;
+  }
+  .lead-field input:focus, .lead-field textarea:focus { border-color: var(--em); }
+  .lead-field textarea { resize: none; height: 80px; }
+  .lead-submit {
+    width: 100%; padding: 13px; border-radius: 12px;
+    background: var(--em); border: none; color: #fff;
+    font-size: 15px; font-weight: 700; cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+    margin-top: 4px;
+  }
+  .lead-submit:hover { background: var(--em-dark); }
+  .lead-submit:active { transform: scale(0.98); }
+  .lead-submit:disabled { opacity: 0.6; cursor: default; }
+  .lead-success {
+    text-align: center; padding: 20px 0 8px;
+    display: none;
+  }
+  .lead-success .check { font-size: 48px; margin-bottom: 12px; }
+  .lead-success h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; color: var(--text); }
+  .lead-success p { font-size: 14px; color: var(--text2); }
+
+
+  /* Q&A BUTTON */
+  .btn-qa {
+    padding: 6px 14px; background: var(--bg3); border: 1.5px solid var(--border);
+    border-radius: 8px; color: var(--text2); font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; transition: 0.15s;
+  }
+  .btn-qa:hover { border-color: var(--em); color: var(--em); background: var(--em-glow); }
+
+  /* CONTACT BUTTON + TOOLTIP */
+  .btn-contact {
+    padding: 6px 14px; background: var(--em); border: none;
+    border-radius: 8px; color: #fff; font-size: 13px; font-weight: 600;
+    cursor: pointer; white-space: nowrap; transition: 0.15s; position: relative;
+  }
+  .btn-contact:hover { background: var(--em-dark); }
+  .contact-tooltip {
+    display: none; position: absolute; top: calc(100% + 10px); right: 0;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 18px; width: 240px;
+    box-shadow: 0 8px 30px rgba(20,40,80,0.14); z-index: 300;
+    text-align: left;
+  }
+  .btn-contact:focus .contact-tooltip,
+  .btn-contact.active .contact-tooltip { display: block; }
+  .contact-tooltip-title { font-size: 12px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+  .contact-link {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 0; text-decoration: none; color: var(--text);
+    font-size: 13px; font-weight: 500; border-bottom: 1px solid var(--border);
+    transition: color 0.15s;
+  }
+  .contact-link:last-child { border-bottom: none; }
+  .contact-link:hover { color: var(--em); }
+  .contact-link-icon { font-size: 18px; width: 24px; text-align: center; flex-shrink: 0; }
+
+  /* Q&A MODAL */
+  .qa-overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: rgba(20,40,80,0.45); backdrop-filter: blur(4px);
+    align-items: flex-start; justify-content: center; padding: 80px 20px 20px;
+  }
+  .qa-overlay.open { display: flex; }
+  .qa-modal {
+    background: var(--bg2); border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(20,40,80,0.18);
+    padding: 32px 28px; width: 100%; max-width: 600px;
+    position: relative; animation: modalIn 0.22s ease;
+    max-height: calc(100vh - 100px); overflow-y: auto;
+  }
+  .qa-close {
+    position: absolute; top: 16px; right: 18px;
+    background: none; border: none; cursor: pointer;
+    color: var(--text3); font-size: 22px; line-height: 1; padding: 4px;
+  }
+  .qa-close:hover { color: var(--text); }
+  .qa-section-title { font-size: 20px; font-weight: 800; color: var(--text); margin-bottom: 18px; }
+
+  /* HOW STEPS inside modal */
+  .qa-steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
+  .qa-step {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: var(--bg); border-radius: 12px; padding: 14px 16px;
+  }
+  .qa-step-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--em-glow); display: flex; align-items: center;
+    justify-content: center; font-size: 20px; flex-shrink: 0;
+  }
+  .qa-step-text h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+  .qa-step-text p { font-size: 13px; color: var(--text2); line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="/">
+    <svg viewBox="0 0 36 36" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="18" fill="#3DC9C1"/>
+      <circle cx="10.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="25.5" cy="11" r="4.5" fill="white"/>
+      <circle cx="10.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="25.5" cy="11" r="2.5" fill="#B5E8E5"/>
+      <circle cx="18" cy="20" r="11.5" fill="white"/>
+      <circle cx="14" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="22" cy="18" r="1.8" fill="#1A3050"/>
+      <circle cx="14.6" cy="17.3" r="0.7" fill="white"/>
+      <circle cx="22.6" cy="17.3" r="0.7" fill="white"/>
+      <ellipse cx="18" cy="22.5" rx="4" ry="3" fill="#D6EFEE"/>
+      <ellipse cx="18" cy="21" rx="2.2" ry="1.6" fill="#1A3050"/>
+      <path d="M15.5 24Q18 26.5 20.5 24" stroke="#1A3050" stroke-width="1.2" stroke-linecap="round"/>
+      <ellipse cx="30" cy="15.5" rx="3" ry="4.5" fill="white" transform="rotate(-28 30 15.5)"/>
+      <ellipse cx="7" cy="22.5" rx="3" ry="4" fill="white" transform="rotate(18 7 22.5)"/>
+    </svg>
+    <span>UMKA HUB</span>
+  </a>
+  <div class="search-wrap">
+    <svg class="search-icon" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="searchInput" placeholder="Поиск по названию...">
+  </div>
+  <button class="sidebar-toggle" id="sidebarToggle">
+    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    Фильтры
+  </button>
+  <button class="btn-qa" id="btnQA">Q&amp;A</button>
+  <div style="position:relative">
+    <button class="btn-contact" id="btnContact">Связаться</button>
+    <div class="contact-tooltip" id="contactTooltip">
+      <div class="contact-tooltip-title">По любым вопросам</div>
+      <a class="contact-link" href="mailto:alex.umkahub@gmail.com">
+        <span class="contact-link-icon">✉️</span>alex.umkahub@gmail.com
+      </a>
+      <a class="contact-link" href="https://t.me/alex_umkahub" target="_blank">
+        <span class="contact-link-icon">✈️</span>@alex_umkahub
+      </a>
+    </div>
+  </div>
+  <div class="nav-count" id="navCount">Загрузка...</div>
+</nav>
+
+<!-- Q&A MODAL -->
+<div class="qa-overlay" id="qaOverlay">
+  <div class="qa-modal">
+    <button class="qa-close" id="qaClose">×</button>
+
+    <div class="qa-section-title">Как это работает</div>
+    <div class="qa-steps">
+      <div class="qa-step">
+        <div class="qa-step-icon">🔍</div>
+        <div class="qa-step-text">
+          <h4>Выберите лагерь</h4>
+          <p>Используйте фильтры по направлению, возрасту и цене. 200+ проверенных вариантов в Москве и Подмосковье.</p>
+        </div>
+      </div>
+      <div class="qa-step">
+        <div class="qa-step-icon">📋</div>
+        <div class="qa-step-text">
+          <h4>Оставьте заявку</h4>
+          <p>Нажмите "Забронировать" на странице лагеря. Заявка уходит напрямую — без посредников и скрытых комиссий.</p>
+        </div>
+      </div>
+      <div class="qa-step">
+        <div class="qa-step-icon">📞</div>
+        <div class="qa-step-text">
+          <h4>Лагерь свяжется с вами</h4>
+          <p>Представитель лагеря перезвонит и уточнит детали. Обычно в течение нескольких часов.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="qa-section-title">Частые вопросы</div>
+
+    <div class="faq-item">
+      <button class="faq-q">Платно ли пользоваться сервисом?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Нет. Умка Хаб — бесплатный сервис для родителей. Вы бронируете напрямую у лагеря по официальным ценам без каких-либо наценок.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Как быстро ответит лагерь?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Можно ли вернуть деньги если передумали?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Условия возврата устанавливает каждый лагерь индивидуально. Обычно при отказе за 30+ дней возвращают полную сумму. Уточняйте при бронировании.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Все лагеря на сайте проверены?<span class="faq-arrow">⌄</span></button>
+      <div class="faq-a">Мы собираем информацию только о лицензированных детских лагерях с официальными сайтами и реальными отзывами родителей.</div>
+    </div>
+  </div>
+</div>
+
+<div class="urgency-bar">
+  <div class="urgency-left">
+    <div class="urgency-pulse"></div>
+    <span>Смены с 21 и 28 июля&nbsp;— места ещё есть.&nbsp;<button class="urgency-cta" id="urgencyBtn">Успейте до конца лета!</button></span>
+  </div>
+  <div class="urgency-counter">
+    <span class="urgency-num" id="urgencyNum">4</span>
+    <span class="urgency-label">семьям сегодня<br>помогли с выбором</span>
+  </div>
+</div>
+
+<!-- LEAD MODAL -->
+<div class="lead-overlay" id="leadOverlay">
+  <div class="lead-modal">
+    <button class="lead-close" id="leadClose">×</button>
+    <div id="leadForm">
+      <div class="lead-title">Подберём лагерь для вашего ребёнка</div>
+      <div class="lead-sub">Оставьте заявку — лагерь свяжется с вами напрямую</div>
+      <div class="lead-field">
+        <label>Ваше имя</label>
+        <input type="text" id="leadName" placeholder="Иван Иванов">
+      </div>
+      <div class="lead-field">
+        <label>Телефон</label>
+        <input type="tel" id="leadPhone" placeholder="+7 900 000-00-00">
+      </div>
+      <div class="lead-field">
+        <label>Возраст ребёнка</label>
+        <input type="number" id="leadAge" placeholder="9" min="4" max="18">
+      </div>
+      <div class="lead-field">
+        <label>Пожелания</label>
+        <textarea id="leadWishes" placeholder="Тип лагеря, даты, бюджет и что важно для ребёнка..."></textarea>
+      </div>
+      <button class="lead-submit" id="leadSubmit">Отправить заявку</button>
+    </div>
+    <div class="lead-success" id="leadSuccess">
+      <div class="check">🎉</div>
+      <h3>Заявка отправлена!</h3>
+      <p>Мы передадим её в подходящий лагерь.<br>Ожидайте звонка в ближайшее время.</p>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="filter-title">Фильтры</div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Возраст ребёнка</span>
+      <div class="range-row">
+        <input type="number" id="ageMin" min="4" max="18" placeholder="от" value="">
+        <span class="range-sep">—</span>
+        <input type="number" id="ageMax" min="4" max="18" placeholder="до" value="">
+        <span class="range-sep" style="font-size:11px;color:var(--text3)">лет</span>
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Цена (₽)</span>
+      <div class="range-row">
+        <input type="number" id="priceMin" min="0" placeholder="от" value="" style="width:90px">
+        <span class="range-sep">—</span>
+        <input type="number" id="priceMax" min="0" placeholder="до" value="" style="width:90px">
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Тип лагеря</span>
+      <div class="radio-item"><input type="radio" name="type" value="" id="typeAll" checked><label for="typeAll">Все</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Городской" id="typeGor"><label for="typeGor">Городской</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Дневной" id="typeDay"><label for="typeDay">Дневного пребывания</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Круглосуточный" id="typeKrug"><label for="typeKrug">Круглосуточный</label></div>
+      <div class="radio-item"><input type="radio" name="type" value="Выездной" id="typeVyez"><label for="typeVyez">Выездной</label></div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Направление</span>
+      <div class="check-item"><input type="checkbox" id="catLang" value="Языков|Английск"><label for="catLang">Языковой / английский</label></div>
+      <div class="check-item"><input type="checkbox" id="catIT" value="программиров|Компьютерн|Технич"><label for="catIT">IT / программирование</label></div>
+      <div class="check-item"><input type="checkbox" id="catSport" value="Спортив|Футбол|Военно-спорт"><label for="catSport">Спортивный</label></div>
+      <div class="check-item"><input type="checkbox" id="catArt" value="Творческ|Художественн|Тематическ"><label for="catArt">Творческий</label></div>
+      <div class="check-item"><input type="checkbox" id="catTheatre" value="Театральн|Кинолагер"><label for="catTheatre">Театральный / кино</label></div>
+      <div class="check-item"><input type="checkbox" id="catDance" value="Танцев"><label for="catDance">Танцевальный</label></div>
+      <div class="check-item"><input type="checkbox" id="catSci" value="Научн|Образовательн"><label for="catSci">Научный / образовательный</label></div>
+      <div class="check-item"><input type="checkbox" id="catMath" value="Математич|Шахматн"><label for="catMath">Математика / шахматы</label></div>
+      <div class="check-item"><input type="checkbox" id="catTour" value="Туристич|Палаточн"><label for="catTour">Туристический / поход</label></div>
+      <div class="check-item"><input type="checkbox" id="catMil" value="Военно-патриот"><label for="catMil">Военно-патриотический</label></div>
+    </div>
+
+    <div class="filter-group">
+      <span class="filter-group-label">Рейтинг</span>
+      <div class="star-select" id="ratingSelect">
+        <button class="star-btn" data-val="">Любой</button>
+        <button class="star-btn" data-val="3">3★+</button>
+        <button class="star-btn" data-val="4">4★+</button>
+        <button class="star-btn" data-val="4.5">4.5★+</button>
+      </div>
+    </div>
+
+    <button class="btn-apply" id="btnApply">Применить фильтры</button>
+    <button class="btn-reset" id="btnReset">Сбросить всё</button>
+  </aside>
+
+  <main class="main">
+    <div class="grid" id="grid"></div>
+    <div class="load-more-wrap" id="loadMoreWrap" style="display:none">
+      <button class="btn-load-more" id="btnLoadMore">Загрузить ещё</button>
+    </div>
+    <div class="empty" id="empty" style="display:none">
+      <h3>Ничего не найдено</h3>
+      <p>Попробуйте изменить фильтры или поисковый запрос</p>
+    </div>
+
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div id="modalForm">
+      <div class="modal-header">
+        <div class="modal-title">Оставить заявку</div>
+        <button class="modal-close" id="modalClose">×</button>
+      </div>
+      <div class="modal-camp-name" id="modalCampName"></div>
+      <div class="form-group" id="sessionGroup" style="display:none">
+        <label>Смена</label>
+        <div class="loading-spinner" id="sessionLoading" style="display:none">Загрузка смен...</div>
+        <select id="fSession"></select>
+      </div>
+      <div class="form-group">
+        <label>Имя родителя *</label>
+        <input type="text" id="fName" placeholder="Иван Иванов">
+      </div>
+      <div class="form-group">
+        <label>Телефон *</label>
+        <input type="tel" id="fPhone" placeholder="+7 900 000 00 00">
+      </div>
+      <div class="form-group">
+        <label>Telegram</label>
+        <input type="text" id="fTelegram" placeholder="@username">
+      </div>
+      <div class="form-group">
+        <label>Возраст ребёнка</label>
+        <input type="text" id="fAge" placeholder="9 лет">
+      </div>
+      <div class="form-group">
+        <label>Комментарий</label>
+        <textarea id="fComment" placeholder="Вопросы, пожелания..."></textarea>
+      </div>
+      <button class="btn-submit" id="btnSubmit">Отправить заявку</button>
+      <div class="modal-note">Мы свяжемся с вами в течение 2 часов</div>
+    </div>
+    <div class="modal-success" id="modalSuccess" style="display:none">
+      <div class="check">✅</div>
+      <h3>Заявка отправлена!</h3>
+      <p>Мы свяжемся с вами в течение 2 часов</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = '/api';
+let page = 1;
+let totalPages = 1;
+let currentCampName = '';
+let currentRating = '';
+let searchTimer = null;
+let _sessions = [];
+
+// Photo URL helper
+function fixPhoto(url) {
+  if (!url) return '';
+  return url.replace('https://vlagere.ru/upload', 'https://umkahub.s3.cloud.ru');
+}
+
+// Lead modal
+(function() {
+  const overlay = document.getElementById('leadOverlay');
+  const openBtn = document.getElementById('urgencyBtn');
+  const closeBtn = document.getElementById('leadClose');
+  const submitBtn = document.getElementById('leadSubmit');
+  const formEl = document.getElementById('leadForm');
+  const successEl = document.getElementById('leadSuccess');
+
+  function openModal() { overlay.classList.add('open'); }
+  function closeModal() {
+    overlay.classList.remove('open');
+    // Reset after close animation
+    setTimeout(() => {
+      formEl.style.display = '';
+      successEl.style.display = 'none';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Отправить заявку';
+    }, 200);
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
+  submitBtn.addEventListener('click', async () => {
+    const name = document.getElementById('leadName').value.trim();
+    const phone = document.getElementById('leadPhone').value.trim();
+    const age = document.getElementById('leadAge').value.trim();
+    const wishes = document.getElementById('leadWishes').value.trim();
+    if (!name || !phone) {
+      document.getElementById('leadName').style.borderColor = name ? '' : '#e55';
+      document.getElementById('leadPhone').style.borderColor = phone ? '' : '#e55';
+      return;
+    }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправляем...';
+    try {
+      await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ parent_name: name, phone, child_age: age, wishes })
+      });
+      if (typeof ym !== 'undefined') ym(110484022, 'reachGoal', 'lead_form');
+    } catch(e) {}
+    formEl.style.display = 'none';
+    successEl.style.display = 'block';
+    setTimeout(closeModal, 3500);
+  });
+})();
+
+// Urgency counter — slow organic tick like a water meter
+(function() {
+  const el = document.getElementById('urgencyNum');
+  if (!el) return;
+  const TARGET = 14;
+  let current = 4;
+  // Irregular delays between ticks (seconds): feels human, not robotic
+  const delays = [38, 52, 29, 61, 44, 33, 57, 41, 48, 36];
+  let step = 0;
+  function tick() {
+    if (current >= TARGET) return;
+    current++;
+    el.style.opacity = '0.5';
+    setTimeout(() => {
+      el.textContent = current;
+      el.style.opacity = '1';
+    }, 120);
+    const next = (delays[step % delays.length] + Math.random() * 18 - 9) * 1000;
+    step++;
+    setTimeout(tick, next);
+  }
+  // Start first tick after ~38 seconds
+  setTimeout(tick, 38000);
+})();
+
+// Date helpers for filtering expired sessions
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+const RU_MON = {
+  'янв':0,'фев':1,'мар':2,'апр':3,'май':4,'июн':5,
+  'июл':6,'авг':7,'сен':8,'окт':9,'ноя':10,'дек':11
+};
+function parseRuDate(s) {
+  if (!s) return null;
+  const p = String(s).trim().split(/\s+/);
+  const d = parseInt(p[0]), m = RU_MON[p[1]?.toLowerCase()];
+  return (!isNaN(d) && m !== undefined) ? new Date(TODAY.getFullYear(), m, d) : null;
+}
+function isFuture(s) {
+  const d = parseRuDate(s.date_start);
+  return !d || d >= TODAY;
+}
+
+// ─── FETCH ────────────────────────────────────────────────────────
+function getFilters() {
+  const cats = [...document.querySelectorAll('.check-item input:checked')].map(el => el.value);
+  return {
+    age_min: document.getElementById('ageMin').value || '',
+    age_max: document.getElementById('ageMax').value || '',
+    price_min: document.getElementById('priceMin').value || '',
+    price_max: document.getElementById('priceMax').value || '',
+    type: document.querySelector('input[name=type]:checked')?.value || '',
+    category: cats.join(','),
+    rating_min: currentRating,
+    search: document.getElementById('searchInput').value.trim(),
+  };
+}
+
+function buildQuery(extra = {}) {
+  const f = { ...getFilters(), ...extra };
+  const p = new URLSearchParams();
+  Object.entries(f).forEach(([k, v]) => { if (v !== '' && v !== null && v !== undefined) p.set(k, v); });
+  return p.toString();
+}
+
+async function loadCamps(reset = false) {
+  if (reset) { page = 1; document.getElementById('grid').innerHTML = ''; }
+  const q = buildQuery({ page, limit: 24 });
+  const res = await fetch(`${API}/camps?${q}`);
+  const data = await res.json();
+  totalPages = data.pages;
+  document.getElementById('navCount').textContent = `${data.total} лагерей`;
+  const grid = document.getElementById('grid');
+  const empty = document.getElementById('empty');
+  const lmw = document.getElementById('loadMoreWrap');
+  if (data.camps.length === 0 && page === 1) {
+    empty.style.display = 'block'; lmw.style.display = 'none'; return;
+  }
+  empty.style.display = 'none';
+  data.camps.forEach(c => grid.appendChild(makeCard(c)));
+  lmw.style.display = page < totalPages ? 'block' : 'none';
+}
+
+// ─── CARD ─────────────────────────────────────────────────────────
+function fmt(n) { return n ? Number(n).toLocaleString('ru-RU') : ''; }
+
+const SEA_LOC = /Краснодар|Сочи|Крым|Анапа|Геленджик|Туапсе|Ялта|Севастополь|Евпатория|Абхазия|Черное море/i;
+const BASE_FILTER = /область|Подмосковье|Московск|^Москва$|Ленинград|Санкт-Петербург|Петербург|за границ|зарубеж|загородн|городской|выездной|дневной|международн|^лагерь$/i;
+const EXTRA_FILTER = /бассейн|на море|у моря|на черном/i;
+
+function makeCard(c) {
+  const div = document.createElement('div');
+  div.className = 'card';
+  div.addEventListener('click', (e) => {
+    if (!e.target.closest('button, a')) window.location.href = `/camp/${c.id}`;
+  });
+  const photoUrl = fixPhoto(c.main_photo);
+  const photo = photoUrl
+    ? `<img class="card-photo" src="${photoUrl}" alt="${c.name}" loading="lazy">`
+    : `<div class="card-photo-placeholder">🏕️</div>`;
+  const nearSea = SEA_LOC.test(c.location || '');
+  const cats = (c.categories || [])
+    .filter(ct => !BASE_FILTER.test(ct) && (nearSea || !EXTRA_FILTER.test(ct)))
+    .slice(0, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
+  const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
+  const ratingStr = c.rating ? `<span class="star">★</span><span class="val">${c.rating.toFixed(1)}</span><span class="cnt">(${c.reviews_count})</span>` : '';
+  div.innerHTML = `
+    ${photo}
+    <div class="card-body">
+      <div class="card-header">
+        <div class="card-name">${c.name}</div>
+        <div class="card-rating">${ratingStr}</div>
+      </div>
+      <div class="card-badges">
+        <span class="badge badge-age">${c.age_min || 6}–${c.age_max || 17} лет</span>
+        ${cats}
+      </div>
+      ${c.tagline ? `<div class="card-desc">${c.tagline}</div>` : ''}
+      <div class="card-footer">
+        <div class="card-price">${priceStr}</div>
+        <div class="card-actions">
+          <a class="btn-detail" href="/camp/${c.id}">Подробнее</a>
+          <button class="btn-book">Забронировать</button>
+        </div>
+      </div>
+    </div>
+  `;
+  div.querySelector('.btn-book').addEventListener('click', () => openModal(c.id, c.name));
+  return div;
+}
+
+// ─── MODAL ────────────────────────────────────────────────────────
+async function openModal(campId, campName) {
+  currentCampName = campName;
+  _sessions = [];
+  document.getElementById('modalCampName').textContent = campName;
+  document.getElementById('modalForm').style.display = 'block';
+  document.getElementById('modalSuccess').style.display = 'none';
+  ['fName','fPhone','fTelegram','fAge','fComment'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('modalOverlay').classList.add('open');
+
+  // Load sessions
+  const grp = document.getElementById('sessionGroup');
+  const sel = document.getElementById('fSession');
+  const loading = document.getElementById('sessionLoading');
+  grp.style.display = 'block';
+  sel.style.display = 'none';
+  loading.style.display = 'block';
+
+  try {
+    const res = await fetch(`${API}/camps/${campId}`);
+    const camp = await res.json();
+    const futureSessions = (camp.sessions || []).filter(s => isFuture(s));
+    if (futureSessions.length > 0) {
+      _sessions = futureSessions;
+      sel.innerHTML = futureSessions.map((s, i) => {
+        const label = [s.date_start, s.date_end].filter(Boolean).join(' — ')
+          + (s.duration_days ? `, ${s.duration_days} дн.` : '')
+          + (s.price ? `, ${fmt(s.price)} ₽` : '');
+        return `<option value="${i}">${label}</option>`;
+      }).join('');
+      loading.style.display = 'none';
+      sel.style.display = 'block';
+    } else {
+      grp.style.display = 'none';
+    }
+  } catch(e) {
+    grp.style.display = 'none';
+  }
+}
+
+document.getElementById('modalClose').addEventListener('click', () => {
+  document.getElementById('modalOverlay').classList.remove('open');
+});
+document.getElementById('modalOverlay').addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modalOverlay')) {
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+});
+
+document.getElementById('btnSubmit').addEventListener('click', async () => {
+  const name = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  if (!name || !phone) { alert('Укажите имя и телефон'); return; }
+  const btn = document.getElementById('btnSubmit');
+  btn.disabled = true; btn.textContent = 'Отправляем...';
+  const selIdx = parseInt(document.getElementById('fSession').value) || 0;
+  const selSession = _sessions[selIdx] || null;
+  try {
+    const res = await fetch(`${API}/booking`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        camp_name: currentCampName,
+        parent_name: name,
+        phone,
+        telegram: document.getElementById('fTelegram').value.trim(),
+        child_age: document.getElementById('fAge').value.trim(),
+        comment: document.getElementById('fComment').value.trim(),
+        session_start: selSession?.date_start || '',
+        session_end: selSession?.date_end || '',
+        session_price: selSession?.price || '',
+      })
+    });
+    const d = await res.json();
+    if (d.ok) {
+      document.getElementById('modalForm').style.display = 'none';
+      document.getElementById('modalSuccess').style.display = 'block';
+    } else { alert(d.error || 'Ошибка. Попробуйте ещё раз.'); }
+  } catch(e) { alert('Ошибка сети.'); }
+  finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
+});
+
+// ─── CONTROLS ─────────────────────────────────────────────────────
+document.getElementById('btnApply').addEventListener('click', () => loadCamps(true));
+document.getElementById('btnReset').addEventListener('click', () => {
+  document.getElementById('ageMin').value = '';
+  document.getElementById('ageMax').value = '';
+  document.getElementById('priceMin').value = '';
+  document.getElementById('priceMax').value = '';
+  document.getElementById('typeAll').checked = true;
+  document.querySelectorAll('.check-item input').forEach(el => el.checked = false);
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.star-btn[data-val=""]').classList.add('active');
+  currentRating = '';
+  loadCamps(true);
+});
+document.getElementById('btnLoadMore').addEventListener('click', () => { page++; loadCamps(false); });
+
+// Contact tooltip
+(function() {
+  const btn = document.getElementById('btnContact');
+  const tip = document.getElementById('contactTooltip');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    btn.classList.toggle('active');
+    tip.style.display = btn.classList.contains('active') ? 'block' : 'none';
+  });
+  document.addEventListener('click', () => {
+    btn.classList.remove('active');
+    tip.style.display = 'none';
+  });
+})();
+
+// Q&A modal
+(function() {
+  const overlay = document.getElementById('qaOverlay');
+  const openBtn = document.getElementById('btnQA');
+  const closeBtn = document.getElementById('qaClose');
+  openBtn.addEventListener('click', () => overlay.classList.add('open'));
+  closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+})();
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+document.getElementById('searchInput').addEventListener('input', () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => loadCamps(true), 350);
+});
+document.querySelectorAll('.star-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.star-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentRating = btn.dataset.val;
+    loadCamps(true);
+  });
+});
+document.querySelector('.star-btn[data-val=""]').classList.add('active');
+document.getElementById('sidebarToggle').addEventListener('click', () => {
+  document.getElementById('sidebar').classList.toggle('open');
+});
+
+loadCamps(true);
+</script>
+</body>
+</html>
