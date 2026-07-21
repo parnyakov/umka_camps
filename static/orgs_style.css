@@ -85,18 +85,24 @@ a { color: inherit; text-decoration: none; }
 }
 
 .back-btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 14px;
+  font-weight: 600;
   color: var(--muted);
   cursor: pointer;
-  padding: 6px 0;
+  padding: 6px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  transition: all .15s;
+  background: transparent;
+  white-space: nowrap;
 }
 
-.back-btn:hover { color: var(--text); }
+.back-btn:hover { color: var(--text); border-color: var(--text); }
 
-/* ── Category colours ───────────────────────────────────────────────────────── */
+/* ── Category badge ─────────────────────────────────────────────────────────── */
 
 .cat-badge {
   display: inline-block;
@@ -104,13 +110,9 @@ a { color: inherit; text-decoration: none; }
   border-radius: 20px;
   font-size: 12px;
   font-weight: 600;
+  background: #F1F5F9;
+  color: #64748B;
 }
-
-[data-cat="IT"]         { background:#EEF2FF; color:#4F46E5; }
-[data-cat="спорт"]      { background:#ECFDF5; color:#059669; }
-[data-cat="творчество"] { background:#FFFBEB; color:#D97706; }
-[data-cat="языки"]      { background:#EFF6FF; color:#2563EB; }
-[data-cat="развитие"]   { background:#F5F3FF; color:#7C3AED; }
 
 /* ── Card grid ─────────────────────────────────────────────────────────────── */
 
@@ -140,19 +142,27 @@ a { color: inherit; text-decoration: none; }
 .card-photo {
   width: 100%;
   height: 180px;
-  object-fit: cover;
-  background: linear-gradient(135deg, #E0E7FF 0%, #C7D2FE 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  color: var(--clr-primary);
+  overflow: hidden;
+  position: relative;
 }
 
 .card-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.card-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: rgba(0,0,0,.18);
 }
 
 .card-body {
@@ -360,20 +370,25 @@ a { color: inherit; text-decoration: none; }
 
 .org-hero {
   width: 100%;
-  height: 320px;
-  object-fit: cover;
-  background: linear-gradient(135deg, #E0E7FF, #C7D2FE);
+  height: 300px;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 80px;
-  overflow: hidden;
 }
 
 .org-hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.hero-initials {
+  font-size: 72px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: rgba(0,0,0,.15);
 }
 
 .org-content {
