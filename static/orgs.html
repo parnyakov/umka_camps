@@ -43,9 +43,7 @@
     <div class="filter-group">
       <label>Категория</label>
       <div class="cat-pills" id="catPills">
-        <div class="cat-pill active" data-cat="" onclick="setCat(this, '')">
-          🗂 Все направления
-        </div>
+        <div class="cat-pill active" data-cat="" onclick="setCat(this, '')">Все направления</div>
       </div>
     </div>
 
@@ -105,15 +103,17 @@
 </div>
 
 <script>
-const CAT_ICONS = {
-  'IT': '💻', 'спорт': '⚽', 'творчество': '🎨',
-  'языки': '🌍', 'развитие': '🧠'
+const CAT_BG = {
+  'IT':         'linear-gradient(135deg,#EEF2FF,#C7D2FE)',
+  'спорт':      'linear-gradient(135deg,#ECFDF5,#A7F3D0)',
+  'творчество': 'linear-gradient(135deg,#FFFBEB,#FDE68A)',
+  'языки':      'linear-gradient(135deg,#EFF6FF,#BFDBFE)',
+  'развитие':   'linear-gradient(135deg,#F5F3FF,#DDD6FE)',
 };
 
-const CAT_FALLBACK = {
-  'IT': '💻', 'спорт': '⚽', 'творчество': '🎨',
-  'языки': '🌍', 'развитие': '🧠', '': '🏫'
-};
+function initials(name) {
+  return (name || '').split(/[\s«»""]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
+}
 
 let state = {
   category: '', metro: '', age: '', price_max: '',
@@ -155,7 +155,7 @@ function buildCatPills(categories) {
     const pill = document.createElement('div');
     pill.className = 'cat-pill';
     pill.dataset.cat = cat;
-    pill.innerHTML = `${CAT_ICONS[cat] || '📚'} ${cat.charAt(0).toUpperCase() + cat.slice(1)}`;
+    pill.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     pill.onclick = () => setCat(pill, cat);
     container.appendChild(pill);
   });
@@ -280,9 +280,12 @@ function renderCards(items, append) {
 }
 
 function cardHTML(org) {
-  const photo = org.photos && org.photos.length
-    ? `<img src="${org.photos[0]}" alt="${esc(org.name)}" loading="lazy" onerror="this.parentElement.innerHTML='${CAT_FALLBACK[org.category] || '🏫'}'"/>`
-    : CAT_FALLBACK[org.category] || '🏫';
+  const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
+  const ini = initials(org.name);
+  const photo = (org.photos && org.photos.length)
+    ? `<img src="${org.photos[0]}" alt="${esc(org.name)}" loading="lazy"
+         onerror="this.outerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'">`
+    : `<div class="card-initials" style="background:${bg}">${ini}</div>`;
 
   const rating = org.rating
     ? `<span class="card-rating">★ ${org.rating.toFixed(1)}</span>` : '';
@@ -290,14 +293,14 @@ function cardHTML(org) {
   const trial = org.has_trial
     ? `<span class="trial-badge">Пробное занятие</span>` : '';
 
-  const metro = org.metro ? `<span>📍 ${esc(org.metro)}</span>` : '';
+  const metro = org.metro ? `<span>${esc(org.metro)}</span>` : '';
   const age   = org.age_range ? `<span class="dot">·</span><span>${esc(org.age_range)}</span>` : '';
 
   return `
     <div class="card" onclick="window.location='/org/${org.id}'">
       <div class="card-photo">${photo}</div>
       <div class="card-body">
-        <span class="cat-badge" data-cat="${esc(org.category)}">${esc(org.category)}</span>
+        <span class="cat-badge">${esc(org.category)}</span>
         <div class="card-name">${esc(org.name)}</div>
         <div class="card-meta">${metro}${age}</div>
         ${trial}
