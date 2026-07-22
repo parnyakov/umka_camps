@@ -302,18 +302,8 @@ function isValidFact(v) {
 function render(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
-  // main_photo takes priority; fallback to first item in photos array
-  const mainPhoto = org.main_photo || (org.photos && org.photos[0]) || '';
-  const photos = (org.photos || []).filter(p => p && p !== mainPhoto);
-
-  let heroHtml;
-  if (mainPhoto) {
-    heroHtml = `<img class="hero-img" src="${esc(mainPhoto)}" alt="${esc(org.name)}" loading="lazy"
-      style="cursor:pointer" onclick="openLightbox(0)"
-      onerror="this.outerHTML='<div class=hero-placeholder style=\\'background:${bg}\\'>${ini}</div>'">`;
-  } else {
-    heroHtml = `<div class="hero-placeholder" style="background:${bg}">${ini}</div>`;
-  }
+  // Placeholder — real allPhotos & heroPhoto are built below after gallery section
+  let heroHtml = '';  // set after allPhotos is computed
 
   // Header
   const ratingHtml = org.rating ? `
@@ -371,15 +361,23 @@ function render(org) {
       <ul class="skills-list">${skills.slice(0,6).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
     </div>` : '';
 
-  // Gallery — all photos (hero is photos[0], gallery shows all for lightbox)
-  const allPhotos = org.photos || [];
-  const galleryExtra = allPhotos.slice(1, 9); // 2 extra after hero
+  // Gallery — Yandex CDN photos + VK/website extra_photos merged
+  const yandexPhotos = org.photos || [];
+  const extraPhotos  = org.extra_photos || [];
+  // extra_photos first (real class photos), then Yandex CDN
+  const seen = new Set();
+  const allPhotos = [...extraPhotos, ...yandexPhotos].filter(p => {
+    if (!p || seen.has(p)) return false;
+    seen.add(p); return true;
+  });
+  const heroPhoto  = allPhotos[0] || '';
+  const galleryExtra = allPhotos.slice(1, 9);
   const galleryClass = galleryExtra.length >= 3 ? 'gallery gallery-3' : 'gallery';
   const galleryHtml = galleryExtra.length ? `
     <div class="section">
       <div class="section-title">Галерея</div>
       <div class="${galleryClass}">${galleryExtra.map((p,i)=>`<img src="${esc(p)}" loading="lazy" alt=""
-        onclick="openLightbox(${i+1})" onerror="this.closest('div').style.display='none'">`).join('')}</div>
+        onclick="openLightbox(${i+1})" onerror="this.parentElement.removeChild(this)">`).join('')}</div>
     </div>` : '';
 
   // How it works
@@ -402,6 +400,15 @@ function render(org) {
       <div class="faq-item"><button class="faq-q">Как быстро ответит организация?<span class="faq-arrow">⌄</span></button><div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div></div>
       <div class="faq-item"><button class="faq-q">Можно ли отменить запись?<span class="faq-arrow">⌄</span></button><div class="faq-a">Условия отмены устанавливает каждая организация. Если занятия ещё не начались и оплата не прошла — как правило, всё решается без проблем.</div></div>
     </div>`;
+
+  // Build hero from merged allPhotos
+  if (heroPhoto) {
+    heroHtml = `<img class="hero-img" src="${esc(heroPhoto)}" alt="${esc(org.name)}" loading="lazy"
+      style="cursor:pointer" onclick="openLightbox(0)"
+      onerror="this.outerHTML='<div class=hero-placeholder style=\\'background:${bg}\\'>${ini}</div>'">`;
+  } else {
+    heroHtml = `<div class="hero-placeholder" style="background:${bg}">${ini}</div>`;
+  }
 
   // Store photos for lightbox navigation
   window._orgPhotos = allPhotos;
