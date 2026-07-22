@@ -381,10 +381,11 @@ def init_orgs_db():
         age_range TEXT, price TEXT, price_type TEXT, description TEXT,
         schedule TEXT, group_size TEXT, duration TEXT,
         phone TEXT, website TEXT, vk TEXT,
-        rating REAL, reviews_count INTEGER, has_trial INTEGER, data_quality INTEGER
+        rating REAL, reviews_count INTEGER, has_trial INTEGER, data_quality INTEGER,
+        extra_photos TEXT
     )''')
     for c in cards:
-        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
             c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
             c.get('address',''), c.get('metro',''), c.get('district',''),
             json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
@@ -395,10 +396,35 @@ def init_orgs_db():
             c.get('duration',''), c.get('phone',''), c.get('website',''), c.get('vk',''),
             c.get('rating',0) or 0, c.get('reviews_count',0) or 0,
             1 if c.get('has_trial') else 0, c.get('data_quality',0) or 0,
+            json.dumps(c.get('extra_photos',[]), ensure_ascii=False),
         ))
     conn.commit()
     conn.close()
     print(f'Orgs DB ready: {len(cards)} organizations')
+
+def _migrate_orgs_db():
+    """Add extra_photos column if missing (safe to call on existing DB)."""
+    if not os.path.exists(ORGS_DB):
+        return
+    conn = _orgs_conn()
+    try:
+        conn.execute("ALTER TABLE organizations ADD COLUMN extra_photos TEXT DEFAULT '[]'")
+        conn.commit()
+        print("Migration: added extra_photos column")
+        # Backfill from JSON
+        if os.path.exists(ORGS_JSON):
+            with open(ORGS_JSON, encoding='utf-8') as f:
+                cards = json.load(f)
+            for c in cards:
+                eps = c.get('extra_photos', [])
+                if eps:
+                    conn.execute("UPDATE organizations SET extra_photos=? WHERE id=?",
+                                 (json.dumps(eps, ensure_ascii=False), c['id']))
+            conn.commit()
+    except Exception:
+        pass  # Column already exists — OK
+    finally:
+        conn.close()
 
 def _price_lte(price_str, max_val):
     """Return True if first number in price_str <= max_val (or no number found)."""
@@ -431,10 +457,11 @@ def _parse_list(val):
 
 def _org_dict(row):
     d = dict(row)
-    d['photos']   = _parse_list(d.get('photos'))
-    d['programs'] = _parse_list(d.get('programs'))
-    d['skills']   = _parse_list(d.get('skills'))
-    d['has_trial'] = bool(d.get('has_trial'))
+    d['photos']       = _parse_list(d.get('photos'))
+    d['programs']     = _parse_list(d.get('programs'))
+    d['skills']       = _parse_list(d.get('skills'))
+    d['extra_photos'] = _parse_list(d.get('extra_photos'))
+    d['has_trial']    = bool(d.get('has_trial'))
     return d
 
 # ─── ORGS API ─────────────────────────────────────────────────────────────────
@@ -530,10 +557,13 @@ def static_files(filename):
     return send_from_directory('static', filename)
 
 
+# ─── STARTUP (runs for both gunicorn and direct) ──────────────────────────────
+init_db()
+init_orgs_db()
+_migrate_orgs_db()   # safe no-op if extra_photos column already exists
+
 # ─── MAIN ────────────────────────────────────────────────────────────────────
 
 if __name__ == '__main__':
-    init_db()
-    init_orgs_db()
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port, debug=False)
