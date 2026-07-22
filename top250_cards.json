@@ -92,7 +92,10 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 100
+    "data_quality": 100,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3731-3762-4764-b739-373766346135/__.png"
+    ]
   },
   {
     "id": 204,
@@ -177,7 +180,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 4,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3430-3734-4834-b337-363632353166/photo.png",
+      "https://thb.tildacdn.com/tild3764-6136-4532-b035-333265663737/-/resize/20x/translucent-image.png",
+      "https://thb.tildacdn.com/tild3666-3733-4464-a265-636138323636/-/empty/photo_53957114810657.jpg",
+      "https://thb.tildacdn.com/tild6361-3430-4637-a133-653062353761/-/empty/4.jpg",
+      "https://thb.tildacdn.com/tild6338-3836-4630-a237-666639386335/-/resize/20x/Mask_group.png",
+      "https://thb.tildacdn.com/tild6330-3034-4438-b366-356162386362/-/resize/20x/61b1f159063311f0a9e1.png"
+    ]
   },
   {
     "id": 13,
@@ -260,7 +271,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3165-3938-4631-b431-396566323930/cheer_tshort.jpg",
+      "https://thb.tildacdn.com/tild3732-6161-4131-a531-386462336366/-/empty/photo_2022-12-26_15-.jpg",
+      "https://thb.tildacdn.com/tild3135-6164-4932-b430-316632633666/-/empty/photo_2023-02-08_11-.jpg",
+      "https://thb.tildacdn.com/tild6663-6234-4333-b064-633830613137/-/empty/DB8A0081_1.jpeg",
+      "https://thb.tildacdn.com/tild6639-3066-4735-a362-613965326336/-/empty/1231.jpg",
+      "https://thb.tildacdn.com/tild6633-3839-4563-b732-663538323436/-/resize/20x/girl333.png"
+    ]
   },
   {
     "id": 58,
@@ -342,7 +361,10 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 4,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3334-6232-4666-b165-303133626238/Group_57.png"
+    ]
   },
   {
     "id": 71,
@@ -381,7 +403,14 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3766-3564-4265-b538-333137626532/_.jpg",
+      "https://thb.tildacdn.com/tild6662-6631-4734-a431-653534653435/-/empty/__2024-02-15__104329.png",
+      "https://thb.tildacdn.com/tild3733-6365-4231-b936-666533653931/-/empty/noroot.png",
+      "https://thb.tildacdn.com/tild3463-3739-4330-b764-363766333738/-/empty/__2024-02-15__162420.png",
+      "https://thb.tildacdn.com/tild3432-3436-4562-a566-303935626437/-/empty/__2025-03-18__163747.png"
+    ]
   },
   {
     "id": 80,
@@ -425,7 +454,10 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 3,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild6161-3232-4631-a630-613066663037/-/empty/ScreenShot20151222at180157.png"
+    ]
   },
   {
     "id": 85,
@@ -465,7 +497,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 2,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6434-3766-4462-b065-383532376366/__.png",
+      "https://thb.tildacdn.com/tild3936-6638-4361-b833-346339636461/-/empty/photo.png",
+      "https://static.tildacdn.com/tild3264-3061-4465-a565-313134323762/photo.png",
+      "https://thb.tildacdn.com/tild6466-6234-4639-b931-333234613939/-/empty/3.jpg",
+      "https://thb.tildacdn.com/tild6334-6538-4534-b736-343032663136/-/empty/1.jpg",
+      "https://thb.tildacdn.com/tild6164-3134-4837-b663-643533346636/-/empty/kras_bel.png"
+    ]
   },
   {
     "id": 101,
@@ -540,7 +580,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 3,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6263-6463-4530-a535-333763363235/cov.jpg",
+      "https://static.tildacdn.com/tild6165-3365-4734-b037-616131316439/image_272.png",
+      "https://static.tildacdn.com/tild3561-3237-4231-a336-626438633331/Group_3.png"
+    ]
   },
   {
     "id": 116,
@@ -756,7 +801,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 3,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6633-3632-4439-a565-636436366533/shutterstock_7191795.jpg",
+      "https://thb.tildacdn.com/tild6132-3235-4431-b264-626365353762/-/resize/20x/dreamy-cheerful-happ.jpg",
+      "https://thb.tildacdn.com/tild3839-3763-4863-a236-353765353332/-/resize/20x/_2.jpg",
+      "https://static.tildacdn.com/tild6333-3237-4234-b738-346433363964/__.png",
+      "https://static.tildacdn.com/tild6233-6232-4531-b863-376461353966/__.png",
+      "https://static.tildacdn.com/tild3636-6137-4038-a335-376663653439/__.png"
+    ]
   },
   {
     "id": 151,
@@ -796,7 +849,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260715-1455",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp"
+    ]
   },
   {
     "id": 153,
@@ -836,7 +897,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/683743641_1496251545376511_2822190704257069468_n.jpg?ccb=11-4&oh=01_Q5Aa5AHZLymjm0D5SeRxgvmEayyMaL-kFaIlygo0WlcPnIOHAQ&oe=6A63EBAE&_nc_sid=5e03e0&_nc_cat=110",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 173,
@@ -975,7 +1041,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 4,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6336-6466-4032-a235-353830326264/photo_2019-08-12_01-.jpg",
+      "https://thb.tildacdn.com/tild3863-3365-4161-b139-323239646635/-/resize/20x/photo.png",
+      "https://thb.tildacdn.com/tild6534-3235-4333-a130-303265646563/-/resize/20x/2.png",
+      "https://thb.tildacdn.com/tild6438-6361-4336-b162-613439303564/-/resize/20x/school-1555910_1280.png",
+      "https://thb.tildacdn.com/tild6234-6336-4231-b435-386330323265/-/resize/20x/-.png",
+      "https://thb.tildacdn.com/tild6231-3239-4630-b838-643333323062/-/empty/__.png"
+    ]
   },
   {
     "id": 105,
@@ -1061,7 +1135,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260715-1455",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp"
+    ]
   },
   {
     "id": 154,
@@ -1107,7 +1189,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3161-6437-4733-b239-383730346135/photo.png",
+      "https://thb.tildacdn.com/tild3039-6236-4534-b839-333464616236/-/resize/20x/IMG_9420.PNG",
+      "https://thb.tildacdn.com/tild6338-3262-4366-a633-303262343938/-/resize/20x/CA42EB96.png"
+    ]
   },
   {
     "id": 167,
@@ -1149,7 +1236,11 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6531-6162-4638-b134-643064376239/__1080_1080_8.png",
+      "https://thb.tildacdn.com/tild3266-3163-4162-b036-383362303066/-/empty/IMG_20230901_145334.jpg"
+    ]
   },
   {
     "id": 190,
@@ -1191,7 +1282,13 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3764-6464-4034-a337-636136316534/-/resize/20x/img_cat.png",
+      "https://thb.tildacdn.com/tild3562-6538-4064-a363-316464373666/-/resize/20x/img_sh.png",
+      "https://thb.tildacdn.com/tild3930-3637-4263-b131-376637623939/-/resize/20x/Frame_3.png",
+      "https://thb.tildacdn.com/tild3433-6633-4166-a430-363239346531/-/resize/20x/Rectangle_32.png"
+    ]
   },
   {
     "id": 17,
@@ -1232,7 +1329,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 2,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://premierakids.ru/wp-content/uploads/2024/09/coj.png",
+      "https://premierakids.ru/wp-content/uploads/2024/09/Snimok-ekrana-2024-09-12-v-9.21.57.png",
+      "https://premierakids.ru/wp-content/uploads/2024/09/Snimok-ekrana-2024-09-12-v-9.21.57-removebg-preview.png",
+      "https://premierakids.ru/wp-content/uploads/2024/09/IMG_6017.jpg",
+      "https://premierakids.ru/wp-content/uploads/2024/08/coj-1.jpg",
+      "https://premierakids.ru/wp-content/uploads/2022/08/YUliya_Gavrilkina.png"
+    ]
   },
   {
     "id": 22,
@@ -1322,7 +1427,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 2,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3334-3662-4832-b333-623164646137/-/resize/504x/photo_2025-09-16_144.jpeg",
+      "https://thb.tildacdn.com/tild3735-6230-4633-b564-313935366135/-/empty/photo_2025-10-17_232.jpeg",
+      "https://thb.tildacdn.com/tild3431-3665-4233-b436-376565346333/-/empty/photo_2025-10-17_232.jpeg",
+      "https://thb.tildacdn.com/tild3334-3662-4832-b333-623164646137/-/empty/photo_2025-09-16_144.jpeg",
+      "https://static.tildacdn.com/tild3334-3662-4832-b333-623164646137/photo_2025-09-16_144.jpeg",
+      "https://thb.tildacdn.com/tild6537-3537-4133-a663-303635396465/-/empty/XXXL-9.webp"
+    ]
   },
   {
     "id": 66,
@@ -1406,7 +1519,10 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://erudite.ru/wp-content/uploads/2024/10/S.jpg"
+    ]
   },
   {
     "id": 172,
@@ -1489,7 +1605,10 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 95
+    "data_quality": 95,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3962-3363-4939-b937-623732336364/-/resize/20x/noroot.png"
+    ]
   },
   {
     "id": 6,
@@ -1535,7 +1654,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3434-3632-4163-b932-363533373036/-/resize/504x/Screenshot_6.png",
+      "https://thb.tildacdn.com/tild6664-3239-4064-b031-623233396166/-/empty/IMG20241224165210.jpg",
+      "https://thb.tildacdn.com/tild6637-3135-4933-b936-393839643434/-/empty/IMG20250105171849.jpg",
+      "https://thb.tildacdn.com/tild6633-6132-4737-b063-386565303633/-/empty/IMG20241214201136.jpg",
+      "https://thb.tildacdn.com/tild6633-3031-4263-b031-613435626161/-/empty/IMG20231105151024.jpg",
+      "https://thb.tildacdn.com/tild6439-6235-4434-a230-313434383266/-/empty/IMG20241201162120.jpg"
+    ]
   },
   {
     "id": 29,
@@ -1580,7 +1707,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6165-3664-4330-b563-363338353633/___.jpg",
+      "https://thb.tildacdn.com/tild6435-6561-4965-b266-373238643032/-/resize/20x/Frame_125.jpg",
+      "https://static.tildacdn.com/tild6337-3165-4131-a164-623361613535/____2381.png"
+    ]
   },
   {
     "id": 51,
@@ -1626,7 +1758,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://voca-beat.ru/wp-content/uploads/2023/09/1024_round.png",
+      "https://voca-beat.ru/wp-content/uploads/2026/07/2026.07.26.-bazar-fest.-afisha-724x1024.jpg",
+      "https://voca-beat.ru/wp-content/uploads/2026/06/vocabeat_sertificate_present.webp",
+      "https://voca-beat.ru/wp-content/uploads/2026/03/voca-beat_telegram_admin_welcome.png",
+      "https://voca-beat.ru/wp-content/uploads/2026/03/voca-beat_max.png",
+      "https://voca-beat.ru/wp-content/uploads/2025/09/vb_story.webp"
+    ]
   },
   {
     "id": 104,
@@ -1665,7 +1805,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3033-3766-4130-b337-373265666537/photo.png",
+      "https://thb.tildacdn.com/tild3836-6330-4337-b237-326637376130/-/resize/20x/Vector.png",
+      "https://thb.tildacdn.com/tild3832-3664-4835-b330-633539633034/-/resize/20x/Vector.png"
+    ]
   },
   {
     "id": 160,
@@ -1751,7 +1896,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 30,
@@ -1791,7 +1940,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 180,
@@ -1831,7 +1984,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 56,
@@ -1871,7 +2028,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3430-3235-4565-a230-626434633163/__.png",
+      "https://static.tildacdn.com/img/tildacopy_black.png",
+      "https://thb.tildacdn.com/tild6635-3665-4431-b363-383535396336/-/empty/175A0598_copy_219.webp",
+      "https://thb.tildacdn.com/tild6630-6266-4332-a236-313637353730/-/empty/175A5327_1_741.webp",
+      "https://thb.tildacdn.com/tild6538-3835-4631-b430-323163633837/-/empty/175A3565_1_993.webp",
+      "https://thb.tildacdn.com/tild6465-6662-4233-b731-333431383639/-/empty/175A3118_1_625.webp"
+    ]
   },
   {
     "id": 106,
@@ -1911,7 +2076,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 170,
@@ -1951,7 +2120,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 20,
@@ -1991,7 +2164,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/359674867_846911706584205_3681326434207556757_n.jpg?ccb=11-4&oh=01_Q5Aa5AEjsEfPkCLMtV55k8FHn-TMU7S1lwAlLaA404W7JNbEqg&oe=6A63F4AC&_nc_sid=5e03e0&_nc_cat=102",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 21,
@@ -2030,7 +2208,11 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3536-3734-4234-b264-393036383131/6a868d15a669999eafbd.jpg",
+      "https://static.tildacdn.com/tild6236-3436-4430-b561-653562396137/Illustration23.png"
+    ]
   },
   {
     "id": 24,
@@ -2070,7 +2252,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260715-1455",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp"
+    ]
   },
   {
     "id": 59,
@@ -2110,7 +2300,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 90
+    "data_quality": 90,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/716930568_27277524178552406_4951702987036429926_n.jpg?ccb=11-4&oh=01_Q5Aa5AHToUNJmwdp4CNO33t_R4TRq487aDCwYMYLJKExYzW0hQ&oe=6A63DEAC&_nc_sid=5e03e0&_nc_cat=101",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 27,
@@ -2150,7 +2345,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 3,
-    "data_quality": 80
+    "data_quality": 80,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3463-3661-4735-a232-653435303962/-/resize/504x/IMG_0873.JPG",
+      "https://thb.tildacdn.com/tild6634-6662-4565-b332-393038386137/-/empty/IMG_2884.JPG",
+      "https://thb.tildacdn.com/tild6334-6331-4532-b730-326664626663/-/empty/IMG_5131.JPG",
+      "https://thb.tildacdn.com/tild6331-3665-4564-b137-393433336263/-/empty/IMG_2881.JPG",
+      "https://thb.tildacdn.com/tild3934-6338-4630-a366-346464663361/-/empty/IMG_2869.JPG",
+      "https://thb.tildacdn.com/tild3833-3335-4339-b033-663832633937/-/empty/IMG_2858.JPG"
+    ]
   },
   {
     "id": 161,
@@ -2185,7 +2388,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 80
+    "data_quality": 80,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3566-3562-4839-a435-613865633466/-/resize/504x/3R4A3077-Edit_copy-m.jpg",
+      "https://thb.tildacdn.com/tild6463-3731-4464-b365-326233366666/-/empty/IMG_9042.JPG",
+      "https://thb.tildacdn.com/tild6364-6235-4264-b039-656631346234/-/empty/IMG_8046.JPG",
+      "https://thb.tildacdn.com/tild6266-3861-4431-a634-393831383439/-/empty/IMG_9031.JPG",
+      "https://thb.tildacdn.com/tild3765-3435-4564-a134-643833323462/-/empty/IMG_5101.JPG",
+      "https://thb.tildacdn.com/tild3066-6638-4438-b532-663363313564/-/empty/IMG_6892-min.jpg"
+    ]
   },
   {
     "id": 63,
@@ -2231,7 +2442,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 2,
-    "data_quality": 80
+    "data_quality": 80,
+    "extra_photos": [
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/9d6fede4-6d2b-4f4f-92de-b48825314826/9d6fede4-6d2b-4f4f-92de-b48825314826-6100365.jpeg",
+      "https://pic.rtbcdn.ru/video/2026-03-18/d3/ca/d3caa8563f14c19c86e88602ca3fda0c.jpg",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/fdb4170b-0347-4841-9c93-f29148eb2ffa/fdb4170b-0347-4841-9c93-f29148eb2ffa-14530773.jpeg",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/f65cdb63-a3f5-4c84-8a2c-95082ec60266/f65cdb63-a3f5-4c84-8a2c-95082ec60266-14646915.png",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/f4141580-1926-47ed-a716-57c83e246a01/f4141580-1926-47ed-a716-57c83e246a01-10061483.jpeg",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/f1379f24-6006-42a2-8ad8-9f4ec5cd4577/f1379f24-6006-42a2-8ad8-9f4ec5cd4577-6042394.jpeg"
+    ]
   },
   {
     "id": 57,
@@ -2380,7 +2599,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3261-6361-4463-b237-313031316531/image.png",
+      "https://static.tildacdn.com/tild3432-6439-4633-a138-303130636265/photo.png",
+      "https://thb.tildacdn.com/tild6665-6632-4338-a466-393034313433/-/empty/21.jpg",
+      "https://thb.tildacdn.com/tild6664-3165-4365-a438-343562656236/-/empty/5361912738437265648.jpg",
+      "https://thb.tildacdn.com/tild6638-3230-4161-b162-393062333562/-/empty/5361912738437265792.jpg",
+      "https://thb.tildacdn.com/tild6636-3834-4633-b639-363036303932/-/empty/17.jpg"
+    ]
   },
   {
     "id": 5,
@@ -2415,7 +2642,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://whitestudio-msk.ru/images/og-image.jpg",
+      "https://whitestudio-msk.ru/images/teachers/sofia.webp",
+      "https://whitestudio-msk.ru/images/teachers/nikita.webp",
+      "https://whitestudio-msk.ru/images/teachers/gleb.webp",
+      "https://whitestudio-msk.ru/images/teachers/elizaveta.webp",
+      "https://whitestudio-msk.ru/images/teachers/elena.webp"
+    ]
   },
   {
     "id": 23,
@@ -2450,7 +2685,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://artel-rus.ru/wp-content/uploads/2026/02/chertej-index-about.webp.webp",
+      "https://artel-rus.ru/wp-content/uploads/2026/03/izobrazhenie-whatsapp-2025-04-01-v-19.35.45_51c813f9.webp",
+      "https://artel-rus.ru/wp-content/uploads/2026/03/izobrazhenie-whatsapp-2025-04-01-v-19.32.53_238c8148.webp",
+      "https://artel-rus.ru/wp-content/uploads/2026/03/izobrazhenie-whatsapp-2025-04-01-v-19.31.43_adbbccb9.webp",
+      "https://artel-rus.ru/wp-content/uploads/2026/03/izobrazhenie-whatsapp-2025-04-01-v-19.31.16_2c6821f9.webp",
+      "https://artel-rus.ru/wp-content/uploads/2026/03/izobrazhenie-whatsapp-2025-04-01-v-19.30.52_4777992f.webp"
+    ]
   },
   {
     "id": 40,
@@ -2496,7 +2739,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild6138-6661-4238-b466-373934643836/-/resize/504x/__43x.png",
+      "https://static.tildacdn.com/img/tildacopy.png",
+      "https://thb.tildacdn.com/tild6632-6665-4837-b534-356163353831/-/empty/1-108.jpg",
+      "https://thb.tildacdn.com/tild6562-6231-4261-a131-383036623030/-/empty/1-81.jpg",
+      "https://thb.tildacdn.com/tild6466-6131-4333-b433-633762383261/-/empty/1-37.jpg",
+      "https://thb.tildacdn.com/tild6266-6236-4166-a661-613863646564/-/empty/1-100.jpg"
+    ]
   },
   {
     "id": 52,
@@ -2531,7 +2782,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://splash-school.com/wp-content/uploads/2025/06/horizontal-container-1-scaled.jpg",
+      "https://splash-school.com/wp-content/uploads/2025/05/hero-section-2048x506.jpg",
+      "https://splash-school.com/wp-content/uploads/2026/05/photo_2026-05-12_12-58-27.jpg",
+      "https://splash-school.com/wp-content/uploads/2025/08/photo_2025-08-06_19-32-58-2.jpg",
+      "https://splash-school.com/wp-content/uploads/2025/07/photo_2025-07-16_14-50-38.jpg",
+      "https://splash-school.com/wp-content/uploads/2025/06/img_0591.webp"
+    ]
   },
   {
     "id": 74,
@@ -2576,7 +2835,12 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6565-3634-4337-b266-323263666339/6C96039F-F8E2-44CD-B.jpg",
+      "https://static.tildacdn.com/tild6562-6562-4364-a537-656234333862/1C3A1970.jpg",
+      "https://thb.tildacdn.com/tild6338-3161-4561-a366-393536346536/-/empty/_0925.jpg"
+    ]
   },
   {
     "id": 76,
@@ -2611,7 +2875,10 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://admin.cantera.ru/uploads/og_906e79a468.jpg"
+    ]
   },
   {
     "id": 83,
@@ -2729,7 +2996,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3165-3865-4065-b265-616635633634/photo_2025-02-11_115.jpeg",
+      "https://thb.tildacdn.com/tild6537-3561-4732-a266-666663333861/-/resize/20x/photo_2025-02-11_115.png",
+      "https://thb.tildacdn.com/tild6231-3231-4137-a163-663038343761/-/resize/20x/image.png",
+      "https://thb.tildacdn.com/tild3833-3263-4261-a430-393233613462/-/resize/20x/photo_2025-03-25_184.png",
+      "https://thb.tildacdn.com/tild6234-3130-4530-b434-323963643435/-/resize/20x/noroot.png",
+      "https://thb.tildacdn.com/tild6162-6637-4733-a663-653238666637/-/resize/20x/noroot.png"
+    ]
   },
   {
     "id": 99,
@@ -2842,7 +3117,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://files.reg.solutions/321af67f-0694-4929-b885-2bb5d9b7f441/images/c86be320-7054-4af5-9b9b-f65ebd7fc151-%D0%BF1.jpg",
+      "https://pelikan-center.ru/img/urIgSpVft5WHwXRpDen3QhT9s5OcZjVALnhQWCh4Tjc/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvNzg5MjE0ZDQtOWEwNi00NjQ2LWI4NTktM2VkZGNlMzU5Y2M1LTNlODIyNTNmNDZhNDExZjBiZmM0MTYzNjI2OTg2OTJiXzEuanBn.webp",
+      "https://pelikan-center.ru/img/uVKxWjWF4VfiR4x4Ojm1nBkwEewS6cI1slb5CeS2_d8/q:87/el:1/g:ce/w:1000/h:0/resize:fit/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvMjIxNTAxNGYtOGNmZi00N2M2LThkOTAtMjAxMmZlY2E1ZWZiLTEuanBn.webp",
+      "https://pelikan-center.ru/img/rr-X-zfeucEoQ61K7G7bAZQ3QcfqCYTSuzu0YI0m7WU/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvNDY5OTllZDQtODRmZC00MmJkLThkOTItNTNjOTJlNTBkNmMwLTljNTRlNTJkNDZhMTExZjBiODFhMGE3ZDU5NTBjNGQ4XzQuanBn.webp",
+      "https://pelikan-center.ru/img/nDELHj9_6DmEmExVuorN2gBUQQxLb5ZKMNeXTDrhbcM/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvYjdkYzBiZGUtYzQ3Yy00NDEyLTliMjktZDY1ZjgzNzI0MGI5LdC60L7QvNC_0LvQtdC60YHQvdC-0LUuanBn.webp",
+      "https://pelikan-center.ru/img/k7nBUeqnwl_z4S5QQ9Fz-Ivjj7tFNBvP5B-YIHvGZtw/q:87/el:1/g:ce/w:200/h:200/resize:fill/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvMzNkYzJiZTctNzVjMi00MzY5LThkMTktYTJkMGM4ODQ2OTdiLdC40L3QtNC40LLQuNC00YPQsNC70YzQvdGL0LkuanBn.webp"
+    ]
   },
   {
     "id": 107,
@@ -2912,7 +3195,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://lubertsy.academyboomkids.ru/wp-content/uploads/Mask-group-12.png",
+      "https://lubertsy.academyboomkids.ru/wp-content/plugins/revslider/sr6/assets/assets/dummy.png",
+      "https://lubertsy.academyboomkids.ru/wp-content/uploads/01-1.png",
+      "https://lubertsy.academyboomkids.ru/wp-content/uploads/slide_17.jpg",
+      "https://lubertsy.academyboomkids.ru/wp-content/uploads/sertifikat-3.png",
+      "https://lubertsy.academyboomkids.ru/wp-content/uploads/sertifikat-2.png"
+    ]
   },
   {
     "id": 126,
@@ -2956,7 +3247,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://informatics.ru/images/otdelenie/cta/cta5.jpg",
+      "https://informatics.ru/images/otdelenie/cta/cta3.jpg",
+      "https://informatics.ru/images/otdelenie/cta/cta2.jpg",
+      "https://informatics.ru/images/otdelenie/cta/cta1.jpg",
+      "https://informatics.ru/images/otdelenie/cta/cat4-3.jpg",
+      "https://informatics.ru/images/otdelenie/chart.png"
+    ]
   },
   {
     "id": 132,
@@ -3072,7 +3371,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 3,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "http://www.cmit.ru/wp-content/uploads/2018/03/i-regions.jpg",
+      "http://www.cmit.ru/wp-content/uploads/2018/03/front_cause_6.png",
+      "http://www.cmit.ru/wp-content/uploads/2018/03/front_cause_5.png",
+      "http://www.cmit.ru/wp-content/uploads/2018/03/front_cause_4.png",
+      "http://www.cmit.ru/wp-content/uploads/2018/03/front_cause_3.png",
+      "http://www.cmit.ru/wp-content/uploads/2018/03/front_cause_2.png"
+    ]
   },
   {
     "id": 174,
@@ -3107,7 +3414,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://krukovo.academyboomkids.ru/wp-content/uploads/Mask-group-12.png",
+      "https://krukovo.academyboomkids.ru/wp-content/plugins/revslider/sr6/assets/assets/dummy.png",
+      "https://krukovo.academyboomkids.ru/wp-content/uploads/01-1.png",
+      "https://krukovo.academyboomkids.ru/wp-content/uploads/slide_17.jpg",
+      "https://krukovo.academyboomkids.ru/wp-content/uploads/sertifikat-3.png",
+      "https://krukovo.academyboomkids.ru/wp-content/uploads/sertifikat-2.png"
+    ]
   },
   {
     "id": 205,
@@ -3142,7 +3457,13 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://uniqum.online/wp-content/uploads/2023/06/iris_scientific_advice-e1687699790472-1024x631.png",
+      "https://uniqum.online/wp-content/uploads/2023/06/4bda98ffb2df4c25f077219377448b18-1024x683.jpg",
+      "https://uniqum.online/wp-content/uploads/2023/06/3-1024x681.jpeg",
+      "https://uniqum.online/wp-content/uploads/2022/08/image-3-1024x768.jpg"
+    ]
   },
   {
     "id": 209,
@@ -3191,7 +3512,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://myenglishforever.ru/wp-content/uploads/2025/09/open-door-main-768x1022.jpg",
+      "https://myenglishforever.ru/wp-content/uploads/2025/08/Дни-открытых-дверей-2-768x543.jpg",
+      "https://myenglishforever.ru/wp-content/uploads/2025/08/Дизайн-без-названия-6-768x432.png",
+      "https://myenglishforever.ru/wp-content/uploads/2025/08/vipuskniki-768x432.jpg",
+      "https://myenglishforever.ru/wp-content/uploads/2025/08/photo_2025-08-07_19-10-12.jpg",
+      "https://myenglishforever.ru/wp-content/uploads/2025/08/IMG_20250817_000046_508-768x578.jpg"
+    ]
   },
   {
     "id": 216,
@@ -3239,7 +3568,15 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3734-3265-4563-a630-366132623331/_11_2_1.png",
+      "https://thb.tildacdn.com/tild6537-6563-4831-b063-613330623335/-/empty/___29.png",
+      "https://thb.tildacdn.com/tild6533-6561-4435-b234-373961323861/-/empty/___13.png",
+      "https://thb.tildacdn.com/tild6466-3139-4265-a538-393334316134/-/empty/noroot.png",
+      "https://thb.tildacdn.com/tild6430-6139-4062-b734-383232303335/-/empty/___22.png",
+      "https://thb.tildacdn.com/tild6364-3334-4663-b139-656666333632/-/empty/___8.png"
+    ]
   },
   {
     "id": 217,
@@ -3286,7 +3623,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 4,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3261-6234-4432-a634-306466376138/-/resize/504x/full-shot-girl-with-.jpg",
+      "https://thb.tildacdn.com/tild6232-3936-4764-b437-363236666236/-/resize/20x/7976184-02.png",
+      "https://thb.tildacdn.com/tild6165-6435-4238-b161-633038323931/-/resize/20x/Flat_bubble_for_q2uo.png",
+      "https://thb.tildacdn.com/tild3634-3434-4130-b838-373965326234/-/resize/20x/Flat_bubble_for_q2uo.png",
+      "https://thb.tildacdn.com/tild3262-3037-4331-b363-366537636631/-/resize/20x/Flat_bubble_for_q2uo.png",
+      "https://thb.tildacdn.com/tild3236-3933-4539-b330-303663353766/-/resize/20x/tf33_e3wy_220107_.png"
+    ]
   },
   {
     "id": 219,
@@ -3426,7 +3771,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://www.djelso.ru/images/home/JC4A3495-1200.jpg",
+      "https://www.djelso.ru/images/home/studia/vocal.jpg",
+      "https://www.djelso.ru/images/home/studia/teatr.jpg",
+      "https://www.djelso.ru/images/home/studia/tancy.jpg",
+      "https://www.djelso.ru/images/home/studia/razvitie.jpg",
+      "https://www.djelso.ru/images/home/studia/izo.jpg"
+    ]
   },
   {
     "id": 141,
@@ -3471,7 +3824,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 4,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3466-3230-4536-b364-353666313433/Frame_2_2.png",
+      "https://thb.tildacdn.com/tild3437-3638-4437-b065-326338396131/-/resize/20x/photo_2025-12-14_19-.jpg",
+      "https://thb.tildacdn.com/tild3162-3765-4931-a135-303736303935/-/resize/20x/photo.PNG",
+      "https://thb.tildacdn.com/tild3961-3966-4465-a631-363638613866/-/resize/20x/Group_427320878_1_1.png",
+      "https://thb.tildacdn.com/tild3734-3639-4330-a538-386435633833/-/resize/20x/2025-12-24_13-56-17.png",
+      "https://thb.tildacdn.com/tild3463-3738-4963-b063-643362643137/-/resize/20x/2025-12-22_15-43-38.png"
+    ]
   },
   {
     "id": 144,
@@ -3517,7 +3878,15 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://gal.edummr.ru/wp-content/uploads/2026/07/IMG_20260702_144822-300x231.png",
+      "https://gal.edummr.ru/wp-content/uploads/2026/05/Рисунок1-300x233.jpg",
+      "https://gal.edummr.ru/wp-content/uploads/2026/05/IMG_20260527_122902-300x183.png",
+      "https://gal.edummr.ru/wp-content/uploads/2026/04/PHOTO-2025-11-08-21-47-30.jpg",
+      "https://gal.edummr.ru/wp-content/uploads/2026/04/300.png",
+      "https://gal.edummr.ru/wp-content/uploads/2025/12/МАХ-1х1.png"
+    ]
   },
   {
     "id": 220,
@@ -3595,7 +3964,10 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 5,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3430-3132-4035-a430-303164313831/Desktop_-_23_1.jpg"
+    ]
   },
   {
     "id": 15,
@@ -3665,7 +4037,15 @@
     "has_trial": true,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://baby-club.ru/static/assets/child-5_Z2Rb8x.png",
+      "https://baby-club.ru/static/assets/child-4_18m4om.png",
+      "https://baby-club.ru/static/assets/child-3_Z22h6DE.png",
+      "https://baby-club.ru/static/assets/child-2_Z1DTIUl.png",
+      "https://baby-club.ru/static/assets/child-1_ZncIyG.png",
+      "https://baby-club.ru/static/assets/video-cover_2vttuE.jpg"
+    ]
   },
   {
     "id": 60,
@@ -3742,7 +4122,10 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/img/tildacopy.png"
+    ]
   },
   {
     "id": 61,
@@ -3777,7 +4160,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://7.paint.mos.ru/upload/resize_cache/iblock/c81/820_420_1/khanova-yuliya-14-let.-natyurmort.-prep.-kovachevich-a.a..jpg",
+      "https://7.paint.mos.ru/upload/resize_cache/iblock/a43/820_420_1/finyakin-sergey-16-let.-natyurmort.-prep.-vishnevskaya-t.i..jpg",
+      "https://7.paint.mos.ru/upload/resize_cache/iblock/7c2/820_420_1/finyakin-grigoriy-14-let.-natyurmort.-prep.-vishnevskaya-t.i..jpg",
+      "https://7.paint.mos.ru/upload/resize_cache/iblock/60a/820_420_1/khanova-yuliya-15-let.-natyurmort.-prep.-kovachevich-a.a..jpg",
+      "https://7.paint.mos.ru/upload/resize_cache/iblock/5ff/820_420_1/matveeva_vera_14_let_prep.ivanov_b.a._natyurmord..jpg",
+      "https://7.paint.mos.ru/upload/resize_cache/iblock/44b/820_420_1/yanovaya-yana-14-let.-natyurmort.-prep.-ivanov-b.a..jpg"
+    ]
   },
   {
     "id": 175,
@@ -3858,7 +4249,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3866-3463-4665-b536-613365376236/-2_2.jpg",
+      "https://thb.tildacdn.com/tild6532-3731-4938-a630-616663633531/-/empty/image-76.png",
+      "https://thb.tildacdn.com/tild3837-6639-4239-a130-326133383036/-/empty/donateimage.png",
+      "https://thb.tildacdn.com/tild6662-3062-4164-a336-303761303334/-/empty/001.png",
+      "https://thb.tildacdn.com/tild6634-3739-4730-b737-333231653966/-/empty/__page-0001.jpg",
+      "https://thb.tildacdn.com/tild6565-3131-4237-b166-386533666436/-/empty/67.jpg"
+    ]
   },
   {
     "id": 26,
@@ -3893,7 +4292,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://vocalette.ru/wp-content/uploads/2022/07/klass_dlya_vokala_so_svetomuzykoj-rotated-e1664285153669-optimized.jpeg",
+      "https://vocalette.ru/wp-content/uploads/reklama-na-kazan-optimized.jpg",
+      "https://vocalette.ru/wp-content/uploads/reklama-na-kazan-1080-14402-optimized.jpg",
+      "https://vocalette.ru/wp-content/uploads/nedelka2-1-optimized.jpg",
+      "https://vocalette.ru/wp-content/uploads/form-free__img-optimized.png",
+      "https://vocalette.ru/wp-content/uploads/elementor/thumbs/Копия-img_2711-rhjshd92grc8i5nqpwokjnw4o3bm6521qu1wi2an2g-optimized.jpg"
+    ]
   },
   {
     "id": 117,
@@ -3928,7 +4335,13 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://uniqum.online/wp-content/uploads/2023/06/iris_scientific_advice-e1687699790472-1024x631.png",
+      "https://uniqum.online/wp-content/uploads/2023/06/4bda98ffb2df4c25f077219377448b18-1024x683.jpg",
+      "https://uniqum.online/wp-content/uploads/2023/06/3-1024x681.jpeg",
+      "https://uniqum.online/wp-content/uploads/2022/08/image-3-1024x768.jpg"
+    ]
   },
   {
     "id": 113,
@@ -3963,7 +4376,10 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://it-robotics.ru/wp-content/uploads/2025/08/img-20241110-wa0003.jpg"
+    ]
   },
   {
     "id": 206,
@@ -3998,7 +4414,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 75
+    "data_quality": 75,
+    "extra_photos": [
+      "https://mos-chess.ru/wp-content/uploads/2023/08/ден-новая1.jpg",
+      "https://mos-chess.ru/wp-content/uploads/2023/08/гоша1.jpg",
+      "https://mos-chess.ru/wp-content/uploads/2023/08/артем.jpg",
+      "https://mos-chess.ru/wp-content/uploads/2022/08/ярослав.jpg",
+      "https://mos-chess.ru/wp-content/uploads/2022/08/серега1.jpg",
+      "https://mos-chess.ru/wp-content/uploads/2022/08/ваня1-898x1024.jpg"
+    ]
   },
   {
     "id": 55,
@@ -4033,7 +4457,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://xn--80abualdvac0af0af9m.xn--p1ai/media/evtdjwzw/favios.png",
+      "https://философиябокса.рф/media/zbmmxiwt/philosophy_of_boxing_moscow-4.jpg?width=1024&height=1024&v=1dc10253bd0cc23",
+      "https://философиябокса.рф/media/yx2bupih/philosophy_boxing_moscow-4.jpg?width=1024&height=1024&v=1dc223cbc742687",
+      "https://философиябокса.рф/media/yn1pm0wz/philosophy_of_boxing_gym-5.jpg?width=1024&height=1024&v=1dc0b5532ea049c",
+      "https://философиябокса.рф/media/ss0m24vn/philosophy_of_boxing_gym-8.jpg?width=1024&height=1024&v=1dc0b553775858d",
+      "https://философиябокса.рф/media/sllcakhz/philosophy_of_boxing-moscow-11.jpg"
+    ]
   },
   {
     "id": 67,
@@ -4073,7 +4505,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260715-1455",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp"
+    ]
   },
   {
     "id": 72,
@@ -4113,7 +4553,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/537804609_1636624161051281_6219664465723702768_n.jpg?ccb=11-4&oh=01_Q5Aa5AEg07ntiNWIDaCxoN0EXs3kqEuNcZPWKncjjHjUjtVhQA&oe=6A63E0E8&_nc_sid=5e03e0&_nc_cat=111",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 75,
@@ -4153,7 +4598,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/344598864_763052168793521_5671386535208969367_n.jpg?ccb=11-4&oh=01_Q5Aa5AHN1Lw6wjlh1BcS67nUK0vIBaEm9DBAhR5eE0SmWPEf6Q&oe=6A63EB71&_nc_sid=5e03e0&_nc_cat=103",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 77,
@@ -4193,7 +4643,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260715-1455",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp"
+    ]
   },
   {
     "id": 86,
@@ -4233,7 +4691,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 127,
@@ -4268,7 +4730,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://roboteh.club/wp-content/uploads/2025/08/d933e9ad-13ac-456a-904c-719be3c5702e.webp",
+      "https://roboteh.club/wp-content/uploads/2025/08/programmirovanie-scratch-dlya-detej-8-12-let.webp",
+      "https://roboteh.club/wp-content/uploads/2025/08/osnovy-robototehniki-dlya-detej-10-14-let.webp",
+      "https://roboteh.club/wp-content/uploads/2025/08/about-1.webp",
+      "https://roboteh.club/wp-content/uploads/2025/07/vitalij-andreevich.jpg",
+      "https://roboteh.club/wp-content/uploads/2025/07/viktoriya-borisovna.jpg"
+    ]
   },
   {
     "id": 192,
@@ -4308,7 +4778,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 215,
@@ -4348,7 +4822,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 16,
@@ -4418,7 +4896,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 70
+    "data_quality": 70,
+    "extra_photos": [
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/56d21ab0-432e-4eed-8fb6-154ee2fdbc26/56d21ab0-432e-4eed-8fb6-154ee2fdbc26-5976792.png",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/f6f1bc8c-0b22-4fe4-a87f-a1c5b1b42dc8/f6f1bc8c-0b22-4fe4-a87f-a1c5b1b42dc8-10488450.png",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/f4ce76e0-ae7e-48d8-9b24-971cbf0cb851/f4ce76e0-ae7e-48d8-9b24-971cbf0cb851-5975726.png",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/f258f0d4-254b-469b-a928-86a323c80902/f258f0d4-254b-469b-a928-86a323c80902-10488436.jpeg",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/e8971c3d-632c-4415-a009-acdbbe91a273/e8971c3d-632c-4415-a009-acdbbe91a273-10488454.jpeg",
+      "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/ca79d361-17ee-4bbb-8e89-d66471098b5a/ca79d361-17ee-4bbb-8e89-d66471098b5a-11008976.png"
+    ]
   },
   {
     "id": 2,
@@ -4453,7 +4939,11 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6462-3038-4934-a332-383330613134/chris-irk6DwN9giQ-un.png",
+      "https://static.tildacdn.com/tild3838-3338-4862-b330-653635393833/Slice_1.png"
+    ]
   },
   {
     "id": 37,
@@ -4493,7 +4983,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/55963726_412267989335128_7124199598339391488_n.jpg?ccb=11-4&oh=01_Q5Aa5AE8bFoOFzNeYhB-urx3kahI0xeCmrTQ9DHZHCSqXZnaZA&oe=6A63DBBD&_nc_sid=5e03e0&_nc_cat=110",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 120,
@@ -4533,7 +5028,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://blog.youtube/static/blog_youtube/images/youtube_social_1200x630.png?version=pr20260715-1455",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp",
+      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp"
+    ]
   },
   {
     "id": 147,
@@ -4568,7 +5071,12 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://taplink.st/a/4/0/1/9/76dbde.jpg?2",
+      "https://taplink.st/a/5/a/e/4/5787f8.jpg?1",
+      "https://taplink.st/a/4/3/0/2/75c28d.png?17"
+    ]
   },
   {
     "id": 150,
@@ -4603,7 +5111,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://fencingleague.ru/wp-content/uploads/2025/09/xfenc-kid.png.pagespeed.ic.xHoaQ5Yuy4.png",
+      "https://fencingleague.ru/wp-content/uploads/2024/10/Снимок-экрана-2024-10-23-в-12.41.19.png",
+      "https://fencingleague.ru/wp-content/uploads/2020/01/vzr2.jpg",
+      "https://fencingleague.ru/wp-content/uploads/2020/01/sasha.jpg",
+      "https://fencingleague.ru/wp-content/uploads/2020/01/korp.jpg",
+      "https://fencingleague.ru/wp-content/uploads/2020/01/ivan.jpg"
+    ]
   },
   {
     "id": 155,
@@ -4673,7 +5189,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://sunschool.ru/upload/iblock/fd6/fd6315645c8371f0e0261b6b3685b9aa.png",
+      "https://sunschool.ru/upload/iblock/ea9/ea99151f768a852dbfaefc00992ecd3a.jpeg",
+      "https://sunschool.ru/upload/iblock/e8d/e8da3f9bf32ab598e79dd9f7d47ce6ec.png",
+      "https://sunschool.ru/upload/iblock/e5f/e5f3c8976cf59279097d04581c66c700.jpeg",
+      "https://sunschool.ru/upload/iblock/e42/e42b21ab8044cc83240f6dbb1955755c.jpg",
+      "https://sunschool.ru/upload/iblock/e38/e387db3086c9285f48fe3c08a812d4f7.JPG"
+    ]
   },
   {
     "id": 159,
@@ -4748,7 +5272,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/491870130_1006615504607428_1263723107529922791_n.jpg?ccb=11-4&oh=01_Q5Aa5AH2pHkJRUvQGJFWYlNTCFB-O6MFl1Jrm-UR6iYn_XvHPg&oe=6A63CEF2&_nc_sid=5e03e0&_nc_cat=106",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 218,
@@ -4788,7 +5317,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 49,
@@ -4823,7 +5356,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 65
+    "data_quality": 65,
+    "extra_photos": [
+      "http://www.rus-aikido.ru/gallery/22058.jpg",
+      "http://www.rus-aikido.ru/gallery/21663.JPG",
+      "http://www.rus-aikido.ru/gallery/21662.jpg",
+      "http://www.rus-aikido.ru/gallery/21661.jpg",
+      "http://www.rus-aikido.ru/gallery/21660.jpg",
+      "http://www.rus-aikido.ru/gallery/21659.jpg"
+    ]
   },
   {
     "id": 200,
@@ -4963,7 +5504,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "http://bcballet.ru/upload/resize_cache/iblock/f0d/112_112_2/2016_12_02-387.jpg",
+      "http://bcballet.ru/upload/resize_cache/iblock/de1/112_112_2/int_tverskoy_sayt.jpg",
+      "http://bcballet.ru/upload/resize_cache/iblock/9d5/112_112_2/DSC_8448_JPG1750.jpg",
+      "http://bcballet.ru/upload/resize_cache/iblock/713/112_112_2/DSC_7685.jpg",
+      "http://bcballet.ru/upload/resize_cache/iblock/286/112_112_2/nov7_sayt.jpg",
+      "http://bcballet.ru/upload/resize_cache/iblock/0b4/112_112_2/Deti.jpg"
+    ]
   },
   {
     "id": 7,
@@ -5033,7 +5582,10 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://www.krasndmsh.ru/userfiles/images/26022016/1_465.jpg"
+    ]
   },
   {
     "id": 10,
@@ -5068,7 +5620,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://s3.reg.solutions/71ced373-4a84-4342-b9ce-1c09ae68a00b/images/f4f1c0d5-5db5-406c-adaa-0c3a1f007486-file-002.png",
+      "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/ydpAIkz2K2346_qsn41py7xFlpLqc8QiXhu85zZzfIA/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvN2VhOWRjY2QtOTAwMy00NjgxLTliZDktMmZiMmYzNzlmMzY5LWltZ185NjMwIXYxLmpwZw.webp",
+      "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/yB681NW3SSjJMfb71hLDDEbFDS--jR8_Cw7E31h4voM/q:87/el:1/g:ce/w:0/h:70/resize:fit/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvZTVmMWMxNjYtZjM5MS00MDdmLTg1ZmEtZTdmMTgzNmVmOTIxLXNjcmVlbnNob3RfOS5wbmc.webp",
+      "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/xgQeHoiiHN-GZez7JQHuuLaL0lOG2bEmPj5dqWEJJec/q:87/el:1/g:ce/w:680/h:0/resize:fit/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvYmMyMTMyYjktNDEzNC00ZTdlLTgwYzgtYjZkMzkxMzVjMjAyLTIwMjQtMDMtMjgyMy01Ni01OCgzMSkuanBlZw.webp",
+      "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/x5P35yfXTAki95dTcxr2_ovkoYj5s2xEUOx4kP7b0qI/q:87/el:1/g:ce/w:600/h:0/resize:fit/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvOTcwYWYzN2QtZTYzMy00YWM2LWFlYjAtMDM3N2M5NTNlNzE2LTIwMjExMTIxXzE0MzcyNS5qcGc.webp",
+      "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/vrHljmqGDReUiTx-GpF-8785V8ethzRfyE4LJPxvXjk/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvZDAzYmU1OGEtZDJlNi00MDY0LWJmNTQtZGVkYTM0NGM2Y2Y4LV9uaWR5cGpvMTIud2VicA.webp"
+    ]
   },
   {
     "id": 31,
@@ -5103,7 +5663,12 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://dance-rh.ru/wp-content/uploads/2021/02/vzrosl.png",
+      "https://dance-rh.ru/wp-content/uploads/2021/02/dets.png",
+      "https://dance-rh.ru/wp-content/themes/generatepress-child-master/img/popap-inner-img.jpg"
+    ]
   },
   {
     "id": 38,
@@ -5138,7 +5703,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://ssmile-zel.ru/wp-content/uploads/2026/05/img_20260507_172449.png",
+      "https://ssmile-zel.ru/wp-content/uploads/2026/05/img_20260507_172448.png",
+      "https://ssmile-zel.ru/wp-content/uploads/2026/05/img_20260507_172446.png",
+      "https://ssmile-zel.ru/wp-content/uploads/2026/05/img_20260507_172445.png",
+      "https://ssmile-zel.ru/wp-content/uploads/2026/05/img_20260420_131117_971-1.jpg",
+      "https://ssmile-zel.ru/wp-content/uploads/2026/05/img_20260321_152216_862-1.jpg"
+    ]
   },
   {
     "id": 50,
@@ -5173,7 +5746,10 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://ritmix-otradnoe.ru/wp-content/themes/catch-fse/assets/images/header-background.jpg"
+    ]
   },
   {
     "id": 53,
@@ -5208,7 +5784,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://zvezdnyi-vals.ru/wp-content/uploads/2024/08/img_7228-624x434.jpg",
+      "https://zvezdnyi-vals.ru/wp-content/uploads/2024/05/zvcup24_5063-624x416.jpg",
+      "https://zvezdnyi-vals.ru/wp-content/uploads/2024/05/zvcup24_5019-624x416.jpg",
+      "https://zvezdnyi-vals.ru/wp-content/uploads/2024/05/3x6a2220-624x416.jpg",
+      "https://zvezdnyi-vals.ru/wp-content/uploads/2024/05/3x6a2103-624x416.jpg",
+      "https://zvezdnyi-vals.ru/wp-content/uploads/2024/05/3x6a1625-624x416.jpg"
+    ]
   },
   {
     "id": 64,
@@ -5523,7 +6107,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild6433-6139-4433-a235-343439653462/image.png",
+      "https://thb.tildacdn.com/tild6339-6261-4133-a337-343665346133/-/resize/20x/image.png",
+      "https://thb.tildacdn.com/tild6132-6366-4164-b661-386634393934/-/resize/20x/image.png",
+      "https://thb.tildacdn.com/tild3933-3336-4334-a266-623163656232/-/resize/20x/image.png",
+      "https://thb.tildacdn.com/tild3164-3233-4439-a366-306638336132/-/resize/20x/image.png",
+      "https://thb.tildacdn.com/tild3063-3530-4261-b738-333632653337/-/resize/20x/image.png"
+    ]
   },
   {
     "id": 124,
@@ -5593,7 +6185,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3636-3963-4364-b663-373538373265/image.png",
+      "https://thb.tildacdn.com/tild6362-3934-4839-a538-323733626339/-/empty/_2021-07-01_135144.png",
+      "https://thb.tildacdn.com/tild6166-3961-4230-b636-633135343039/-/empty/_2021-07-01_194453.png",
+      "https://thb.tildacdn.com/tild6136-6166-4330-b662-313334373930/-/empty/_2021-07-01_135027.png",
+      "https://thb.tildacdn.com/tild3962-6432-4837-b665-383361363239/-/empty/_2021-07-01_135233.png",
+      "https://thb.tildacdn.com/tild3364-3466-4436-b438-653636333636/-/empty/_2021-07-01_134513.png"
+    ]
   },
   {
     "id": 134,
@@ -5698,7 +6298,10 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://vitarad.ru/wp-content/uploads/2017/11/elki-mal.jpg"
+    ]
   },
   {
     "id": 162,
@@ -5768,7 +6371,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "http://www.altera-vita.ru/upload/resize_cache/iblock/fb7/cy2d3p23tlh9722r93gelpqooum7n3v6/300_300_2/Popova.jpg",
+      "http://www.altera-vita.ru/upload/resize_cache/iblock/b10/yr67snr0oqzu8o3it3pedf43miucjdt1/460_315_2/Rechevaya-gimnastika-dlya-detei.png",
+      "http://www.altera-vita.ru/upload/resize_cache/iblock/6d3/300_300_2/kulikova-450x450.jpg",
+      "http://www.altera-vita.ru/upload/resize_cache/iblock/65a/xjm6j0crzjfmu95sa75xwv1g9or68iv4/460_315_2/Pochemu-rebenok-ne-govorit-v-6-let.png",
+      "http://www.altera-vita.ru/upload/resize_cache/iblock/52c/mp6ymrniqzdjgpzihyk9xw2zza287pv2/300_300_2/Dunaevskaya.png",
+      "http://www.altera-vita.ru/upload/resize_cache/iblock/512/a5uhffd666t5wa3dy6l5eyryk62nfbwh/300_300_2/Shipilina.jpeg"
+    ]
   },
   {
     "id": 164,
@@ -5803,7 +6414,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://firstaid-rrc.ru/upload/phoenix/ee4/pud3h6uv4vhrdutaftrjlcq51cokddi5/ContentSlider1.jpg",
+      "https://firstaid-rrc.ru/upload/uf/8c0/3t35pwzzvngsjeb8v5lr6a2x0qaryhf5/GV.png",
+      "https://firstaid-rrc.ru/upload/resize_cache/uf/fbc/iv3zoiezlntkn1cuxoh7d6k98ko7szfp/100_100_1/2025_01_26_21_23_08.png",
+      "https://firstaid-rrc.ru/upload/resize_cache/uf/faa/xk946e0fqde3t0gfeglcpvlv1lg5eb83/100_100_1/IMG_0813.png",
+      "https://firstaid-rrc.ru/upload/resize_cache/uf/ee9/0u4mx5smkd2tw6tegqd1izlr1vegy8ai/100_100_1/IMG_0529.png",
+      "https://firstaid-rrc.ru/upload/resize_cache/uf/edf/uhlm8cgm6l3bv5ya5x40exeqqml9mepz/100_100_1/Antistress.jpg"
+    ]
   },
   {
     "id": 165,
@@ -5978,7 +6597,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://chess-clubs.ru/wp-content/uploads/2024/06/shahmatoriya_shahmatnye-kaniuly_1024h1024.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2026/07/b4a01d13-6262-4066-a9b4-d2e435312f3d.jpeg",
+      "https://chess-clubs.ru/wp-content/uploads/2025/05/vopshin1.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2024/08/andrej-master-klass-v-gorodskom-lagere-shahamatnye-kanikuly.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2024/06/anastasia-1024x682-1.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2024/05/tennis.jpg"
+    ]
   },
   {
     "id": 182,
@@ -6013,7 +6640,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://chess-clubs.ru/wp-content/uploads/2024/06/shahmatoriya_shahmatnye-kaniuly_1024h1024.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2026/07/b4a01d13-6262-4066-a9b4-d2e435312f3d.jpeg",
+      "https://chess-clubs.ru/wp-content/uploads/2025/05/vopshin1.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2024/08/andrej-master-klass-v-gorodskom-lagere-shahamatnye-kanikuly.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2024/06/anastasia-1024x682-1.jpg",
+      "https://chess-clubs.ru/wp-content/uploads/2024/05/tennis.jpg"
+    ]
   },
   {
     "id": 195,
@@ -6122,7 +6757,15 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 3,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "http://patagoniacamp.ru/img/gallery3/9.jpg",
+      "http://patagoniacamp.ru/img/gallery3/8.jpg",
+      "http://patagoniacamp.ru/img/gallery3/7.jpg",
+      "http://patagoniacamp.ru/img/gallery3/6.jpg",
+      "http://patagoniacamp.ru/img/gallery3/5.jpg",
+      "http://patagoniacamp.ru/img/gallery3/4.jpg"
+    ]
   },
   {
     "id": 212,
@@ -6157,7 +6800,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://clasesdeespanol.ru/img/yandex3.jpg",
+      "https://clasesdeespanol.ru/img/training-minnie-groups.jpg",
+      "https://clasesdeespanol.ru/img/training-materials.jpg",
+      "https://clasesdeespanol.ru/img/training-group.jpg",
+      "https://clasesdeespanol.ru/img/teacher.jpg",
+      "https://clasesdeespanol.ru/img/speaking-club.jpg"
+    ]
   },
   {
     "id": 11,
@@ -6297,7 +6948,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://www.step-to-step.ru/media/img/design/gallery-big1.jpg",
+      "https://www.step-to-step.ru/media/photo/world_around.png",
+      "https://www.step-to-step.ru/media/photo/vokal.png",
+      "https://www.step-to-step.ru/media/photo/studio_art.png",
+      "https://www.step-to-step.ru/media/photo/report_concert_2019.png",
+      "https://www.step-to-step.ru/media/photo/report_concert_2016.png"
+    ]
   },
   {
     "id": 202,
@@ -6332,7 +6991,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://brit-school.ru/wp-content/uploads/2026/02/Britanskaya_rus_148x73.png",
+      "https://brit-school.ru/wp-content/uploads/2023/06/slide-eng-line-min.png",
+      "https://brit-school.ru/wp-content/uploads/2023/06/slide-eng-box-min.png",
+      "https://brit-school.ru/wp-content/uploads/2019/05/IMG_0115s-1024x640.jpg",
+      "https://brit-school.ru/wp-content/uploads/2019/05/IMG_0088s-1024x640.jpg",
+      "https://brit-school.ru/wp-content/uploads/2019/05/6-1024x683.jpg"
+    ]
   },
   {
     "id": 110,
@@ -6367,7 +7034,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 60
+    "data_quality": 60,
+    "extra_photos": [
+      "https://coddyschool.com/images/og.jpg",
+      "https://coddyschool.com/upload/webp/images/template/main-pic.webp",
+      "https://coddyschool.com/upload/iblock/fda/element_6_3.webp",
+      "https://coddyschool.com/upload/iblock/fcb/iekb5zerhdl8nbbpafzvftmtz2iqunkb/415x300-_2_min.webp",
+      "https://coddyschool.com/upload/iblock/f86/element_6_4.webp",
+      "https://coddyschool.com/upload/iblock/f34/9dk2hfgn66wf3sq0893s76sxqstykbr3/7402_category_min.100.100.webp"
+    ]
   },
   {
     "id": 118,
@@ -6542,7 +7217,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://mos-gym.ru/wp-content/uploads/2024/08/IMG_8505.jpg",
+      "https://mos-gym.ru/wp-content/uploads/2024/08/IMG_8663.jpg",
+      "https://mos-gym.ru/wp-content/uploads/2024/08/IMG_8662.jpg",
+      "https://mos-gym.ru/wp-content/uploads/2024/08/IMG_8532-2.jpg",
+      "https://mos-gym.ru/wp-content/uploads/2024/08/IMG_7798.jpg",
+      "https://mos-gym.ru/wp-content/uploads/2024/08/IMG_7797.jpg"
+    ]
   },
   {
     "id": 89,
@@ -6577,7 +7260,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://barsukova-school.ru/images/system/og.png",
+      "https://barsukova-school.ru/assets/components/phpthumbof/cache/video-img2.96c7fc2ea7d0b1a372622f2939ec5d54.webp",
+      "https://barsukova-school.ru/assets/components/phpthumbof/cache/video-img.96c7fc2ea7d0b1a372622f2939ec5d54.webp",
+      "https://barsukova-school.ru/assets/components/phpthumbof/cache/img-2203-1.8494bca04d0ff179fd3051e8b6f2787c.webp",
+      "https://barsukova-school.ru/assets/components/phpthumbof/cache/way.96c7fc2ea7d0b1a372622f2939ec5d54.webp",
+      "https://barsukova-school.ru/assets/components/phpthumbof/cache/nb.54075cb9365555365e410ecd322d71b7.webp"
+    ]
   },
   {
     "id": 93,
@@ -6612,7 +7303,11 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 115,
@@ -6787,7 +7482,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/463101/e8011f47-c834-46fe-9c79-815795c12aa8.jpg",
+      "https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/463101/e668bbfe-b6a7-4ecb-9d91-91c7e657cbb1.jpg",
+      "https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/463101/d819a903-f09d-46ed-bb05-d7c2087e2d47.jpg",
+      "https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/463101/d7c91037-8e4f-423f-9d22-be06baf46d59.jpg",
+      "https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/463101/d61593d4-9470-4076-a565-9c65361449df.jpg",
+      "https://274418.selcdn.ru/cv08300-33250f0d-0664-43fc-9dbf-9d89738d114e/uploads/463101/cba73ecf-fd57-4085-afd5-cbd997d9a31a.jpg"
+    ]
   },
   {
     "id": 221,
@@ -6888,7 +7591,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://www.peliken.su/files/project_5573/images/1625116025_1_mini1.jpg",
+      "https://www.peliken.su/files/project_5573/images/1625115936_1_mini1.jpg",
+      "https://www.peliken.su/files/project_5573/images/1542630718_1_mini1.jpg",
+      "https://www.peliken.su/files/project_5573/images/1542630551_1_mini1.jpg",
+      "https://www.peliken.su/files/project_5573/snabzh.jpg",
+      "https://www.peliken.su/files/project_5573/pic9.png"
+    ]
   },
   {
     "id": 119,
@@ -6923,7 +7634,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://filinit.ru/front/assets/img/user.png",
+      "https://filinit.ru/front/assets/img/static/school/4.png",
+      "https://filinit.ru/front/assets/img/static/school/3.png",
+      "https://filinit.ru/front/assets/img/static/school/2.png",
+      "https://filinit.ru/front/assets/img/static/school/1.png",
+      "https://filinit.ru/front/assets/img/animation/gear.png"
+    ]
   },
   {
     "id": 142,
@@ -6993,7 +7712,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3966-3434-4033-b161-663730323136/-/resize/504x/noroot.png",
+      "https://static.tildacdn.com/img/tildacopy_black.png",
+      "https://thb.tildacdn.com/tild6535-3433-4032-b566-613938613965/-/empty/__1.png",
+      "https://thb.tildacdn.com/tild6162-3530-4230-b862-376666643163/-/empty/learning.png",
+      "https://thb.tildacdn.com/tild3934-3336-4839-a432-663535666162/-/empty/success.png",
+      "https://thb.tildacdn.com/tild3364-3561-4230-b961-636664613930/-/empty/fingerprint-scanning.png"
+    ]
   },
   {
     "id": 146,
@@ -7028,7 +7755,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://mietcenter.ru/wp-content/uploads/2025/08/Group-5-4.png",
+      "https://mietcenter.ru/wp-content/uploads/2025/08/блок1-scaled.png",
+      "https://mietcenter.ru/wp-content/uploads/2026/02/Frame-30.png",
+      "https://mietcenter.ru/wp-content/uploads/2026/02/Frame-10.png",
+      "https://mietcenter.ru/wp-content/uploads/2025/08/Frame-6.png",
+      "https://mietcenter.ru/wp-content/uploads/2025/08/Frame-4.png"
+    ]
   },
   {
     "id": 149,
@@ -7063,7 +7798,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://balashikha.roboticlub.ru/wp-content/uploads/sites/18/2024/11/main-intro-1-e1732989478123.png",
+      "https://balashikha.roboticlub.ru/wp-content/uploads/sites/18/2025/08/sto.png",
+      "https://balashikha.roboticlub.ru/wp-content/uploads/sites/18/2025/08/am1.png",
+      "https://balashikha.roboticlub.ru/wp-content/uploads/sites/18/2025/04/excurs-768x768.png",
+      "https://balashikha.roboticlub.ru/wp-content/uploads/sites/18/2025/04/WhatsApp-Image-2025-04-09-at-02.47.43-768x768.jpeg",
+      "https://balashikha.roboticlub.ru/wp-content/uploads/sites/18/2025/04/7ecf42a31a3611f0b4c8c69e8a5adaee_1-768x768.jpeg"
+    ]
   },
   {
     "id": 12,
@@ -7133,7 +7876,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://cko-do.ru/impl/img/slidenew-06-25-3.jpg?v=3",
+      "https://cko-do.ru/impl/img/slidenew-05-25-3.jpg?v=3",
+      "https://cko-do.ru/impl/img/slidenew-04-25-3.jpg?v=3",
+      "https://cko-do.ru/impl/img/slidenew-03-25-3.jpg?v=3",
+      "https://cko-do.ru/impl/img/slidenew-02-25-3.jpg?v=3",
+      "https://cko-do.ru/impl/img/slidenew-01-25-3.jpg?v=3"
+    ]
   },
   {
     "id": 168,
@@ -7168,7 +7919,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://color-chicks.ru/wp-content/uploads/2026/02/quizfinal.jpg",
+      "https://color-chicks.ru/wp-content/uploads/2026/02/quiz-pict.png",
+      "https://color-chicks.ru/wp-content/uploads/2026/02/page-form-scaled.jpg",
+      "https://color-chicks.ru/wp-content/uploads/2026/02/girl.jpg",
+      "https://color-chicks.ru/wp-content/uploads/2026/02/elena.jpg",
+      "https://color-chicks.ru/wp-content/uploads/2026/02/boy.jpg"
+    ]
   },
   {
     "id": 19,
@@ -7238,7 +7997,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://chesslabyrinth.ru/assets/templates/global/images/yandex.jpg",
+      "https://chesslabyrinth.ru/assets/templates/global/images/webmoney.jpg",
+      "https://chesslabyrinth.ru/assets/templates/global/images/visa.jpg",
+      "https://chesslabyrinth.ru/assets/templates/global/images/qiwi.jpg",
+      "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1_1780340019.144d6a5393ed23bff1d21c5524699c5b.jpg",
+      "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1_1777362482.144d6a5393ed23bff1d21c5524699c5b.jpg"
+    ]
   },
   {
     "id": 246,
@@ -7273,7 +8040,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://greenglish.ru/wp-content/uploads/2024/05/93c29b57786a8f7ea0a343f9ecbdec5fa312df2b.png",
+      "https://greenglish.ru/wp-content/uploads/2026/04/10-voprosov-repetitoru-anglijskogo.png",
+      "https://greenglish.ru/wp-content/uploads/2026/01/fuenlshh8z.jpg",
+      "https://greenglish.ru/wp-content/uploads/2026/01/anons-mk-ot-dzhejmsa-724x1024.png",
+      "https://greenglish.ru/wp-content/uploads/2025/10/img_2531-768x483.jpg",
+      "https://greenglish.ru/wp-content/uploads/2025/07/gringlish-forma-1024x329.jpg"
+    ]
   },
   {
     "id": 70,
@@ -7308,7 +8083,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://sk-asgard.ru/images/karate/karate-training-nature.png",
+      "https://sk-asgard.ru/images/karate/karate-masters-nature.webp",
+      "https://sk-asgard.ru/images/karate/karate-kids.png",
+      "https://sk-asgard.ru/images/karate/karate-dojo-interior.png",
+      "https://sk-asgard.ru/images/karate/karate-beach-sunset.png",
+      "https://sk-asgard.ru/quantam-assets/footer/waves-lines-left-bottom.png"
+    ]
   },
   {
     "id": 138,
@@ -7343,7 +8126,10 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3462-3636-4664-a461-353266626332/photo.png"
+    ]
   },
   {
     "id": 186,
@@ -7378,7 +8164,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://chesslabyrinth.ru/assets/templates/global/images/yandex.jpg",
+      "https://chesslabyrinth.ru/assets/templates/global/images/webmoney.jpg",
+      "https://chesslabyrinth.ru/assets/templates/global/images/visa.jpg",
+      "https://chesslabyrinth.ru/assets/templates/global/images/qiwi.jpg",
+      "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1_1780340019.144d6a5393ed23bff1d21c5524699c5b.jpg",
+      "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1_1777362482.144d6a5393ed23bff1d21c5524699c5b.jpg"
+    ]
   },
   {
     "id": 187,
@@ -7413,7 +8207,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 55
+    "data_quality": 55,
+    "extra_photos": [
+      "https://educhess.ru/wp-content/webp-express/webp-images/uploads/2022/01/adventage-tournament-2.jpg.webp",
+      "https://educhess.ru/wp-content/uploads/2024/09/portret.png",
+      "https://educhess.ru/wp-content/uploads/2024/08/6.png",
+      "https://educhess.ru/wp-content/uploads/2024/08/5.png",
+      "https://educhess.ru/wp-content/uploads/2024/08/4.png",
+      "https://educhess.ru/wp-content/uploads/2024/08/3.png"
+    ]
   },
   {
     "id": 203,
@@ -7518,7 +8320,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 50
+    "data_quality": 50,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 73,
@@ -7553,7 +8359,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 50
+    "data_quality": 50,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 122,
@@ -7588,7 +8398,11 @@
     "has_trial": true,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 50
+    "data_quality": 50,
+    "extra_photos": [
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 135,
@@ -7658,7 +8472,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 50
+    "data_quality": 50,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3739-6638-4033-b832-383461323637/-/resize/504x/cb_AziIbleI.jpg",
+      "https://thb.tildacdn.com/tild6365-3535-4365-b638-306439323563/-/resize/20x/image.png",
+      "https://thb.tildacdn.com/tild6330-3831-4235-a338-653636343937/-/resize/20x/_____1.jpg",
+      "https://thb.tildacdn.com/tild6238-3662-4432-b733-633438643833/-/resize/20x/boy.png",
+      "https://thb.tildacdn.com/tild3435-6535-4166-a363-393830356564/-/resize/20x/girl.png",
+      "https://thb.tildacdn.com/tild3136-3366-4063-b239-633665363433/-/resize/20x/_____1.jpg"
+    ]
   },
   {
     "id": 35,
@@ -7693,7 +8515,11 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 45
+    "data_quality": 45,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3664-3661-4966-b237-313936363566/photo_2020-07-05_13-.jpg",
+      "https://thb.tildacdn.com/tild3831-3535-4264-a438-383464323030/-/resize/20x/3031153_telefone-emo.png"
+    ]
   },
   {
     "id": 193,
@@ -7796,7 +8622,12 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 45
+    "data_quality": 45,
+    "extra_photos": [
+      "https://school.moscow.funscool.ru/img/main-sliders/MainSlider4.webp",
+      "https://school.moscow.funscool.ru/img/main-sliders/MainSlider2.webp",
+      "https://school.moscow.funscool.ru/img/main-sliders/MainSlider1.webp"
+    ]
   },
   {
     "id": 41,
@@ -7831,7 +8662,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild6639-3861-4562-b962-646538663536/-/resize/20x/photo.png",
+      "https://thb.tildacdn.com/tild6466-3238-4065-a438-646234633737/-/resize/20x/photo.png",
+      "https://thb.tildacdn.com/tild3765-6434-4535-a431-663635393866/-/resize/20x/photo.png",
+      "https://thb.tildacdn.com/tild3437-3833-4163-a135-383263636465/-/resize/20x/photo.png",
+      "https://thb.tildacdn.com/tild6337-6134-4432-b366-303461343331/-/resize/20x/_.png",
+      "https://thb.tildacdn.com/tild6333-3262-4366-b762-613065363036/-/resize/20x/3.png"
+    ]
   },
   {
     "id": 42,
@@ -7901,7 +8740,12 @@
     "has_trial": false,
     "scraped": true,
     "pages_visited": 1,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://pps.whatsapp.net/v/t61.24694-24/534417972_798812929233038_3649373660337700083_n.jpg?ccb=11-4&oh=01_Q5Aa5AGbOxDSEGHYL5XbsGOEIxZxcl5YVg3IJlN3UF_yD0TZmQ&oe=6A63D7B7&_nc_sid=5e03e0&_nc_cat=107",
+      "https://static.xx.fbcdn.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+      "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
+    ]
   },
   {
     "id": 46,
@@ -7936,7 +8780,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3861-3634-4732-a163-333461663161/oK3nrpR179U22-transf.png",
+      "https://thb.tildacdn.com/tild6137-6332-4065-a435-623735653538/-/resize/20x/photo.png",
+      "https://thb.tildacdn.com/tild6562-3235-4464-b163-646436373730/-/resize/20x/_7.png",
+      "https://thb.tildacdn.com/tild6461-3439-4639-a365-373665383363/-/resize/20x/Frame_23.png",
+      "https://thb.tildacdn.com/tild6332-3930-4630-a464-663064303762/-/resize/20x/_3.png",
+      "https://thb.tildacdn.com/tild6136-6535-4166-b261-336330383938/-/resize/20x/Group_12.png"
+    ]
   },
   {
     "id": 47,
@@ -7971,7 +8823,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://iocanto.ru/wp-content/uploads/2025/07/zinger-300x300.jpg",
+      "https://iocanto.ru/wp-content/uploads/2025/07/lyapneva-300x300.jpg",
+      "https://iocanto.ru/wp-content/uploads/2022/09/uvms31qivck-300x300.jpg",
+      "https://iocanto.ru/wp-content/uploads/2022/09/hfd-iydwku4-300x300.jpg",
+      "https://iocanto.ru/wp-content/uploads/2022/08/ekaterina-grishhuk-300x300.jpg",
+      "https://iocanto.ru/wp-content/uploads/2022/08/burdina-300x300.jpg"
+    ]
   },
   {
     "id": 78,
@@ -8006,7 +8866,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://husbasket.ru/wp-content/uploads/2025/05/kak-vybrat-luchshuyu-basketbolnuyu-sekcziyu-dlya-rebyonka-v-moskve-—.webp",
+      "https://husbasket.ru/wp-content/uploads/2026/06/zaly2.webp",
+      "https://husbasket.ru/wp-content/uploads/2026/06/xwogtetwu5x6pvd5hndqjl1aebk34-b50fnb4uuo42qingsw4f6fx0yxuynz9juaf0n7yqklywzlhfbbasjatiud.webp",
+      "https://husbasket.ru/wp-content/uploads/2026/06/pyrek_gjdjfoa0lrnwldpop9ei5xkvxz5t_bmuysmeazdfznxkckhrkeeh7c4bf2qx2cj11z8leovzcpk4hgamjh.webp",
+      "https://husbasket.ru/wp-content/uploads/2026/06/o_rkybzv0bdnq5td-18-oxud5gf_dqpv5m9ws5dkcdijl6xtf1wtwfa4nsb9gephsufu8_snfcx6z11mmjfotuek.webp",
+      "https://husbasket.ru/wp-content/uploads/2026/06/mwevpmpv0zu1m0ji46gerkl0kgdfowjbmktt6goatwojqc02o0r2woco-qyd3scaq467oh6j76i_rklwvlwymajd.webp"
+    ]
   },
   {
     "id": 90,
@@ -8041,7 +8909,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild6233-6432-4366-a464-343433326234/-/resize/504x/photo.png",
+      "https://thb.tildacdn.com/tild3936-6462-4335-a336-633233653030/-/resize/20x/photo.jpg",
+      "https://static.tildacdn.com/tild6339-3331-4437-a663-383132303137/photo.png",
+      "https://static.tildacdn.com/tild6233-6432-4366-a464-343433326234/photo.png",
+      "https://static.tildacdn.com/tild6166-3434-4539-b939-363830396363/photo_4_2025-05-05_1.jpg",
+      "https://static.tildacdn.com/tild3864-3930-4130-b338-636132633434/photo_3_2025-05-05_1.jpg"
+    ]
   },
   {
     "id": 91,
@@ -8111,7 +8987,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://ustinovswim.pro/wp-content/uploads/2025/09/skrin-otzyvov-7-1.jpg",
+      "https://ustinovswim.pro/wp-content/uploads/2025/09/skrin-otzyvov-6-1.jpg",
+      "https://ustinovswim.pro/wp-content/uploads/2025/09/skrin-otzyvov-5-1.jpg",
+      "https://ustinovswim.pro/wp-content/uploads/2025/09/skrin-otzyvov-4-1.jpg",
+      "https://ustinovswim.pro/wp-content/uploads/2025/09/skrin-otzyvov-3-1.jpg",
+      "https://ustinovswim.pro/wp-content/uploads/2025/09/skrin-otzyvov-2-1.jpg"
+    ]
   },
   {
     "id": 96,
@@ -8146,7 +9030,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "http://artoffight.ru/wp-content/uploads/2026/07/IMG_3804-1440x960.jpg",
+      "http://artoffight.ru/wp-content/uploads/2026/07/IMG_3802.jpg",
+      "http://artoffight.ru/wp-content/uploads/2026/07/IMG_3801.jpg",
+      "http://artoffight.ru/wp-content/uploads/2026/07/IMG_3799.jpg",
+      "http://artoffight.ru/wp-content/uploads/2026/07/IMG_3798.jpg",
+      "http://artoffight.ru/wp-content/uploads/2018/07/Bez-imeni-1.jpg"
+    ]
   },
   {
     "id": 139,
@@ -8216,7 +9108,11 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://sapronovo.academyboomkids.ru/wp-content/uploads/Mask-group-12.png",
+      "https://sapronovo.academyboomkids.ru/wp-content/plugins/revslider/sr6/assets/assets/dummy.png"
+    ]
   },
   {
     "id": 207,
@@ -8251,7 +9147,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://ef-time.ru/wp-content/uploads/elementor/thumbs/vz-e1727936116846-qv03eapkb8sf10n68mul11091qyykha1aie8x1n9nk.jpeg",
+      "https://ef-time.ru/wp-content/uploads/elementor/thumbs/tep4-qf77i03s8h50soxsaz31n8m4riflf5h0h5dozz31jc.jpg",
+      "https://ef-time.ru/wp-content/uploads/elementor/thumbs/t7-qf77hz5y1n3qh2z5ggof2quo64k87gda50q7ip4fpk.jpg",
+      "https://ef-time.ru/wp-content/uploads/elementor/thumbs/screenshot_20240925_210605_gallery-kopija-qusgfhitgc2ajl7vcbht7gi2iuy6esopby2viwpme8.jpg",
+      "https://ef-time.ru/wp-content/uploads/elementor/thumbs/resize-of-_r8a1491-kopija-quubqgzm79eyj3ehzkcrgornlhafow9thh9vbor24o.jpg",
+      "https://ef-time.ru/wp-content/uploads/elementor/thumbs/resize-of-20240920_190654-quubz1aogx50b6ynz9me6iyufv2ttm9rzv94qg1xfs.jpg"
+    ]
   },
   {
     "id": 213,
@@ -8550,7 +9454,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://static.tildacdn.com/tild3039-3735-4262-a364-643365373433/-06.jpg",
+      "https://thb.tildacdn.com/tild6663-3264-4662-a234-623465623437/-/empty/_png.png",
+      "https://thb.tildacdn.com/tild6631-6664-4035-a266-643665663239/-/empty/_png.png",
+      "https://thb.tildacdn.com/tild3166-6335-4337-b634-323462616661/-/empty/__.png",
+      "https://static.tildacdn.com/tild6562-3339-4466-b666-323231393038/__.png",
+      "https://static.tildacdn.com/tild6533-3036-4731-a161-386330623231/__.png"
+    ]
   },
   {
     "id": 98,
@@ -8655,7 +9567,11 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "http://a-robotov.ru/images/tild3564-3362-4835-b131-643664636362__-__resize__504x__robototekhnikamp4_sn.png",
+      "http://a-robotov.ru/images/tildacopy.png"
+    ]
   },
   {
     "id": 222,
@@ -8690,7 +9606,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://alistravel.ru/wp-content/uploads/2026/07/DXJ_7531.jpg",
+      "https://alistravel.ru/wp-content/uploads/2026/07/DXJ_7509.jpg",
+      "https://alistravel.ru/wp-content/uploads/2026/07/DXJ_7464.jpg",
+      "https://alistravel.ru/wp-content/uploads/2026/07/DXJ_7454.jpg",
+      "https://alistravel.ru/wp-content/uploads/2026/07/DXJ_7428.jpg",
+      "https://alistravel.ru/wp-content/uploads/2026/07/DXJ_7413.jpg"
+    ]
   },
   {
     "id": 250,
@@ -8725,7 +9649,15 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 40
+    "data_quality": 40,
+    "extra_photos": [
+      "https://studyda.school/wp-content/uploads/elementor/thumbs/yuriy_development_director-r33zqxm3th159h6kjysnxpiy7919w3e66ynfaahn2o.jpg",
+      "https://studyda.school/wp-content/uploads/elementor/thumbs/sofya_admin-r3ixn8e2wtapztggnahs471gmcv9qobijcfxieum1c.jpeg",
+      "https://studyda.school/wp-content/uploads/elementor/thumbs/photo_2024-03-03_18-34-01-r33zr394yh8v74ydn18fco3prk9h6a0k7qkc5y9a1c.jpg",
+      "https://studyda.school/wp-content/uploads/2025/03/school956_2025_02.jpg",
+      "https://studyda.school/wp-content/uploads/2025/03/school956_2025_01.jpg",
+      "https://studyda.school/wp-content/uploads/2025/03/marina_admin.jpg"
+    ]
   },
   {
     "id": 45,
@@ -8795,7 +9727,12 @@
     "has_trial": false,
     "scraped": false,
     "pages_visited": 0,
-    "data_quality": 35
+    "data_quality": 35,
+    "extra_photos": [
+      "https://thb.tildacdn.com/tild3163-3562-4232-a439-396435363463/-/resize/504x/zumbaback.png",
+      "https://thb.tildacdn.com/tild6264-3861-4630-a364-653937366538/-/resize/20x/___png.png",
+      "https://static.tildacdn.com/tild3639-3339-4339-a536-383033303065/320494FB-0CDE-4C33-9.png"
+    ]
   },
   {
     "id": 114,
