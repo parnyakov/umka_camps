@@ -451,8 +451,12 @@ function renderCards(items, append) {
 function cardHTML(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
-  const photo = (org.photos && org.photos.length)
-    ? `<img src="${org.photos[0]}" alt="${esc(org.name)}" loading="lazy"
+  // Предпочитаем extra_photos (с сайта орга — реальные занятия), fallback — Яндекс CDN
+  const heroSrc = (org.extra_photos && org.extra_photos.length)
+    ? org.extra_photos[0]
+    : (org.photos && org.photos.length) ? org.photos[0] : null;
+  const photo = heroSrc
+    ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
          onerror="this.outerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'">`
     : `<div class="card-initials" style="background:${bg}">${ini}</div>`;
 
