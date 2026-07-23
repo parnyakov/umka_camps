@@ -227,6 +227,27 @@ nav {
 
 .not-found { text-align:center;padding:80px 20px; }
 
+/* ── Reviews ── */
+.reviews-block {
+  display:flex;align-items:center;gap:18px;
+  background:var(--bg2);border:1px solid var(--border);
+  border-radius:14px;padding:16px 20px;
+}
+.reviews-score { text-align:center;flex-shrink:0; }
+.reviews-score .rs-num { font-size:36px;font-weight:800;color:var(--text);line-height:1; }
+.reviews-score .rs-stars { font-size:20px;color:#F59E0B;margin:3px 0; }
+.reviews-score .rs-cnt { font-size:11px;color:var(--text3); }
+.reviews-divider { width:1px;height:52px;background:var(--border);flex-shrink:0; }
+.reviews-text { flex:1;font-size:13px;color:var(--text2);line-height:1.55; }
+.reviews-text strong { color:var(--text);font-size:14px;display:block;margin-bottom:3px; }
+.reviews-link {
+  display:inline-flex;align-items:center;gap:6px;margin-top:10px;
+  color:var(--em);font-size:13px;font-weight:600;text-decoration:none;
+  background:var(--em-glow);border:1px solid var(--em);
+  padding:6px 14px;border-radius:20px;transition:.15s;
+}
+.reviews-link:hover { background:var(--em);color:white; }
+
 /* ── Animations ── */
 @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
 .anim { animation: fadeIn .35s ease both; }
@@ -409,7 +430,7 @@ function buildGallery(photos, startIdx) {
     <div class="gallery-item" onclick="openLightbox(${startIdx + i})">
       <img src="${esc(p)}" loading="lazy" alt=""
         onerror="this.closest('.gallery-item').remove()"
-        onload="if(this.naturalWidth<20||this.naturalHeight<20)this.closest('.gallery-item').remove()">
+        onload="(function(i){const w=i.naturalWidth,h=i.naturalHeight,r=w/(h||1);if(w<20||h<20||(w<380&&h<380&&r>0.72&&r<1.38))i.closest('.gallery-item').remove()})(this)">
     </div>`).join('');
   return `<div class="${cls}" id="galleryGrid">${items}</div>`;
 }
@@ -529,9 +550,34 @@ function render(org) {
       ${buildGallery(galleryPhotos, 1)}
     </div>` : '';
 
+  // ── Reviews ──────────────────────────────────────────────────────────────
+  const mapsQuery   = encodeURIComponent((org.address || org.name) + ' ' + (org.district || ''));
+  const mapsUrl     = `https://yandex.ru/maps/?text=${mapsQuery}`;
+  const reviewsUrl  = `https://yandex.ru/maps/?text=${mapsQuery}&reviews=true`;
+  const starsCount  = org.rating ? Math.round(org.rating) : 0;
+  const reviewsHtml = org.rating ? `
+    <div class="section anim anim-d3">
+      <div class="section-title">Отзывы</div>
+      <div class="reviews-block">
+        <div class="reviews-score">
+          <div class="rs-num">${org.rating.toFixed(1)}</div>
+          <div class="rs-stars">${'★'.repeat(starsCount)}${'☆'.repeat(5-starsCount)}</div>
+          ${org.reviews_count ? `<div class="rs-cnt">${org.reviews_count} отзывов</div>` : ''}
+        </div>
+        <div class="reviews-divider"></div>
+        <div class="reviews-text">
+          <strong>Рейтинг на Яндекс Картах</strong>
+          Оценки оставлены реальными посетителями. Чтобы прочитать отзывы или оставить свой — перейдите на страницу организации.
+          <br>
+          <a class="reviews-link" href="${reviewsUrl}" target="_blank" rel="noopener">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M5 7h4M7 5l2 2-2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Читать отзывы на Яндекс Картах
+          </a>
+        </div>
+      </div>
+    </div>` : '';
+
   // ── Contacts ─────────────────────────────────────────────────────────────
-  const mapsQuery = encodeURIComponent((org.address || org.name) + ' ' + (org.district || ''));
-  const mapsUrl   = `https://yandex.ru/maps/?text=${mapsQuery}`;
   const siteUrl = isRealWebsite(org.website) ? org.website : null;
   const contactRows = [
     org.address && `
@@ -601,6 +647,7 @@ function render(org) {
         ${progsHtml}
         ${skillsHtml}
         ${galleryHtml}
+        ${reviewsHtml}
         ${contactsHtml}
         ${howHtml}
         ${faqHtml}
@@ -626,11 +673,13 @@ function render(org) {
   }, 3000);
 }
 
-// Hero logo detection: only reject truly tiny images (icons/favicons)
+// Hero: reject tiny icons AND square badge-like images (Yandex awards/pins)
 function checkHeroSize(img, bg, emoji, ini) {
   const w = img.naturalWidth, h = img.naturalHeight;
-  // Only reject if genuinely tiny — pure icons/favicons, not small CDN photos
-  if (w < 80 && h < 80) {
+  const r = w / (h || 1);
+  const isTiny   = w < 80 || h < 80;
+  const isBadge  = w < 450 && h < 450 && r > 0.72 && r < 1.38; // square-ish = badge
+  if (isTiny || isBadge) {
     img.outerHTML = `<div class="hero-placeholder" style="background:${bg}"><div class="ph-emoji">${emoji}</div><div class="ph-ini">${ini}</div></div>`;
   }
 }
