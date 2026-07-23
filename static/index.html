@@ -245,7 +245,7 @@
       <div class="choice-desc">Находите лучшие смены для детей — с фильтрами по возрасту, цене, типу отдыха и рейтингу.</div>
       <div class="choice-count">
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.5"/><path d="M6 3.5v2.75l1.5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-        Смены с 21 и 28 июля
+        <span id="indexSessionDates">Смены с …</span>
       </div>
       <div class="choice-arrow">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 8h8M9 5l3 3-3 3" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -278,6 +278,20 @@
     document.getElementById('choices').classList.add('show');
     document.getElementById('footer').classList.add('show');
   }, 950);
+
+  // Автоматические даты смен: +4 и +11 дней от сегодня
+  (function() {
+    const MONTHS = ['января','февраля','марта','апреля','мая','июня',
+                    'июля','августа','сентября','октября','ноября','декабря'];
+    const d1 = new Date(); d1.setDate(d1.getDate() + 4);
+    const d2 = new Date(); d2.setDate(d2.getDate() + 11);
+    const m1 = MONTHS[d1.getMonth()], m2 = MONTHS[d2.getMonth()];
+    const text = m1 === m2
+      ? `Смены с ${d1.getDate()} и ${d2.getDate()} ${m1}`
+      : `Смены с ${d1.getDate()} ${m1} и ${d2.getDate()} ${m2}`;
+    const el = document.getElementById('indexSessionDates');
+    if (el) el.textContent = text;
+  })();
 </script>
 
 </body>
