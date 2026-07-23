@@ -438,25 +438,24 @@ function render(org) {
   const ini   = initials(org.name);
 
   // ── Photos ────────────────────────────────────────────────────────────────
-  // Yandex photos: reliable building/interior shots
-  // extra_photos: website photos (may include logos — filter by URL)
+  // Yandex CDN photos = реальные снимки помещения, никогда не логотипы → идут в hero первыми
+  // extra_photos = с сайтов организаций (могут содержать логотипы) → только в галерею
   const yandexPhotos = (org.photos || []).filter(p => p && !isBadPhotoUrl(p));
   const extraPhotos  = (org.extra_photos || []).filter(p => p && !isBadPhotoUrl(p) && !isLogoUrl(p));
 
-  // Merge: extra first (class photos), then yandex (interior)
+  // Hero = первое Яндекс-фото (самое надёжное), fallback — первое extra
+  const heroPhoto = yandexPhotos[0] || extraPhotos[0] || '';
+
+  // Галерея = оставшиеся Яндекс + extra (без дублей)
   const seen = new Set();
-  const allPhotos = [...extraPhotos, ...yandexPhotos].filter(p => {
+  if (heroPhoto) seen.add(heroPhoto);
+  const galleryPhotos = [...yandexPhotos.slice(1), ...extraPhotos].filter(p => {
     if (!p || seen.has(p)) return false;
     seen.add(p); return true;
   });
 
-  // Hero: try first non-logo photo
-  let heroPhoto = '';
-  for (const p of allPhotos) {
-    if (!isLogoUrl(p)) { heroPhoto = p; break; }
-  }
-
-  window._orgPhotos = allPhotos;
+  // Все фото для lightbox: hero + галерея
+  window._orgPhotos = [heroPhoto, ...galleryPhotos].filter(Boolean);
 
   // ── Hero HTML ─────────────────────────────────────────────────────────────
   const heroHtml = heroPhoto
@@ -524,7 +523,6 @@ function render(org) {
     </div>` : '';
 
   // ── Gallery ──────────────────────────────────────────────────────────────
-  const galleryPhotos = allPhotos.slice(1); // hero is index 0
   const galleryHtml = galleryPhotos.length ? `
     <div class="section anim anim-d3">
       <div class="section-title">Галерея</div>
@@ -628,12 +626,11 @@ function render(org) {
   }, 3000);
 }
 
-// Hero logo detection: if image is square and small, it's probably a logo
+// Hero logo detection: only reject truly tiny images (icons/favicons)
 function checkHeroSize(img, bg, emoji, ini) {
   const w = img.naturalWidth, h = img.naturalHeight;
-  const ratio = w / (h || 1);
-  if (w < 350 && h < 350 && ratio > 0.75 && ratio < 1.35) {
-    // Looks like a logo — replace with gradient placeholder
+  // Only reject if genuinely tiny — pure icons/favicons, not small CDN photos
+  if (w < 80 && h < 80) {
     img.outerHTML = `<div class="hero-placeholder" style="background:${bg}"><div class="ph-emoji">${emoji}</div><div class="ph-ini">${ini}</div></div>`;
   }
 }
