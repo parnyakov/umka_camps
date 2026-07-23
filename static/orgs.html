@@ -31,7 +31,7 @@
   </a>
   <div class="header-search">
     <span class="icon">🔍</span>
-    <input id="searchInput" type="text" placeholder="Поиск по названию или направлению...">
+    <input id="searchInput" type="text" placeholder="Поиск по названию...">
   </div>
   <button class="btn-qa" id="btnQA">Q&amp;A</button>
   <div style="position:relative">
@@ -403,24 +403,18 @@ async function fetchOrgs(append = false) {
   if (state.loading) return;
   state.loading = true;
 
-  let url, data;
-  if (state.q) {
-    url = `/api/search?q=${encodeURIComponent(state.q)}&limit=${state.limit}&offset=${state.offset}`;
-    data = await fetch(url).then(r => r.json());
-    state.total = data.items.length + state.offset;
-  } else {
-    const p = new URLSearchParams();
-    if (state.category)    p.set('category', state.category);
-    if (state.subcategory) p.set('subcategory', state.subcategory);
-    if (state.metro)       p.set('metro', state.metro);
-    if (state.age)         p.set('age', state.age);
-    if (state.price_max)   p.set('price_max', state.price_max);
-    if (state.has_trial)   p.set('has_trial', '1');
-    p.set('limit', state.limit);
-    p.set('offset', state.offset);
-    data = await fetch('/api/orgs?' + p).then(r => r.json());
-    state.total = data.total;
-  }
+  const p = new URLSearchParams();
+  if (state.q)           p.set('q', state.q);
+  if (state.category)    p.set('category', state.category);
+  if (state.subcategory) p.set('subcategory', state.subcategory);
+  if (state.metro)       p.set('metro', state.metro);
+  if (state.age)         p.set('age', state.age);
+  if (state.price_max)   p.set('price_max', state.price_max);
+  if (state.has_trial)   p.set('has_trial', '1');
+  p.set('limit', state.limit);
+  p.set('offset', state.offset);
+  const data = await fetch('/api/orgs?' + p).then(r => r.json());
+  state.total = data.total;
 
   renderCards(data.items, append);
   state.loading = false;
