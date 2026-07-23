@@ -325,9 +325,34 @@ function isLogoUrl(url) {
   return /logo|логотип|brand[-_]|[-_]brand|header[-_]bg|bg[-_]header/i.test(url);
 }
 function isBadPhotoUrl(url) {
-  // Filter social media / tracking / tiny icons
   const bad = /youtube|youtu\.be|ytimg|instagram|cdninstagram|fbcdn|facebook|twimg|twitter|tiktok|mycdn\.me|mc\.yandex/i;
   return bad.test(url);
+}
+
+// Настоящий сайт организации (не ватсап / телеграм / соцсети)
+function isRealWebsite(url) {
+  if (!url) return false;
+  return !/wa\.me|whatsapp\.|api\.whatsapp|t\.me|telegram\.(me|org)|vk\.com|instagram\.com|facebook\.com|youtube\.com|youtu\.be|ok\.ru/i.test(url);
+}
+
+// Фильтр мусорных описаний — WhatsApp, Google Consent, Telegram и т.п.
+function cleanDescription(text) {
+  if (!text) return '';
+  const garbage = [
+    /whatsapp messenger/i,
+    /миллиард\w* (человек|пользовател)/i,
+    /бесплатное мобильное приложение/i,
+    /безопасный.*?способ обмена сообщ/i,
+    /google llc/i,
+    /прежде чем перейти в google/i,
+    /telegram.*?мессенджер/i,
+    /политика конфиденциальности/i,
+    /принять все файлы cookie/i,
+  ];
+  for (const re of garbage) {
+    if (re.test(text)) return '';
+  }
+  return text;
 }
 
 // ── Garbage filters ───────────────────────────────────────────────────────
@@ -475,10 +500,11 @@ function render(org) {
     </div>` : '';
 
   // ── Description ──────────────────────────────────────────────────────────
-  const descHtml = org.description ? `
+  const desc = cleanDescription(org.description);
+  const descHtml = desc ? `
     <div class="section anim anim-d1">
       <div class="section-title">Об организации</div>
-      <div class="section-body">${esc(org.description)}</div>
+      <div class="section-body">${esc(desc)}</div>
     </div>` : '';
 
   // ── Programs ─────────────────────────────────────────────────────────────
@@ -508,6 +534,7 @@ function render(org) {
   // ── Contacts ─────────────────────────────────────────────────────────────
   const mapsQuery = encodeURIComponent((org.address || org.name) + ' ' + (org.district || ''));
   const mapsUrl   = `https://yandex.ru/maps/?text=${mapsQuery}`;
+  const siteUrl = isRealWebsite(org.website) ? org.website : null;
   const contactRows = [
     org.address && `
       <a class="contact-row" href="${mapsUrl}" target="_blank" rel="noopener">
@@ -519,10 +546,10 @@ function render(org) {
         <span class="ci">📞</span>
         <span class="ct"><span class="cl">Телефон</span><span class="cv">${esc(org.phone)}</span></span>
       </a>`,
-    org.website && `
-      <a class="contact-row" href="${esc(org.website)}" target="_blank" rel="noopener">
+    siteUrl && `
+      <a class="contact-row" href="${esc(siteUrl)}" target="_blank" rel="noopener">
         <span class="ci">🌐</span>
-        <span class="ct"><span class="cl">Сайт</span><span class="cv">${esc(org.website.replace(/^https?:\/\//,''))}</span></span>
+        <span class="ct"><span class="cl">Сайт</span><span class="cv">${esc(siteUrl.replace(/^https?:\/\//,''))}</span></span>
       </a>`,
     org.vk && `
       <a class="contact-row" href="${esc(org.vk)}" target="_blank" rel="noopener">
@@ -562,7 +589,7 @@ function render(org) {
     ? `<div class="trial-callout"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#16A34A" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Есть пробное занятие</div>` : '';
 
   const sbLinks = [
-    org.website && `<a class="sb-link" href="${esc(org.website)}" target="_blank" rel="noopener"><span class="sl-icon">🌐</span>Открыть сайт</a>`,
+    siteUrl     && `<a class="sb-link" href="${esc(siteUrl)}" target="_blank" rel="noopener"><span class="sl-icon">🌐</span>Открыть сайт</a>`,
     org.phone   && `<a class="sb-link" href="tel:${esc(org.phone)}"><span class="sl-icon">📞</span>${esc(org.phone)}</a>`,
     org.vk      && `<a class="sb-link" href="${esc(org.vk)}" target="_blank" rel="noopener"><span class="sl-icon">💬</span>ВКонтакте</a>`,
     `<a class="sb-link" href="${mapsUrl}" target="_blank" rel="noopener"><span class="sl-icon">🗺</span>Маршрут на карте</a>`,
