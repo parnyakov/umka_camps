@@ -541,11 +541,6 @@ function render(org) {
         <span class="ci">📍</span>
         <span class="ct"><span class="cl">Адрес</span><span class="cv">${esc(org.address)}</span></span>
       </a>`,
-    org.phone && `
-      <a class="contact-row" href="tel:${esc(org.phone)}">
-        <span class="ci">📞</span>
-        <span class="ct"><span class="cl">Телефон</span><span class="cv">${esc(org.phone)}</span></span>
-      </a>`,
     siteUrl && `
       <a class="contact-row" href="${esc(siteUrl)}" target="_blank" rel="noopener">
         <span class="ci">🌐</span>
@@ -590,7 +585,6 @@ function render(org) {
 
   const sbLinks = [
     siteUrl     && `<a class="sb-link" href="${esc(siteUrl)}" target="_blank" rel="noopener"><span class="sl-icon">🌐</span>Открыть сайт</a>`,
-    org.phone   && `<a class="sb-link" href="tel:${esc(org.phone)}"><span class="sl-icon">📞</span>${esc(org.phone)}</a>`,
     org.vk      && `<a class="sb-link" href="${esc(org.vk)}" target="_blank" rel="noopener"><span class="sl-icon">💬</span>ВКонтакте</a>`,
     `<a class="sb-link" href="${mapsUrl}" target="_blank" rel="noopener"><span class="sl-icon">🗺</span>Маршрут на карте</a>`,
   ].filter(Boolean).join('');
