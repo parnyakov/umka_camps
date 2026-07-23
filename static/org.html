@@ -467,10 +467,12 @@ function render(org) {
   // Hero = первое Яндекс-фото (самое надёжное), fallback — первое extra
   const heroPhoto = yandexPhotos[0] || extraPhotos[0] || '';
 
-  // Галерея = оставшиеся Яндекс + extra (без дублей)
+  // Галерея = ТОЛЬКО фото с сайта организации.
+  // Яндекс CDN НЕ показываем в галерее — они привязаны к геолокации
+  // и могут содержать фото соседних бизнесов в том же здании.
   const seen = new Set();
   if (heroPhoto) seen.add(heroPhoto);
-  const galleryPhotos = [...yandexPhotos.slice(1), ...extraPhotos].filter(p => {
+  const galleryPhotos = extraPhotos.filter(p => {
     if (!p || seen.has(p)) return false;
     seen.add(p); return true;
   });
