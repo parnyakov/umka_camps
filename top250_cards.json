@@ -90,7 +90,7 @@
     ],
     "age_range": "3–18 лет",
     "price": "от 5000 ₽",
-    "description": "Обучаем детей и взрослых английскому и китайскому, проводит корпоративное обучение по индивидуальной программе",
+    "description": "",
     "schedule": "",
     "group_size": "до 10 чел.",
     "duration": "80 мин",
@@ -102,9 +102,7 @@
     "scraped": true,
     "pages_visited": 5,
     "data_quality": 100,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3865-3363-4232-b766-393339653465/__.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 204,
@@ -382,7 +380,7 @@
     ],
     "age_range": "3–5 лет",
     "price": "от 3000 ₽",
-    "description": "Индивидуальные и групповые занятия художественной гимнастикой для детей от 3 лет",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -394,9 +392,7 @@
     "scraped": true,
     "pages_visited": 4,
     "data_quality": 95,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3334-6232-4666-b165-303133626238/Group_57.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 71,
@@ -1204,15 +1200,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 95,
-    "extra_photos": [
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/class-crunchlabs-announcement-s.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    "extra_photos": []
   },
   {
     "id": 154,
@@ -1396,7 +1384,7 @@
     ],
     "age_range": "3–18 лет",
     "price": "от 480 ₽",
-    "description": "День 6.Актёрский тренинг. Сценическая речь. Проверка Д/З. Просмотр и разбор самопроб. Первый съёмочный день фильма. День 7.‍Актёрский тренинг. Сценическая речь. Просмотр и разбор самопроб. Второй съёмочный день фильма. День 8.‍Актёрский тренинг. Сценическая речь. Что такое раскадровка? Третий съёмочный день фильма. Д/3 : самостоятельно нарисовать раскадровку своей сцены в фильме. День 9.‍Актёрский тренинг. Сценическая речь. Проверка Д/З. Просмотр и разбор раскадровок. Четвертый съёмочный день фи",
+    "description": "",
     "schedule": "Вторник 17:00 - 18:00 Танец 18:00 - 19:00 Актерское мастерст",
     "group_size": "",
     "duration": "4 ч",
@@ -2227,7 +2215,7 @@
     ],
     "age_range": "",
     "price": "от 400 ₽",
-    "description": "Создадим множество быстрых и \"вкусных\" зарисовок! Все материалы входят в стоимость занятий. Продолжительность: 2 часа",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -2239,9 +2227,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 90,
-    "extra_photos": [
-      "https://pps.whatsapp.net/v/t61.24694-24/359674867_846911706584205_3681326434207556757_n.jpg?ccb=11-4&oh=01_Q5Aa5AEHLaDd2TKByzkO7MrJrGpksqwVNCdm7rshfD97SKQcdQ&oe=6A65EEEC&_nc_sid=5e03e0&_nc_cat=102"
-    ]
+    "extra_photos": []
   },
   {
     "id": 21,
@@ -2322,15 +2308,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 90,
-    "extra_photos": [
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/class-crunchlabs-announcement-s.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    "extra_photos": []
   },
   {
     "id": 59,
@@ -2366,9 +2344,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 90,
-    "extra_photos": [
-      "https://pps.whatsapp.net/v/t61.24694-24/716930568_27277524178552406_4951702987036429926_n.jpg?ccb=11-4&oh=01_Q5Aa5AGf9faECfp7JfRtBXn2g9IBFkExSkEJuIhxRW1EJvPtHg&oe=6A65D8EC&_nc_sid=5e03e0&_nc_cat=101"
-    ]
+    "extra_photos": []
   },
   {
     "id": 27,
@@ -2409,16 +2385,7 @@
     "scraped": true,
     "pages_visited": 3,
     "data_quality": 80,
-    "extra_photos": [
-      "https://thb.tildacdn.com/tild3463-3661-4735-a232-653435303962/-/resize/504x/IMG_0873.JPG",
-      "https://thb.tildacdn.com/tild3561-3438-4637-a263-343765343131/-/empty/IMG_2830.JPG",
-      "https://thb.tildacdn.com/tild3833-3335-4339-b033-663832633937/-/empty/IMG_2858.JPG",
-      "https://thb.tildacdn.com/tild3633-6664-4430-b361-643362303166/-/empty/IMG_2873.JPG",
-      "https://thb.tildacdn.com/tild6634-6662-4565-b332-393038386137/-/empty/IMG_2884.JPG",
-      "https://thb.tildacdn.com/tild6331-3665-4564-b137-393433336263/-/empty/IMG_2881.JPG",
-      "https://thb.tildacdn.com/tild3934-6338-4630-a366-346464663361/-/empty/IMG_2869.JPG",
-      "https://thb.tildacdn.com/tild3763-6531-4136-b163-393133356130/-/empty/IMG_2903.JPG"
-    ]
+    "extra_photos": []
   },
   {
     "id": 161,
@@ -2699,7 +2666,7 @@
     ],
     "age_range": "",
     "price": "от 1100 ₽",
-    "description": "Клубная карта на мастер-классы- это уникальная возможность посещения всех анонсированных мастер-классов на протяжение 45 календарных дней",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -2735,7 +2702,7 @@
     ],
     "age_range": "",
     "price": "от 13000 ₽",
-    "description": "Ремонт салона красоты под ключ – 12 000,00р\\м2, это среднестатистическая стоимость работ, ремонта такого формата коммерческих помещений. Стиль дизайн-проекта таких помещений очень многообразен и естественно, это напрямую влияет на стоимость работ...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -2825,7 +2792,7 @@
     ],
     "age_range": "",
     "price": "от 700 ₽",
-    "description": "4 тренировки в месяц - 3500 руб. 8 тренировок в месяц - 6800 руб.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -2916,7 +2883,7 @@
     ],
     "age_range": "",
     "price": "от 1800 до 16000 ₽",
-    "description": "Приглашаем на занятия детей в возрасте от 3 до 13 лет",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4131,7 +4098,7 @@
     ],
     "age_range": "",
     "price": "от 690 ₽",
-    "description": "MAX позволяет отправлять любые виды сообщений и звонить даже на слабых устройствах и при низкой скорости интернета.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4186,9 +4153,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 75,
-    "extra_photos": [
-      "https://static.tildacdn.com/img/tildacopy.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 61,
@@ -4212,7 +4177,7 @@
     ],
     "age_range": "",
     "price": "от 1350 ₽",
-    "description": "Уютный класс керамики для взрослых, где вы сможете: Лепить свои первые шедевры из глины. Снять стресс через тактильное творчество; Найти новое хобби и единомышленников; Гордиться результатом — все работы забираете с собой после обжига.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4340,7 +4305,7 @@
     ],
     "age_range": "",
     "price": "от 500 ₽",
-    "description": "Уроки игры на пианино проходят в индивидуальной форме, длительностью 50 минут, 1 или 2 раза в неделю, на Ваш выбор. Цена при покупке абонемента.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4419,7 +4384,7 @@
     ],
     "age_range": "",
     "price": "от 650 ₽",
-    "description": "Этот курс – важная ступенька на дороге между детскими играми с роботами и серьёзными робототехническими специальностями, существующими сейчас в ряде ВУЗов.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4455,7 +4420,7 @@
     ],
     "age_range": "",
     "price": "от 1000 ₽",
-    "description": "Личное занятие с тренером очно или на территории ученика",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4548,15 +4513,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 70,
-    "extra_photos": [
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/class-crunchlabs-announcement-s.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    "extra_photos": []
   },
   {
     "id": 72,
@@ -4580,7 +4537,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Получайте помощь по всем вопросам, сохраняя безопасность и конфиденциальность в WhatsApp.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4592,9 +4549,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 70,
-    "extra_photos": [
-      "https://pps.whatsapp.net/v/t61.24694-24/537804609_1636624161051281_6219664465723702768_n.jpg?ccb=11-4&oh=01_Q5Aa5AF5roVxF7MaWl7fHVSAZfTvfPprd0I-dUtIlK2FaF2upQ&oe=6A65DB28&_nc_sid=5e03e0&_nc_cat=111"
-    ]
+    "extra_photos": []
   },
   {
     "id": 75,
@@ -4668,15 +4623,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 70,
-    "extra_photos": [
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/class-crunchlabs-announcement-s.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    "extra_photos": []
   },
   {
     "id": 86,
@@ -4736,7 +4683,7 @@
     ],
     "age_range": "",
     "price": "от 1000 до 4200 ₽",
-    "description": "Курс знакомит школьников с профессией системного администратора. Они научатся собирать компьютеры, исправлять неисправности в них, устанавливать ОС, настраивать сети и обжимать провода, получая практические навыки для работы с домашними ПК",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4844,7 +4791,7 @@
     ],
     "age_range": "",
     "price": "от 400 ₽",
-    "description": "MAX позволяет отправлять любые виды сообщений и звонить даже на слабых устройствах и при низкой скорости интернета.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4937,11 +4884,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 65,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild6462-3038-4934-a332-383330613134/chris-irk6DwN9giQ-un.png",
-      "https://static.tildacdn.com/tild3838-3338-4862-b330-653635393833/Slice_1.png",
-      "https://thb.tildacdn.com/tild3262-3563-4030-a630-303536656131/-/resize/20x/_.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 37,
@@ -4965,7 +4908,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Получайте помощь по всем вопросам, сохраняя безопасность и конфиденциальность в WhatsApp.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -4977,9 +4920,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 65,
-    "extra_photos": [
-      "https://pps.whatsapp.net/v/t61.24694-24/55963726_412267989335128_7124199598339391488_n.jpg?ccb=11-4&oh=01_Q5Aa5AHwF7aPTPW2wd4Yj1npw6pzfpSkOjdSulzV0raw8mS12w&oe=6A65D5FD&_nc_sid=5e03e0&_nc_cat=110"
-    ]
+    "extra_photos": []
   },
   {
     "id": 120,
@@ -5015,15 +4956,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 65,
-    "extra_photos": [
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/drbeckyphoto.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/wc200_a.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-us-impact-report-2025-h.max-100x100.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/class-crunchlabs-announcement-s.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
-      "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    "extra_photos": []
   },
   {
     "id": 147,
@@ -5203,16 +5136,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 65,
-    "extra_photos": [
-      "https://thb.tildacdn.com/tild3139-3231-4837-a336-343764336661/-/resize/20x/photo.png",
-      "https://thb.tildacdn.com/tild3066-3739-4830-b738-653461613634/-/resize/20x/photo_239.png",
-      "https://static.tildacdn.com/tild3439-3933-4562-a165-613236323037/2_3_1.png",
-      "https://thb.tildacdn.com/tild3838-3061-4662-b636-383235623564/-/resize/20x/____ngkids_2__2_1.png",
-      "https://thb.tildacdn.com/tild3766-6262-4230-b034-663763303737/-/resize/20x/Rectangle_1.png",
-      "https://thb.tildacdn.com/tild3130-3431-4561-b837-363533343330/-/resize/20x/_1.png",
-      "https://thb.tildacdn.com/tild3633-3234-4130-a337-333166636466/-/resize/20x/1.png",
-      "https://thb.tildacdn.com/tild3962-6166-4037-b962-303638336530/-/resize/20x/_2.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 196,
@@ -5236,7 +5160,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Получайте помощь по всем вопросам, сохраняя безопасность и конфиденциальность в WhatsApp.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -5248,9 +5172,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 65,
-    "extra_photos": [
-      "https://pps.whatsapp.net/v/t61.24694-24/491870130_1006615504607428_1263723107529922791_n.jpg?ccb=11-4&oh=01_Q5Aa5AFZ-Sgn0lMksdVc5P6W9cBrklaCPMZ1sdQ6FgOUFW4__A&oe=6A65C932&_nc_sid=5e03e0&_nc_cat=106"
-    ]
+    "extra_photos": []
   },
   {
     "id": 218,
@@ -5322,16 +5244,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 65,
-    "extra_photos": [
-      "http://www.rus-aikido.ru/gallery/22058.jpg",
-      "http://www.rus-aikido.ru/gallery/21657.jpg",
-      "http://www.rus-aikido.ru/gallery/21663.JPG",
-      "http://www.rus-aikido.ru/gallery/21659.jpg",
-      "http://www.rus-aikido.ru/gallery/21662.jpg",
-      "http://www.rus-aikido.ru/gallery/21658.jpg",
-      "http://www.rus-aikido.ru/gallery/21661.jpg",
-      "http://www.rus-aikido.ru/gallery/21660.jpg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 200,
@@ -5481,16 +5394,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 60,
-    "extra_photos": [
-      "http://bcballet.ru/upload/resize_cache/iblock/ea2/530_685_2/N0A3439.jpg",
-      "http://bcballet.ru/upload/resize_cache/iblock/75c/1530_637.5_2/Deti.jpg",
-      "http://bcballet.ru/upload/resize_cache/iblock/37c/1530_637.5_2/DSC06551_2.jpg",
-      "http://bcballet.ru/upload/resize_cache/iblock/49a/510_510_2/parter.jpg",
-      "http://bcballet.ru/upload/resize_cache/iblock/f7a/510_510_2/rastyazhka.jpg",
-      "http://bcballet.ru/upload/resize_cache/iblock/284/510_510_2/spina.jpg",
-      "http://bcballet.ru/upload/resize_cache/iblock/f8b/510_510_2/repertuar.jpg",
-      "http://bcballet.ru/upload/resize_cache/iblock/ab6/510_510_2/DUET_.jpg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 7,
@@ -5706,16 +5610,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 60,
-    "extra_photos": [
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2019/09/IMG_3938.jpg",
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2022/12/arina2b-scaled.jpg",
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2023/01/IMG_5196-scaled.jpg",
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2023/01/web3-scaled.jpg",
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2022/12/girly.jpg",
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2022/12/IMG_20230724_115718-2.jpg",
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2025/10/IMG_9458.jpeg",
-      "https://ritmix-otradnoe.ru/wp-content/uploads/2022/12/IMG_3676-2-scaled.jpg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 53,
@@ -5787,16 +5682,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 60,
-    "extra_photos": [
-      "https://thb.tildacdn.com/tild3837-3731-4465-b066-613361623065/-/resize/504x/noroot.png",
-      "https://thb.tildacdn.com/tild3765-3435-4532-a634-393338396531/-/empty/_.jpg",
-      "https://thb.tildacdn.com/tild6461-3732-4434-b461-356132303165/-/empty/noroot.png",
-      "https://thb.tildacdn.com/tild6138-6139-4662-b732-356264383434/-/resizeb/20x/_.jpg",
-      "https://thb.tildacdn.com/tild6366-6434-4833-a664-383435303663/-/resizeb/20x/FOEI2879.JPG",
-      "https://thb.tildacdn.com/tild3064-3030-4030-b030-343631653461/-/resizeb/20x/-16.jpg",
-      "https://thb.tildacdn.com/tild6438-6636-4665-b538-313666393261/-/resizeb/20x/noroot.png",
-      "https://thb.tildacdn.com/tild3264-3064-4131-a338-663365373262/-/resizeb/20x/noroot.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 68,
@@ -5856,7 +5742,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Тхэквондо-корейское боевое искусство гармонично развивающее физические качества. В период тренировочного процесса спортсмены изучаю технические элементы тхэквондо, этикет, историю. Соревнования, аттестации, спортивные сборы, присвоение спорт разрядов",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -6084,16 +5970,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 60,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild6433-6139-4433-a235-343439653462/image.png",
-      "https://thb.tildacdn.com/tild3063-3235-4433-b634-353832383263/-/resizeb/20x/photo.jpeg",
-      "https://thb.tildacdn.com/tild3239-3061-4565-b531-663531663330/-/resizeb/20x/image.png",
-      "https://thb.tildacdn.com/tild6364-3762-4162-b632-383535303063/-/resizeb/20x/IMG_3904.jpg",
-      "https://thb.tildacdn.com/tild3030-3738-4238-a337-346439623365/-/resizeb/20x/IMG_3905.jpg",
-      "https://thb.tildacdn.com/tild3338-3964-4462-a433-333439613336/-/resizeb/20x/IMG_3906.jpg",
-      "https://thb.tildacdn.com/tild3332-3865-4436-a131-616631663434/-/resizeb/20x/IMG_3907.jpg",
-      "https://thb.tildacdn.com/tild3464-3466-4539-a338-643934633634/-/resizeb/20x/86691C4F-AC4D-49E8-9.jpeg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 124,
@@ -6165,15 +6042,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 60,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3636-3963-4364-b663-373538373265/image.png",
-      "https://thb.tildacdn.com/tild6166-3961-4230-b636-633135343039/-/empty/_2021-07-01_194453.png",
-      "https://thb.tildacdn.com/tild6362-3934-4839-a538-323733626339/-/empty/_2021-07-01_135144.png",
-      "https://thb.tildacdn.com/tild3364-3466-4436-b438-653636333636/-/empty/_2021-07-01_134513.png",
-      "https://thb.tildacdn.com/tild3136-3966-4336-a231-336134313165/-/empty/_2021-07-01_194613.png",
-      "https://thb.tildacdn.com/tild3962-6432-4837-b665-383361363239/-/empty/_2021-07-01_135233.png",
-      "https://thb.tildacdn.com/tild6136-6166-4330-b662-313334373930/-/empty/_2021-07-01_135027.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 134,
@@ -6209,16 +6078,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 60,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild6431-6430-4735-a564-363937613639/__.png",
-      "https://thb.tildacdn.com/tild3831-3261-4264-a362-316266303337/-/resize/20x/Union.png",
-      "https://thb.tildacdn.com/tild3262-6537-4631-b031-323233373762/-/resize/20x/boys-with-laptop-sca.png",
-      "https://thb.tildacdn.com/tild3232-6439-4135-a437-663037656639/-/resize/20x/XXXL_4_1.png",
-      "https://thb.tildacdn.com/tild6534-3436-4562-a136-663033373664/-/resize/20x/XXXL_4_2_1.png",
-      "https://thb.tildacdn.com/tild3663-3333-4332-a465-303662626634/-/resize/20x/___1.png",
-      "https://thb.tildacdn.com/tild3463-3766-4236-a633-303266623733/-/resize/20x/Rectangle_25_3.png",
-      "https://thb.tildacdn.com/tild6663-3237-4961-b266-633931353333/-/resize/20x/XXXL_4_3.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 136,
@@ -6725,16 +6585,7 @@
     "scraped": true,
     "pages_visited": 3,
     "data_quality": 60,
-    "extra_photos": [
-      "http://patagoniacamp.ru/img/gallery3/1.jpg",
-      "http://patagoniacamp.ru/img/gallery3/10.jpg",
-      "http://patagoniacamp.ru/img/gallery3/11.jpg",
-      "http://patagoniacamp.ru/img/gallery3/12.jpg",
-      "http://patagoniacamp.ru/img/gallery3/13.jpg",
-      "http://patagoniacamp.ru/img/gallery3/14.jpg",
-      "http://patagoniacamp.ru/img/gallery3/15.jpg",
-      "http://patagoniacamp.ru/img/gallery3/16.jpg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 212,
@@ -6986,16 +6837,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 60,
-    "extra_photos": [
-      "https://coddyschool.com/images/og.jpg",
-      "https://coddyschool.com/upload/iblock/f34/9dk2hfgn66wf3sq0893s76sxqstykbr3/7402_category_min.100.100.webp",
-      "https://coddyschool.com/upload/iblock/9df/lginsr91hszqobvhgkobsfz9i5dgoswe/npbk_1_min.100.100.webp",
-      "https://coddyschool.com/upload/iblock/875/nz2v4pgad3kpysfb46wxtesz9ciavcto/DEk1_min3_min.100.100.webp",
-      "https://coddyschool.com/upload/iblock/ee5/chua0htfxanphuvg75mkuz9lkiif1zba/hh2023_logo2_min.100.100.webp",
-      "https://coddyschool.com/upload/iblock/43f/qoszs1tpuwemek61vs6g7jstqtyovudw/Mask_group_1.100.100.webp",
-      "https://coddyschool.com/upload/iblock/17b/a6849ar9gyzdtad43ul3mrut3gpdzk0m/mir_rodina_logo 1.100.100.webp",
-      "https://coddyschool.com/upload/iblock/c0c/8uy2m1hzvoxkfmu2t08soh6913nij4wl/vmeste-_1_.100.100.webp"
-    ]
+    "extra_photos": []
   },
   {
     "id": 118,
@@ -7163,7 +7005,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Занятия по гимнастике для детей Развивающие занятия спортом",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7199,7 +7041,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Урок для новичков. Базовые элементы, безопасность. 60 мин.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7235,7 +7077,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Набор в команду каверденс K-pop. Взрослые и подростки от 13-14 лет Парни и девушки. Цена указана за абонент на месяц, 8 занятий.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7271,7 +7113,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "MAX позволяет отправлять любые виды сообщений и звонить даже на слабых устройствах и при низкой скорости интернета.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7307,7 +7149,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Курсы программирования и школа с результатами — как выбрать лучшее Если вы ищете курсы программирования, курсы программирования с нуля или лучшие курсы по программированию, обратите внимание на Московскую школу программистов. Несмотря на то, что ...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7343,7 +7185,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "абонемент на 4 занятия, 1 раз в неделю, продолжительность 80 минут",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7379,7 +7221,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "2-недельные интенсивы для детей в маленьких группах до 8 человек позволят прокачать английский язык. Игры, творчество, проекты, активные занятия и заботливая атмосфера рядом с метро Новаторская. Программа интенсива направлена на комплексное развит...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7415,7 +7257,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Индивидуальные занятия позволяют сосредоточиться на ваших личных целях и потребностях, обеспечивая максимально эффективное и персонализированное обучение",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7451,7 +7293,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Курсы английского языка для детей и подростков в Балашихе: 3–4 года, 5–6 лет, 7–10 лет и 11–18 лет. Занятия в школе UNAVI / Юнави.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7483,7 +7325,7 @@
     ],
     "age_range": "",
     "price": "от 700 ₽",
-    "description": "Авторская программа, написанная совместно с носителями и основанная на оригинальных сказках, легендах, приключенческих романах. Никаких учебников английского, мы целенаправленно отказались от известных учебников и написали свою программу, опираясь...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7591,7 +7433,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Робототехника для детей – это самое перспективное и увлекательное занятие. Мы собираем собственные модели роботов, программируем и управляем ими. Дети в 5 лет знают что такое отрицательные, десятичные числа, дроби. Знают элементарные формулы и как...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7672,7 +7514,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Интересное и увлекательное обучение программированию на базе всемирно известной компьютерной игры «Minecraft» для детей 11-13 лет. Этот курс можно считать самым облегчённым для детей данного возраста. На курсе дети научатся: – Думать алгоритмичес...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7708,7 +7550,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Робототехника для детей – это самое перспективное и увлекательное занятие. Мы собираем собственные модели роботов, программируем и управляем ими. Дети в 5 лет знают что такое отрицательные, десятичные числа, дроби. Знают элементарные формулы и как...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7780,7 +7622,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "От 1 до 5 уровней. С нуля до Junior-разработчика. 1-й уровень (11+): Python - алгоритмы, основы языка, графика, разработка игр. Свидетельство с итоговыми оценками.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -7924,7 +7766,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "На этом курсе: Ребенок понимает речь на слух, отвечает на вопросы полными предложениями, знакомится, рассказывает о временах года, погоде, о своем дне, о том, что находится в классе, рассуждает об игрушках и животных, выполняет задания с элементам...",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -8008,12 +7850,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 55,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3462-3636-4664-a461-353266626332/photo.png",
-      "https://thb.tildacdn.com/tild3561-3262-4162-b231-633061656462/-/resize/20x/image_6.png",
-      "https://thb.tildacdn.com/tild3265-3263-4963-b637-656637663735/-/resize/20x/image_7.png",
-      "https://thb.tildacdn.com/tild6337-6230-4762-a338-323633323134/-/resize/20x/image_8.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 186,
@@ -8293,7 +8130,7 @@
     ],
     "age_range": "",
     "price": "",
-    "description": "Дети почувствуют себя настоящими разработчиками игр! С помощью PyGame - набора библиотек языка программирования Python - дети смогут создавать 2D-игры с интерфейсом, анимацией и функциональностью.",
+    "description": "",
     "schedule": "",
     "group_size": "",
     "duration": "",
@@ -8382,10 +8219,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 45,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3664-3661-4966-b237-313936363566/photo_2020-07-05_13-.jpg",
-      "https://thb.tildacdn.com/tild3831-3535-4264-a438-383464323030/-/resize/20x/3031153_telefone-emo.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 193,
@@ -8527,16 +8361,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": [
-      "https://thb.tildacdn.com/tild3765-6434-4535-a431-663635393866/-/resize/20x/photo.png",
-      "https://thb.tildacdn.com/tild6639-3861-4562-b962-646538663536/-/resize/20x/photo.png",
-      "https://thb.tildacdn.com/tild3437-3833-4163-a135-383263636465/-/resize/20x/photo.png",
-      "https://thb.tildacdn.com/tild6466-3238-4065-a438-646234633737/-/resize/20x/photo.png",
-      "https://thb.tildacdn.com/tild3861-6334-4561-b836-313035363166/-/resize/20x/1_.png",
-      "https://thb.tildacdn.com/tild3962-6464-4831-b031-306262343630/-/resize/20x/1.png",
-      "https://thb.tildacdn.com/tild3338-3531-4734-a165-303564393133/-/resize/20x/2.png",
-      "https://thb.tildacdn.com/tild3961-3331-4933-a632-306339343237/-/resize/20x/4.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 42,
@@ -8608,9 +8433,7 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 40,
-    "extra_photos": [
-      "https://pps.whatsapp.net/v/t61.24694-24/534417972_798812929233038_3649373660337700083_n.jpg?ccb=11-4&oh=01_Q5Aa5AEnpscSxj5Sf1PKuWbo8Xnex7JTWaSUGCVRnizdjOIrwA&oe=6A65D1F7&_nc_sid=5e03e0&_nc_cat=107"
-    ]
+    "extra_photos": []
   },
   {
     "id": 46,
@@ -8646,16 +8469,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3861-3634-4732-a163-333461663161/oK3nrpR179U22-transf.png",
-      "https://thb.tildacdn.com/tild3561-3535-4666-b338-636432633863/-/resizeb/20x/photo_2025-11-08_21-.jpg",
-      "https://thb.tildacdn.com/tild6639-3865-4836-a430-656566633533/-/resizeb/20x/photo_2025-11-08_21-.jpg",
-      "https://thb.tildacdn.com/tild3734-6533-4363-b265-363536663438/-/resizeb/20x/photo_2025-11-08_21-.jpg",
-      "https://thb.tildacdn.com/tild6130-3361-4332-a666-663233383066/-/resizeb/20x/photo_2025-11-08_17-.jpg",
-      "https://thb.tildacdn.com/tild6230-3733-4333-a536-616337633464/-/resizeb/20x/photo_2025-11-08_21-.jpg",
-      "https://thb.tildacdn.com/tild3265-6431-4432-a235-356139306238/-/resizeb/20x/photo_2025-02-23_17-.jpg",
-      "https://thb.tildacdn.com/tild3732-6166-4264-a134-663763343533/-/resizeb/20x/photo_2025-02-11_23-.jpg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 47,
@@ -8763,16 +8577,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": [
-      "https://thb.tildacdn.com/tild6233-6432-4366-a464-343433326234/-/resize/504x/photo.png",
-      "https://static.tildacdn.com/tild3237-6338-4666-a565-623036346262/photo_1_2025-05-05_1.jpg",
-      "https://static.tildacdn.com/tild3538-3661-4332-a366-313065383964/photo_2_2025-05-05_1.jpg",
-      "https://static.tildacdn.com/tild3835-3434-4534-a164-373735643534/photo_3_2025-05-05_1.jpg",
-      "https://static.tildacdn.com/tild6166-3434-4539-b939-363830396363/photo_4_2025-05-05_1.jpg",
-      "https://static.tildacdn.com/tild3066-3239-4363-a262-356565613433/photo_1_2025-05-05_1.jpg",
-      "https://static.tildacdn.com/tild3461-3937-4132-b661-616463663138/photo_2_2025-05-05_1.jpg",
-      "https://static.tildacdn.com/tild3864-3930-4130-b338-636132633434/photo_3_2025-05-05_1.jpg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 91,
@@ -9296,16 +9101,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3039-3735-4262-a364-643365373433/-06.jpg",
-      "https://thb.tildacdn.com/tild6333-3539-4066-a531-663939363939/-/resizeb/20x/photo_2022-05-18_12-.jpg",
-      "https://thb.tildacdn.com/tild3637-3032-4730-a131-613935353862/-/resizeb/20x/photo_2022-05-18_17-.jpg",
-      "https://thb.tildacdn.com/tild6330-3235-4063-a333-656530623562/-/resizeb/20x/photo_2022-05-18_13-.jpg",
-      "https://thb.tildacdn.com/tild3632-6365-4264-b462-653231663762/-/resizeb/20x/photo_2022-05-18_12-.jpg",
-      "https://thb.tildacdn.com/tild6636-3462-4430-b933-656266303937/-/resizeb/20x/photo_2022-05-18_14-.jpg",
-      "https://thb.tildacdn.com/tild6463-6164-4563-a234-316139646130/-/resizeb/20x/photo_2022-05-18_14-.jpg",
-      "https://thb.tildacdn.com/tild3363-3730-4033-a461-316235633537/-/resizeb/20x/photo_2022-05-18_15-.jpg"
-    ]
+    "extra_photos": []
   },
   {
     "id": 98,
@@ -9557,16 +9353,7 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 35,
-    "extra_photos": [
-      "https://static.tildacdn.com/tild3663-6333-4839-b130-393638636438/zumba.png",
-      "https://thb.tildacdn.com/tild3634-3432-4664-b465-623535393736/-/resizeb/20x/photo.png",
-      "https://thb.tildacdn.com/tild3830-3465-4732-a666-373039383565/-/resizeb/20x/Screenshot_2022-08-2.png",
-      "https://thb.tildacdn.com/tild6637-3638-4534-b932-346562376563/-/resizeb/20x/Screenshot_2022-08-2.png",
-      "https://thb.tildacdn.com/tild6461-3835-4334-b564-306666623466/-/resizeb/20x/Screenshot_2022-08-2.png",
-      "https://thb.tildacdn.com/tild3163-6435-4334-b330-636665356437/-/resizeb/20x/Screenshot_2022-08-2.png",
-      "https://thb.tildacdn.com/tild3535-3563-4639-b166-633462343564/-/resizeb/20x/z1.png",
-      "https://thb.tildacdn.com/tild3433-3161-4635-b262-366262373266/-/resizeb/20x/z2.png"
-    ]
+    "extra_photos": []
   },
   {
     "id": 114,
