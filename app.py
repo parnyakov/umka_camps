@@ -334,17 +334,23 @@ def api_lead():
     phone = data.get('phone', '').strip()
     child_age = data.get('child_age', '')
     wishes = data.get('wishes', '').strip()
+    org_name = data.get('org_name', '').strip()
+    telegram  = data.get('telegram', '').strip()
+    direction = data.get('direction', '').strip()
+    comment   = data.get('comment', '').strip()
 
     if not parent_name or not phone:
         return jsonify({'ok': False, 'error': 'Укажите имя и телефон'}), 400
 
-    text = (
-        f'🎯 Новая заявка с главной страницы!\n'
-        f'Родитель: {parent_name}\n'
-        f'Телефон: {phone}\n'
-        f'Возраст ребёнка: {child_age or "—"}\n'
-        f'Пожелания: {wishes or "—"}'
-    )
+    lines = ['🎨 Новая заявка на кружок!']
+    if org_name:   lines.append(f'Кружок: {org_name}')
+    lines.append(f'Родитель: {parent_name}')
+    lines.append(f'Телефон: {phone}')
+    if telegram:   lines.append(f'Telegram: {telegram}')
+    if child_age:  lines.append(f'Возраст ребёнка: {child_age}')
+    if direction:  lines.append(f'Направление: {direction}')
+    if comment:    lines.append(f'Комментарий: {comment}')
+    text = '\n'.join(lines)
 
     if TELEGRAM_TOKEN and TELEGRAM_CHAT_ID:
         try:
