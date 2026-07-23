@@ -491,25 +491,25 @@ def api_orgs():
     if subcategory:    conds.append('subcategory=?');  params.append(subcategory)
     if metro:          conds.append('metro=?');        params.append(metro)
     if has_trial=='1': conds.append('has_trial=1')
-    if q:
-        conds.append('(name LIKE ? OR description LIKE ? OR programs LIKE ?)')
-        params += [f'%{q}%']*3
+    # q, age, price_max are applied Python-side:
+    # SQLite LIKE is case-insensitive only for ASCII, not Cyrillic.
     where = ('WHERE ' + ' AND '.join(conds)) if conds else ''
 
-    # Age and price need Python-side filtering (stored as text)
-    if age or price_max:
-        rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC', params).fetchall()
-        conn.close()
-        items = [_org_dict(r) for r in rows]
-        if age:       items = [o for o in items if _age_includes(o.get('age_range',''), age)]
-        if price_max: items = [o for o in items if _price_lte(o.get('price',''), price_max)]
-        total = len(items)
-        items = items[offset:offset+limit]
-    else:
-        total = conn.execute(f'SELECT COUNT(*) FROM organizations {where}', params).fetchone()[0]
-        rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC LIMIT ? OFFSET ?', params+[limit,offset]).fetchall()
-        conn.close()
-        items = [_org_dict(r) for r in rows]
+    rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC', params).fetchall()
+    conn.close()
+    items = [_org_dict(r) for r in rows]
+
+    if q:
+        q_lower = q.lower()
+        items = [o for o in items if
+                 q_lower in (o.get('name') or '').lower() or
+                 q_lower in (o.get('description') or '').lower() or
+                 q_lower in ' '.join(o.get('programs') or []).lower()]
+    if age:       items = [o for o in items if _age_includes(o.get('age_range',''), age)]
+    if price_max: items = [o for o in items if _price_lte(o.get('price',''), price_max)]
+
+    total = len(items)
+    items = items[offset:offset+limit]
 
     return jsonify({'total': total, 'items': items})
 
