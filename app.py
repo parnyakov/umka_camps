@@ -388,10 +388,10 @@ def init_orgs_db():
         schedule TEXT, group_size TEXT, duration TEXT,
         phone TEXT, website TEXT, vk TEXT,
         rating REAL, reviews_count INTEGER, has_trial INTEGER, data_quality INTEGER,
-        extra_photos TEXT
+        extra_photos TEXT, featured INTEGER DEFAULT 0
     )''')
     for c in cards:
-        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
             c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
             c.get('address',''), c.get('metro',''), c.get('district',''),
             json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
@@ -403,6 +403,7 @@ def init_orgs_db():
             c.get('rating',0) or 0, c.get('reviews_count',0) or 0,
             1 if c.get('has_trial') else 0, c.get('data_quality',0) or 0,
             json.dumps(c.get('extra_photos',[]), ensure_ascii=False),
+            1 if c.get('featured') else 0,
         ))
     conn.commit()
     conn.close()
@@ -495,7 +496,7 @@ def api_orgs():
     # SQLite LIKE is case-insensitive only for ASCII, not Cyrillic.
     where = ('WHERE ' + ' AND '.join(conds)) if conds else ''
 
-    rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY data_quality DESC, rating DESC', params).fetchall()
+    rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY featured DESC, data_quality DESC, rating DESC', params).fetchall()
     conn.close()
     items = [_org_dict(r) for r in rows]
 
