@@ -346,7 +346,7 @@ function isLogoUrl(url) {
   return /logo|логотип|brand[-_]|[-_]brand|header[-_]bg|bg[-_]header/i.test(url);
 }
 function isBadPhotoUrl(url) {
-  const bad = /youtube|youtu\.be|ytimg|instagram|cdninstagram|fbcdn|facebook|twimg|twitter|tiktok|mycdn\.me|mc\.yandex|storage\.googleapis\.com\/gweb|peacocktv|crunchyroll|netflix\.com|hulu\.com|disneyplus|paramountplus/i;
+  const bad = /youtube|youtu\.be|ytimg|instagram|cdninstagram|fbcdn|facebook|twimg|twitter|tiktok|mycdn\.me|mc\.yandex|avatars\.mds\.yandex|yandex\.net\/get-|storage\.googleapis\.com\/gweb|peacocktv|crunchyroll|netflix\.com|hulu\.com|disneyplus|paramountplus/i;
   return bad.test(url);
 }
 
@@ -429,8 +429,8 @@ function buildGallery(photos, startIdx) {
   const items = valid.map((p, i) => `
     <div class="gallery-item" onclick="openLightbox(${startIdx + i})">
       <img src="${esc(p)}" loading="lazy" alt=""
-        onerror="this.closest('.gallery-item').remove()"
-        onload="(function(i){const w=i.naturalWidth,h=i.naturalHeight,r=w/(h||1);if(w<20||h<20||(w<380&&h<380&&r>0.72&&r<1.38))i.closest('.gallery-item').remove()})(this)">
+        onerror="this.closest('.gallery-item').remove();_checkGalleryEmpty()"
+        onload="(function(i){const w=i.naturalWidth,h=i.naturalHeight,r=w/(h||1);if(w<20||h<20||(w<380&&h<380&&r>0.72&&r<1.38)){i.closest('.gallery-item').remove();_checkGalleryEmpty()}})(this)">
     </div>`).join('');
   return `<div class="${cls}" id="galleryGrid">${items}</div>`;
 }
@@ -459,17 +459,13 @@ function render(org) {
   const ini   = initials(org.name);
 
   // ── Photos ────────────────────────────────────────────────────────────────
-  // Yandex CDN photos = реальные снимки помещения, никогда не логотипы → идут в hero первыми
-  // extra_photos = с сайтов организаций (могут содержать логотипы) → только в галерею
-  const yandexPhotos = (org.photos || []).filter(p => p && !isBadPhotoUrl(p));
-  const extraPhotos  = (org.extra_photos || []).filter(p => p && !isBadPhotoUrl(p) && !isLogoUrl(p));
+  // extra_photos = фото с сайта орга (реальные занятия) — единственный источник.
+  // Яндекс CDN (org.photos) полностью исключён: там логотипы и фото соседей.
+  const extraPhotos = (org.extra_photos || []).filter(p => p && !isBadPhotoUrl(p) && !isLogoUrl(p));
 
-  // Hero = первое Яндекс-фото (самое надёжное), fallback — первое extra
-  const heroPhoto = yandexPhotos[0] || extraPhotos[0] || '';
+  // Hero = первое фото с сайта орга
+  const heroPhoto = extraPhotos[0] || '';
 
-  // Галерея = ТОЛЬКО фото с сайта организации.
-  // Яндекс CDN НЕ показываем в галерее — они привязаны к геолокации
-  // и могут содержать фото соседних бизнесов в том же здании.
   const seen = new Set();
   if (heroPhoto) seen.add(heroPhoto);
   const galleryPhotos = extraPhotos.filter(p => {
@@ -668,11 +664,21 @@ function render(org) {
 
   document.getElementById('btnCta').addEventListener('click', openModal);
 
-  // Collapse empty gallery after images settle
+  // Collapse empty gallery — called after every onerror/onload removal + fallback timeout
+  window._checkGalleryEmpty = function() {
+    const grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+    // Wait until all images have settled (no more pending loads)
+    const imgs = grid.querySelectorAll('img');
+    const pending = Array.from(imgs).filter(i => !i.complete);
+    if (pending.length > 0) return; // still loading, check again after each one
+    if (grid.children.length === 0) grid.closest('.section').remove();
+  };
+  // Fallback: remove empty gallery even if some images never fire events
   setTimeout(() => {
     const grid = document.getElementById('galleryGrid');
     if (grid && grid.children.length === 0) grid.closest('.section').remove();
-  }, 3000);
+  }, 10000);
 }
 
 // Hero: reject tiny icons AND square badge-like images (Yandex awards/pins)
