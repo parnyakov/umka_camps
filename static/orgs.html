@@ -451,14 +451,11 @@ function renderCards(items, append) {
 function cardHTML(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
-  // Предпочитаем extra_photos (с сайта орга — реальные занятия), fallback — Яндекс CDN
-  // extra_photos[0] = фото с сайта орга (реальные занятия)
-  // photos[0] = Яндекс Карты CDN (фото помещения, иногда логотип) — fallback
-  const yandexBad = /logo|логотип|brand|icon/i;
-  const extraOk = (org.extra_photos || []).filter(p => p && !yandexBad.test(p));
-  const heroSrc = extraOk.length
-    ? extraOk[0]
-    : (org.photos && org.photos.length) ? org.photos[0] : null;
+  // Только extra_photos (реальные фото с сайта орга).
+  // Яндекс CDN (org.photos) — не используем: там логотипы и случайные фото.
+  const YANDEX = /avatars\.mds\.yandex|yandex\.net\/get-|logo|логотип|brand|icon/i;
+  const extraOk = (org.extra_photos || []).filter(p => p && !YANDEX.test(p));
+  const heroSrc = extraOk.length ? extraOk[0] : null;
   const photo = heroSrc
     ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
          onerror="this.outerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'">`
