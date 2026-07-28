@@ -58,6 +58,17 @@
       <div class="cat-pills" id="catPills">
         <div class="cat-pill active" data-cat="" onclick="setCat(this, '')">Все направления</div>
       </div>
+      <!-- Мобильные подкатегории — появляются под категорией при выборе -->
+      <div class="mobile-subcats" id="mobileSubcats"></div>
+    </div>
+
+    <div class="filter-group">
+      <label>Регион</label>
+      <div style="display:flex;gap:6px">
+        <button id="areaAll" class="area-btn active" onclick="setArea('')">Все</button>
+        <button id="areaMsk" class="area-btn" onclick="setArea('москва')">🏙 Москва</button>
+        <button id="areaMO"  class="area-btn" onclick="setArea('подмосковье')">🌲 Область</button>
+      </div>
     </div>
 
     <div class="filter-group">
@@ -116,6 +127,24 @@
 </div>
 
 <style>
+.area-btn {
+  flex:1; padding:6px 4px; border:1.5px solid var(--border); border-radius:8px;
+  background:none; cursor:pointer; font-size:12px; color:var(--muted);
+  transition: all .15s; white-space:nowrap;
+}
+.area-btn.active {
+  background:var(--accent); color:#fff; border-color:var(--accent);
+}
+.mobile-subcats {
+  display:none; flex-wrap:wrap; gap:6px; margin-top:8px;
+}
+.mobile-subcats.open { display:flex; }
+.mobile-sub-pill {
+  padding:5px 12px; border:1.5px solid var(--border); border-radius:20px;
+  font-size:12px; color:var(--muted); cursor:pointer; background:#fff;
+  transition: all .15s;
+}
+.mobile-sub-pill.active { background:var(--accent); color:#fff; border-color:var(--accent); }
 .sub-popover {
   position: fixed;
   background: white;
@@ -201,7 +230,7 @@ const SUB_PILLS = {
 
 let state = {
   category: '', subcategory: '', metro: '', age: '', price_max: '',
-  has_trial: false, q: '',
+  has_trial: false, q: '', area: '',
   offset: 0, limit: 24, total: 0, loading: false
 };
 
@@ -271,6 +300,7 @@ function setCat(el, cat) {
   state.offset = 0;
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   el.classList.add('active');
+  renderMobileSubcats(cat);
   fetchOrgs(false);
 }
 
@@ -368,8 +398,35 @@ function toggleTrial() {
   fetchOrgs(false);
 }
 
+function setArea(val) {
+  state.area = val;
+  state.offset = 0;
+  document.querySelectorAll('.area-btn').forEach(b => b.classList.remove('active'));
+  const ids = { '': 'areaAll', 'москва': 'areaMsk', 'подмосковье': 'areaMO' };
+  const el = document.getElementById(ids[val]);
+  if (el) el.classList.add('active');
+  fetchOrgs(false);
+}
+
+function renderMobileSubcats(cat) {
+  const box = document.getElementById('mobileSubcats');
+  const subs = SUB_PILLS[cat] || [];
+  if (!subs.length) { box.classList.remove('open'); box.innerHTML = ''; return; }
+  box.innerHTML = subs.map(s =>
+    `<div class="mobile-sub-pill${state.subcategory===s.val?' active':''}" onclick="setMobileSub('${s.val}')">${s.label}</div>`
+  ).join('');
+  box.classList.add('open');
+}
+
+function setMobileSub(val) {
+  state.subcategory = state.subcategory === val ? '' : val;
+  state.offset = 0;
+  renderMobileSubcats(state.category);
+  fetchOrgs(false);
+}
+
 function resetFilters() {
-  state = { ...state, category: '', subcategory: '', metro: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
+  state = { ...state, category: '', subcategory: '', metro: '', age: '', price_max: '', has_trial: false, q: '', area: '', offset: 0 };
   document.getElementById('searchInput').value = '';
   document.getElementById('metroFilter').value = '';
   document.getElementById('ageFilter').value = '';
@@ -377,6 +434,10 @@ function resetFilters() {
   document.getElementById('trialToggle').classList.remove('on');
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
+  document.querySelectorAll('.area-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('areaAll').classList.add('active');
+  const box = document.getElementById('mobileSubcats');
+  box.classList.remove('open'); box.innerHTML = '';
   closeSubPopover();
   fetchOrgs(false);
 }
@@ -408,6 +469,7 @@ async function fetchOrgs(append = false) {
   if (state.category)    p.set('category', state.category);
   if (state.subcategory) p.set('subcategory', state.subcategory);
   if (state.metro)       p.set('metro', state.metro);
+  if (state.area)        p.set('area', state.area);
   if (state.age)         p.set('age', state.age);
   if (state.price_max)   p.set('price_max', state.price_max);
   if (state.has_trial)   p.set('has_trial', '1');
@@ -456,9 +518,11 @@ function cardHTML(org) {
   const YANDEX = /avatars\.mds\.yandex|yandex\.net\/get-|logo|логотип|brand|icon/i;
   const extraOk = (org.extra_photos || []).filter(p => p && !YANDEX.test(p));
   const heroSrc = extraOk.length ? extraOk[0] : null;
+  const fallback = `this.outerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'`;
   const photo = heroSrc
     ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
-         onerror="this.outerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'">`
+         onerror="${fallback}"
+         onload="(function(i){const w=i.naturalWidth,h=i.naturalHeight,r=w/(h||1);if(w<120||h<80||(w<500&&h<500&&r>0.8&&r<1.25&&w===h)){${fallback.replace(/'/g,"\\'")}}})(this)">`
     : `<div class="card-initials" style="background:${bg}">${ini}</div>`;
 
   const rating = org.rating
