@@ -494,8 +494,8 @@ function renderCards(items, append) {
 function cardHTML(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
-  // Только extra_photos. Яндекс CDN (avatars.mds.yandex) не используем — там блок hotlink.
-  const SKIP_RE = /avatars\.mds\.yandex|yandex\.net\/get-/i;
+  // Фильтруем: Яндекс CDN (hotlink block) + сломанный S3 (таймаут)
+  const SKIP_RE = /avatars\.mds\.yandex|yandex\.net\/get-|umkahub\.s3\.cloud\.ru/i;
   const extraOk = (org.extra_photos || []).filter(p => p && !SKIP_RE.test(p));
   const heroSrc = extraOk.length ? extraOk[0] : null;
   const photo = heroSrc
