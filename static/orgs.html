@@ -63,15 +63,6 @@
     </div>
 
     <div class="filter-group">
-      <label>Регион</label>
-      <div style="display:flex;gap:6px">
-        <button id="areaAll" class="area-btn active" onclick="setArea('')">Все</button>
-        <button id="areaMsk" class="area-btn" onclick="setArea('москва')">🏙 Москва</button>
-        <button id="areaMO"  class="area-btn" onclick="setArea('подмосковье')">🌲 Область</button>
-      </div>
-    </div>
-
-    <div class="filter-group">
       <label>Станция метро</label>
       <select id="metroFilter" onchange="applyFilters()">
         <option value="">Любая станция</option>
@@ -127,14 +118,6 @@
 </div>
 
 <style>
-.area-btn {
-  flex:1; padding:6px 4px; border:1.5px solid var(--border); border-radius:8px;
-  background:none; cursor:pointer; font-size:12px; color:var(--muted);
-  transition: all .15s; white-space:nowrap;
-}
-.area-btn.active {
-  background:var(--accent); color:#fff; border-color:var(--accent);
-}
 .mobile-subcats {
   display:none; flex-wrap:wrap; gap:6px; margin-top:8px;
 }
@@ -230,7 +213,7 @@ const SUB_PILLS = {
 
 let state = {
   category: '', subcategory: '', metro: '', age: '', price_max: '',
-  has_trial: false, q: '', area: '',
+  has_trial: false, q: '',
   offset: 0, limit: 24, total: 0, loading: false
 };
 
@@ -398,16 +381,6 @@ function toggleTrial() {
   fetchOrgs(false);
 }
 
-function setArea(val) {
-  state.area = val;
-  state.offset = 0;
-  document.querySelectorAll('.area-btn').forEach(b => b.classList.remove('active'));
-  const ids = { '': 'areaAll', 'москва': 'areaMsk', 'подмосковье': 'areaMO' };
-  const el = document.getElementById(ids[val]);
-  if (el) el.classList.add('active');
-  fetchOrgs(false);
-}
-
 function renderMobileSubcats(cat) {
   const box = document.getElementById('mobileSubcats');
   const subs = SUB_PILLS[cat] || [];
@@ -426,7 +399,7 @@ function setMobileSub(val) {
 }
 
 function resetFilters() {
-  state = { ...state, category: '', subcategory: '', metro: '', age: '', price_max: '', has_trial: false, q: '', area: '', offset: 0 };
+  state = { ...state, category: '', subcategory: '', metro: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
   document.getElementById('searchInput').value = '';
   document.getElementById('metroFilter').value = '';
   document.getElementById('ageFilter').value = '';
@@ -434,8 +407,6 @@ function resetFilters() {
   document.getElementById('trialToggle').classList.remove('on');
   document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
   document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
-  document.querySelectorAll('.area-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('areaAll').classList.add('active');
   const box = document.getElementById('mobileSubcats');
   box.classList.remove('open'); box.innerHTML = '';
   closeSubPopover();
@@ -469,7 +440,7 @@ async function fetchOrgs(append = false) {
   if (state.category)    p.set('category', state.category);
   if (state.subcategory) p.set('subcategory', state.subcategory);
   if (state.metro)       p.set('metro', state.metro);
-  if (state.area)        p.set('area', state.area);
+
   if (state.age)         p.set('age', state.age);
   if (state.price_max)   p.set('price_max', state.price_max);
   if (state.has_trial)   p.set('has_trial', '1');
@@ -513,16 +484,13 @@ function renderCards(items, append) {
 function cardHTML(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
-  // Только extra_photos (реальные фото с сайта орга).
-  // Яндекс CDN (org.photos) — не используем: там логотипы и случайные фото.
-  const YANDEX = /avatars\.mds\.yandex|yandex\.net\/get-|logo|логотип|brand|icon/i;
-  const extraOk = (org.extra_photos || []).filter(p => p && !YANDEX.test(p));
+  // Только extra_photos. Яндекс CDN (avatars.mds.yandex) не используем — там блок hotlink.
+  const SKIP_RE = /avatars\.mds\.yandex|yandex\.net\/get-/i;
+  const extraOk = (org.extra_photos || []).filter(p => p && !SKIP_RE.test(p));
   const heroSrc = extraOk.length ? extraOk[0] : null;
-  const fallback = `this.outerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'`;
+  const fallback = `this.closest('.card-photo').innerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'`;
   const photo = heroSrc
-    ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
-         onerror="${fallback}"
-         onload="(function(i){const w=i.naturalWidth,h=i.naturalHeight,r=w/(h||1);if(w<120||h<80||(w<500&&h<500&&r>0.8&&r<1.25&&w===h)){${fallback.replace(/'/g,"\\'")}}})(this)">`
+    ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy" onerror="${fallback}">`
     : `<div class="card-initials" style="background:${bg}">${ini}</div>`;
 
   const rating = org.rating
