@@ -166,6 +166,16 @@
 </style>
 
 <script>
+function _cardImgFail(el) {
+  var p = el.closest('.card-photo');
+  if (!p) return;
+  var bg  = el.dataset.bg  || '#eee';
+  var ini = el.dataset.ini || '?';
+  p.innerHTML = '<div class="card-initials" style="background:' + bg + '">' + ini + '</div>';
+}
+</script>
+
+<script>
 const CAT_BG = {
   'IT':         'linear-gradient(135deg,#EEF2FF,#C7D2FE)',
   'спорт':      'linear-gradient(135deg,#ECFDF5,#A7F3D0)',
@@ -488,9 +498,11 @@ function cardHTML(org) {
   const SKIP_RE = /avatars\.mds\.yandex|yandex\.net\/get-/i;
   const extraOk = (org.extra_photos || []).filter(p => p && !SKIP_RE.test(p));
   const heroSrc = extraOk.length ? extraOk[0] : null;
-  const fallback = `this.closest('.card-photo').innerHTML='<div class=\\'card-initials\\' style=\\'background:${bg}\\'>${ini}</div>'`;
   const photo = heroSrc
-    ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy" onerror="${fallback}">`
+    ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
+         onerror="_cardImgFail(this)"
+         onload="if(!this.naturalWidth||!this.naturalHeight)_cardImgFail(this)"
+         data-bg="${bg.replace(/"/g,'&quot;')}" data-ini="${ini}">`
     : `<div class="card-initials" style="background:${bg}">${ini}</div>`;
 
   const rating = org.rating
