@@ -481,7 +481,7 @@ def api_orgs():
     subcategory = request.args.get('subcategory','')
     metro       = request.args.get('metro','')
     has_trial   = request.args.get('has_trial','')
-    area        = request.args.get('area','')   # 'москва' | 'подмосковье'
+
     q           = request.args.get('q','')
     age         = request.args.get('age', type=int)
     price_max   = request.args.get('price_max', type=int)
@@ -509,10 +509,6 @@ def api_orgs():
                  q_lower in ' '.join(o.get('programs') or []).lower()]
     if age:       items = [o for o in items if _age_includes(o.get('age_range',''), age)]
     if price_max: items = [o for o in items if _price_lte(o.get('price',''), price_max)]
-    if area == 'москва':
-        items = [o for o in items if (o.get('district') or '').startswith('Москва') or (o.get('district') or '') == 'Зеленоград']
-    elif area == 'подмосковье':
-        items = [o for o in items if not ((o.get('district') or '').startswith('Москва') or (o.get('district') or '') == 'Зеленоград')]
 
     total = len(items)
     items = items[offset:offset+limit]
