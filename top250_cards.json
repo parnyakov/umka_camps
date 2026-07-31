@@ -46,7 +46,10 @@
       "https://cdn.jsdelivr.net/gh/parnyakov/storage/how_1.jpg",
       "https://cdn.jsdelivr.net/gh/parnyakov/storage/how_2.jpg"
     ],
-    "featured": true
+    "featured": true,
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 157,
@@ -104,7 +107,10 @@
       "https://iq007.ru/imgproxy/insecure/fit/2360/900/ce/0/plain/local:///slides/68b98a1974134846793313.png",
       "https://iq007.ru/imgproxy/insecure/fit/772/1026/ce/0/plain/local:///slides/68b98a1975375839679747.png",
       "https://iq007.ru/imgproxy/insecure/fit/2360/900/ce/0/plain/local:///slides/690334af4030c554224724.png"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 198,
@@ -152,7 +158,10 @@
     "data_quality": 100,
     "extra_photos": [
       "https://static.tildacdn.com/tild3865-3363-4232-b766-393339653465/__.png"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 204,
@@ -204,7 +213,11 @@
       "https://static.tildacdn.com/tild3033-6431-4433-b536-393339643635/photo_2026-03-09_21-.jpg",
       "https://thb.tildacdn.com/tild3036-3962-4636-b764-616337306632/-/resize/20x/Group_297.png",
       "https://thb.tildacdn.com/tild3331-3737-4438-b637-313734653939/-/resize/20x/ok_1.png"
-    ]
+    ],
+    "price_from": 1500,
+    "price_to": 16000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 9,
@@ -253,7 +266,10 @@
       "https://thb.tildacdn.com/tild6361-3430-4637-a133-653062353761/-/empty/4.jpg",
       "https://thb.tildacdn.com/tild3036-3163-4438-b137-346435323031/-/resizeb/20x/image_23.jpg",
       "https://thb.tildacdn.com/tild6433-3735-4561-a430-306636373032/-/resizeb/20x/image_24.jpg"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 13,
@@ -298,7 +314,10 @@
       "https://thb.tildacdn.com/tild6632-6231-4962-a533-636233323930/-/resize/20x/image_251.png",
       "https://thb.tildacdn.com/tild3938-3036-4530-b134-623630373538/-/resize/20x/image-bg-main.png",
       "https://thb.tildacdn.com/tild6231-3938-4562-b362-343638313737/-/resize/20x/yu93qepz_1.png"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 54,
@@ -350,7 +369,10 @@
       "https://thb.tildacdn.com/tild3038-3736-4738-b539-653630666461/-/empty/bw6.jpg",
       "https://thb.tildacdn.com/tild6639-3066-4735-a362-613965326336/-/empty/1231.jpg",
       "https://thb.tildacdn.com/tild6663-6234-4333-b064-633830613137/-/empty/DB8A0081_1.jpeg"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 58,
@@ -403,7 +425,10 @@
       "https://thb.tildacdn.com/tild6137-3632-4635-a638-613337333834/-/resizeb/20x/4___.jpg",
       "https://thb.tildacdn.com/tild3630-6363-4535-b532-663564616364/-/resizeb/20x/IMG_2133.JPG",
       "https://thb.tildacdn.com/tild3437-6364-4433-b835-333135313634/-/resizeb/20x/IMG_6351.jpg"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 65,
@@ -444,7 +469,10 @@
     "data_quality": 95,
     "extra_photos": [
       "https://static.tildacdn.com/tild3334-6232-4666-b165-303133626238/Group_57.png"
-    ]
+    ],
+    "price_from": 3000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 71,
@@ -491,7 +519,10 @@
       "https://thb.tildacdn.com/tild3432-3436-4562-a566-303935626437/-/empty/__2025-03-18__163747.png",
       "https://thb.tildacdn.com/tild3138-3761-4965-a264-336638363339/-/empty/__2024-09-11__135522.png",
       "https://thb.tildacdn.com/tild6438-3430-4336-a234-616239623333/-/empty/__2025-03-18__163747.png"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 80,
@@ -532,7 +563,10 @@
     "extra_photos": [
       "https://thb.tildacdn.com/tild6161-3232-4631-a630-613066663037/-/empty/ScreenShot20151222at180157.png",
       "https://thb.tildacdn.com/tild3464-6664-4731-a133-656130373437/-/empty/banner.jpg"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 85,
@@ -580,7 +614,11 @@
       "https://thb.tildacdn.com/tild3033-3036-4865-b365-343866393862/-/empty/photo.png",
       "https://thb.tildacdn.com/tild3337-3264-4335-b230-356436656264/-/empty/photo.png",
       "https://thb.tildacdn.com/tild6230-6639-4137-b637-393863653430/-/empty/photo.png"
-    ]
+    ],
+    "price_from": 7200,
+    "price_to": 16500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 101,
@@ -621,7 +659,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/1042100/2a000001683e21a50018dc002b2d865c95df/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/217470/2a000001851bd32c1ea73eb38ad36fc8fb97/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/5534836/2a00000183514a5cb1c1a7c8a67d0aa4504b/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 41000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 108,
@@ -662,7 +703,11 @@
       "https://static.tildacdn.com/tild3561-3237-4231-a336-626438633331/Group_3.png",
       "https://static.tildacdn.com/tild6165-3365-4734-b037-616131316439/image_272.png",
       "https://static.tildacdn.com/tild3035-6365-4132-b132-333966353863/Group_2_4.png"
-    ]
+    ],
+    "price_from": 2025,
+    "price_to": 3400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 116,
@@ -710,7 +755,10 @@
       "https://moscow-r.kiber-one.com/uploadedFiles/newsimages/big/banner-forbs-4.jpg",
       "https://moscow-r.kiber-one.com/uploadedFiles/newsimages/big/banner_dlya_sayta_mat_kapital_desktop.jpg",
       "https://moscow-r.kiber-one.com/uploadedFiles/newsimages/big/banner-mobilnoe-prilozhenie-2.jpg"
-    ]
+    ],
+    "price_from": 14500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 121,
@@ -759,7 +807,11 @@
       "http://robotx.su/images/src/teacher1.webp",
       "http://robotx.su/images/src/image33.webp",
       "http://robotx.su/images/src/hiro6-1.webp"
-    ]
+    ],
+    "price_from": 3000,
+    "price_to": 14800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 129,
@@ -817,7 +869,10 @@
       "https://iq007.ru/imgproxy/insecure/fit/2360/900/ce/0/plain/local:///slides/68b98a1974134846793313.png",
       "https://iq007.ru/imgproxy/insecure/fit/772/1026/ce/0/plain/local:///slides/68b98a1975375839679747.png",
       "https://iq007.ru/imgproxy/insecure/fit/2360/900/ce/0/plain/local:///slides/690334af4030c554224724.png"
-    ]
+    ],
+    "price_from": 3500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 130,
@@ -875,7 +930,10 @@
       "https://iq007.ru/imgproxy/insecure/fit/2360/900/ce/0/plain/local:///slides/68b98a1974134846793313.png",
       "https://iq007.ru/imgproxy/insecure/fit/772/1026/ce/0/plain/local:///slides/68b98a1975375839679747.png",
       "https://iq007.ru/imgproxy/insecure/fit/2360/900/ce/0/plain/local:///slides/690334af4030c554224724.png"
-    ]
+    ],
+    "price_from": 3500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 131,
@@ -920,7 +978,11 @@
       "https://static.tildacdn.com/tild6233-6232-4531-b863-376461353966/__.png",
       "https://thb.tildacdn.com/tild3839-3763-4863-a236-353765353332/-/resize/20x/_2.jpg",
       "https://thb.tildacdn.com/tild6132-3235-4431-b264-626365353762/-/resize/20x/dreamy-cheerful-happ.jpg"
-    ]
+    ],
+    "price_from": 500,
+    "price_to": 6800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 151,
@@ -964,7 +1026,10 @@
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    ],
+    "price_from": 7000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 153,
@@ -1002,7 +1067,10 @@
     "data_quality": 95,
     "extra_photos": [
       "https://pps.whatsapp.net/v/t61.24694-24/683743641_1496251545376511_2822190704257069468_n.jpg?ccb=11-4&oh=01_Q5Aa5AFYJfrC6gY1MYDethlbXVw59xeb1hyFVLfE7v9sAXMs3Q&oe=6A65ADAE&_nc_sid=5e03e0&_nc_cat=110"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 173,
@@ -1058,7 +1126,10 @@
       "https://thb.tildacdn.com/tild6338-3033-4262-b034-313863356530/-/resize/20x/tg.jpg",
       "https://thb.tildacdn.com/tild3865-3337-4639-a334-643437383364/-/resize/20x/17g.png",
       "https://thb.tildacdn.com/tild3435-6535-4934-b837-373937326564/-/resize/20x/boy_2.png"
-    ]
+    ],
+    "price_from": 990,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 179,
@@ -1116,7 +1187,10 @@
       "https://thb.tildacdn.com/tild6238-6235-4762-a435-353864323063/-/empty/___27.png",
       "https://thb.tildacdn.com/tild3933-3863-4762-a630-613631656661/-/empty/___7.png",
       "https://thb.tildacdn.com/tild3433-3839-4661-a438-623365363161/-/empty/noroot.png"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 197,
@@ -1171,7 +1245,11 @@
       "https://thb.tildacdn.com/tild6566-3537-4438-b837-633336363562/-/resizeb/20x/noroot.png",
       "https://thb.tildacdn.com/tild6366-3064-4637-b261-343232373331/-/resizeb/20x/d3ba10614bb4edff628d.jpeg",
       "https://thb.tildacdn.com/tild3030-6464-4637-b262-386365336433/-/resizeb/20x/_2.jpg"
-    ]
+    ],
+    "price_from": 5000,
+    "price_to": 10000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 105,
@@ -1227,7 +1305,10 @@
       "https://thb.tildacdn.com/tild6535-3734-4538-b430-376565376461/-/empty/_.jpg",
       "https://thb.tildacdn.com/tild3062-6139-4438-a161-626537626534/-/empty/_.jpg",
       "https://thb.tildacdn.com/tild3764-6334-4161-a330-316331663463/-/empty/_.jpg"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 152,
@@ -1271,7 +1352,10 @@
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    ],
+    "price_from": 7000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 154,
@@ -1327,7 +1411,11 @@
       "https://static.tildacdn.com/tild6530-6630-4761-a432-353630326664/--1.png",
       "https://static.tildacdn.com/tild6339-6132-4463-b865-356638396330/--6.png",
       "https://static.tildacdn.com/tild3161-3535-4130-a565-343934616434/--5.png"
-    ]
+    ],
+    "price_from": 500,
+    "price_to": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 167,
@@ -1379,7 +1467,10 @@
       "https://thb.tildacdn.com/tild3937-3333-4234-a663-393535643832/-/resizeb/20x/__.jpg",
       "https://thb.tildacdn.com/tild3335-3935-4938-a539-393066323037/-/resizeb/20x/_-__.jpg",
       "https://thb.tildacdn.com/tild3262-3532-4262-a134-613361646361/-/resizeb/20x/InShot_20240421_0031.jpg"
-    ]
+    ],
+    "price_from": 5500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 190,
@@ -1429,7 +1520,11 @@
       "https://thb.tildacdn.com/tild3562-6538-4064-a363-316464373666/-/resize/20x/img_sh.png",
       "https://thb.tildacdn.com/tild6138-6662-4466-b465-313734623933/-/resize/20x/img_robot.png",
       "https://thb.tildacdn.com/tild3061-3061-4666-a139-663637656634/-/resize/20x/sh.png"
-    ]
+    ],
+    "price_from": 4320,
+    "price_to": 48200,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 17,
@@ -1473,7 +1568,10 @@
       "https://premierakids.ru/wp-content/themes/theatre-premiere/images/615ea4b309cb4830ec631682_sep.png",
       "https://premierakids.ru/wp-content/themes/theatre-premiere/images/62ea6a1f3733b412dcccece6_close.png",
       "https://premierakids.ru/wp-content/themes/theatre-premiere/images/615eba743a198d5ceb8bc92a_IMG_0229204.jpg"
-    ]
+    ],
+    "price_from": 480,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 22,
@@ -1529,7 +1627,10 @@
       "http://happiness-bird.ru/upload/cssinliner_webp/medialibrary/4.webp",
       "http://happiness-bird.ru/upload/cssinliner_webp/medialibrary/5.webp",
       "http://happiness-bird.ru/upload/cssinliner_webp/medialibrary/6.webp"
-    ]
+    ],
+    "price_from": 850,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 62,
@@ -1583,7 +1684,10 @@
       "https://thb.tildacdn.com/tild6362-6537-4333-b638-323534656634/-/empty/XXXL-8.webp",
       "https://thb.tildacdn.com/tild6537-3537-4133-a663-303635396465/-/empty/XXXL-9.webp",
       "https://thb.tildacdn.com/tild3664-3439-4736-b464-626361356335/-/empty/XXXL-6.webp"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 66,
@@ -1630,7 +1734,10 @@
       "https://thb.tildacdn.com/tild6434-3038-4763-b062-646366666234/-/resize/504x/____.png",
       "https://thb.tildacdn.com/tild6465-6637-4563-b361-343965303566/-/resizeb/20x/woman-practicing-yog.jpg",
       "https://thb.tildacdn.com/tild6531-6437-4836-a136-643330666533/-/resizeb/20x/reformer-pilates.jpg"
-    ]
+    ],
+    "price_from": 1541,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 171,
@@ -1675,7 +1782,10 @@
     "data_quality": 95,
     "extra_photos": [
       "https://erudite.ru/wp-content/uploads/2024/10/S.jpg"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 172,
@@ -1728,7 +1838,10 @@
       "https://thb.tildacdn.com/tild3766-3935-4462-b764-383935633935/-/resize/20x/ChatGPT_Image_11__20.png",
       "https://thb.tildacdn.com/tild6138-3336-4638-a636-653838643937/-/resize/20x/ChatGPT_Image_11__20.png",
       "https://thb.tildacdn.com/tild3761-6233-4834-b430-323034366537/-/resize/20x/20250811_1141____rem.png"
-    ]
+    ],
+    "price_from": 50000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 111,
@@ -1777,7 +1890,10 @@
       "https://thb.tildacdn.com/tild3462-6134-4366-b764-313036343230/-/resizeb/20x/0483.jpg",
       "https://thb.tildacdn.com/tild3639-6366-4135-a132-396664333437/-/resizeb/20x/1339.jpg",
       "https://thb.tildacdn.com/tild6166-3937-4131-b961-363538396637/-/resizeb/20x/1444.JPG"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 6,
@@ -1833,7 +1949,10 @@
       "https://thb.tildacdn.com/tild3136-3265-4634-a436-313936663866/-/empty/IMG20240405210751.jpg",
       "https://thb.tildacdn.com/tild3731-3331-4235-b736-633564316135/-/empty/IMG20240330190135.jpg",
       "https://thb.tildacdn.com/tild3033-3063-4534-b365-323133613238/-/empty/IMG20240127183900.jpg"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 29,
@@ -1883,7 +2002,10 @@
       "https://static.tildacdn.com/tild6165-3664-4330-b563-363338353633/___.jpg",
       "https://thb.tildacdn.com/tild6435-6561-4965-b266-373238643032/-/resize/20x/Frame_125.jpg",
       "https://static.tildacdn.com/tild6337-3165-4131-a164-623361613535/____2381.png"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 51,
@@ -1936,7 +2058,11 @@
       "https://voca-beat.ru/wp-content/uploads/2022/10/google-img.png",
       "https://voca-beat.ru/wp-content/uploads/2022/10/logo_text-1-300x43.png",
       "https://voca-beat.ru/wp-content/uploads/2022/10/logo_text-1.png"
-    ]
+    ],
+    "price_from": 2400,
+    "price_to": 46200,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 104,
@@ -1981,7 +2107,10 @@
       "https://thb.tildacdn.com/tild3833-3934-4664-b134-396233306237/-/resize/20x/Group_40.png",
       "https://thb.tildacdn.com/tild6334-3335-4336-b561-393134393565/-/resize/20x/Group_38.png",
       "https://thb.tildacdn.com/tild6162-6338-4661-b762-343037313036/-/resize/20x/Group_37.png"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 160,
@@ -2037,7 +2166,10 @@
       "https://thb.tildacdn.com/tild3739-6630-4236-a233-636666613266/-/resizeb/20x/9f7b8263-b342-45d1-b.jpg",
       "https://thb.tildacdn.com/tild3032-3837-4166-b038-623238343363/-/resizeb/20x/ec692e53-0a04-4387-b.jpg",
       "https://thb.tildacdn.com/tild3862-6432-4831-b734-313561326337/-/resizeb/20x/noroot.png"
-    ]
+    ],
+    "price_from": 4000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 201,
@@ -2075,7 +2207,10 @@
     "data_quality": 90,
     "extra_photos": [
       "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 30,
@@ -2113,7 +2248,10 @@
     "data_quality": 90,
     "extra_photos": [
       "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 180,
@@ -2151,7 +2289,10 @@
     "data_quality": 90,
     "extra_photos": [
       "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
-    ]
+    ],
+    "price_from": 4090,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 56,
@@ -2201,7 +2342,10 @@
       "https://thb.tildacdn.com/tild3034-3366-4636-a132-666662313033/-/resizeb/20x/175A5106_1_324.webp",
       "https://thb.tildacdn.com/tild3266-3761-4363-b332-383363323837/-/resizeb/20x/kyyxqqyRMxL4UQZ_6YEN.webp",
       "https://thb.tildacdn.com/tild6339-3765-4364-a635-393431323662/-/resizeb/20x/175A5319_2_787.webp"
-    ]
+    ],
+    "price_from": 1070,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 106,
@@ -2239,7 +2383,10 @@
     "data_quality": 90,
     "extra_photos": [
       "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 170,
@@ -2277,7 +2424,10 @@
     "data_quality": 90,
     "extra_photos": [
       "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 20,
@@ -2315,7 +2465,10 @@
     "data_quality": 90,
     "extra_photos": [
       "https://pps.whatsapp.net/v/t61.24694-24/359674867_846911706584205_3681326434207556757_n.jpg?ccb=11-4&oh=01_Q5Aa5AFro_oVoDESIlENyVuZ1_1EaomCMscN8azRLB38mB7fFg&oe=6A65B6AC&_nc_sid=5e03e0&_nc_cat=102"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 21,
@@ -2360,7 +2513,10 @@
       "https://thb.tildacdn.com/tild6434-6430-4236-b633-643565343139/-/resizeb/20x/full_WzKWtuWr.jpg",
       "https://thb.tildacdn.com/tild6164-3466-4039-a436-613632343066/-/resizeb/20x/full_Idjs3vz0.jpg",
       "https://thb.tildacdn.com/tild3562-3934-4432-b134-323763333439/-/resizeb/20x/full_dWguflmT.jpg"
-    ]
+    ],
+    "price_from": 2100,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 24,
@@ -2404,7 +2560,10 @@
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Peacock_Tile_Wall.max-900x600.format-webp.webp",
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/youtube-mobile-homepage-sharing.max-900x600.format-webp.webp",
       "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/stella-lefty-headshot-boston-pe.max-900x600.format-webp.webp"
-    ]
+    ],
+    "price_from": 3000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 59,
@@ -2442,7 +2601,10 @@
     "data_quality": 90,
     "extra_photos": [
       "https://pps.whatsapp.net/v/t61.24694-24/716930568_27277524178552406_4951702987036429926_n.jpg?ccb=11-4&oh=01_Q5Aa5AGf9faECfp7JfRtBXn2g9IBFkExSkEJuIhxRW1EJvPtHg&oe=6A65D8EC&_nc_sid=5e03e0&_nc_cat=101"
-    ]
+    ],
+    "price_from": 2000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 27,
@@ -2492,7 +2654,10 @@
       "https://thb.tildacdn.com/tild6331-3665-4564-b137-393433336263/-/empty/IMG_2881.JPG",
       "https://thb.tildacdn.com/tild3934-6338-4630-a366-346464663361/-/empty/IMG_2869.JPG",
       "https://thb.tildacdn.com/tild3763-6531-4136-b163-393133356130/-/empty/IMG_2903.JPG"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 161,
@@ -2537,7 +2702,10 @@
       "https://thb.tildacdn.com/tild3466-6436-4036-a430-666162383935/-/resize/20x/Rectangle_39.jpg",
       "https://thb.tildacdn.com/tild3366-6131-4462-a662-636566396664/-/resize/20x/Rectangle_34.jpg",
       "https://thb.tildacdn.com/tild6230-3762-4764-b963-383037326662/-/resize/20x/Rectangle_33.jpg"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 63,
@@ -2593,7 +2761,10 @@
       "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/4d38a266-38ff-4084-8377-6a54645ff65c/4d38a266-38ff-4084-8377-6a54645ff65c-14654348.jpeg",
       "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/ab17c626-f0d8-45ed-a61a-b2672ef95a29/ab17c626-f0d8-45ed-a61a-b2672ef95a29-14654345.jpeg",
       "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site795485/4c5a727f-16d3-4221-9827-12941691fac8/4c5a727f-16d3-4221-9827-12941691fac8-14654344.jpeg"
-    ]
+    ],
+    "price_from": 2700,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 57,
@@ -2636,7 +2807,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/19883212/2a0000019e933d5780494bc3d6e90a3eca88/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16379675/2a0000019a06d920a26463482373669a31cb/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/18473509/2a0000019e832e407ee1e5459d9041a3ca75/L_height&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 900,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 183,
@@ -2681,7 +2855,10 @@
     "extra_photos": [
       "https://static.tildacdn.com/tild3633-3561-4133-b638-656231653135/photo.jpg",
       "https://thb.tildacdn.com/tild6135-6138-4831-b638-663038353533/-/resize/20x/noroot.png"
-    ]
+    ],
+    "price_from": 463,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 3,
@@ -2722,7 +2899,10 @@
       "https://static.tildacdn.com/tild3938-3665-4633-a363-323162613366/logo-not-frontpage12.png",
       "https://static.tildacdn.com/tild3631-3061-4930-b366-343061656366/logo-not-frontpage.png",
       "https://thb.tildacdn.com/tild3164-6563-4465-b937-306261663063/-/empty/noroot.png"
-    ]
+    ],
+    "price_from": 6000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 4,
@@ -2767,7 +2947,10 @@
       "https://thb.tildacdn.com/tild6431-6363-4331-b766-646365373234/-/empty/5.jpg",
       "https://thb.tildacdn.com/tild6562-6665-4338-b839-323037343832/-/empty/6.jpg",
       "https://thb.tildacdn.com/tild6165-3762-4663-b733-633365613862/-/empty/7.jpg"
-    ]
+    ],
+    "price_from": 3000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 5,
@@ -2805,7 +2988,10 @@
     "data_quality": 75,
     "extra_photos": [
       "https://whitestudio-msk.ru/images/og-image.jpg"
-    ]
+    ],
+    "price_from": 1100,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 23,
@@ -2847,7 +3033,10 @@
       "https://artel-rus.ru/wp-content/uploads/2026/02/skolkovo.webp",
       "https://artel-rus.ru/wp-content/uploads/2026/02/sogaz.webp",
       "https://artel-rus.ru/wp-content/uploads/2026/02/vernyj.webp"
-    ]
+    ],
+    "price_from": 13000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 40,
@@ -2942,7 +3131,10 @@
       "https://splash-school.com/wp-content/uploads/2025/05/hero-section-2048x506.jpg",
       "https://splash-school.com/wp-content/uploads/2025/06/horizontal-container-1-scaled.jpg",
       "https://splash-school.com/wp-content/uploads/2025/03/Rating-1-1024x945.jpg"
-    ]
+    ],
+    "price_from": 700,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 74,
@@ -3039,7 +3231,11 @@
       "https://admin.cantera.ru/uploads/2_58fb561047.webp",
       "https://admin.cantera.ru/uploads/3_ca4fccd7c2.webp",
       "https://admin.cantera.ru/uploads/4_10116874ce.webp"
-    ]
+    ],
+    "price_from": 1800,
+    "price_to": 16000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 83,
@@ -3081,7 +3277,11 @@
       "https://zkarate.ru/templates/yootheme/cache/56/hero_mg7530_C_sport-569c6248.jpeg",
       "https://zkarate.ru/templates/yootheme/cache/15/benefit_terpenie-15cb67e8.jpeg",
       "https://zkarate.ru/templates/yootheme/cache/64/benefit_samozashchita-64ad9fcd.jpeg"
-    ]
+    ],
+    "price_from": 800,
+    "price_to": 9600,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 95,
@@ -3267,7 +3467,10 @@
     "data_quality": 75,
     "extra_photos": [
       "https://taplink.st/a/7/1/f/f/aa1a24.png?2"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 103,
@@ -3309,7 +3512,10 @@
       "https://pelikan-center.ru/img/aJzA73aXw3mDJwV1XI5plWxbo2BY3NQl_2rQK4QLj4Y/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvMjIxNTAxNGYtOGNmZi00N2M2LThkOTAtMjAxMmZlY2E1ZWZiLTEuanBn.webp",
       "https://pelikan-center.ru/img/uVKxWjWF4VfiR4x4Ojm1nBkwEewS6cI1slb5CeS2_d8/q:87/el:1/g:ce/w:1000/h:0/resize:fit/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvMjIxNTAxNGYtOGNmZi00N2M2LThkOTAtMjAxMmZlY2E1ZWZiLTEuanBn.webp",
       "https://pelikan-center.ru/img/rr-X-zfeucEoQ61K7G7bAZQ3QcfqCYTSuzu0YI0m7WU/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9maWxlcy5yZWcuc29sdXRpb25zLzMyMWFmNjdmLTA2OTQtNDkyOS1iODg1LTJiYjVkOWI3ZjQ0MS9pbWFnZXMvNDY5OTllZDQtODRmZC00MmJkLThkOTItNTNjOTJlNTBkNmMwLTljNTRlNTJkNDZhMTExZjBiODFhMGE3ZDU5NTBjNGQ4XzQuanBn.webp"
-    ]
+    ],
+    "price_from": 30000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 107,
@@ -3351,7 +3557,10 @@
       "http://startjunior.su/wp-content/themes/start_junior/img/wedo2.jpg",
       "http://startjunior.su/wp-content/uploads/2025/09/p01.jpg",
       "http://startjunior.su/wp-content/themes/start_junior/img/59650312.png"
-    ]
+    ],
+    "price_from": 3000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 112,
@@ -3389,7 +3598,10 @@
     "data_quality": 75,
     "extra_photos": [
       "https://lubertsy.academyboomkids.ru/wp-content/plugins/revslider/sr6/assets/assets/dummy.png"
-    ]
+    ],
+    "price_from": 7000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 126,
@@ -3485,7 +3697,11 @@
       "https://static.tildacdn.com/tild3331-3336-4363-a131-303839343132/Pattaern_1.png",
       "https://thb.tildacdn.com/tild3130-3265-4538-b763-363961626238/-/empty/noroot.png",
       "https://thb.tildacdn.com/tild6634-3035-4136-b265-323961356562/-/resize/20x/Sk__-block-mono-cont.png"
-    ]
+    ],
+    "price_from": 750,
+    "price_to": 8990,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 133,
@@ -3527,7 +3743,11 @@
       "https://glv-club.ru/cdn/_design/new/glv-trava2.png",
       "https://glv-club.ru/cdn/_design/new/glv-strekoza.png",
       "https://glv-club.ru/cdn/_design/new/glv-strekoza2.png"
-    ]
+    ],
+    "price_from": 600,
+    "price_to": 1600,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 137,
@@ -3621,7 +3841,10 @@
     "data_quality": 75,
     "extra_photos": [
       "https://krukovo.academyboomkids.ru/wp-content/plugins/revslider/sr6/assets/assets/dummy.png"
-    ]
+    ],
+    "price_from": 7000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 205,
@@ -3663,7 +3886,10 @@
       "https://uniqum.online/wp-content/uploads/2023/06/3-1024x681.jpeg",
       "https://uniqum.online/wp-content/uploads/2023/06/4bda98ffb2df4c25f077219377448b18-1024x683.jpg",
       "https://uniqum.online/wp-content/uploads/2023/06/admin-ajax-e1687699863273.jpeg"
-    ]
+    ],
+    "price_from": 50000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 209,
@@ -3879,7 +4105,11 @@
       "https://raw.githubusercontent.com/Dymovgrigory/Dymova-english/4dcc1ef1b977038bfb8bdc22ea40385e0429f78c/prototype/team-media/kovalenko.jpg",
       "https://raw.githubusercontent.com/Dymovgrigory/Dymova-english/4dcc1ef1b977038bfb8bdc22ea40385e0429f78c/prototype/team-media/golovoznina.jpg",
       "https://raw.githubusercontent.com/Dymovgrigory/Dymova-english/4dcc1ef1b977038bfb8bdc22ea40385e0429f78c/prototype/team-media/de.png"
-    ]
+    ],
+    "price_from": 1125,
+    "price_to": 16000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 14,
@@ -3921,7 +4151,10 @@
       "http://doldshi.ru/assets/images/imagesQV1B1Z3O.png",
       "http://doldshi.ru/assets/images/2039-276.jpg",
       "http://doldshi.ru/assets/images/038.png"
-    ]
+    ],
+    "price_from": 9000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 34,
@@ -3961,7 +4194,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/15439859/2a00000195a50b53218bc00d6e8407a88cdf/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16318204/2a000001995b7f65b4ee0132154b1dd7390e/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/14699088/2a0000019678a54e9d3942bda884b0c67eb5/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 2490,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 109,
@@ -4003,7 +4239,10 @@
       "https://www.djelso.ru/images/home/slide/f12.jpg",
       "https://www.djelso.ru/images/home/slide/f10.jpg",
       "https://www.djelso.ru/images/home/slide/f08.jpg"
-    ]
+    ],
+    "price_from": 700,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 141,
@@ -4246,7 +4485,10 @@
       "https://ctbuff.ru/thumb/2/Crr_XYD-gfcAun6vECPvyg/r200/d/img_20230820_164709_081.jpg",
       "https://ctbuff.ru/thumb/2/lhM7d8p4T13A_lf7cSbhOA/r200/d/dsc_2449.jpg",
       "https://ctbuff.ru/thumb/2/4sdJBA7SoNR_gStvrwedNw/r200/d/koncert_buff_3.jpg"
-    ]
+    ],
+    "price_from": 2300,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 18,
@@ -4288,7 +4530,10 @@
       "https://baby-club.ru/static/assets/boy-on-yellow_1npD7n.png",
       "https://baby-club.ru/static/assets/video-cover_2vttuE.jpg",
       "https://baby-club.ru/static/assets/form-telephone-club_2m4NXx.png"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 60,
@@ -4328,7 +4573,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/961502/2a0000019016ffdf00aa3334e1578a480217/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/18107333/2a0000019eb0063d3bb95206b240feff4e95/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/927353/2a000001888754ae3adf868e652287fae434/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 690,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 178,
@@ -4373,7 +4621,10 @@
     "data_quality": 75,
     "extra_photos": [
       "https://static.tildacdn.com/img/tildacopy.png"
-    ]
+    ],
+    "price_from": 700,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 61,
@@ -4413,7 +4664,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/14165812/2a00000191dcd3e624b5baf487712fa51793/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/13453452/2a0000018ebefb03cf70b577df30eef18b5c/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16398472/2a000001997b77c37764ea3dd542d19dcbf8/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 1350,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 175,
@@ -4455,7 +4709,10 @@
       "https://abaplanet.ru/wp-content/uploads/2026/05/i-1-1024x572.webp",
       "https://abaplanet.ru/wp-content/uploads/2026/05/sloj-03-1.webp",
       "https://abaplanet.ru/wp-content/uploads/2026/05/sloj-0-4.webp"
-    ]
+    ],
+    "price_from": 2600,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 248,
@@ -4552,7 +4809,10 @@
       "https://vocalette.ru/wp-content/uploads/resurs-9logo_vocalette_2-optimized.png",
       "https://vocalette.ru/wp-content/uploads/reklama-na-kazan-optimized.jpg",
       "https://vocalette.ru/wp-content/uploads/reklama-na-kazan-1080-14402-optimized.jpg"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 117,
@@ -4594,7 +4854,10 @@
       "https://uniqum.online/wp-content/uploads/2023/06/3-1024x681.jpeg",
       "https://uniqum.online/wp-content/uploads/2023/06/4bda98ffb2df4c25f077219377448b18-1024x683.jpg",
       "https://uniqum.online/wp-content/uploads/2023/06/admin-ajax-e1687699863273.jpeg"
-    ]
+    ],
+    "price_from": 50000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 113,
@@ -4636,7 +4899,10 @@
       "https://it-robotics.ru/wp-content/uploads/2025/08/ikonka-%E2%84%961-150x150.png",
       "https://it-robotics.ru/wp-content/uploads/2025/08/ikonka_4_bez-fona-150x150.png",
       "https://it-robotics.ru/wp-content/uploads/2025/08/ikonka_7_bez-fona-150x150.png"
-    ]
+    ],
+    "price_from": 650,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 206,
@@ -4678,7 +4944,10 @@
       "https://mos-chess.ru/wp-content/uploads/2022/04/маша1-1024x679.jpg",
       "https://mos-chess.ru/wp-content/uploads/2022/03/макс1-1024x684.jpg",
       "https://mos-chess.ru/wp-content/uploads/2020/12/Friedrich_Zweite_Alt.jpg"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 55,
@@ -4718,7 +4987,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/14731058/2a0000019252d720e4cfc2da6716124297a8/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16874376/2a00000198dc75c8d89946d28b0b66c7f7fd/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-discovery-int/1534577/2a00000196448018d60ab50a465b0a658c41/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 8700,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 67,
@@ -4962,7 +5234,11 @@
       "https://roboteh.club/wp-content/uploads/2023/10/logo_2a-1.png",
       "https://roboteh.club/wp-content/uploads/2023/10/banner-2-shape-2.png",
       "https://roboteh.club/wp-content/uploads/2023/10/banner-2-shape-4.png"
-    ]
+    ],
+    "price_from": 1000,
+    "price_to": 4200,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 192,
@@ -5076,7 +5352,10 @@
     "data_quality": 70,
     "extra_photos": [
       "https://i.oneme.ru/i?r=BTFjO43w8Yr1OSJ4tcurq5HiDt0gLe21vJdyZ9eG9IWYe_y4ePJqkr65xxKnGpLOYvo"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 36,
@@ -5121,7 +5400,10 @@
       "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/10479d58-3ee5-4122-9218-14e367335816/10479d58-3ee5-4122-9218-14e367335816-10488441.jpeg",
       "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/341f239e-d68e-4bb1-9415-d52c958bc4d1/341f239e-d68e-4bb1-9415-d52c958bc4d1-11008977.png",
       "https://90f1661d-2ff4-4f29-b07c-0e47453ca691.selstorage.ru/site608021/ca79d361-17ee-4bbb-8e89-d66471098b5a/ca79d361-17ee-4bbb-8e89-d66471098b5a-11008976.png"
-    ]
+    ],
+    "price_from": 1800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 2,
@@ -5161,7 +5443,10 @@
       "https://static.tildacdn.com/tild6462-3038-4934-a332-383330613134/chris-irk6DwN9giQ-un.png",
       "https://static.tildacdn.com/tild3838-3338-4862-b330-653635393833/Slice_1.png",
       "https://thb.tildacdn.com/tild3262-3563-4030-a630-303536656131/-/resize/20x/_.png"
-    ]
+    ],
+    "price_from": 1500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 37,
@@ -5275,7 +5560,10 @@
     "data_quality": 65,
     "extra_photos": [
       "https://taplink.st/a/2/4/a/4/22aaac.jpg?96"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 150,
@@ -5320,7 +5608,10 @@
       "https://fencingleague.ru/wp-content/uploads/2018/12/reportage_21-00-32.jpg",
       "https://fencingleague.ru/wp-content/uploads/2018/12/reportage_20-55-56.jpg",
       "https://fencingleague.ru/wp-content/uploads/2018/12/reportage_20-37-05.jpg"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 155,
@@ -5362,7 +5653,10 @@
       "https://cifra-77.ru/upload/ammina.optimizer/png-webp/q80/upload/iblock/03f/2b6v21wglj3e6cxd61sxd0wk4ngxu0wo.webp",
       "https://cifra-77.ru/upload/ammina.optimizer/png-webp/q80/upload/iblock/365/qhd4bn1hpickeesbs20qffibrg1ckdx4.webp",
       "https://cifra-77.ru/upload/ammina.optimizer/png-webp/q80/upload/iblock/15e/pmxpck9hnpvew1em06h4lzg9zaitlv2e.webp"
-    ]
+    ],
+    "price_from": 1350,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 158,
@@ -5407,7 +5701,10 @@
       "https://sunschool.ru/upload/iblock/ad2/ad2c420fced096a4b8da1cd2a4c693ae.jpeg",
       "https://sunschool.ru/upload/iblock/06c/06c81744024026e9f299ddb3c87c0a87.png",
       "https://sunschool.ru/upload/iblock/442/4426dbf4cd9353a91b8126550ad525cc.png"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 159,
@@ -5448,7 +5745,10 @@
       "https://static.tildacdn.com/tild3439-3933-4562-a165-613236323037/2_3_1.png",
       "https://thb.tildacdn.com/tild3838-3061-4662-b636-383235623564/-/resize/20x/____ngkids_2__2_1.png",
       "https://thb.tildacdn.com/tild3766-6262-4230-b034-663763303737/-/resize/20x/Rectangle_1.png"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 196,
@@ -5569,7 +5869,10 @@
       "http://www.rus-aikido.ru/gallery/21658.jpg",
       "http://www.rus-aikido.ru/gallery/21661.jpg",
       "http://www.rus-aikido.ru/gallery/21660.jpg"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 200,
@@ -5614,7 +5917,10 @@
       "https://thb.tildacdn.com/tild3436-3534-4938-a437-663538333232/-/empty/image_3.png",
       "https://thb.tildacdn.com/tild3061-6137-4362-b862-613466633432/-/empty/image_4.png",
       "https://thb.tildacdn.com/tild3265-6530-4130-b238-343765333130/-/empty/image_5.png"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 189,
@@ -5654,7 +5960,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/2405086/2a0000017242ce47fbaa709d4c484919e600/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/223006/2a0000015b2e81e726e995327dbb6f494462/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/2701879/2a0000017242ce47e78ef472255eace12e03/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 3000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 188,
@@ -5696,7 +6005,10 @@
       "https://thb.tildacdn.com/tild6261-3133-4234-b638-386465616434/-/empty/photo.jpg",
       "https://thb.tildacdn.com/tild3965-6630-4132-b933-323838386330/-/resize/20x/RVIO_horizontal_1.png",
       "https://static.tildacdn.com/img/tildacopy.png"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 1,
@@ -5741,7 +6053,10 @@
       "http://bcballet.ru/upload/resize_cache/iblock/284/510_510_2/spina.jpg",
       "http://bcballet.ru/upload/resize_cache/iblock/f8b/510_510_2/repertuar.jpg",
       "http://bcballet.ru/upload/resize_cache/iblock/ab6/510_510_2/DUET_.jpg"
-    ]
+    ],
+    "price_from": 2000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 7,
@@ -5781,7 +6096,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/859900/2a0000015e61403f9d49e19aeea76a41a5fb/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16136444/2a0000019a93a78cbd6048be4a36079ac003/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/226077/2a0000015dcbdf5c2b7cf964f5696ef0ffa3/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 8,
@@ -5826,7 +6144,10 @@
       "https://www.krasndmsh.ru/images/e902e2c78f788661c6afa9eb25e04959.png",
       "https://www.krasndmsh.ru/userfiles/editor/large/1239_1360_nok-2020.jpg",
       "https://www.krasndmsh.ru/userfiles/editor/small/1758_qr-640340154-1.png"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 10,
@@ -5871,7 +6192,10 @@
       "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/MNA6d2cVIkC5dIFeLdUle7CZJg8TkZzXJOD0BFgX5c0/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvY2FiZWZkZWYtZDc3MS00OGI4LTllYTUtMDdkOWNmMDRiNjcwLWltZ185NzE0IXYyLmpwZw.webp",
       "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/vrHljmqGDReUiTx-GpF-8785V8ethzRfyE4LJPxvXjk/q:87/el:1/g:ce/w:40/h:0/resize:fit/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvZDAzYmU1OGEtZDJlNi00MDY0LWJmNTQtZGVkYTM0NGM2Y2Y4LV9uaWR5cGpvMTIud2VicA.webp",
       "https://xn-----6kcrbga6anr7ci9b5d3c.xn--p1ai/img/6MPLWgM1rnT8rUPY8UBNjw0oxEams4EUBBKvVxxFMAc/q:87/el:1/g:ce/w:432/h:530/resize:fill/aHR0cHM6Ly9zMy5yZWcuc29sdXRpb25zLzcxY2VkMzczLTRhODQtNDM0Mi1iOWNlLTFjMDlhZTY4YTAwYi9pbWFnZXMvN2VhOWRjY2QtOTAwMy00NjgxLTliZDktMmZiMmYzNzlmMzY5LWltZ185NjMwIXYxLmpwZw.webp"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 31,
@@ -5911,7 +6235,10 @@
       "https://dance-rh.ru/wp-content/uploads/2021/02/dets.png",
       "https://dance-rh.ru/wp-content/uploads/2021/02/vzrosl.png",
       "https://dance-rh.ru/wp-content/themes/generatepress-child-master/img/popap-inner-img.jpg"
-    ]
+    ],
+    "price_from": 2500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 38,
@@ -5956,7 +6283,10 @@
       "https://ssmile-zel.ru/wp-content/uploads/2026/04/young-girl-being-home-schooled_23-2148598024.jpg",
       "https://ssmile-zel.ru/wp-content/uploads/2026/04/crop-woman-painting-eggs_23-2147760652.jpg",
       "https://ssmile-zel.ru/wp-content/uploads/2026/05/auyayu.png"
-    ]
+    ],
+    "price_from": 22838,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 50,
@@ -6001,7 +6331,10 @@
       "https://ritmix-otradnoe.ru/wp-content/uploads/2022/12/IMG_20230724_115718-2.jpg",
       "https://ritmix-otradnoe.ru/wp-content/uploads/2025/10/IMG_9458.jpeg",
       "https://ritmix-otradnoe.ru/wp-content/uploads/2022/12/IMG_3676-2-scaled.jpg"
-    ]
+    ],
+    "price_from": 309,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 53,
@@ -6046,7 +6379,10 @@
       "https://zvezdnyi-vals.ru/wp-content/uploads/2024/03/3.png",
       "https://zvezdnyi-vals.ru/wp-content/uploads/2024/03/5ragj073l5g.jpg",
       "https://zvezdnyi-vals.ru/wp-content/uploads/2024/03/tmrbhi8ocsg.jpg"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 64,
@@ -6088,7 +6424,10 @@
       "https://thb.tildacdn.com/tild6533-3261-4165-a131-643965363534/-/empty/IMG_2042.PNG",
       "https://thb.tildacdn.com/tild3765-3435-4532-a634-393338396531/-/empty/_.jpg",
       "https://thb.tildacdn.com/tild6461-3732-4434-b461-356132303165/-/empty/noroot.png"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 68,
@@ -6128,7 +6467,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/18804755/2a0000019e6d5fee67536bb53544c85baaf7/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16874425/2a0000019c236665ea586ef8f1b4e96118d3/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/12550566/2a0000018e84c7abd07904ded67f69c91e0e/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 69,
@@ -6208,7 +6550,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/5965316/2a0000018105f14ac83eaee856378a728c5c/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/19392810/2a0000019f1c2ecee1b91e9fc174d465912d/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/17785064/2a0000019e97532bd690438bb88cd00da468/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 450,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 82,
@@ -6248,7 +6593,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-tycoon/18708525/30215238_drop_search_standard_2026-03-13T18_19/drop_x2&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-tycoon/18733683/30215238_pin_search_standard_2026-03-13T18_19_01/pin_x2&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/6119709/2a00000180862008a354993b6cb9a72e5dc4/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 84,
@@ -6288,7 +6636,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/19799298/2a0000019f3daa0a5bdce2d590304d2e7aee/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/19824988/2a0000019f446568434a808796b52fde7302/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16503558/2a00000199e741c299f3e6327281b126df04/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 900,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 87,
@@ -6328,7 +6679,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/1773749/2a0000016ae31468307a5d3e50321080da71/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-discovery-int/1532686/2a0000018a8951d0536918abccb677fda58a/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-discovery-int/1357607/2a0000019b363c20d2b4a635b5f0c8124fc2/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 29500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 88,
@@ -6368,7 +6722,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/18144645/2a0000019e4052742498e1b360c971a303f8/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/9831576/2a0000019119714f45b65697039ea6c2dcf7/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/5253303/2a0000017b3b185f33428e43fe98616dedcf/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 14000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 123,
@@ -6413,7 +6770,10 @@
       "https://thb.tildacdn.com/tild3338-3964-4462-a433-333439613336/-/resizeb/20x/IMG_3906.jpg",
       "https://thb.tildacdn.com/tild3332-3865-4436-a131-616631663434/-/resizeb/20x/IMG_3907.jpg",
       "https://thb.tildacdn.com/tild3464-3466-4539-a338-643934633634/-/resizeb/20x/86691C4F-AC4D-49E8-9.jpeg"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 124,
@@ -6455,7 +6815,11 @@
       "https://thb.tildacdn.com/tild6330-3031-4662-b465-306137626465/-/resize/20x/noroot.png",
       "https://thb.tildacdn.com/tild3534-3739-4331-b533-613965323035/-/resize/20x/photo_2025-12-22_111.jpeg",
       "https://thb.tildacdn.com/tild6334-3337-4136-b637-623964363565/-/resize/20x/warning.png"
-    ]
+    ],
+    "price_from": 1125,
+    "price_to": 9000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 128,
@@ -6499,7 +6863,11 @@
       "https://thb.tildacdn.com/tild3136-3966-4336-a231-336134313165/-/empty/_2021-07-01_194613.png",
       "https://thb.tildacdn.com/tild3962-6432-4837-b665-383361363239/-/empty/_2021-07-01_135233.png",
       "https://thb.tildacdn.com/tild6136-6166-4330-b662-313334373930/-/empty/_2021-07-01_135027.png"
-    ]
+    ],
+    "price_from": 5600,
+    "price_to": 12800,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 134,
@@ -6539,7 +6907,11 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/10648814/2a0000018cfcae9d553853e222ce6ed66099/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-discovery-int/1534577/2a00000196448018d60ab50a465b0a658c41/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/19300554/2a0000019ecb01224f777da47bcd41f45c21/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 700,
+    "price_to": 5000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 136,
@@ -6577,7 +6949,10 @@
     "data_quality": 60,
     "extra_photos": [
       "https://classiki.club/wp-content/uploads/2023/08/avatar_klassiki.jpg"
-    ]
+    ],
+    "price_from": 18500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 156,
@@ -6619,7 +6994,10 @@
       "https://vitarad.ru/wp-content/uploads/2022/02/kl2.jpg",
       "https://vitarad.ru/wp-content/uploads/2022/02/kl1.jpg",
       "https://vitarad.ru/wp-content/uploads/2022/02/kl61.jpg"
-    ]
+    ],
+    "price_from": 1600,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 162,
@@ -6659,7 +7037,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-tycoon/20763525/32085241_drop_search_standard_2026-06-25T18_11_15/drop_x2&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/10661403/2a000001917e61476b0d3c9e79ae87e019af/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/813485/2a0000015eb3fa74ac20a2dd6f856a3ffc75/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 8500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 163,
@@ -6704,7 +7085,10 @@
       "http://www.altera-vita.ru/upload/resize_cache/iblock/449/300_300_2/Merkulova.jpg",
       "http://www.altera-vita.ru/images/recommend_4.png",
       "http://www.altera-vita.ru/images/recommend_3.png"
-    ]
+    ],
+    "price_from": 50000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 164,
@@ -6749,7 +7133,10 @@
       "https://firstaid-rrc.ru/upload/resize_cache/iblock/19c/300_70_1/Bez-nazvaniya-_2_.jpg",
       "https://firstaid-rrc.ru/upload/resize_cache/iblock/a0f/300_70_1/2021_01_12_12_11_17.png",
       "https://firstaid-rrc.ru/upload/resize_cache/iblock/753/300_70_1/Wordmark_blue.png"
-    ]
+    ],
+    "price_from": 4990,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 165,
@@ -6789,7 +7176,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/15270672/2a000001984a8778ba101816383681045479/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/4618902/2a00000179f5f29e33fa8295823207275262/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/15452616/2a0000019c063cc0622cbd24da8dde11e5ee/L_height&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 166,
@@ -6829,7 +7219,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/11924971/2a000001900029718c29aac518cd0c9a5677/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/6119709/2a0000018060e541f8af73654af765f1aff2/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/11356085/2a00000190c156270b40ffb780d13ced60b3/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 176,
@@ -6869,7 +7262,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/774406/2a00000185339cf40f0d6b2533dce5c3b2b1/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16487000/2a00000197ef6eb35d526e5266fc4598a308/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/8128793/2a00000185490b8514ae3fa3d4d7f39ae96f/L_height&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 7415,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 177,
@@ -6907,7 +7303,10 @@
     "data_quality": 60,
     "extra_photos": [
       "https://mycleverland.ru/media/seeded/root/2d1c7b908d58927f.png"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 181,
@@ -6952,7 +7351,10 @@
       "https://chess-clubs.ru/wp-content/uploads/2024/05/photo_2024-05-05_21-07-56.jpg",
       "https://chess-clubs.ru/wp-content/uploads/2024/05/photo_2024-05-05_21-07-57-2.jpg",
       "https://chess-clubs.ru/wp-content/uploads/2024/05/photo_2024-05-05_13-36-45-1024x768.jpg"
-    ]
+    ],
+    "price_from": 850,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 182,
@@ -6997,7 +7399,10 @@
       "https://chess-clubs.ru/wp-content/uploads/2024/05/photo_2024-05-05_21-07-56.jpg",
       "https://chess-clubs.ru/wp-content/uploads/2024/05/photo_2024-05-05_21-07-57-2.jpg",
       "https://chess-clubs.ru/wp-content/uploads/2024/05/photo_2024-05-05_13-36-45-1024x768.jpg"
-    ]
+    ],
+    "price_from": 850,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 195,
@@ -7037,7 +7442,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/20105336/2a0000019f13feabc14f958613e8d38c0f2c/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/5533948/2a0000017e4877912ae4684686f63d342129/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-discovery-int/1532686/2a0000018a8951d0536918abccb677fda58a/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 199,
@@ -7079,7 +7487,11 @@
       "https://thb.tildacdn.com/tild6330-3031-4662-b465-306137626465/-/resize/20x/noroot.png",
       "https://thb.tildacdn.com/tild3534-3739-4331-b533-613965323035/-/resize/20x/photo_2025-12-22_111.jpeg",
       "https://thb.tildacdn.com/tild6334-3337-4136-b637-623964363565/-/resize/20x/warning.png"
-    ]
+    ],
+    "price_from": 1125,
+    "price_to": 9000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 210,
@@ -7169,7 +7581,11 @@
       "https://clasesdeespanol.ru/img/slider/introslide3-sm.png",
       "https://clasesdeespanol.ru/img/slider/introslide-1-sm.png",
       "https://clasesdeespanol.ru/img/prepod/new/yuliet-slider.png"
-    ]
+    ],
+    "price_from": 1800,
+    "price_to": 10200,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 11,
@@ -7211,7 +7627,10 @@
       "https://maklaya55.ru/thumb/2/04Yam_UO1KcgtrN_bel12g/2000r2000/d/tpl25_4.jpg",
       "https://maklaya55.ru/thumb/2/dgk9Wveoyvuccqq9Qx2EJQ/2000r2000/d/tpl25_chel4.png",
       "https://maklaya55.ru/thumb/2/KTWaz7NLYS4qujqcuKykWQ/2000r2000/d/tpl25_che2.png"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 33,
@@ -7253,7 +7672,10 @@
       "http://www.inside.ru/bitrix/components/inside/callback.draggable.form/templates/.default/images/phoneImage.png",
       "http://www.inside.ru/bitrix/templates/inside/images/client_entrance_ico.png",
       "http://www.inside.ru/bitrix/templates/inside/images/bottom_live_internet.png"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 102,
@@ -7293,7 +7715,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16341471/2a0000019bc131e9f3d43b5b8d1892584f60/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/5469293/2a00000180a3d072ce38b5dda6bf14d20a65/L_height&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/11381866/2a0000018c30e6c205796227c2a7b68dcb64/L_height&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 169,
@@ -7338,7 +7763,10 @@
       "https://www.step-to-step.ru/media/img/design/banner/9.jpg",
       "https://www.step-to-step.ru/media/img/design/banner/10.jpg",
       "https://www.step-to-step.ru/media/img/design/banner/5.jpg"
-    ]
+    ],
+    "price_from": 400,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 202,
@@ -7383,7 +7811,10 @@
       "https://brit-school.ru/wp-content/uploads/2019/05/1-1024x683.jpg",
       "https://brit-school.ru/wp-content/uploads/2015/12/g1_01-1024x640.jpg",
       "https://brit-school.ru/wp-content/uploads/2019/05/IMG_0115s-1024x640.jpg"
-    ]
+    ],
+    "price_from": 449,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 110,
@@ -7428,7 +7859,10 @@
       "https://coddyschool.com/upload/iblock/ee5/chua0htfxanphuvg75mkuz9lkiif1zba/hh2023_logo2_min.100.100.webp",
       "https://coddyschool.com/upload/iblock/b2f/6vrs1eg1s2zzi2w1s2rllz4obdjw6bt8/career_share.100.100.webp",
       "https://coddyschool.com/upload/iblock/efc/os8xe4ktsvdsan7qza1vz96mjdy7y9r6/наш вклад лого.100.100.webp"
-    ]
+    ],
+    "price_from": 7850,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 118,
@@ -7468,7 +7902,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16378552/2a00000197ea018676ee50944a1f547d2b77/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/236825/2a0000015dcbce06004427e44fd5a9c6d02f/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16378552/2a00000197ea018676ee50944a1f547d2b77/L_height&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 2500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 25,
@@ -7508,7 +7945,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/859900/2a0000015e61403f9d49e19aeea76a41a5fb/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/16136444/2a0000019a93a78cbd6048be4a36079ac003/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/226077/2a0000015dcbdf5c2b7cf964f5696ef0ffa3/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 3900,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 185,
@@ -7546,7 +7986,10 @@
     "data_quality": 60,
     "extra_photos": [
       "https://thb.tildacdn.com/tild3263-6162-4031-b135-316439343964/-/resize/20x/Rectangle_8130.png"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 28,
@@ -7588,7 +8031,10 @@
       "https://cvetostrov.ru/upload/resize_cache/iblock/cc9/60_60_1/utawejyd41uhz0yej99sz3rn0zvgefxu.JPG",
       "https://cvetostrov.ru/upload/resize_cache/iblock/330/60_60_1/yr0qf9yykv3qzc96la29i0hsjgufhscl.JPG",
       "https://cvetostrov.ru/upload/resize_cache/iblock/b1f/60_60_1/hubv7zf4p666qary89qioyqhirkah0t9.jpg"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 81,
@@ -8003,7 +8449,10 @@
       "https://englium.ru/wp-content/uploads/2022/04/schola-angliskogo-yazyka-englium-prepodavately-valeria-vladimirovna-zemskova-350x240.jpg",
       "https://englium.ru/wp-content/uploads/2022/09/Анна-Николаевна-Миронова-2-scaled-350x240.jpg",
       "https://englium.ru/wp-content/uploads/2026/07/image-e1783368405932-435x280.png"
-    ]
+    ],
+    "price_from": 700,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 32,
@@ -8044,7 +8493,10 @@
       "https://www.peliken.su/files/project_5573/images/1542630551_1_mini1.jpg",
       "https://www.peliken.su/files/project_5573/images/1542630718_1_mini1.jpg",
       "https://www.peliken.su/files/project_5573/images/1625115936_1_mini1.jpg"
-    ]
+    ],
+    "price_from": 650,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 119,
@@ -8089,7 +8541,10 @@
       "https://filinit.ru/front/assets/img/static/school/3.png",
       "https://filinit.ru/front/assets/img/static/school/4.png",
       "https://filinit.ru/admin/images/training-programs/1689012959_img1.png"
-    ]
+    ],
+    "price_from": 3000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 142,
@@ -8303,7 +8758,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/4581272/2a0000017be87f3fa28f27344762786df868/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-discovery-int/1532686/2a0000018a8951d0536918abccb677fda58a/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/1696029/2a0000016d2a4c0f44ea14b48a8a0e9b8e67/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 8000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 148,
@@ -8393,7 +8851,10 @@
       "https://color-chicks.ru/wp-content/uploads/2025/12/loktionova-aleksandra-evgenevna.jpeg",
       "https://color-chicks.ru/wp-content/uploads/2025/12/nikitina-olga-vladimirovna.jpeg",
       "https://color-chicks.ru/wp-content/uploads/2025/12/pasuginova-mariya-valerevna.jpeg"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 19,
@@ -8433,7 +8894,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-tycoon/14588020/16825002_dust_search_standard_2025-08-27T20_56_19/dust_x2&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-tycoon/8205167/22829912_dust_search_standard_2025-08-27T21_55_24/dust_x2&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/5483320/2a0000017e00c6eceaf4a07ab4dd947e3964/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 2600,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 184,
@@ -8473,7 +8937,10 @@
       "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1118.07a426ba310aa89418b72ac0f8c183c4.jpg",
       "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1116.07a426ba310aa89418b72ac0f8c183c4.jpg",
       "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1117.07a426ba310aa89418b72ac0f8c183c4.jpg"
-    ]
+    ],
+    "price_from": 456,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 246,
@@ -8560,7 +9027,10 @@
       "https://sk-asgard.ru/images/trainers/sinkovcky.jpg",
       "https://sk-asgard.ru/images/trainers/gentemiriv.jpg",
       "https://sk-asgard.ru/images/trainers/vasileva.jpeg"
-    ]
+    ],
+    "price_from": 500,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 138,
@@ -8602,7 +9072,10 @@
       "https://thb.tildacdn.com/tild3936-6362-4235-a431-326532643739/-/resize/20x/Group_6665.png",
       "https://thb.tildacdn.com/tild3666-3935-4435-b730-623033653235/-/resize/20x/Group_6662.png",
       "https://thb.tildacdn.com/tild3030-6264-4736-b963-353765653238/-/resize/20x/Group_6663.png"
-    ]
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 186,
@@ -8642,7 +9115,10 @@
       "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1118.07a426ba310aa89418b72ac0f8c183c4.jpg",
       "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1116.07a426ba310aa89418b72ac0f8c183c4.jpg",
       "https://chesslabyrinth.ru/assets/components/phpthumbof/cache/1117.07a426ba310aa89418b72ac0f8c183c4.jpg"
-    ]
+    ],
+    "price_from": 750,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 187,
@@ -8687,7 +9163,10 @@
       "https://educhess.ru/wp-content/uploads/2021/07/adventage-home-1.jpg",
       "https://educhess.ru/wp-content/uploads/2021/07/adventage-home-2.jpg",
       "https://educhess.ru/wp-content/uploads/2024/08/6.png"
-    ]
+    ],
+    "price_from": 4563,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 203,
@@ -8727,7 +9206,10 @@
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/9663145/2a0000018a8d67a7c30c79b12f1aab677f1a/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-discovery-int/1534577/2a00000196448018d60ab50a465b0a658c41/L&w=600&output=jpg",
       "https://wsrv.nl/?url=avatars.mds.yandex.net/get-altay/13594632/2a00000194dfdc4995ccf60f7b30687d171f/L&w=600&output=jpg"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 39,
@@ -9047,7 +9529,10 @@
       "https://www.logoakademia.ru/images/pomogaem_obuch.webp",
       "https://www.logoakademia.ru/images/pomogaem_com.webp",
       "https://www.logoakademia.ru/images/pomogaem_ch3.webp"
-    ]
+    ],
+    "price_from": 550,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 194,
@@ -9876,7 +10361,10 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": []
+    "extra_photos": [],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 229,
@@ -9908,7 +10396,10 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": []
+    "extra_photos": [],
+    "price_from": 6500,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 230,
@@ -9940,7 +10431,10 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": []
+    "extra_photos": [],
+    "price_from": 570,
+    "price_period": "занятие",
+    "price_source": "heuristic"
   },
   {
     "id": 231,
@@ -9972,7 +10466,10 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 40,
-    "extra_photos": []
+    "extra_photos": [],
+    "price_from": 4000,
+    "price_period": "месяц",
+    "price_source": "heuristic"
   },
   {
     "id": 94,
