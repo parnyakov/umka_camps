@@ -218,6 +218,17 @@ a { color: inherit; text-decoration: none; }
   font-weight: 700;
   color: var(--clr-primary);
 }
+.price-period {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--clr-text-light, #888);
+  margin-left: 2px;
+}
+.price-unknown {
+  font-size: 13px;
+  font-weight: 400;
+  color: #aaa;
+}
 
 .card-rating {
   display: flex;
