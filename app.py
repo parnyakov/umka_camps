@@ -388,10 +388,11 @@ def init_orgs_db():
         schedule TEXT, group_size TEXT, duration TEXT,
         phone TEXT, website TEXT, vk TEXT,
         rating REAL, reviews_count INTEGER, has_trial INTEGER, data_quality INTEGER,
-        extra_photos TEXT, featured INTEGER DEFAULT 0
+        extra_photos TEXT, featured INTEGER DEFAULT 0,
+        price_from INTEGER, price_to INTEGER, price_period TEXT
     )''')
     for c in cards:
-        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
             c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
             c.get('address',''), c.get('metro',''), c.get('district',''),
             json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
@@ -404,37 +405,53 @@ def init_orgs_db():
             1 if c.get('has_trial') else 0, c.get('data_quality',0) or 0,
             json.dumps(c.get('extra_photos',[]), ensure_ascii=False),
             1 if c.get('featured') else 0,
+            c.get('price_from'), c.get('price_to'), c.get('price_period'),
         ))
     conn.commit()
     conn.close()
     print(f'Orgs DB ready: {len(cards)} organizations')
 
 def _migrate_orgs_db():
-    """Add extra_photos column if missing (safe to call on existing DB)."""
+    """Add new columns if missing (safe to call on existing DB)."""
     if not os.path.exists(ORGS_DB):
         return
     conn = _orgs_conn()
-    try:
-        conn.execute("ALTER TABLE organizations ADD COLUMN extra_photos TEXT DEFAULT '[]'")
-        conn.commit()
-        print("Migration: added extra_photos column")
-        # Backfill from JSON
-        if os.path.exists(ORGS_JSON):
-            with open(ORGS_JSON, encoding='utf-8') as f:
-                cards = json.load(f)
-            for c in cards:
-                eps = c.get('extra_photos', [])
-                if eps:
-                    conn.execute("UPDATE organizations SET extra_photos=? WHERE id=?",
-                                 (json.dumps(eps, ensure_ascii=False), c['id']))
+    migrations = [
+        ("extra_photos", "ALTER TABLE organizations ADD COLUMN extra_photos TEXT DEFAULT '[]'"),
+        ("price_from",   "ALTER TABLE organizations ADD COLUMN price_from INTEGER"),
+        ("price_to",     "ALTER TABLE organizations ADD COLUMN price_to INTEGER"),
+        ("price_period", "ALTER TABLE organizations ADD COLUMN price_period TEXT"),
+    ]
+    for col, sql in migrations:
+        try:
+            conn.execute(sql)
             conn.commit()
-    except Exception:
-        pass  # Column already exists — OK
-    finally:
-        conn.close()
+            print(f"Migration: added column {col}")
+        except Exception:
+            pass  # Already exists — OK
 
-def _price_lte(price_str, max_val):
-    """Return True if first number in price_str <= max_val (or no number found)."""
+    # Backfill from JSON
+    if os.path.exists(ORGS_JSON):
+        with open(ORGS_JSON, encoding='utf-8') as f:
+            cards = json.load(f)
+        for c in cards:
+            cid = c.get('id')
+            if not cid:
+                continue
+            eps = c.get('extra_photos', [])
+            conn.execute(
+                "UPDATE organizations SET extra_photos=?, price_from=?, price_to=?, price_period=? WHERE id=?",
+                (json.dumps(eps, ensure_ascii=False), c.get('price_from'), c.get('price_to'), c.get('price_period'), cid)
+            )
+        conn.commit()
+    conn.close()
+
+def _price_lte(org_dict, max_val):
+    """Return True if org price_from <= max_val (or no price found)."""
+    pf = org_dict.get('price_from')
+    if pf:
+        return pf <= max_val
+    price_str = org_dict.get('price') or ''
     if not price_str: return True
     m = re.search(r'(\d[\d\s]*)', price_str)
     if not m: return True
@@ -508,7 +525,7 @@ def api_orgs():
                  q_lower in (o.get('description') or '').lower() or
                  q_lower in ' '.join(o.get('programs') or []).lower()]
     if age:       items = [o for o in items if _age_includes(o.get('age_range',''), age)]
-    if price_max: items = [o for o in items if _price_lte(o.get('price',''), price_max)]
+    if price_max: items = [o for o in items if _price_lte(o, price_max)]
 
     total = len(items)
     items = items[offset:offset+limit]
