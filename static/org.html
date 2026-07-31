@@ -460,16 +460,21 @@ function render(org) {
   const ini   = initials(org.name);
 
   // ── Photos ────────────────────────────────────────────────────────────────
-  // extra_photos = фото с сайта орга (реальные занятия) — единственный источник.
-  // Яндекс CDN (org.photos) полностью исключён: там логотипы и фото соседей.
   const extraPhotos = (org.extra_photos || []).filter(p => p && !isBadPhotoUrl(p) && !isLogoUrl(p));
 
-  // Hero = первое фото с сайта орга
-  const heroPhoto = extraPhotos[0] || '';
+  // Fallback: Yandex CDN через wsrv.nl (если нет extra_photos)
+  const yaPhotos = extraPhotos.length ? [] : (org.photos || [])
+    .filter(p => p && /avatars\.mds\.yandex|yandex\.net\/get-/.test(p))
+    .map(p => 'https://wsrv.nl/?url=' + encodeURIComponent(p) + '&w=800&output=jpg');
+
+  const allPhotos = extraPhotos.length ? extraPhotos : yaPhotos;
+
+  // Hero = первое фото
+  const heroPhoto = allPhotos[0] || '';
 
   const seen = new Set();
   if (heroPhoto) seen.add(heroPhoto);
-  const galleryPhotos = extraPhotos.filter(p => {
+  const galleryPhotos = allPhotos.filter(p => {
     if (!p || seen.has(p)) return false;
     seen.add(p); return true;
   });
@@ -698,13 +703,11 @@ function render(org) {
   }, 10000);
 }
 
-// Hero: reject tiny icons AND square badge-like images (Yandex awards/pins)
+/// Hero: reject only tiny icons (< 150px). Square images of 150px+ are valid photos.
 function checkHeroSize(img, bg, emoji, ini) {
   const w = img.naturalWidth, h = img.naturalHeight;
-  const r = w / (h || 1);
-  const isTiny   = w < 80 || h < 80;
-  const isBadge  = w < 450 && h < 450 && r > 0.72 && r < 1.38; // square-ish = badge
-  if (isTiny || isBadge) {
+  const isTiny = w < 150 || h < 150;
+  if (isTiny) {
     img.outerHTML = `<div class="hero-placeholder" style="background:${bg}"><div class="ph-emoji">${emoji}</div><div class="ph-ini">${ini}</div></div>`;
   }
 }
