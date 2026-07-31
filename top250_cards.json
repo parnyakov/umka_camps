@@ -3070,7 +3070,7 @@
       "Формирует творческое мышление"
     ],
     "age_range": "5–8 лет",
-    "price": "",
+    "price": "от 500 ₽",
     "description": "Если Ваш близкий человек интересуется музыкой, мечтает научиться, играть на музыкальных инструментах или вовсе хочет научиться сочинять музыку, тогда подарочный сертификат на занятия в нашей школе – то, что Вам нужно.",
     "schedule": "",
     "group_size": "",
@@ -3090,7 +3090,11 @@
       "https://thb.tildacdn.com/tild3865-6263-4866-a337-663435363463/-/resizeb/20x/_02.jpg",
       "https://thb.tildacdn.com/tild3561-6139-4366-b836-396163343661/-/resizeb/20x/3x.png",
       "https://thb.tildacdn.com/tild3562-3437-4537-b566-336538383436/-/resizeb/20x/photo_2025-11-01_15-.jpg"
-    ]
+    ],
+    "price_from": 500,
+    "price_to": 16400,
+    "price_period": "неделю",
+    "price_source": "https://svoboda.community/#price"
   },
   {
     "id": 52,
@@ -3781,7 +3785,7 @@
       "Развивает системное мышление"
     ],
     "age_range": "от 7 лет",
-    "price": "",
+    "price": "от 4 000 ₽",
     "description": "Кружки ШЦТ в Месягутово - это занятия робототехникой без конструкторов, программированием и научно-техническим творчеством для детей 1-11 классов",
     "schedule": "",
     "group_size": "",
@@ -3803,7 +3807,10 @@
       "https://cmit.ru/podolsk/wp-content/uploads/sites/35/2020/04/WhatsApp-Image-2020-04-03-at-16.46.24-1.jpeg",
       "https://cmit.ru/podolsk/wp-content/uploads/sites/35/2020/04/WhatsApp-Image-2020-03-30-at-16.34.37.jpeg",
       "https://cmit.ru/podolsk/wp-content/uploads/sites/35/2020/04/WhatsApp-Image-2020-04-03-at-16.46.24.jpeg"
-    ]
+    ],
+    "price_from": 4000,
+    "price_period": "год",
+    "price_source": "http://www.cmit.ru/цены"
   },
   {
     "id": 174,
@@ -3926,7 +3933,7 @@
       "частая смена видов деятельности в рамках одного урока"
     ],
     "age_range": "5–18 лет",
-    "price": "",
+    "price": "от 300 ₽",
     "description": "Решили изучать английский? Ознакомьтесь с путем наших учеников, который им предстоит пройти. Новости нашей школы английского языка EnglishForever.",
     "schedule": "",
     "group_size": "до 8 чел.",
@@ -3945,7 +3952,11 @@
       "https://myenglishforever.ru/wp-content/uploads/2024/07/Коллаж-867x1024.png",
       "https://myenglishforever.ru/wp-content/uploads/2026/07/picture-10-1024x768.jpg",
       "https://myenglishforever.ru/wp-content/uploads/2025/08/photo_2025-08-07_19-10-12.jpg"
-    ]
+    ],
+    "price_from": 300,
+    "price_to": 500,
+    "price_period": "месяц",
+    "price_source": "https://myenglishforever.ru/#price"
   },
   {
     "id": 216,
@@ -3981,7 +3992,7 @@
       "Я помогаю ребёнку преодолеть трудность. Когда проблема решена, мы либо идём к новой цели, либо завершаем занятия"
     ],
     "age_range": "6–15 лет",
-    "price": "",
+    "price": "от 800 ₽",
     "description": "Авторские онлайн-курсы Елены Гордеевой, 31 год в частном образовании. Английский язык, подготовка к школе, чтение, математика и нейроигры. Мини-группы до 4 человек. Бесплатный пробный урок.Елена Гордеева: онлайн курсы английского, подготовки к школе и",
     "schedule": "",
     "group_size": "до 4 чел.",
@@ -4003,7 +4014,11 @@
       "https://thb.tildacdn.com/tild6238-6235-4762-a435-353864323063/-/empty/___27.png",
       "https://thb.tildacdn.com/tild3933-3863-4762-a630-613631656661/-/empty/___7.png",
       "https://thb.tildacdn.com/tild3433-3839-4661-a438-623365363161/-/empty/noroot.png"
-    ]
+    ],
+    "price_from": 800,
+    "price_to": 6000,
+    "price_period": "месяц",
+    "price_source": "https://superprodlenka.ru/price"
   },
   {
     "id": 217,
@@ -4275,7 +4290,7 @@
       "Развивает системное мышление"
     ],
     "age_range": "5–16 лет",
-    "price": "",
+    "price": "от 1 000 ₽",
     "description": "Городские каникулы в школе робототехники для детей в формате недельного интенсива. Каждый день узнаем новое о мире технологий и науки, занимаемся, общаемся, играем. Проводим время весело и с пользой. Целый день, все включено: занятия, питание, оборудование, отдых.",
     "schedule": "",
     "group_size": "до 8 чел.",
@@ -4297,7 +4312,11 @@
       "https://thb.tildacdn.com/tild3232-3630-4438-a137-633537373162/-/resize/20x/2025-12-24_12-32-19.png",
       "https://thb.tildacdn.com/tild3364-3537-4436-a230-623830613961/-/resize/20x/Background_Noise_1_1.jpg",
       "https://thb.tildacdn.com/tild3463-3738-4963-b063-643362643137/-/resize/20x/2025-12-22_15-43-38.png"
-    ]
+    ],
+    "price_from": 1000,
+    "price_to": 10000,
+    "price_period": "неделю",
+    "price_source": "https://stemika.ru/#price"
   },
   {
     "id": 144,
@@ -4428,7 +4447,7 @@
       "Открывает возможности за рубежом"
     ],
     "age_range": "5–16 лет",
-    "price": "",
+    "price": "от 250 ₽",
     "description": "Асинхронный курс, состоящий из 8 блоков. Каждый блок включает презентацию теории, вопросы по теории, отработка в упражнениях. Между блоками проводятся тесты",
     "schedule": "",
     "group_size": "",
@@ -4443,7 +4462,10 @@
     "data_quality": 75,
     "extra_photos": [
       "https://static.tildacdn.com/tild3430-3132-4035-a430-303164313831/Desktop_-_23_1.jpg"
-    ]
+    ],
+    "price_from": 250,
+    "price_period": "месяц",
+    "price_source": "https://www.studiowelcome.ru/#price"
   },
   {
     "id": 15,
@@ -8057,7 +8079,7 @@
       "Воспитывает дисциплину"
     ],
     "age_range": "",
-    "price": "",
+    "price": "от 5 000 ₽",
     "description": "Мосгимнастика у Речного вокзала — московская школа художественной гимнастики с серьёзными спортивными амбициями. Тренировки ведут специалисты с опытом подготовки призёров соревнований. Набор с раннего возраста, программы для любого уровня.",
     "schedule": "",
     "group_size": "",
@@ -8079,7 +8101,11 @@
       "https://mos-gym.ru/wp-content/uploads/2024/08/DDB9E7B9-9891-40FD-BBB9-BAEF830B.jpg",
       "https://mos-gym.ru/wp-content/uploads/2024/08/3356D24C-F63D-4FE2-8D23-346CCC656C9F.jpg",
       "https://mos-gym.ru/wp-content/uploads/2024/08/IMG_8532-2.jpg"
-    ]
+    ],
+    "price_from": 5000,
+    "price_to": 9000,
+    "price_period": "месяц",
+    "price_source": "https://mos-gym.ru/#price"
   },
   {
     "id": 89,
@@ -8392,7 +8418,7 @@
       "Открывает возможности за рубежом"
     ],
     "age_range": "",
-    "price": "",
+    "price": "от 5 000 ₽",
     "description": "Unavischool в Балашихе — современная языковая школа, где обучение строится на реальных коммуникативных задачах. Дети учатся не отвечать на уроке, а пользоваться языком: смотреть видео, читать тексты, общаться с учителем исключительно на английском.",
     "schedule": "",
     "group_size": "",
@@ -8411,7 +8437,10 @@
       "https://unavischool.ru/wp-content/uploads/2026/04/angliyskiy-dlya-detey-letom-v-balashihe.webp",
       "https://unavischool.ru/wp-content/uploads/2026/02/horoshee-mesto-2026.webp",
       "https://unavischool.ru/wp-content/uploads/2026/05/pochemu1.webp"
-    ]
+    ],
+    "price_from": 5000,
+    "price_period": "неделю",
+    "price_source": "https://unavischool.ru/#price"
   },
   {
     "id": 247,
@@ -9640,7 +9669,7 @@
       "Раскрывает творческий потенциал"
     ],
     "age_range": "",
-    "price": "",
+    "price": "от 800 ₽",
     "description": "Арт-студия Зелёный маяк — творческое пространство, которое служит ориентиром для юных художников. Живопись, графика, скульптура и дизайн. Педагоги помогают детям найти свой художественный язык и не бояться экспериментировать.",
     "schedule": "",
     "group_size": "",
@@ -9662,7 +9691,10 @@
       "https://thb.tildacdn.com/tild3962-6464-4831-b031-306262343630/-/resize/20x/1.png",
       "https://thb.tildacdn.com/tild3338-3531-4734-a165-303564393133/-/resize/20x/2.png",
       "https://thb.tildacdn.com/tild3961-3331-4933-a632-306339343237/-/resize/20x/4.png"
-    ]
+    ],
+    "price_from": 800,
+    "price_period": "месяц",
+    "price_source": "https://www.zmayak-studio.ru/#price"
   },
   {
     "id": 42,
@@ -10492,7 +10524,7 @@
       "Воспитывает дисциплину"
     ],
     "age_range": "",
-    "price": "",
+    "price": "от 1 100 ₽",
     "description": "Junibasket у метро Дмитровская — детская школа баскетбола, где маленькие игроки учатся броску, дриблингу и командному духу. Профессиональные тренеры, регулярные игры и атмосфера настоящего спорта с первых занятий.",
     "schedule": "",
     "group_size": "",
@@ -10514,7 +10546,11 @@
       "https://thb.tildacdn.com/tild6636-3462-4430-b933-656266303937/-/resizeb/20x/photo_2022-05-18_14-.jpg",
       "https://thb.tildacdn.com/tild6463-6164-4563-a234-316139646130/-/resizeb/20x/photo_2022-05-18_14-.jpg",
       "https://thb.tildacdn.com/tild3363-3730-4033-a461-316235633537/-/resizeb/20x/photo_2022-05-18_15-.jpg"
-    ]
+    ],
+    "price_from": 1100,
+    "price_to": 2000,
+    "price_period": "неделю",
+    "price_source": "https://junibasket.ru/#price"
   },
   {
     "id": 98,
@@ -10577,7 +10613,7 @@
       "Открывает возможности за рубежом"
     ],
     "age_range": "",
-    "price": "",
+    "price": "от 4 880 ₽",
     "description": "Центр Модерн Инглиш в Марьино — школа английского с современными методиками и акцентом на разговорную практику. Занятия ведут педагоги с международными сертификатами. Подготовка к Cambridge, IELTS и школьным экзаменам.",
     "schedule": "",
     "group_size": "",
@@ -10596,7 +10632,11 @@
       "https://www.me-english.ru/wp-content/themes/sme-theme/assets/img/home/programms/01.png",
       "https://www.me-english.ru/wp-content/themes/sme-theme/assets/img/home/programms/02.png",
       "https://www.me-english.ru/wp-content/themes/sme-theme/assets/img/home/programms/03.png"
-    ]
+    ],
+    "price_from": 4880,
+    "price_to": 7281,
+    "price_period": "месяц",
+    "price_source": "http://www.me-english.ru/#price"
   },
   {
     "id": 145,
@@ -10701,7 +10741,7 @@
       "Открывает возможности за рубежом"
     ],
     "age_range": "",
-    "price": "",
+    "price": "от 300 ₽",
     "description": "СтадиДА у Бабушкинской — языковая школа с говорящим названием: здесь всегда говорят «да» новым знаниям и возможностям. Английский через проекты, дискуссии и творческие задания — для детей, которые хотят язык, а не оценку.",
     "schedule": "",
     "group_size": "",
@@ -10720,7 +10760,11 @@
       "https://studyda.school/wp-content/uploads/2025/01/circle-2024-2025-number-194.png",
       "https://studyda.school/wp-content/uploads/2025/01/circle-2024-2025-words.png",
       "https://studyda.school/wp-content/uploads/2025/03/lada.jpeg"
-    ]
+    ],
+    "price_from": 300,
+    "price_to": 8000,
+    "price_period": "месяц",
+    "price_source": "https://studyda.school/price"
   },
   {
     "id": 45,
