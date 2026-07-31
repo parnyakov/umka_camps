@@ -491,6 +491,35 @@ function renderCards(items, append) {
   btn.style.display = shown < state.total ? 'block' : 'none';
 }
 
+const PERIOD_LABEL = {
+  'занятие':  'за занятие',
+  'месяц':    'в месяц',
+  'неделю':   'в неделю',
+  'курс':     'за курс',
+  'год':      'в год',
+  'квартал':  'в квартал',
+  'семестр':  'за семестр',
+};
+
+function formatPrice(org) {
+  // Если есть price_from (числовое) — форматируем красиво
+  if (org.price_from) {
+    const lo = org.price_from.toLocaleString('ru-RU');
+    const hi = org.price_to ? org.price_to.toLocaleString('ru-RU') : null;
+    const label = org.price_period ? PERIOD_LABEL[org.price_period] || ('/' + org.price_period) : '';
+    const range = hi ? `${lo} – ${hi} ₽` : `от ${lo} ₽`;
+    return label ? `${range} <span class="price-period">${label}</span>` : range;
+  }
+  // Фоллбэк: исходная строка price + period если есть
+  if (org.price) {
+    const label = org.price_period ? PERIOD_LABEL[org.price_period] || ('/' + org.price_period) : '';
+    return label
+      ? `${esc(org.price)} <span class="price-period">${label}</span>`
+      : esc(org.price);
+  }
+  return '<span class="price-unknown">цена по запросу</span>';
+}
+
 function cardHTML(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
@@ -524,7 +553,7 @@ function cardHTML(org) {
         <div class="card-meta">${metro}${age}</div>
         ${trial}
         <div class="card-footer">
-          <span class="card-price">${esc(org.price || 'Цена по запросу')}</span>
+          <span class="card-price">${formatPrice(org)}</span>
           ${rating}
         </div>
       </div>
