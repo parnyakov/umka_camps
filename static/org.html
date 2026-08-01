@@ -347,6 +347,8 @@ function isLogoUrl(url) {
   return /logo|логотип|brand[-_]|[-_]brand|header[-_]bg|bg[-_]header/i.test(url);
 }
 function isBadPhotoUrl(url) {
+  if (!url) return true;
+  if (/\/empty\//.test(url)) return true;   // Tilda placeholder
   const bad = /youtube|youtu\.be|ytimg|instagram|cdninstagram|fbcdn|facebook|twimg|twitter|tiktok|mycdn\.me|mc\.yandex|avatars\.mds\.yandex|yandex\.net\/get-|storage\.googleapis\.com\/gweb|peacocktv|crunchyroll|netflix\.com|hulu\.com|disneyplus|paramountplus/i;
   return bad.test(url);
 }
@@ -571,7 +573,7 @@ function render(org) {
     </div>` : '';
 
   // ── Reviews ──────────────────────────────────────────────────────────────
-  const mapsQuery   = encodeURIComponent((org.address || org.name) + ' ' + (org.district || ''));
+  const mapsQuery   = encodeURIComponent(org.name + ' ' + (org.address || '') + ' ' + (org.district || ''));
   const mapsUrl     = `https://yandex.ru/maps/?text=${mapsQuery}`;
   const reviewsUrl  = `https://yandex.ru/maps/?text=${mapsQuery}&reviews=true`;
   const starsCount  = org.rating ? Math.round(org.rating) : 0;
