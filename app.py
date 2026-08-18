@@ -572,6 +572,11 @@ def orgs_page():
     return send_from_directory('static', 'orgs.html')
 
 
+@app.route('/orgs/quiz')
+def orgs_quiz_page():
+    return send_from_directory('static', 'quiz_landing.html')
+
+
 @app.route('/org/<int:org_id>')
 def org_page(org_id):
     return send_from_directory('static', 'org.html')

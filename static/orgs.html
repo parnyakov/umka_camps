@@ -11,6 +11,7 @@
 <meta property="og:url" content="https://umkahub.ru/orgs">
 <meta property="og:site_name" content="UmkaHub">
   <link rel="stylesheet" href="/static/orgs_style.css">
+  <link rel="stylesheet" href="/static/quiz.css">
 </head>
 <body>
 
@@ -107,6 +108,14 @@
     <button class="filter-toggle" onclick="toggleSidebar()" style="display:none" id="filterToggleBtn">
       ⚙️ Фильтры
     </button>
+
+    <div class="quiz-banner" onclick="openQuizOverlay()">
+      <div>
+        <div class="quiz-banner-text">Не знаете что выбрать?</div>
+        <div class="quiz-banner-sub">Быстрый подбор за 30 секунд — 5 вопросов, покажем подходящие варианты</div>
+      </div>
+      <span class="quiz-banner-cta">Пройти подбор →</span>
+    </div>
 
     <div class="results-bar" id="resultsBar">Загрузка...</div>
 
@@ -763,6 +772,33 @@ init();
     });
   });
 })();
+</script>
+
+<div class="quiz-overlay" id="quizOverlay">
+  <div class="quiz-overlay-modal">
+    <button class="quiz-overlay-close" id="quizOverlayClose">×</button>
+    <div id="quizOverlayContainer"></div>
+  </div>
+</div>
+
+<script src="/static/quiz.js"></script>
+<script>
+let _quizInited = false;
+function openQuizOverlay() {
+  const overlay = document.getElementById('quizOverlay');
+  overlay.classList.add('open');
+  if (!_quizInited) {
+    _quizInited = true;
+    UmkaQuiz(document.getElementById('quizOverlayContainer'));
+  }
+  if (typeof ym !== 'undefined') ym(110484022, 'reachGoal', 'quiz_orgs_open');
+}
+document.getElementById('quizOverlayClose').addEventListener('click', () =>
+  document.getElementById('quizOverlay').classList.remove('open'));
+document.getElementById('quizOverlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('quizOverlay'))
+    document.getElementById('quizOverlay').classList.remove('open');
+});
 </script>
 
 </body>
