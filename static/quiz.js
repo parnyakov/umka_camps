@@ -87,7 +87,7 @@
     }
 
     function shellHTML() {
-      const totalSteps = 5;
+      const totalSteps = 4;
       const progress = Math.min(state.step, totalSteps);
       return `
         <div class="uq-progress"><div class="uq-progress-bar" style="width:${(progress / totalSteps) * 100}%"></div></div>
@@ -99,7 +99,6 @@
       if (state.step === 2) return stepCategory();
       if (state.step === 3) return stepBudget();
       if (state.step === 4) return stepDistrict();
-      if (state.step === 5) return stepContact();
       if (state.step === 'loading') return `<div class="uq-loading">Подбираем варианты…</div>`;
       if (state.step === 'results') return stepResults();
       return '';
@@ -140,33 +139,20 @@
         <input class="uq-input" type="text" placeholder="Например, Люберцы или Юго-Западная" id="uqDistrictInput" value="${esc(state.district)}">
         <div class="uq-actions">
           <button class="uq-skip" id="uqSkip4">Пропустить</button>
-          <button class="uq-next" id="uqNext4">Далее →</button>
+          <button class="uq-next" id="uqNext4">Показать варианты →</button>
         </div>`;
-    }
-
-    function stepContact() {
-      return `
-        <div class="uq-q">Куда прислать подборку?</div>
-        <div class="uq-hint">Заявку передадим выбранным кружкам от вашего имени</div>
-        <input class="uq-input" type="text" placeholder="Имя родителя *" id="uqParentName">
-        <input class="uq-input" type="text" placeholder="Имя ребёнка" id="uqChildName">
-        <input class="uq-input" type="tel" placeholder="Телефон *" id="uqPhone">
-        <input class="uq-input" type="text" placeholder="Telegram (необязательно)" id="uqTelegram">
-        <button class="uq-next" id="uqSubmit">Показать подходящие кружки</button>
-      `;
     }
 
     function stepResults() {
       const items = state.results || [];
       const cards = items.length
         ? items.map(resultCardHTML).join('')
-        : `<div class="uq-hint">Не нашли точного совпадения — но заявку уже передали, подберём варианты вручную.</div>`;
+        : `<div class="uq-hint">Не нашли точных совпадений — попробуйте другие параметры (например, снимите ограничение по бюджету).</div>`;
+      const header = items.length
+        ? `<h3>Нашли ${items.length} подходящих вариантов</h3><p>Откройте карточку и оставьте заявку прямо у организации — так она увидит именно вашу заявку, не общий список.</p>`
+        : `<h3>Пока пусто</h3>`;
       return `
-        <div class="uq-success">
-          <div class="uq-success-check">✅</div>
-          <h3>Заявка получена</h3>
-          <p>Мы передадим её выбранным кружкам от вашего имени — с вами свяжется <b>организатор кружка</b> в течение 1 рабочего дня, не робот и не колл-центр UmkaHub.</p>
-        </div>
+        <div class="uq-success">${header}</div>
         <div class="uq-results-grid">${cards}</div>`;
     }
 
@@ -198,24 +184,14 @@
           }));
       } else if (state.step === 4) {
         const input = container.querySelector('#uqDistrictInput');
-        container.querySelector('#uqSkip4').addEventListener('click', () => { state.district = ''; goto(5); });
-        container.querySelector('#uqNext4').addEventListener('click', () => { state.district = input.value; goto(5); });
-      } else if (state.step === 5) {
-        container.querySelector('#uqSubmit').addEventListener('click', submit);
+        container.querySelector('#uqSkip4').addEventListener('click', () => { state.district = ''; showResults(); });
+        container.querySelector('#uqNext4').addEventListener('click', () => { state.district = input.value; showResults(); });
       }
     }
 
     function goto(step) { state.step = step; render(); }
 
-    async function submit() {
-      const parentName = container.querySelector('#uqParentName').value.trim();
-      const phone = container.querySelector('#uqPhone').value.trim();
-      const childName = container.querySelector('#uqChildName').value.trim();
-      const telegram = container.querySelector('#uqTelegram').value.trim();
-      if (!parentName || !phone) { alert('Укажите имя и телефон'); return; }
-
-      const btn = container.querySelector('#uqSubmit');
-      btn.disabled = true; btn.textContent = 'Подбираем…';
+    async function showResults() {
       state.step = 'loading'; render();
 
       try {
@@ -229,29 +205,12 @@
           return fetch('/api/orgs?' + p.toString()).then(r => r.json()).then(d => d.items || []).catch(() => []);
         });
         const lists = await Promise.all(queries);
-        const matched = mergeAndRank(lists, state.district);
-        state.results = matched;
+        state.results = mergeAndRank(lists, state.district);
 
-        const directionLabel = cats.map(c => CAT_LABELS[c] || c).join(', ');
-        const commentParts = [];
-        if (state.district) commentParts.push(`Район: ${state.district}`);
-        const budgetLabel = BUDGETS.find(b => b.val === state.price_max);
-        if (budgetLabel && budgetLabel.val) commentParts.push(`Бюджет: ${budgetLabel.label}`);
-        commentParts.push(`Подобрано (квиз): ${matched.map(o => o.name).join(', ') || '—'}`);
-
-        await fetch('/api/lead', {
-          method: 'POST', headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            org_name: matched.length ? `Квиз: ${matched.slice(0, 5).map(o => o.name).join(', ')}` : 'Квиз: без точных совпадений',
-            parent_name: parentName + (childName ? ` (ребёнок: ${childName})` : ''),
-            phone, telegram,
-            child_age: state.age || '',
-            direction: directionLabel,
-            comment: commentParts.join(' · '),
-          }),
-        });
-
-        if (typeof ym !== 'undefined') ym(111728638, 'reachGoal', 'quiz_orgs_complete');
+        // Funnel-visibility signal only — NOT a lead. The real lead event
+        // is `org_lead`, fired by org.html when someone actually submits a
+        // form on a specific organization's page. Quiz is filter-only.
+        if (typeof ym !== 'undefined') ym(111728638, 'reachGoal', 'quiz_orgs_results_shown');
       } catch (e) {
         state.results = [];
       }
