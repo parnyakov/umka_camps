@@ -184,12 +184,22 @@
           }));
       } else if (state.step === 4) {
         const input = container.querySelector('#uqDistrictInput');
-        container.querySelector('#uqSkip4').addEventListener('click', () => { state.district = ''; showResults(); });
-        container.querySelector('#uqNext4').addEventListener('click', () => { state.district = input.value; showResults(); });
+        container.querySelector('#uqSkip4').addEventListener('click', () => { state.district = ''; fireStep('district'); showResults(); });
+        container.querySelector('#uqNext4').addEventListener('click', () => { state.district = input.value; fireStep('district'); showResults(); });
       }
     }
 
-    function goto(step) { state.step = step; render(); }
+    // Funnel visibility per step, for Метрика's built-in funnel report —
+    // fired on the step just COMPLETED, not the one being entered.
+    const STEP_GOALS = { 2: 'age', 3: 'category', 4: 'budget' };
+    function fireStep(name) {
+      if (typeof ym !== 'undefined') ym(111728638, 'reachGoal', 'quiz_step_' + name);
+    }
+    function goto(step) {
+      if (STEP_GOALS[step]) fireStep(STEP_GOALS[step]);
+      state.step = step;
+      render();
+    }
 
     async function showResults() {
       state.step = 'loading'; render();
