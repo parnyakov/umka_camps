@@ -2,6 +2,7 @@ import os
 import re
 import json
 import sqlite3
+import datetime
 import requests
 from flask import Flask, jsonify, request, send_from_directory, abort
 
@@ -12,6 +13,52 @@ JSON_PATH = os.path.join(os.path.dirname(__file__), 'camps_structured.json')
 
 TELEGRAM_TOKEN = os.environ.get('TELEGRAM_TOKEN', '')
 TELEGRAM_CHAT_ID = os.environ.get('TELEGRAM_CHAT_ID', '')
+
+GOOGLE_SERVICE_ACCOUNT_JSON = os.environ.get('GOOGLE_SERVICE_ACCOUNT_JSON', '')
+GOOGLE_SHEET_ID = os.environ.get('GOOGLE_SHEET_ID', '')
+_sheets_service = None
+
+
+def _get_sheets_service():
+    """Lazy-init — only pulls in google-api-python-client if leads tracking
+    is actually configured, so its absence never breaks unrelated routes."""
+    global _sheets_service
+    if _sheets_service is not None:
+        return _sheets_service
+    if not GOOGLE_SERVICE_ACCOUNT_JSON or not GOOGLE_SHEET_ID:
+        return None
+    try:
+        from google.oauth2 import service_account
+        from googleapiclient.discovery import build
+        info = json.loads(GOOGLE_SERVICE_ACCOUNT_JSON)
+        creds = service_account.Credentials.from_service_account_info(
+            info, scopes=['https://www.googleapis.com/auth/spreadsheets']
+        )
+        _sheets_service = build('sheets', 'v4', credentials=creds)
+    except Exception as e:
+        print('Google Sheets init failed:', e)
+        _sheets_service = False  # remember failure, don't retry every request
+    return _sheets_service or None
+
+
+def _log_lead_to_sheet(lead_type, org_name, parent_name, phone, telegram, child_age, direction, comment):
+    """Best-effort — a Sheets outage must never block a real lead going to Telegram."""
+    service = _get_sheets_service()
+    if not service:
+        return
+    try:
+        now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
+        row = [[now, lead_type, org_name, parent_name, phone, telegram,
+                child_age, direction, comment, '', '', '', 'Новая']]
+        service.spreadsheets().values().append(
+            spreadsheetId=GOOGLE_SHEET_ID,
+            range="'Лист1'!A:M",
+            valueInputOption='RAW',
+            insertDataOption='INSERT_ROWS',
+            body={'values': row},
+        ).execute()
+    except Exception as e:
+        print('Sheets lead log failed:', e)
 
 
 # ─── DB INIT ────────────────────────────────────────────────────────────────
@@ -324,6 +371,9 @@ def api_booking():
         except Exception as e:
             print('Telegram send failed:', e)
 
+    _log_lead_to_sheet('Лагерь', camp_name, parent_name, phone, telegram,
+                       child_age, '', comment)
+
     return jsonify({'ok': True})
 
 
@@ -361,6 +411,9 @@ def api_lead():
             )
         except Exception as e:
             print('Telegram send failed:', e)
+
+    _log_lead_to_sheet('Кружок', org_name, parent_name, phone, telegram,
+                       child_age, direction, comment)
 
     return jsonify({'ok': True})
 
