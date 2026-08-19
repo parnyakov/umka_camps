@@ -307,12 +307,12 @@ nav {
       <div class="form-group"><label>Интересующее направление</label><input type="text" id="fDirection" placeholder="Английский, программирование..."></div>
       <div class="form-group"><label>Комментарий</label><textarea id="fComment" placeholder="Вопросы, пожелания..."></textarea></div>
       <button class="btn-submit" id="btnSubmit">Отправить заявку</button>
-      <div class="modal-note">Мы свяжемся с вами в течение 2 часов</div>
+      <div class="modal-note">Организация свяжется с вами в течение 1 рабочего дня</div>
     </div>
     <div class="modal-success" id="modalSuccess" style="display:none">
       <div class="check">✅</div>
       <h3>Заявка отправлена!</h3>
-      <p>Мы свяжемся с вами в течение 2 часов</p>
+      <p>Организация свяжется с вами в течение 1 рабочего дня</p>
     </div>
   </div>
 </div>
@@ -636,7 +636,7 @@ function render(org) {
       <div class="section-title">Как записаться</div>
       <div class="how-steps">
         <div class="how-step"><div class="how-icon">📋</div><div class="how-text"><h4>Оставьте заявку</h4><p>Нажмите «Записаться» — заявка уйдёт напрямую в организацию без посредников и скрытых комиссий.</p></div></div>
-        <div class="how-step"><div class="how-icon">📞</div><div class="how-text"><h4>Организация свяжется с вами</h4><p>Вам расскажут о расписании, ценах и пробном занятии. Обычно перезванивают в течение нескольких часов.</p></div></div>
+        <div class="how-step"><div class="how-icon">📞</div><div class="how-text"><h4>Организация свяжется с вами</h4><p>Вам расскажут о расписании, ценах и пробном занятии. Обычно перезванивают в течение 1 рабочего дня.</p></div></div>
         <div class="how-step"><div class="how-icon">✅</div><div class="how-text"><h4>Приходите на пробный урок</h4><p>Большинство студий предлагают первое занятие бесплатно — чтобы вы и ребёнок точно не ошиблись с выбором.</p></div></div>
       </div>
     </div>`;
@@ -647,7 +647,7 @@ function render(org) {
       <div class="section-title">Частые вопросы</div>
       <div class="faq-item"><button class="faq-q">Платно ли пользоваться сервисом?<span class="faq-arrow">⌄</span></button><div class="faq-a">Нет. UMKA HUB — бесплатный сервис для родителей. Вы записываетесь напрямую в организацию по официальным ценам без наценок.</div></div>
       <div class="faq-item"><button class="faq-q">Есть ли пробное занятие?<span class="faq-arrow">⌄</span></button><div class="faq-a">Уточните при записи — большинство хороших студий предлагают первое занятие бесплатно или со скидкой.</div></div>
-      <div class="faq-item"><button class="faq-q">Как быстро ответит организация?<span class="faq-arrow">⌄</span></button><div class="faq-a">Обычно в течение нескольких часов в рабочее время. Если не отвечают больше суток — напишите нам, поможем разобраться.</div></div>
+      <div class="faq-item"><button class="faq-q">Как быстро ответит организация?<span class="faq-arrow">⌄</span></button><div class="faq-a">Обычно в течение 1 рабочего дня. Если не отвечают больше суток — напишите нам, поможем разобраться.</div></div>
       <div class="faq-item"><button class="faq-q">Можно ли отменить запись?<span class="faq-arrow">⌄</span></button><div class="faq-a">Условия отмены устанавливает каждая организация. Если занятия ещё не начались и оплата не прошла — как правило, всё решается без проблем.</div></div>
     </div>`;
 
@@ -686,7 +686,7 @@ function render(org) {
           <div class="price-value">${esc(priceObj.main)}${priceObj.per ? `<span class="price-period-sub">${esc(priceObj.per)}</span>` : ''}</div>
           ${trialCallout}
           <button class="btn-cta" id="btnCta">Записаться на занятие</button>
-          <div class="price-note">Свяжемся с вами в течение 2 часов</div>
+          <div class="price-note">Организация свяжется с вами в течение 1 рабочего дня</div>
           <div class="sidebar-links">${sbLinks}</div>
         </div>
       </div>
