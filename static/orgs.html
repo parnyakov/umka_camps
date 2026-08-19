@@ -793,12 +793,27 @@ function openQuizOverlay() {
   }
   if (typeof ym !== 'undefined') ym(111728638, 'reachGoal', 'quiz_orgs_open');
 }
-document.getElementById('quizOverlayClose').addEventListener('click', () =>
-  document.getElementById('quizOverlay').classList.remove('open'));
+function closeQuizOverlay() {
+  document.getElementById('quizOverlay').classList.remove('open');
+  // remembered only for this tab/session — never force the quiz back on
+  // someone who already said no, but a fresh visit can still suggest it
+  sessionStorage.setItem('quiz_dismissed', '1');
+}
+document.getElementById('quizOverlayClose').addEventListener('click', closeQuizOverlay);
 document.getElementById('quizOverlay').addEventListener('click', e => {
-  if (e.target === document.getElementById('quizOverlay'))
-    document.getElementById('quizOverlay').classList.remove('open');
+  if (e.target === document.getElementById('quizOverlay')) closeQuizOverlay();
 });
+
+// Non-blocking proactive suggestion: if nobody has opened or dismissed the
+// quiz within 15s of landing (e.g. ad traffic dropped straight onto /orgs),
+// offer it once. Never forces navigation — the overlay is the same
+// dismissible one as the manual "Пройти подбор" banner, just triggered by
+// time instead of a click. Skipped entirely if the user already interacted.
+setTimeout(() => {
+  const alreadyDismissed = sessionStorage.getItem('quiz_dismissed') === '1';
+  const alreadyOpen = document.getElementById('quizOverlay').classList.contains('open');
+  if (!alreadyDismissed && !alreadyOpen) openQuizOverlay();
+}, 15000);
 </script>
 
 </body>
