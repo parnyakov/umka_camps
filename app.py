@@ -41,18 +41,18 @@ def _get_sheets_service():
     return _sheets_service or None
 
 
-def _log_lead_to_sheet(lead_type, org_name, parent_name, phone, telegram, child_age, direction, comment):
+def _log_lead_to_sheet(lead_type, org_name, parent_name, phone, telegram, contact_method, child_age, direction, comment):
     """Best-effort — a Sheets outage must never block a real lead going to Telegram."""
     service = _get_sheets_service()
     if not service:
         return
     try:
         now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M UTC')
-        row = [[now, lead_type, org_name, parent_name, phone, telegram,
+        row = [[now, lead_type, org_name, parent_name, phone, telegram, contact_method,
                 child_age, direction, comment, '', '', '', 'Новая']]
         service.spreadsheets().values().append(
             spreadsheetId=GOOGLE_SHEET_ID,
-            range="'Лист1'!A:M",
+            range="'Лист1'!A:N",
             valueInputOption='RAW',
             insertDataOption='INSERT_ROWS',
             body={'values': row},
@@ -333,6 +333,7 @@ def api_booking():
     parent_name = data.get('parent_name', '')
     phone = data.get('phone', '')
     telegram = data.get('telegram', '')
+    contact_method = data.get('contact_method', '')
     child_age = data.get('child_age', '')
     comment = data.get('comment', '')
     session_start = data.get('session_start', '')
@@ -355,6 +356,7 @@ def api_booking():
         f'Родитель: {parent_name}\n'
         f'Телефон: {phone}\n'
         f'Telegram: {telegram or "—"}\n'
+        f'Способ связи: {contact_method or "—"}\n'
         f'Возраст ребёнка: {child_age or "—"}\n'
         f'Комментарий: {comment or "—"}'
     )
@@ -372,7 +374,7 @@ def api_booking():
             print('Telegram send failed:', e)
 
     _log_lead_to_sheet('Лагерь', camp_name, parent_name, phone, telegram,
-                       child_age, '', comment)
+                       contact_method, child_age, '', comment)
 
     return jsonify({'ok': True})
 
@@ -386,6 +388,7 @@ def api_lead():
     wishes = data.get('wishes', '').strip()
     org_name = data.get('org_name', '').strip()
     telegram  = data.get('telegram', '').strip()
+    contact_method = data.get('contact_method', '').strip()
     direction = data.get('direction', '').strip()
     comment   = data.get('comment', '').strip()
 
@@ -397,6 +400,7 @@ def api_lead():
     lines.append(f'Родитель: {parent_name}')
     lines.append(f'Телефон: {phone}')
     if telegram:   lines.append(f'Telegram: {telegram}')
+    if contact_method: lines.append(f'Способ связи: {contact_method}')
     if child_age:  lines.append(f'Возраст ребёнка: {child_age}')
     if direction:  lines.append(f'Направление: {direction}')
     if comment:    lines.append(f'Комментарий: {comment}')
@@ -413,7 +417,7 @@ def api_lead():
             print('Telegram send failed:', e)
 
     _log_lead_to_sheet('Кружок', org_name, parent_name, phone, telegram,
-                       child_age, direction, comment)
+                       contact_method, child_age, direction, comment)
 
     return jsonify({'ok': True})
 

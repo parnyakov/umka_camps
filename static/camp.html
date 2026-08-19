@@ -286,6 +286,13 @@
       <div class="form-group"><label>Имя родителя *</label><input type="text" id="fName" placeholder="Иван Иванов"></div>
       <div class="form-group"><label>Телефон *</label><input type="tel" id="fPhone" placeholder="+7 900 000 00 00"></div>
       <div class="form-group"><label>Telegram</label><input type="text" id="fTelegram" placeholder="@username"></div>
+      <div class="form-group"><label>Как удобнее связаться?</label>
+        <select id="fContactMethod">
+          <option value="Звонок">Звонок</option>
+          <option value="Telegram">Telegram</option>
+          <option value="WhatsApp">WhatsApp</option>
+        </select>
+      </div>
       <div class="form-group"><label>Возраст ребёнка</label><input type="text" id="fAge" placeholder="9 лет"></div>
       <div class="form-group"><label>Комментарий</label><textarea id="fComment" placeholder="Вопросы, пожелания..."></textarea></div>
       <button class="btn-submit" id="btnSubmit">Отправить заявку</button>
@@ -603,6 +610,7 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
       body: JSON.stringify({
         camp_name: campName, parent_name: name, phone,
         telegram: document.getElementById('fTelegram').value.trim(),
+        contact_method: document.getElementById('fContactMethod').value,
         child_age: document.getElementById('fAge').value.trim(),
         comment: document.getElementById('fComment').value.trim(),
         session_start: selSession?.date_start || '',
