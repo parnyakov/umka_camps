@@ -77,7 +77,9 @@
 
   function UmkaQuiz(container, opts) {
     opts = opts || {};
-    const state = { step: 1, age: null, categories: [], price_max: undefined, district: '', results: null };
+    const _urlCat = new URLSearchParams(location.search).get('category');
+    const _preset = _urlCat && CATEGORIES.includes(_urlCat) ? [_urlCat] : [];
+    const state = { step: 1, age: null, categories: _preset, price_max: undefined, district: '', results: null };
 
     render();
 

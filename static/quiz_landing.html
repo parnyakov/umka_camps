@@ -102,6 +102,14 @@ nav {
 
 <script src="/static/quiz.js"></script>
 <script>
+  (function () {
+    var CAT_H1 = { 'IT': 'IT-кружок', 'языки': 'языковой кружок', 'творчество': 'творческий кружок', 'спорт': 'секцию', 'развитие': 'развивающий кружок' };
+    var cat = new URLSearchParams(location.search).get('category');
+    if (cat && CAT_H1[cat]) {
+      var h1 = document.querySelector('.quiz-hero h1');
+      if (h1) h1.textContent = 'Подберём ' + CAT_H1[cat] + ' за 30 секунд';
+    }
+  })();
   UmkaQuiz(document.getElementById('quizContainer'));
 </script>
 </body>
