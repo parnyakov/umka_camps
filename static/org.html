@@ -93,7 +93,11 @@ nav {
 
 /* ── Grid ── */
 .content-grid { display:grid;grid-template-columns:1fr 300px;gap:24px; }
-@media (max-width:720px) { .content-grid { grid-template-columns:1fr; } }
+@media (max-width:720px) {
+  .content-grid { grid-template-columns:1fr; }
+  .content-main { display:flex; flex-direction:column; }
+  .reviews-wrap { order:10; }
+}
 
 /* ── Sections ── */
 .section { margin-bottom: 26px; }
@@ -184,6 +188,18 @@ nav {
 .btn-cta { width:100%;padding:14px;background:var(--em);border:none;border-radius:12px;color:white;font-size:16px;font-weight:700;cursor:pointer;transition:background .2s,transform .1s;font-family:inherit; }
 .btn-cta:hover { background:var(--em-d);transform:translateY(-1px); }
 .btn-cta:active { transform:translateY(0); }
+.mobile-cta { display:none; }
+@media (max-width:720px) {
+  .mobile-cta { display:flex; position:fixed; left:0; right:0; bottom:0;
+    z-index:150; gap:12px; align-items:center; justify-content:space-between;
+    background:rgba(255,255,255,.96); backdrop-filter:blur(12px);
+    border-top:1px solid var(--border); padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    box-shadow:0 -4px 20px rgba(80,120,200,.12); }
+  .mobile-cta-price { font-size:15px; font-weight:800; color:var(--em); line-height:1.15; }
+  .mobile-cta-btn { flex-shrink:0; padding:12px 22px; background:var(--em); border:none;
+    border-radius:12px; color:white; font-size:15px; font-weight:700; font-family:inherit; }
+  .container { padding-bottom:88px; }
+}
 .price-note { font-size:11px;color:var(--text3);text-align:center;margin-top:10px; }
 
 .sidebar-links { display:flex;flex-direction:column;gap:8px;margin-top:10px; }
@@ -209,9 +225,9 @@ nav {
 .lightbox-counter { position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:13px; }
 
 /* ── Modal ── */
-.modal-overlay { display:none;position:fixed;inset:0;z-index:200;background:rgba(30,50,100,.45);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px; }
+.modal-overlay { display:none;position:fixed;inset:0;z-index:200;background:rgba(30,50,100,.45);backdrop-filter:blur(6px);align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto; }
 .modal-overlay.open { display:flex; }
-.modal { background:white;border:1px solid var(--border);border-radius:18px;padding:28px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(30,60,150,.15);animation:slideUp .2s ease; }
+.modal { background:white;border:1px solid var(--border);border-radius:18px;padding:28px;width:100%;max-width:440px;box-shadow:0 20px 60px rgba(30,60,150,.15);animation:slideUp .2s ease;max-height:calc(100vh - 40px);overflow-y:auto;margin:auto 0; }
 @keyframes slideUp { from{opacity:0;transform:translateY(20px)} }
 .modal-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:6px; }
 .modal-title { font-size:18px;font-weight:700;color:var(--text); }
@@ -249,11 +265,9 @@ nav {
 .reviews-text strong { color:var(--text);font-size:14px;display:block;margin-bottom:3px; }
 .reviews-link {
   display:inline-flex;align-items:center;gap:6px;margin-top:10px;
-  color:var(--em);font-size:13px;font-weight:600;text-decoration:none;
-  background:var(--em-glow);border:1px solid var(--em);
-  padding:6px 14px;border-radius:20px;transition:.15s;
+  color:var(--em);font-size:13px;font-weight:600;text-decoration:underline;
 }
-.reviews-link:hover { background:var(--em);color:white; }
+.reviews-link:hover { color:var(--em-d); }
 
 /* ── Animations ── */
 @keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
@@ -348,6 +362,10 @@ const CAT_EMOJI = {
   'IT': '💻', 'спорт': '🏆', 'творчество': '🎨',
   'языки': '🌍', 'развитие': '🧠',
 };
+const CAT_LABELS = { IT: 'IT', 'языки': 'Языки', 'творчество': 'Творчество', 'спорт': 'Спорт', 'развитие': 'Развитие' };
+const _prefillParams = new URLSearchParams(location.search);
+const prefillAge = _prefillParams.get('age') || '';
+const prefillCat = _prefillParams.get('cat') || '';
 
 function initials(name) {
   return (name||'').split(/[\s«»""]+/).filter(Boolean).slice(0,2).map(w=>w[0].toUpperCase()).join('');
@@ -677,13 +695,13 @@ function render(org) {
       <div class="org-meta">${ratingHtml}${badges}</div>
     </div>
     <div class="content-grid">
-      <div>
+      <div class="content-main">
         ${factsHtml}
         ${descHtml}
         ${progsHtml}
         ${skillsHtml}
         ${galleryHtml}
-        ${reviewsHtml}
+        <div class="reviews-wrap">${reviewsHtml}</div>
         ${contactsHtml}
         ${howHtml}
         ${faqHtml}
@@ -701,6 +719,11 @@ function render(org) {
     </div>`;
 
   document.getElementById('btnCta').addEventListener('click', openModal);
+  const mBtn = document.getElementById('btnCtaMobile');
+  if (mBtn) {
+    document.getElementById('mobileCtaPrice').textContent = priceObj.main;
+    mBtn.addEventListener('click', openModal);
+  }
 
   // Collapse empty gallery — called after every onerror/onload removal + fallback timeout
   window._checkGalleryEmpty = function() {
@@ -736,6 +759,8 @@ function openModal() {
   ['fName','fPhone','fTelegram','fAge','fDirection','fComment'].forEach(id => {
     const el = document.getElementById(id); if (el) el.value = '';
   });
+  if (prefillAge) document.getElementById('fAge').value = prefillAge + ' лет';
+  if (prefillCat) document.getElementById('fDirection').value = CAT_LABELS[prefillCat] || prefillCat;
   document.getElementById('modalOverlay').classList.add('open');
 }
 document.getElementById('modalClose').addEventListener('click', () =>
@@ -808,5 +833,10 @@ document.addEventListener('keydown', e => {
 
 load();
 </script>
+
+<div class="mobile-cta" id="mobileCta">
+  <div class="mobile-cta-price" id="mobileCtaPrice"></div>
+  <button class="mobile-cta-btn" id="btnCtaMobile">Записаться</button>
+</div>
 </body>
 </html>

@@ -19,7 +19,7 @@
     { label: 'До 10 000 ₽/мес', val: 10000 },
     { label: 'Неважно', val: null },
   ];
-  const AGE_PRESETS = [5, 7, 9, 11, 13];
+  const AGE_PRESETS = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
   function esc(str) {
     return String(str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -36,11 +36,15 @@
     return 'цена по запросу';
   }
 
-  function resultCardHTML(org) {
+  function resultCardHTML(org, state) {
     const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
     const ini = initials(org.name);
+    const linkParams = new URLSearchParams();
+    if (state && state.age) linkParams.set('age', state.age);
+    if (org.category) linkParams.set('cat', org.category);
+    const qs = linkParams.toString();
     return `
-      <a class="quiz-result-card" href="/org/${org.id}" target="_blank" rel="noopener">
+      <a class="quiz-result-card" href="/org/${org.id}${qs ? '?' + qs : ''}" target="_blank" rel="noopener">
         <div class="quiz-result-photo" style="background:${bg}">
           <span class="quiz-result-initials">${ini}</span>
         </div>
@@ -72,14 +76,14 @@
       if ((b.data_quality || 0) !== (a.data_quality || 0)) return (b.data_quality || 0) - (a.data_quality || 0);
       return (b.rating || 0) - (a.rating || 0);
     });
-    return items.slice(0, 5);
+    return items;
   }
 
   function UmkaQuiz(container, opts) {
     opts = opts || {};
     const _urlCat = new URLSearchParams(location.search).get('category');
     const _preset = _urlCat && CATEGORIES.includes(_urlCat) ? [_urlCat] : [];
-    const state = { step: 1, age: null, categories: _preset, price_max: undefined, district: '', results: null };
+    const state = { step: 1, age: null, categories: _preset, price_max: undefined, district: '', results: null, shown: 5 };
 
     render();
 
@@ -146,16 +150,21 @@
     }
 
     function stepResults() {
-      const items = state.results || [];
+      const all = state.results || [];
+      const items = all.slice(0, state.shown);
       const cards = items.length
-        ? items.map(resultCardHTML).join('')
+        ? items.map(o => resultCardHTML(o, state)).join('')
         : `<div class="uq-hint">Не нашли точных совпадений — попробуйте другие параметры (например, снимите ограничение по бюджету).</div>`;
-      const header = items.length
-        ? `<h3>Нашли ${items.length} подходящих вариантов</h3><p>Откройте карточку и оставьте заявку прямо у организации — так она увидит именно вашу заявку, не общий список.</p>`
+      const header = all.length
+        ? `<h3>Подобрали ${all.length} вариантов</h3><p>Нажмите на карточку, чтобы посмотреть и записаться. Заявка уйдёт напрямую в организацию, без посредников.</p>`
         : `<h3>Пока пусто</h3>`;
+      const showMore = all.length > state.shown
+        ? `<button class="uq-next" id="uqShowMore">Показать ещё 5</button>`
+        : '';
       return `
         <div class="uq-success">${header}</div>
-        <div class="uq-results-grid">${cards}</div>`;
+        <div class="uq-results-grid">${cards}</div>
+        ${showMore}`;
     }
 
     function bindShell() {
@@ -188,6 +197,9 @@
         const input = container.querySelector('#uqDistrictInput');
         container.querySelector('#uqSkip4').addEventListener('click', () => { state.district = ''; fireStep('district'); showResults(); });
         container.querySelector('#uqNext4').addEventListener('click', () => { state.district = input.value; fireStep('district'); showResults(); });
+      } else if (state.step === 'results') {
+        const more = container.querySelector('#uqShowMore');
+        if (more) more.addEventListener('click', () => { state.shown += 5; render(); });
       }
     }
 
