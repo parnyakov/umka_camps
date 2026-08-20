@@ -52,12 +52,14 @@
   overflow: hidden; text-decoration: none; background: var(--bg2, var(--card)); transition: transform .15s, box-shadow .15s;
 }
 .quiz-result-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(80,120,200,.15); }
-.quiz-result-photo { height: 90px; display: flex; align-items: center; justify-content: center; }
+.quiz-result-photo { height: 120px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.quiz-result-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .quiz-result-initials { font-size: 22px; font-weight: 800; color: rgba(30,40,80,.55); }
-.quiz-result-body { padding: 12px; }
+.quiz-result-body { padding: 12px; display: flex; flex-direction: column; gap: 4px; }
 .quiz-result-cat { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; color: var(--em, var(--clr-primary)); }
 .quiz-result-name { font-size: 14px; font-weight: 700; color: var(--text); margin: 4px 0 4px; line-height: 1.3; }
 .quiz-result-meta { font-size: 12px; color: var(--text3, var(--muted)); margin-bottom: 6px; }
+.quiz-result-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
 .quiz-result-price { font-size: 13px; font-weight: 600; color: var(--text2); }
 
 /* ── Оверлей квиза поверх /orgs ── */

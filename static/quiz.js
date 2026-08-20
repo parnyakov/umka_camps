@@ -36,23 +36,54 @@
     return 'цена по запросу';
   }
 
+  // Same photo-source filtering as orgs.html's cardHTML — hotlink-blocked
+  // Yandex/WhatsApp/etc URLs are skipped up front, and any image that still
+  // fails to load (broken link, 0x0 dimensions) falls back to initials via
+  // window._quizCardImgFail, mirroring orgs.html's window._cardImgFail
+  // (kept as a separate name since both scripts can be loaded on the same
+  // /orgs page — the overlay banner reuses this same quiz.js).
+  const SKIP_S3   = /umkahub\.s3\.cloud\.ru/i;
+  const DIRECT_YA = /^https?:\/\/avatars\.mds\.yandex|^https?:\/\/[^?]*yandex\.net\/get-/i;
+  const SKIP_JUNK = /whatsapp|pps\.whatsapp|static\.whatsapp|gweb-uniblog|ytimg|yt3\.ggpht|cdninstagram|fbcdn|fbsbx/i;
+
+  window._quizCardImgFail = function (el) {
+    const p = el.closest('.quiz-result-photo');
+    if (!p) return;
+    const bg = el.dataset.bg || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
+    const ini = el.dataset.ini || '?';
+    p.style.background = bg;
+    p.innerHTML = `<span class="quiz-result-initials">${ini}</span>`;
+  };
+
   function resultCardHTML(org, state) {
     const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
     const ini = initials(org.name);
+    const extraOk = (org.extra_photos || []).filter(p => p && !SKIP_S3.test(p) && !DIRECT_YA.test(p) && !SKIP_JUNK.test(p));
+    const heroSrc = extraOk.length ? extraOk[0] : null;
+    const photo = heroSrc
+      ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
+           onerror="window._quizCardImgFail(this)"
+           onload="if(!this.naturalWidth||!this.naturalHeight)window._quizCardImgFail(this)"
+           data-bg="${bg.replace(/"/g, '&quot;')}" data-ini="${ini}">`
+      : `<span class="quiz-result-initials">${ini}</span>`;
+    const rating = org.rating ? `<span class="card-rating">★ ${org.rating.toFixed(1)}</span>` : '';
+    const trial = org.has_trial ? `<span class="trial-badge">Пробное занятие</span>` : '';
     const linkParams = new URLSearchParams();
     if (state && state.age) linkParams.set('age', state.age);
     if (org.category) linkParams.set('cat', org.category);
     const qs = linkParams.toString();
     return `
       <a class="quiz-result-card" href="/org/${org.id}${qs ? '?' + qs : ''}" target="_blank" rel="noopener">
-        <div class="quiz-result-photo" style="background:${bg}">
-          <span class="quiz-result-initials">${ini}</span>
-        </div>
+        <div class="quiz-result-photo"${heroSrc ? '' : ` style="background:${bg}"`}>${photo}</div>
         <div class="quiz-result-body">
           <span class="quiz-result-cat">${esc(CAT_LABELS[org.category] || org.category)}</span>
           <div class="quiz-result-name">${esc(org.name)}</div>
           <div class="quiz-result-meta">${org.metro ? esc(org.metro) + ' · ' : ''}${esc(org.age_range || '')}</div>
-          <div class="quiz-result-price">${formatPrice(org)}</div>
+          ${trial}
+          <div class="quiz-result-footer">
+            <div class="quiz-result-price">${formatPrice(org)}</div>
+            ${rating}
+          </div>
         </div>
       </a>`;
   }
