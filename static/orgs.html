@@ -775,10 +775,18 @@ init();
 </script>
 
 <div class="quiz-overlay" id="quizOverlay">
+  <div class="quiz-overlay-topbar">
+    <button class="quiz-overlay-close" id="quizOverlayClose">← Назад к каталогу</button>
+  </div>
   <div class="quiz-overlay-modal">
-    <button class="quiz-overlay-close" id="quizOverlayClose">×</button>
     <div id="quizOverlayContainer"></div>
   </div>
+</div>
+
+<div class="quiz-teaser" id="quizTeaser">
+  <div class="quiz-teaser-text">Хотите пройти тест? Подберём под ваши критерии быстро</div>
+  <button class="quiz-teaser-cta" id="quizTeaserCta">Пройти тест</button>
+  <button class="quiz-teaser-close" id="quizTeaserClose" aria-label="Закрыть">×</button>
 </div>
 
 <script src="/static/quiz.js"></script>
@@ -787,6 +795,7 @@ let _quizInited = false;
 function openQuizOverlay() {
   const overlay = document.getElementById('quizOverlay');
   overlay.classList.add('open');
+  document.getElementById('quizTeaser').classList.remove('open');
   if (!_quizInited) {
     _quizInited = true;
     UmkaQuiz(document.getElementById('quizOverlayContainer'));
@@ -800,20 +809,21 @@ function closeQuizOverlay() {
   sessionStorage.setItem('quiz_dismissed', '1');
 }
 document.getElementById('quizOverlayClose').addEventListener('click', closeQuizOverlay);
-document.getElementById('quizOverlay').addEventListener('click', e => {
-  if (e.target === document.getElementById('quizOverlay')) closeQuizOverlay();
+document.getElementById('quizTeaserCta').addEventListener('click', openQuizOverlay);
+document.getElementById('quizTeaserClose').addEventListener('click', () => {
+  document.getElementById('quizTeaser').classList.remove('open');
+  sessionStorage.setItem('quiz_dismissed', '1');
 });
 
-// Non-blocking proactive suggestion: if nobody has opened or dismissed the
-// quiz within 15s of landing (e.g. ad traffic dropped straight onto /orgs),
-// offer it once. Never forces navigation — the overlay is the same
-// dismissible one as the manual "Пройти подбор" banner, just triggered by
-// time instead of a click. Skipped entirely if the user already interacted.
+// Non-blocking, non-intrusive: 10s after landing, show a small dismissible
+// QUESTION (not the quiz itself) — the quiz only opens if the visitor
+// actually clicks "Пройти тест". Never auto-opens the full quiz on its own.
+// Skipped entirely if the visitor already opened or dismissed it.
 setTimeout(() => {
   const alreadyDismissed = sessionStorage.getItem('quiz_dismissed') === '1';
   const alreadyOpen = document.getElementById('quizOverlay').classList.contains('open');
-  if (!alreadyDismissed && !alreadyOpen) openQuizOverlay();
-}, 15000);
+  if (!alreadyDismissed && !alreadyOpen) document.getElementById('quizTeaser').classList.add('open');
+}, 10000);
 </script>
 
 </body>
