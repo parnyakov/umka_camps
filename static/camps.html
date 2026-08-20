@@ -177,6 +177,7 @@
   .badge { padding: 3px 9px; border-radius: 20px; font-size: 11px; font-weight: 500; border: 1px solid var(--border); color: var(--text2); background: var(--bg3); }
   .badge-age { border-color: #BCD6F7; background: #EAF3FF; color: #2B72C8; }
   .badge-pool { border-color: #B5E4EE; background: #E5F7FA; color: #1A92A8; }
+  .badge-type { border-color: #CFC6F2; background: #F1EDFF; color: #6B4FC9; font-weight: 600; }
   .badge-cat { border-color: var(--border); background: var(--bg3); }
   .card-desc { font-size: 12px; color: var(--text2); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
   .card-footer { margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid var(--border); }
@@ -262,13 +263,14 @@
   .modal-overlay {
     display: none; position: fixed; inset: 0; z-index: 200;
     background: rgba(30,50,100,0.45); backdrop-filter: blur(6px);
-    align-items: center; justify-content: center; padding: 20px;
+    align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto;
   }
   .modal-overlay.open { display: flex; }
   .modal {
     background: white; border: 1px solid var(--border);
     border-radius: 18px; padding: 28px; width: 100%; max-width: 440px;
     box-shadow: 0 20px 60px rgba(30,60,150,0.15); animation: slideUp 0.2s ease;
+    max-height: calc(100vh - 40px); overflow-y: auto; margin: auto 0;
   }
   @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
@@ -314,10 +316,14 @@
       border-radius: 8px; color: var(--text2); font-size: 13px; cursor: pointer;
     }
     .main { padding: 16px; }
-    .grid { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: 1fr; gap: 14px; }
     nav { padding: 0 12px; gap: 10px; }
-    .urgency-bar { flex-direction: column; gap: 6px; padding: 10px 16px; text-align: center; }
+    /* Полоса срочности в две строки + шапка съедали ~150px из ~640px экрана,
+       если оставить её липкой. На мобильном она прокручивается вместе со страницей. */
+    .urgency-bar { flex-direction: column; gap: 6px; padding: 10px 16px; text-align: center; position: static; }
     .urgency-counter { border-left: none; padding-left: 0; }
+    .card-body { padding: 12px; gap: 7px; }
+    .card-name { font-size: 16px; }
   }
 
   /* URGENCY BAR */
@@ -367,7 +373,7 @@
   .lead-overlay {
     display: none; position: fixed; inset: 0; z-index: 500;
     background: rgba(20,40,80,0.45); backdrop-filter: blur(4px);
-    align-items: center; justify-content: center; padding: 20px;
+    align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto;
   }
   .lead-overlay.open { display: flex; }
   .lead-modal {
@@ -375,6 +381,7 @@
     box-shadow: 0 20px 60px rgba(20,40,80,0.18);
     padding: 32px 28px; width: 100%; max-width: 420px;
     position: relative; animation: modalIn 0.22s ease;
+    max-height: calc(100vh - 40px); overflow-y: auto; margin: auto 0;
   }
   @keyframes modalIn {
     from { opacity: 0; transform: translateY(12px) scale(0.97); }
@@ -733,6 +740,15 @@
         <input type="text" id="fTelegram" placeholder="@username">
       </div>
       <div class="form-group">
+        <label>Как удобнее связаться?</label>
+        <select id="fContactMethod">
+          <option value="Звонок">Звонок</option>
+          <option value="Telegram">Telegram</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Max">Max</option>
+        </select>
+      </div>
+      <div class="form-group">
         <label>Возраст ребёнка</label>
         <input type="text" id="fAge" placeholder="9 лет">
       </div>
@@ -764,6 +780,91 @@ let _sessions = [];
 function fixPhoto(url) {
   if (!url) return '';
   return url.replace('https://vlagere.ru/upload', 'https://umkahub.s3.cloud.ru');
+}
+// Уменьшенная копия через wsrv.nl (тот же прокси, что уже используется на /org):
+// оригиналы в каталоге весят 400-800 КБ, на первый экран приходило ~11 МБ.
+function thumbPhoto(url, w) {
+  const u = fixPhoto(url);
+  return u ? 'https://wsrv.nl/?url=' + encodeURIComponent(u) + '&w=' + w + '&output=jpg&q=80' : '';
+}
+// Фолбэк: прокси молчит -> оригинал с S3 -> плейсхолдер (4 фото из 206 битые)
+function _campImgFail(el) {
+  const orig = el.dataset.orig;
+  if (orig && el.getAttribute('src') !== orig) { el.setAttribute('src', orig); return; }
+  el.outerHTML = '<div class="card-photo-placeholder">🏕️</div>';
+}
+
+// Категории в базе — сырые теги парсера: у каждого лагеря их ровно 8, три из них
+// одинаковые у всех 206 записей, а тематические дублируются между собой
+// («Психологические» + «Психологические лагеря» на одной карточке — 124 из 206).
+// Приводим к коротким человеческим ярлыкам и схлопываем дубли.
+const CAT_LABELS = [
+  [/программир|компьютерн|\bIT\b/i,  'Программирование'],
+  [/робототехн/i,                    'Робототехника'],
+  [/киберспорт/i,                    'Киберспорт'],
+  [/английск/i,                      'Английский язык'],
+  [/китайск/i,                       'Китайский язык'],
+  [/языков/i,                        'Языковой'],
+  [/военно/i,                        'Военно-патриотический'],
+  [/футбольн/i,                      'Футбол'],
+  [/баскетбольн/i,                   'Баскетбол'],
+  [/волейбольн/i,                    'Волейбол'],
+  [/теннисн/i,                       'Теннис'],
+  [/плаван/i,                        'Плавание'],
+  [/конн/i,                          'Конный'],
+  [/шахматн/i,                       'Шахматы'],
+  [/математич|олимпиад/i,            'Математика'],
+  [/спортивн/i,                      'Спортивный'],
+  [/театральн/i,                     'Театральный'],
+  [/кино/i,                          'Кино'],
+  [/танцевальн/i,                    'Танцы'],
+  [/музыкальн/i,                     'Музыка'],
+  [/художествен/i,                   'Художественный'],
+  [/творческ/i,                      'Творческий'],
+  [/туристич|палаточн/i,             'Туризм и походы'],
+  [/научн/i,                         'Научный'],
+  [/психологич/i,                    'Психологический'],
+  [/профориентац/i,                  'Профориентация'],
+  [/бизнес/i,                        'Бизнес'],
+  [/технич/i,                        'Технический'],
+  [/образовательн/i,                 'Образовательный'],
+  [/оздоровительн/i,                 'Оздоровительный'],
+  [/семейн/i,                        'Семейный'],
+  [/православн/i,                    'Православный'],
+];
+// Общий ярлык убираем, если рядом есть более точный («Языковой» + «Английский язык»)
+const CAT_GENERIC = {
+  'Спортивный':      ['Футбол','Баскетбол','Волейбол','Теннис','Плавание','Конный','Шахматы'],
+  'Языковой':        ['Английский язык','Китайский язык'],
+  'Творческий':      ['Театральный','Кино','Танцы','Музыка','Художественный'],
+  'Технический':     ['Программирование','Робототехника','Киберспорт'],
+  'Образовательный': ['Программирование','Математика','Робототехника','Научный','Профориентация','Языковой','Английский язык'],
+};
+function campCats(cats, limit) {
+  let out = [];
+  (cats || []).forEach(ct => {
+    for (let i = 0; i < CAT_LABELS.length; i++) {
+      if (CAT_LABELS[i][0].test(ct)) {
+        if (out.indexOf(CAT_LABELS[i][1]) === -1) out.push(CAT_LABELS[i][1]);
+        break;
+      }
+    }
+  });
+  out = out.filter(l => !(CAT_GENERIC[l] || []).some(s => out.indexOf(s) !== -1));
+  return limit ? out.slice(0, limit) : out;
+}
+// Формат лагеря (городской / круглосуточный / выездной) — главный критерий выбора,
+// он есть в данных у 125 из 206 лагерей, но на карточке не показывался вообще.
+function campTypeBadge(type) {
+  const t = String(type || '').split(';')[0].trim();
+  return t ? `<span class="badge badge-type">${t}</span>` : '';
+}
+function plural(n, one, few, many) {
+  const a = Math.abs(n) % 100, b = a % 10;
+  if (a > 10 && a < 20) return many;
+  if (b > 1 && b < 5) return few;
+  if (b === 1) return one;
+  return many;
 }
 
 // Lead modal
@@ -903,10 +1004,6 @@ async function loadCamps(reset = false) {
 // ─── CARD ─────────────────────────────────────────────────────────
 function fmt(n) { return n ? Number(n).toLocaleString('ru-RU') : ''; }
 
-const SEA_LOC = /Краснодар|Сочи|Крым|Анапа|Геленджик|Туапсе|Ялта|Севастополь|Евпатория|Абхазия|Черное море/i;
-const BASE_FILTER = /область|Подмосковье|Московск|^Москва$|Ленинград|Санкт-Петербург|Петербург|за границ|зарубеж|загородн|городской|выездной|дневной|международн|^лагерь$/i;
-const EXTRA_FILTER = /бассейн|на море|у моря|на черном/i;
-
 function makeCard(c) {
   const div = document.createElement('div');
   div.className = 'card';
@@ -915,14 +1012,15 @@ function makeCard(c) {
   });
   const photoUrl = fixPhoto(c.main_photo);
   const photo = photoUrl
-    ? `<img class="card-photo" src="${photoUrl}" alt="${c.name}" loading="lazy">`
+    ? `<img class="card-photo" src="${thumbPhoto(c.main_photo, 640)}" alt="${c.name}" loading="lazy"
+         data-orig="${photoUrl}" onerror="_campImgFail(this)">`
     : `<div class="card-photo-placeholder">🏕️</div>`;
-  const nearSea = SEA_LOC.test(c.location || '');
-  const cats = (c.categories || [])
-    .filter(ct => !BASE_FILTER.test(ct) && (nearSea || !EXTRA_FILTER.test(ct)))
-    .slice(0, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
+  const cats = campCats(c.categories, 2).map(ct => `<span class="badge badge-cat">${ct}</span>`).join('');
   const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
-  const ratingStr = c.rating ? `<span class="star">★</span><span class="val">${c.rating.toFixed(1)}</span><span class="cnt">(${c.reviews_count})</span>` : '';
+  const ratingStr = c.rating
+    ? `<span class="star">★</span><span class="val">${c.rating.toFixed(1)}</span>` +
+      (c.reviews_count ? `<span class="cnt">${c.reviews_count} ${plural(c.reviews_count,'отзыв','отзыва','отзывов')}</span>` : '')
+    : '';
   div.innerHTML = `
     ${photo}
     <div class="card-body">
@@ -932,6 +1030,7 @@ function makeCard(c) {
       </div>
       <div class="card-badges">
         <span class="badge badge-age">${c.age_min || 6}–${c.age_max || 17} лет</span>
+        ${campTypeBadge(c.type)}
         ${cats}
       </div>
       ${c.tagline ? `<div class="card-desc">${c.tagline}</div>` : ''}
@@ -1014,6 +1113,7 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
         parent_name: name,
         phone,
         telegram: document.getElementById('fTelegram').value.trim(),
+        contact_method: document.getElementById('fContactMethod').value,
         child_age: document.getElementById('fAge').value.trim(),
         comment: document.getElementById('fComment').value.trim(),
         session_start: selSession?.date_start || '',
@@ -1023,6 +1123,8 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
     });
     const d = await res.json();
     if (d.ok) {
+      // Заявка прямо из каталога не отмечалась в Метрике вообще — на /camp/ такая цель уже есть
+      if (typeof ym !== 'undefined') ym(111728638, 'reachGoal', 'booking');
       document.getElementById('modalForm').style.display = 'none';
       document.getElementById('modalSuccess').style.display = 'block';
     } else { alert(d.error || 'Ошибка. Попробуйте ещё раз.'); }

@@ -241,7 +241,9 @@ def api_camps():
     limit = request.args.get('limit', 24, type=int)
     offset = (page - 1) * limit
 
-    query = 'SELECT * FROM camps WHERE 1=1'
+    # Пять записей в базе — брак парсера: name='ОШИБКА', пустые категории,
+    # цена, фото и локация. В каталоге они выглядели как сломанные карточки.
+    query = "SELECT * FROM camps WHERE name IS NOT NULL AND name != '' AND name != 'ОШИБКА'"
     params = []
 
     if age_min is not None:
@@ -321,7 +323,7 @@ def api_camp(camp_id):
     conn = get_db()
     row = conn.execute('SELECT * FROM camps WHERE id = ?', (camp_id,)).fetchone()
     conn.close()
-    if not row:
+    if not row or not row['name'] or row['name'] == 'ОШИБКА':
         abort(404)
     return jsonify(row_to_dict(row))
 

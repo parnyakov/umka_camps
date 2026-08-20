@@ -79,6 +79,8 @@
   .badge-pool { border-color: #B5E4EE; background: #E5F7FA; color: #1A92A8; }
   .rating { display: flex; align-items: center; gap: 6px; }
   .rating .stars { color: #F59E0B; font-size: 16px; }
+  .rating .stars-off { color: #D8E2F0; }
+  .badge-type { border-color: #CFC6F2; background: #F1EDFF; color: #6B4FC9; font-weight: 600; }
   .rating .val { font-size: 18px; font-weight: 700; color: var(--text); }
   .rating .cnt { font-size: 13px; color: var(--text3); }
 
@@ -193,13 +195,16 @@
   .modal-overlay {
     display: none; position: fixed; inset: 0; z-index: 200;
     background: rgba(30,50,100,0.45); backdrop-filter: blur(6px);
-    align-items: center; justify-content: center; padding: 20px;
+    align-items: flex-start; justify-content: center; padding: 20px; overflow-y: auto;
   }
   .modal-overlay.open { display: flex; }
+  /* Форма из семи полей выше экрана телефона — без max-height/overflow кнопка
+     «Отправить заявку» физически не помещалась и не прокручивалась. */
   .modal {
     background: white; border: 1px solid var(--border);
     border-radius: 18px; padding: 28px; width: 100%; max-width: 440px;
     box-shadow: 0 20px 60px rgba(30,60,150,0.15); animation: slideUp 0.2s ease;
+    max-height: calc(100vh - 40px); overflow-y: auto; margin: auto 0;
   }
   @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } }
   .modal-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
@@ -231,6 +236,39 @@
   .modal-success h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
   .modal-success p { font-size: 14px; color: var(--text2); }
 
+  /* LIGHTBOX */
+  .lightbox { display:none;position:fixed;inset:0;z-index:400;background:rgba(10,20,50,.9);backdrop-filter:blur(10px);align-items:center;justify-content:center;padding:20px; }
+  .lightbox.open { display:flex; }
+  .lightbox img { max-width:92vw;max-height:88vh;border-radius:14px;object-fit:contain;box-shadow:0 20px 60px rgba(0,0,0,.4); }
+  .lightbox-close { position:absolute;top:20px;right:24px;background:rgba(255,255,255,.15);border:none;color:white;font-size:26px;cursor:pointer;padding:4px 10px;border-radius:8px;line-height:1; }
+  .lightbox-close:hover { background:rgba(255,255,255,.25); }
+  .lightbox-nav { position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.18);border:none;color:white;font-size:28px;cursor:pointer;padding:8px 14px;border-radius:10px;line-height:1; }
+  .lightbox-nav:hover { background:rgba(255,255,255,.3); }
+  #lbPrev { left:20px; } #lbNext { right:20px; }
+  .lightbox-counter { position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.7);font-size:13px; }
+
+  /* STICKY MOBILE CTA */
+  .mobile-cta { display: none; }
+  @media (max-width: 700px) {
+    .mobile-cta {
+      display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+      gap: 12px; align-items: center; justify-content: space-between;
+      background: rgba(255,255,255,0.96); backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border);
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+      box-shadow: 0 -4px 20px rgba(80,120,200,0.12);
+    }
+    .mobile-cta-price { font-size: 15px; font-weight: 800; color: var(--em); line-height: 1.15; }
+    .mobile-cta-btn {
+      flex-shrink: 0; padding: 12px 22px; background: var(--em); border: none;
+      border-radius: 12px; color: white; font-size: 15px; font-weight: 700; font-family: inherit;
+    }
+    .container { padding-bottom: 92px; }
+    .hero-img { height: 220px; }
+    .camp-name { font-size: 23px; }
+    #lbPrev { left: 6px; } #lbNext { right: 6px; }
+  }
+
   .not-found { text-align: center; padding: 80px 20px; }
   .not-found h2 { font-size: 24px; margin-bottom: 10px; color: var(--text); }
   .not-found p { color: var(--text2); margin-bottom: 20px; }
@@ -260,7 +298,7 @@
     </svg>
     <span>UMKA HUB</span>
   </a>
-  <a class="nav-back" href="/">
+  <a class="nav-back" href="/camps">
     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>
     Все лагеря
   </a>
@@ -305,6 +343,21 @@
       <p>Лагерь свяжется с вами в течение 1 рабочего дня</p>
     </div>
   </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="if(event.target===this)closeLb()">
+  <button class="lightbox-close" onclick="closeLb()">×</button>
+  <button class="lightbox-nav" id="lbPrev" onclick="lbNav(-1)">‹</button>
+  <img id="lbImg" src="" alt="">
+  <button class="lightbox-nav" id="lbNext" onclick="lbNav(1)">›</button>
+  <div class="lightbox-counter" id="lbCounter"></div>
+</div>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta" id="mobileCta">
+  <div class="mobile-cta-price" id="mobileCtaPrice"></div>
+  <button class="mobile-cta-btn" id="btnCtaMobile">Забронировать</button>
 </div>
 
 <script>
@@ -377,7 +430,7 @@ async function load() {
   try {
     const res = await fetch(`/api/camps/${campId}`);
     if (!res.ok) {
-      app.innerHTML = `<div class="not-found"><h2>Лагерь не найден</h2><p>Возможно, он был удалён или ссылка устарела.</p><a href="/">← Вернуться в каталог</a></div>`;
+      app.innerHTML = `<div class="not-found"><h2>Лагерь не найден</h2><p>Возможно, он был удалён или ссылка устарела.</p><a href="/camps">← Вернуться в каталог</a></div>`;
       return;
     }
     const c = await res.json();
@@ -394,26 +447,101 @@ function fixPhoto(url) {
   if (!url) return '';
   return url.replace('https://vlagere.ru/upload', 'https://umkahub.s3.cloud.ru');
 }
+// Уменьшенная копия через wsrv.nl (тот же прокси, что уже используется на /org):
+// оригиналы весят 400-800 КБ, галерея из 9 фото тянула ~5 МБ на телефон.
+function thumbPhoto(url, w) {
+  const u = fixPhoto(url);
+  return u ? 'https://wsrv.nl/?url=' + encodeURIComponent(u) + '&w=' + w + '&output=jpg&q=80' : '';
+}
+// Фолбэк для главного фото: прокси молчит -> оригинал с S3 -> плейсхолдер
+function _heroImgFail(el) {
+  const orig = el.dataset.orig;
+  if (orig && el.getAttribute('src') !== orig) { el.setAttribute('src', orig); return; }
+  el.outerHTML = '<div class="hero-placeholder">🏕️</div>';
+}
+function plural(n, one, few, many) {
+  const a = Math.abs(n) % 100, b = a % 10;
+  if (a > 10 && a < 20) return many;
+  if (b > 1 && b < 5) return few;
+  if (b === 1) return one;
+  return many;
+}
+// Категории из базы — сырые теги парсера, дублирующие друг друга
+// («Психологические» + «Психологические лагеря»). Короткие человеческие ярлыки.
+const CAT_LABELS = [
+  [/программир|компьютерн|\bIT\b/i,  'Программирование'],
+  [/робототехн/i,                    'Робототехника'],
+  [/киберспорт/i,                    'Киберспорт'],
+  [/английск/i,                      'Английский язык'],
+  [/китайск/i,                       'Китайский язык'],
+  [/языков/i,                        'Языковой'],
+  [/военно/i,                        'Военно-патриотический'],
+  [/футбольн/i,                      'Футбол'],
+  [/баскетбольн/i,                   'Баскетбол'],
+  [/волейбольн/i,                    'Волейбол'],
+  [/теннисн/i,                       'Теннис'],
+  [/плаван/i,                        'Плавание'],
+  [/конн/i,                          'Конный'],
+  [/шахматн/i,                       'Шахматы'],
+  [/математич|олимпиад/i,            'Математика'],
+  [/спортивн/i,                      'Спортивный'],
+  [/театральн/i,                     'Театральный'],
+  [/кино/i,                          'Кино'],
+  [/танцевальн/i,                    'Танцы'],
+  [/музыкальн/i,                     'Музыка'],
+  [/художествен/i,                   'Художественный'],
+  [/творческ/i,                      'Творческий'],
+  [/туристич|палаточн/i,             'Туризм и походы'],
+  [/научн/i,                         'Научный'],
+  [/психологич/i,                    'Психологический'],
+  [/профориентац/i,                  'Профориентация'],
+  [/бизнес/i,                        'Бизнес'],
+  [/технич/i,                        'Технический'],
+  [/образовательн/i,                 'Образовательный'],
+  [/оздоровительн/i,                 'Оздоровительный'],
+  [/семейн/i,                        'Семейный'],
+  [/православн/i,                    'Православный'],
+];
+// Общий ярлык убираем, если рядом есть более точный («Языковой» + «Английский язык»)
+const CAT_GENERIC = {
+  'Спортивный':      ['Футбол','Баскетбол','Волейбол','Теннис','Плавание','Конный','Шахматы'],
+  'Языковой':        ['Английский язык','Китайский язык'],
+  'Творческий':      ['Театральный','Кино','Танцы','Музыка','Художественный'],
+  'Технический':     ['Программирование','Робототехника','Киберспорт'],
+  'Образовательный': ['Программирование','Математика','Робототехника','Научный','Профориентация','Языковой','Английский язык'],
+};
+function campCats(cats, limit) {
+  let out = [];
+  (cats || []).forEach(ct => {
+    for (let i = 0; i < CAT_LABELS.length; i++) {
+      if (CAT_LABELS[i][0].test(ct)) {
+        if (out.indexOf(CAT_LABELS[i][1]) === -1) out.push(CAT_LABELS[i][1]);
+        break;
+      }
+    }
+  });
+  out = out.filter(l => !(CAT_GENERIC[l] || []).some(s => out.indexOf(s) !== -1));
+  return limit ? out.slice(0, limit) : out;
+}
 
 function render(c) {
   const priceStr = c.price_min ? `от ${fmt(c.price_min)} ₽` : 'Цена по запросу';
   const photoUrl = fixPhoto(c.main_photo);
   const photo = photoUrl
-    ? `<img class="hero-img" src="${photoUrl}" alt="${c.name}" loading="lazy">`
+    ? `<img class="hero-img" src="${thumbPhoto(c.main_photo, 1200)}" alt="${c.name}" loading="eager"
+         data-orig="${photoUrl}" onerror="_heroImgFail(this)">`
     : `<div class="hero-placeholder">🏕️</div>`;
 
-  const SEA_LOC = /Краснодар|Сочи|Крым|Анапа|Геленджик|Туапсе|Ялта|Севастополь|Евпатория|Абхазия|Черное море/i;
-  const BASE_FILTER = /область|Подмосковье|Московск|^Москва$|Ленинград|Санкт-Петербург|Петербург|за границ|зарубеж|загородн|городской|выездной|дневной|международн|^лагерь$/i;
-  const EXTRA_FILTER = /бассейн|на море|у моря|на черном/i;
-  const nearSea = SEA_LOC.test(c.location || '');
-  const cats = (c.categories || [])
-    .filter(ct => !BASE_FILTER.test(ct) && (nearSea || !EXTRA_FILTER.test(ct)))
+  const typeStr = String(c.type || '').split(';')[0].trim();
+  const typeBadge = typeStr ? `<span class="badge badge-type">${typeStr}</span>` : '';
+  const cats = campCats(c.categories, 4)
     .map(ct => `<span class="badge badge-em">${ct}</span>`).join('');
+  const full = Math.round(c.rating || 0);
   const ratingHtml = c.rating ? `
     <div class="rating">
-      <span class="stars">★★★★★</span>
+      <span class="stars">${'★'.repeat(full)}<span class="stars-off">${'★'.repeat(5 - full)}</span></span>
       <span class="val">${c.rating.toFixed(1)}</span>
-      <span class="cnt">(${c.reviews_count} отзывов)</span>
+      ${c.reviews_count ? `<span class="cnt">${c.reviews_count} ${plural(c.reviews_count,'отзыв','отзыва','отзывов')}</span>` : ''}
     </div>` : '';
 
   const sections = [
@@ -460,11 +588,15 @@ function render(c) {
   })();
 
   const photos = (c.photos || []).filter(p => p && p !== c.main_photo).slice(0, 9);
+  // Миниатюры в сетке, полноразмерная версия — в лайтбоксе (раньше курсор
+  // показывал «кликабельно», но по клику не происходило ничего)
   const galleryHtml = photos.length ? `
-    <div class="section">
+    <div class="section" id="gallerySection">
       <div class="section-title">Галерея</div>
-      <div class="gallery">${photos.map(p =>
-        `<img class="gallery-item" src="${fixPhoto(p)}" loading="lazy">`
+      <div class="gallery" id="galleryGrid">${photos.map(p =>
+        `<img class="gallery-item" src="${thumbPhoto(p, 400)}" loading="lazy" alt=""
+           data-orig="${fixPhoto(p)}" data-full="${thumbPhoto(p, 1400)}"
+           onclick="openLightbox(this)" onerror="_galleryImgFail(this)">`
       ).join('')}</div>
     </div>` : '';
 
@@ -528,6 +660,7 @@ function render(c) {
       <div class="camp-meta">
         ${ratingHtml}
         <span class="badge badge-age">${c.age_min || 6}–${c.age_max || 17} лет</span>
+        ${typeBadge}
         ${c.location ? `<span class="badge">${c.location}</span>` : ''}
         ${cats}
       </div>
@@ -555,7 +688,53 @@ function render(c) {
   document.querySelectorAll('.session-row-btn').forEach(btn => {
     btn.addEventListener('click', () => openModal(c.name, parseInt(btn.dataset.idx)));
   });
+
+  // Липкая кнопка на мобильном: в одну колонку блок с ценой и «Забронировать»
+  // уезжает под программу, смены, галерею, отзывы и FAQ — 8-10 экранов вниз.
+  const cta = document.getElementById('mobileCta');
+  if (cta) {
+    document.getElementById('mobileCtaPrice').textContent = priceStr;
+    document.getElementById('btnCtaMobile').addEventListener('click', () => openModal(c.name));
+  }
 }
+
+// ── Галерея: битые фото убираем, остальное — в лайтбокс ────────────────────
+function _galleryImgFail(el) {
+  const orig = el.dataset.orig;
+  if (orig && el.getAttribute('src') !== orig) { el.setAttribute('src', orig); return; }
+  el.remove();
+  const grid = document.getElementById('galleryGrid');
+  if (grid && grid.children.length === 0) {
+    const sec = document.getElementById('gallerySection');
+    if (sec) sec.remove();
+  }
+}
+function _lbItems() {
+  const grid = document.getElementById('galleryGrid');
+  return grid ? Array.from(grid.querySelectorAll('.gallery-item')) : [];
+}
+let _lbIdx = 0;
+function _lbShow() {
+  const items = _lbItems();
+  if (!items.length) return closeLb();
+  _lbIdx = (_lbIdx + items.length) % items.length;
+  document.getElementById('lbImg').src = items[_lbIdx].dataset.full || items[_lbIdx].src;
+  document.getElementById('lbCounter').textContent = `${_lbIdx + 1} / ${items.length}`;
+}
+function openLightbox(el) {
+  _lbIdx = _lbItems().indexOf(el);
+  if (_lbIdx < 0) return;
+  _lbShow();
+  document.getElementById('lightbox').classList.add('open');
+}
+function lbNav(dir) { _lbIdx += dir; _lbShow(); }
+function closeLb() { document.getElementById('lightbox').classList.remove('open'); }
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'ArrowLeft')  lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+  if (e.key === 'Escape')     closeLb();
+});
 
 function openModal(name, sessionIdx) {
   document.getElementById('modalCampName').textContent = name;
