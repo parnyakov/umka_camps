@@ -4,7 +4,7 @@ import json
 import sqlite3
 import datetime
 import requests
-from flask import Flask, jsonify, request, send_from_directory, abort
+from flask import Flask, jsonify, request, send_from_directory, abort, redirect
 
 app = Flask(__name__, static_folder='static')
 
@@ -613,17 +613,21 @@ def api_orgs_meta():
 
 @app.route('/')
 def index():
-    return send_from_directory('static', 'index.html')
+    # 2026-08-21, Максим: сезон лагерей закончился (лето прошло), раздел
+    # временно скрыт — заход на сайт сразу ведёт на кружки/секции.
+    # Вернуться к лагерям планируется перед школьными каникулами (октябрь) —
+    # шаблоны/API/данные не удалены, только маршрут отключён.
+    return redirect('/orgs')
 
 
 @app.route('/camps')
 def camps_page():
-    return send_from_directory('static', 'camps.html')
+    return redirect('/orgs')
 
 
 @app.route('/camp/<camp_id>')
 def camp_page(camp_id):
-    return send_from_directory('static', 'camp.html')
+    return redirect('/orgs')
 
 
 @app.route('/orgs')
