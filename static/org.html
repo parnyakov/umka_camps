@@ -747,7 +747,6 @@ function render(org) {
     ? `<div class="trial-callout"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#16A34A" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Есть пробное занятие</div>` : '';
 
   const sbLinks = [
-    siteUrl     && `<a class="sb-link" href="${esc(siteUrl)}" target="_blank" rel="noopener"><span class="sl-icon">🌐</span>Открыть сайт</a>`,
     org.vk      && `<a class="sb-link" href="${esc(org.vk)}" target="_blank" rel="noopener"><span class="sl-icon">💬</span>ВКонтакте</a>`,
   ].filter(Boolean).join('');
 

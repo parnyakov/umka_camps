@@ -450,10 +450,10 @@ def init_orgs_db():
         extra_photos TEXT, featured INTEGER DEFAULT 0,
         price_from INTEGER, price_to INTEGER, price_period TEXT,
         team TEXT, programs_detailed TEXT,
-        lat REAL, lon REAL
+        lat REAL, lon REAL, tags TEXT
     )''')
     for c in cards:
-        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
             c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
             c.get('address',''), c.get('metro',''), c.get('district',''),
             json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
@@ -470,6 +470,7 @@ def init_orgs_db():
             json.dumps(c.get('team',[]), ensure_ascii=False),
             json.dumps(c.get('programs_detailed',[]), ensure_ascii=False),
             c.get('lat'), c.get('lon'),
+            json.dumps(c.get('tags',[]), ensure_ascii=False),
         ))
     conn.commit()
     conn.close()
@@ -489,6 +490,7 @@ def _migrate_orgs_db():
         ("programs_detailed", "ALTER TABLE organizations ADD COLUMN programs_detailed TEXT DEFAULT '[]'"),
         ("lat", "ALTER TABLE organizations ADD COLUMN lat REAL"),
         ("lon", "ALTER TABLE organizations ADD COLUMN lon REAL"),
+        ("tags", "ALTER TABLE organizations ADD COLUMN tags TEXT DEFAULT '[]'"),
     ]
     for col, sql in migrations:
         try:
@@ -509,11 +511,12 @@ def _migrate_orgs_db():
             eps = c.get('extra_photos', [])
             team = c.get('team', [])
             programs_detailed = c.get('programs_detailed', [])
+            tags = c.get('tags', [])
             conn.execute(
-                "UPDATE organizations SET extra_photos=?, price_from=?, price_to=?, price_period=?, team=?, programs_detailed=?, lat=?, lon=? WHERE id=?",
+                "UPDATE organizations SET extra_photos=?, price_from=?, price_to=?, price_period=?, team=?, programs_detailed=?, lat=?, lon=?, tags=? WHERE id=?",
                 (json.dumps(eps, ensure_ascii=False), c.get('price_from'), c.get('price_to'), c.get('price_period'),
                  json.dumps(team, ensure_ascii=False), json.dumps(programs_detailed, ensure_ascii=False),
-                 c.get('lat'), c.get('lon'), cid)
+                 c.get('lat'), c.get('lon'), json.dumps(tags, ensure_ascii=False), cid)
             )
         conn.commit()
     conn.close()
@@ -559,6 +562,7 @@ def _org_dict(row):
     d['extra_photos']      = _parse_list(d.get('extra_photos'))
     d['team']              = _parse_list(d.get('team'))
     d['programs_detailed'] = _parse_list(d.get('programs_detailed'))
+    d['tags']              = _parse_list(d.get('tags'))
     d['has_trial']         = bool(d.get('has_trial'))
     return d
 
@@ -594,10 +598,18 @@ def api_orgs():
 
     if q:
         q_lower = q.lower()
+        def _prog_detail_text(o):
+            return ' '.join(
+                f"{p.get('name','')} {p.get('description','')}"
+                for p in (o.get('programs_detailed') or [])
+            )
         items = [o for o in items if
                  q_lower in (o.get('name') or '').lower() or
                  q_lower in (o.get('description') or '').lower() or
-                 q_lower in ' '.join(o.get('programs') or []).lower()]
+                 q_lower in (o.get('subcategory') or '').lower() or
+                 q_lower in ' '.join(o.get('tags') or []).lower() or
+                 q_lower in ' '.join(o.get('programs') or []).lower() or
+                 q_lower in _prog_detail_text(o).lower()]
     if age:       items = [o for o in items if _age_includes(o.get('age_range',''), age)]
     if price_max: items = [o for o in items if _price_lte(o, price_max)]
 
