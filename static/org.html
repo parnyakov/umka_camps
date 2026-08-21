@@ -754,11 +754,10 @@ function render(org) {
   const trialCallout = org.has_trial
     ? `<div class="trial-callout"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#16A34A" stroke-width="1.5"/><path d="M5 8.5l2 2 4-4" stroke="#16A34A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Есть пробное занятие</div>` : '';
 
-  const sbLinks = [
-    org.vk      && `<a class="sb-link" href="${esc(org.vk)}" target="_blank" rel="noopener"><span class="sl-icon">💬</span>ВКонтакте</a>`,
-  ].filter(Boolean).join('');
-
   // ── Assemble ──────────────────────────────────────────────────────────────
+  // Note: no contact/site/VK links in the booking sidebar by design — all
+  // contacts live only in the "Контакты" section below, so the price/CTA
+  // card stays focused on booking, not an exit ramp off the platform.
   document.getElementById('app').innerHTML = `
     <div class="hero anim">${heroHtml}</div>
     <div class="org-header anim">
@@ -786,7 +785,6 @@ function render(org) {
           ${trialCallout}
           <button class="btn-cta" id="btnCta">Записаться на занятие</button>
           <div class="price-note">Организация свяжется с вами в течение 1 рабочего дня</div>
-          <div class="sidebar-links">${sbLinks}</div>
         </div>
       </div>
     </div>`;
