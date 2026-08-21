@@ -70,6 +70,13 @@
     </div>
 
     <div class="filter-group">
+      <label>Округ / район</label>
+      <select id="districtFilter" onchange="applyFilters()">
+        <option value="">Любой округ</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
       <label>Станция метро</label>
       <select id="metroFilter" onchange="applyFilters()">
         <option value="">Любая станция</option>
@@ -237,7 +244,7 @@ const SUB_PILLS = {
 };
 
 let state = {
-  category: '', subcategory: '', metro: '', age: '', price_max: '',
+  category: '', subcategory: '', metro: '', district: '', age: '', price_max: '',
   has_trial: false, q: '',
   offset: 0, limit: 24, total: 0, loading: false
 };
@@ -250,13 +257,15 @@ async function init() {
   state.q        = params.get('q')        || '';
   state.category = params.get('category') || '';
   state.metro    = params.get('metro')    || '';
+  state.district = params.get('district') || '';
 
   if (state.q) document.getElementById('searchInput').value = state.q;
 
-  // Загружаем мета (категории, метро)
+  // Загружаем мета (категории, метро, округа/районы)
   const meta = await fetch('/api/orgs-meta').then(r => r.json());
   buildCatPills(meta.categories);
   buildMetroSelect(meta.metros);
+  buildDistrictSelect(meta.districts || []);
   addPillHoverBehavior();
 
   // Выставляем активную категорию
@@ -280,6 +289,17 @@ function buildCatPills(categories) {
     pill.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
     pill.onclick = () => setCat(pill, cat);
     container.appendChild(pill);
+  });
+}
+
+function buildDistrictSelect(districts) {
+  const sel = document.getElementById('districtFilter');
+  districts.forEach(d => {
+    const opt = document.createElement('option');
+    opt.value = d;
+    opt.textContent = d;
+    if (d === state.district) opt.selected = true;
+    sel.appendChild(opt);
   });
 }
 
@@ -393,6 +413,7 @@ document.addEventListener('click', e => {
 
 function applyFilters() {
   state.metro    = document.getElementById('metroFilter').value;
+  state.district = document.getElementById('districtFilter').value;
   state.age      = document.getElementById('ageFilter').value;
   state.price_max= document.getElementById('priceFilter').value;
   state.offset   = 0;
@@ -424,9 +445,10 @@ function setMobileSub(val) {
 }
 
 function resetFilters() {
-  state = { ...state, category: '', subcategory: '', metro: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
+  state = { ...state, category: '', subcategory: '', metro: '', district: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
   document.getElementById('searchInput').value = '';
   document.getElementById('metroFilter').value = '';
+  document.getElementById('districtFilter').value = '';
   document.getElementById('ageFilter').value = '';
   document.getElementById('priceFilter').value = '';
   document.getElementById('trialToggle').classList.remove('on');
@@ -465,6 +487,7 @@ async function fetchOrgs(append = false) {
   if (state.category)    p.set('category', state.category);
   if (state.subcategory) p.set('subcategory', state.subcategory);
   if (state.metro)       p.set('metro', state.metro);
+  if (state.district)    p.set('district', state.district);
 
   if (state.age)         p.set('age', state.age);
   if (state.price_max)   p.set('price_max', state.price_max);

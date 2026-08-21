@@ -131,7 +131,11 @@ nav {
 /* ── Detailed programs (rich, multi-program orgs) ── */
 .prog-detailed-list { display:flex;flex-direction:column;gap:12px; }
 .prog-detailed-card { background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px 18px; }
-.prog-detailed-name { font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px; }
+.prog-detailed-head { display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px; }
+.prog-detailed-name { font-size:15px;font-weight:700;color:var(--text); }
+.prog-detailed-cta { flex-shrink:0;background:var(--em);border:none;color:white;font-size:12px;font-weight:700;
+  padding:7px 14px;border-radius:8px;cursor:pointer;font-family:inherit;white-space:nowrap;transition:background .15s; }
+.prog-detailed-cta:hover { background:var(--em-d); }
 .prog-detailed-meta { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px; }
 .prog-detailed-tag { font-size:12px;font-weight:500;color:var(--text3);background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:3px 9px; }
 .prog-detailed-desc { font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:6px; }
@@ -612,12 +616,16 @@ function render(org) {
     if (p.price_from) return `от ${Number(p.price_from).toLocaleString('ru-RU')} ₽${unit}`;
     return p.price_note || '';
   }
+  const jsEsc = s => String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   const progsDetailedHtml = programsDetailed.length ? `
     <div class="section anim anim-d2">
       <div class="section-title">Программы и цены</div>
       <div class="prog-detailed-list">${programsDetailed.map(p => `
         <div class="prog-detailed-card">
-          <div class="prog-detailed-name">${esc(p.name)}</div>
+          <div class="prog-detailed-head">
+            <div class="prog-detailed-name">${esc(p.name)}</div>
+            <button class="prog-detailed-cta" onclick="openModal('${jsEsc(p.name)}')">Записаться</button>
+          </div>
           <div class="prog-detailed-meta">
             ${p.age_range ? `<span class="prog-detailed-tag">${esc(p.age_range)}</span>` : ''}
             ${p.format ? `<span class="prog-detailed-tag">${esc(p.format)}</span>` : ''}
@@ -817,7 +825,7 @@ function checkHeroSize(img, bg, emoji, ini) {
 }
 
 // ── Modal ─────────────────────────────────────────────────────────────────
-function openModal() {
+function openModal(programName) {
   document.getElementById('modalOrgName').textContent = orgName;
   document.getElementById('modalForm').style.display = 'block';
   document.getElementById('modalSuccess').style.display = 'none';
@@ -825,7 +833,11 @@ function openModal() {
     const el = document.getElementById(id); if (el) el.value = '';
   });
   if (prefillAge) document.getElementById('fAge').value = prefillAge + ' лет';
-  if (prefillCat) document.getElementById('fDirection').value = CAT_LABELS[prefillCat] || prefillCat;
+  if (typeof programName === 'string' && programName) {
+    document.getElementById('fDirection').value = programName;
+  } else if (prefillCat) {
+    document.getElementById('fDirection').value = CAT_LABELS[prefillCat] || prefillCat;
+  }
   document.getElementById('modalOverlay').classList.add('open');
 }
 document.getElementById('modalClose').addEventListener('click', () =>

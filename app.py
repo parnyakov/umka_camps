@@ -575,6 +575,7 @@ def api_orgs():
     category    = request.args.get('category','')
     subcategory = request.args.get('subcategory','')
     metro       = request.args.get('metro','')
+    district    = request.args.get('district','')
     has_trial   = request.args.get('has_trial','')
 
     q           = request.args.get('q','')
@@ -587,6 +588,7 @@ def api_orgs():
     if category:       conds.append('category=?');     params.append(category)
     if subcategory:    conds.append('subcategory=?');  params.append(subcategory)
     if metro:          conds.append('metro=?');        params.append(metro)
+    if district:       conds.append('district=?');     params.append(district)
     if has_trial=='1': conds.append('has_trial=1')
     # q, age, price_max are applied Python-side:
     # SQLite LIKE is case-insensitive only for ASCII, not Cyrillic.
@@ -629,12 +631,13 @@ def api_org(org_id):
 
 @app.route('/api/orgs-meta')
 def api_orgs_meta():
-    if not os.path.exists(ORGS_DB): return jsonify({'categories':[],'metros':[]})
+    if not os.path.exists(ORGS_DB): return jsonify({'categories':[],'metros':[],'districts':[]})
     conn = _orgs_conn()
-    cats   = [r[0] for r in conn.execute("SELECT DISTINCT category FROM organizations WHERE category!='' ORDER BY category").fetchall()]
-    metros = [r[0] for r in conn.execute("SELECT DISTINCT metro FROM organizations WHERE metro!='' ORDER BY metro").fetchall()]
+    cats      = [r[0] for r in conn.execute("SELECT DISTINCT category FROM organizations WHERE category!='' ORDER BY category").fetchall()]
+    metros    = [r[0] for r in conn.execute("SELECT DISTINCT metro FROM organizations WHERE metro!='' ORDER BY metro").fetchall()]
+    districts = [r[0] for r in conn.execute("SELECT DISTINCT district FROM organizations WHERE district!='' ORDER BY district").fetchall()]
     conn.close()
-    return jsonify({'categories': cats, 'metros': metros})
+    return jsonify({'categories': cats, 'metros': metros, 'districts': districts})
 
 # ─── STATIC FILES ────────────────────────────────────────────────────────────
 
