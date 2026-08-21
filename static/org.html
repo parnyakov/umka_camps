@@ -909,6 +909,23 @@ document.addEventListener('keydown', e => {
 load();
 </script>
 
+<footer class="site-disclaimer">
+  UMKA HUB — информационный сервис-агрегатор. Мы не оказываем образовательные,
+  спортивные или иные услуги, представленные в каталоге, и не являемся
+  стороной договора между вами и организацией. Сведения об организациях
+  (описание, программы, цены, расписание, фотографии) публикуются на основе
+  открытых и официальных источников самих организаций и могут уточняться
+  при записи. Услуги оказывает и несёт за них ответственность организация,
+  указанная в карточке.
+</footer>
+<style>
+.site-disclaimer {
+  max-width: 900px; margin: 40px auto 24px; padding: 16px 20px 100px;
+  font-size: 11px; line-height: 1.5; color: var(--text3); text-align: center;
+}
+@media (max-width: 720px) { .site-disclaimer { padding: 16px 16px 90px; } }
+</style>
+
 <div class="mobile-cta" id="mobileCta">
   <div class="mobile-cta-inner">
     <div class="mobile-cta-price" id="mobileCtaPrice"></div>
