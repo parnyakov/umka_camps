@@ -128,6 +128,22 @@ nav {
 .skills-list li { display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text2);line-height:1.5; }
 .skills-list li::before { content:'✓';color:var(--em);font-weight:700;flex-shrink:0;margin-top:1px; }
 
+/* ── Detailed programs (rich, multi-program orgs) ── */
+.prog-detailed-list { display:flex;flex-direction:column;gap:12px; }
+.prog-detailed-card { background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px 18px; }
+.prog-detailed-name { font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px; }
+.prog-detailed-meta { display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px; }
+.prog-detailed-tag { font-size:12px;font-weight:500;color:var(--text3);background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:3px 9px; }
+.prog-detailed-desc { font-size:13px;color:var(--text2);line-height:1.6;margin-bottom:6px; }
+.prog-detailed-price { font-size:13px;font-weight:700;color:var(--em-d); }
+
+/* ── Team ── */
+.team-list { display:flex;flex-direction:column;gap:10px; }
+.team-item { display:flex;flex-direction:column;gap:2px;padding:10px 0;border-bottom:1px solid var(--border); }
+.team-item:last-child { border-bottom:none; }
+.team-role { font-size:14px;font-weight:700;color:var(--text); }
+.team-detail { font-size:13px;color:var(--text2);line-height:1.5; }
+
 /* ── Gallery ── */
 .gallery { display:grid;grid-template-columns:1fr 1fr;gap:8px; }
 .gallery-3 { grid-template-columns:1fr 1fr 1fr; }
@@ -581,9 +597,35 @@ function render(org) {
       <div class="section-body">${esc(desc)}</div>
     </div>` : '';
 
-  // ── Programs ─────────────────────────────────────────────────────────────
+  // ── Programs (detailed — rich multi-program orgs; falls back to flat tags) ─
+  const programsDetailed = Array.isArray(org.programs_detailed) ? org.programs_detailed.filter(p => p && p.name) : [];
+  function fmtProgPrice(p) {
+    if (!p) return '';
+    const unit = p.price_unit ? '/' + p.price_unit : '';
+    if (p.price_from && p.price_to) return `${Number(p.price_from).toLocaleString('ru-RU')}–${Number(p.price_to).toLocaleString('ru-RU')} ₽${unit}`;
+    if (p.price_from) return `от ${Number(p.price_from).toLocaleString('ru-RU')} ₽${unit}`;
+    return p.price_note || '';
+  }
+  const progsDetailedHtml = programsDetailed.length ? `
+    <div class="section anim anim-d2">
+      <div class="section-title">Программы и цены</div>
+      <div class="prog-detailed-list">${programsDetailed.map(p => `
+        <div class="prog-detailed-card">
+          <div class="prog-detailed-name">${esc(p.name)}</div>
+          <div class="prog-detailed-meta">
+            ${p.age_range ? `<span class="prog-detailed-tag">${esc(p.age_range)}</span>` : ''}
+            ${p.format ? `<span class="prog-detailed-tag">${esc(p.format)}</span>` : ''}
+            ${p.schedule ? `<span class="prog-detailed-tag">${esc(p.schedule)}</span>` : ''}
+          </div>
+          ${p.description ? `<div class="prog-detailed-desc">${esc(p.description)}</div>` : ''}
+          ${fmtProgPrice(p) ? `<div class="prog-detailed-price">${esc(fmtProgPrice(p))}</div>` : ''}
+          ${p.price_note && p.price_from ? `<div class="prog-detailed-desc">${esc(p.price_note)}</div>` : ''}
+        </div>`).join('')}</div>
+    </div>` : '';
+
+  // ── Programs (flat tags — simple single-program orgs, only if no detailed list) ─
   const programs = cleanPrograms(org.programs);
-  const progsHtml = programs.length ? `
+  const progsHtml = (!programsDetailed.length && programs.length) ? `
     <div class="section anim anim-d2">
       <div class="section-title">Программы и направления</div>
       <div class="programs-wrap">${programs.map(p=>`<span class="prog-tag">${esc(p)}</span>`).join('')}</div>
@@ -595,6 +637,18 @@ function render(org) {
     <div class="section anim anim-d2">
       <div class="section-title">Почему выбирают</div>
       <ul class="skills-list">${skills.slice(0,6).map(s=>`<li>${esc(s)}</li>`).join('')}</ul>
+    </div>` : '';
+
+  // ── Team ─────────────────────────────────────────────────────────────────
+  const team = Array.isArray(org.team) ? org.team.filter(t => t && t.role) : [];
+  const teamHtml = team.length ? `
+    <div class="section anim anim-d2">
+      <div class="section-title">Команда</div>
+      <div class="team-list">${team.map(t => `
+        <div class="team-item">
+          <div class="team-role">${esc(t.role)}</div>
+          ${t.detail ? `<div class="team-detail">${esc(t.detail)}</div>` : ''}
+        </div>`).join('')}</div>
     </div>` : '';
 
   // ── Gallery ──────────────────────────────────────────────────────────────
@@ -698,7 +752,9 @@ function render(org) {
       <div class="content-main">
         ${factsHtml}
         ${descHtml}
+        ${progsDetailedHtml}
         ${progsHtml}
+        ${teamHtml}
         ${skillsHtml}
         ${galleryHtml}
         <div class="reviews-wrap">${reviewsHtml}</div>

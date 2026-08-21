@@ -448,10 +448,11 @@ def init_orgs_db():
         phone TEXT, website TEXT, vk TEXT,
         rating REAL, reviews_count INTEGER, has_trial INTEGER, data_quality INTEGER,
         extra_photos TEXT, featured INTEGER DEFAULT 0,
-        price_from INTEGER, price_to INTEGER, price_period TEXT
+        price_from INTEGER, price_to INTEGER, price_period TEXT,
+        team TEXT, programs_detailed TEXT
     )''')
     for c in cards:
-        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
             c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
             c.get('address',''), c.get('metro',''), c.get('district',''),
             json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
@@ -465,6 +466,8 @@ def init_orgs_db():
             json.dumps(c.get('extra_photos',[]), ensure_ascii=False),
             1 if c.get('featured') else 0,
             c.get('price_from'), c.get('price_to'), c.get('price_period'),
+            json.dumps(c.get('team',[]), ensure_ascii=False),
+            json.dumps(c.get('programs_detailed',[]), ensure_ascii=False),
         ))
     conn.commit()
     conn.close()
@@ -480,6 +483,8 @@ def _migrate_orgs_db():
         ("price_from",   "ALTER TABLE organizations ADD COLUMN price_from INTEGER"),
         ("price_to",     "ALTER TABLE organizations ADD COLUMN price_to INTEGER"),
         ("price_period", "ALTER TABLE organizations ADD COLUMN price_period TEXT"),
+        ("team",              "ALTER TABLE organizations ADD COLUMN team TEXT DEFAULT '[]'"),
+        ("programs_detailed", "ALTER TABLE organizations ADD COLUMN programs_detailed TEXT DEFAULT '[]'"),
     ]
     for col, sql in migrations:
         try:
@@ -498,9 +503,12 @@ def _migrate_orgs_db():
             if not cid:
                 continue
             eps = c.get('extra_photos', [])
+            team = c.get('team', [])
+            programs_detailed = c.get('programs_detailed', [])
             conn.execute(
-                "UPDATE organizations SET extra_photos=?, price_from=?, price_to=?, price_period=? WHERE id=?",
-                (json.dumps(eps, ensure_ascii=False), c.get('price_from'), c.get('price_to'), c.get('price_period'), cid)
+                "UPDATE organizations SET extra_photos=?, price_from=?, price_to=?, price_period=?, team=?, programs_detailed=? WHERE id=?",
+                (json.dumps(eps, ensure_ascii=False), c.get('price_from'), c.get('price_to'), c.get('price_period'),
+                 json.dumps(team, ensure_ascii=False), json.dumps(programs_detailed, ensure_ascii=False), cid)
             )
         conn.commit()
     conn.close()
@@ -540,11 +548,13 @@ def _parse_list(val):
 
 def _org_dict(row):
     d = dict(row)
-    d['photos']       = _parse_list(d.get('photos'))
-    d['programs']     = _parse_list(d.get('programs'))
-    d['skills']       = _parse_list(d.get('skills'))
-    d['extra_photos'] = _parse_list(d.get('extra_photos'))
-    d['has_trial']    = bool(d.get('has_trial'))
+    d['photos']            = _parse_list(d.get('photos'))
+    d['programs']          = _parse_list(d.get('programs'))
+    d['skills']            = _parse_list(d.get('skills'))
+    d['extra_photos']      = _parse_list(d.get('extra_photos'))
+    d['team']              = _parse_list(d.get('team'))
+    d['programs_detailed'] = _parse_list(d.get('programs_detailed'))
+    d['has_trial']         = bool(d.get('has_trial'))
     return d
 
 # ─── ORGS API ─────────────────────────────────────────────────────────────────
