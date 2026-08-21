@@ -42,7 +42,6 @@
   // window._quizCardImgFail, mirroring orgs.html's window._cardImgFail
   // (kept as a separate name since both scripts can be loaded on the same
   // /orgs page — the overlay banner reuses this same quiz.js).
-  const SKIP_S3   = /umkahub\.s3\.cloud\.ru/i;
   const DIRECT_YA = /^https?:\/\/avatars\.mds\.yandex|^https?:\/\/[^?]*yandex\.net\/get-/i;
   const SKIP_JUNK = /whatsapp|pps\.whatsapp|static\.whatsapp|gweb-uniblog|ytimg|yt3\.ggpht|cdninstagram|fbcdn|fbsbx/i;
 
@@ -58,7 +57,7 @@
   function resultCardHTML(org, state) {
     const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
     const ini = initials(org.name);
-    const extraOk = (org.extra_photos || []).filter(p => p && !SKIP_S3.test(p) && !DIRECT_YA.test(p) && !SKIP_JUNK.test(p));
+    const extraOk = (org.extra_photos || []).filter(p => p && !DIRECT_YA.test(p) && !SKIP_JUNK.test(p));
     const heroSrc = extraOk.length ? extraOk[0] : null;
     const photo = heroSrc
       ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
