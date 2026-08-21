@@ -562,11 +562,11 @@ function formatPrice(org) {
 function cardHTML(org) {
   const bg = CAT_BG[org.category] || 'linear-gradient(135deg,#F0F9FF,#E0F2FE)';
   const ini = initials(org.name);
+  // Наш собственный бакет (org_photos_v2) — прямая ссылка, hotlink не защищён, показываем как есть.
   // wsrv.nl/?url=avatars... — OK (прокси обходит hotlink), прямые Яндекс / WA / YT — нет
-  const SKIP_S3   = /umkahub\.s3\.cloud\.ru/i;
   const DIRECT_YA = /^https?:\/\/avatars\.mds\.yandex|^https?:\/\/[^?]*yandex\.net\/get-/i;
   const SKIP_JUNK = /whatsapp|pps\.whatsapp|static\.whatsapp|gweb-uniblog|ytimg|yt3\.ggpht|cdninstagram|fbcdn|fbsbx/i;
-  const extraOk = (org.extra_photos || []).filter(p => p && !SKIP_S3.test(p) && !DIRECT_YA.test(p) && !SKIP_JUNK.test(p));
+  const extraOk = (org.extra_photos || []).filter(p => p && !DIRECT_YA.test(p) && !SKIP_JUNK.test(p));
   const heroSrc = extraOk.length ? extraOk[0] : null;
   const photo = heroSrc
     ? `<img src="${heroSrc}" alt="${esc(org.name)}" loading="lazy"
