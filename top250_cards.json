@@ -5309,59 +5309,6 @@
     "care_type": "kindergarten"
   },
   {
-    "id": 111,
-    "name": "Детский образовательный центр",
-    "category": "IT",
-    "subcategory": "STEM образование детский центр",
-    "address": "Химки, Молодёжная ул., 2А",
-    "metro": "Молодёжная",
-    "district": "Химки",
-    "photos": [
-      "https://avatars.mds.yandex.net/get-tycoon/17739120/31843782_dust_search_standard_2026-06-09T16_37_04/dust_x2",
-      "https://avatars.mds.yandex.net/get-altay/938969/2a0000018dc0623c56c2a523a4bbd8a73a16/L",
-      "https://avatars.mds.yandex.net/get-altay/17737331/2a0000019c8b94d19dab3343f40b3037301a/L"
-    ],
-    "photo_count": 3,
-    "programs": [
-      "До сна",
-      "Неполный день",
-      "Полный день"
-    ],
-    "skills": [
-      "Учит алгоритмическому мышлению",
-      "Развивает логику и внимание",
-      "Готовит к цифровой профессии"
-    ],
-    "age_range": "5–10 лет",
-    "price": "от 5000 ₽",
-    "description": "Детский образовательный центр в Химках — STEM-пространство для детей 5–10 лет. На занятиях дети проводят опыты, собирают модели, знакомятся с электроникой и делают первые шаги в программировании. Всё через эксперимент и руки — никаких лекций у доски. Центр подходит для детей, которым интересно понять, «как это устроено»: почему летает самолёт, как работает лампочка, как написать простую программу. Рядом с метро Молодёжная, удобно для семей Химок и Митино.",
-    "schedule": "",
-    "group_size": "до 15 чел.",
-    "duration": "0 ч",
-    "phone": "",
-    "website": "https://www.babyshale.ru/?yclid=9803714759243857919&utm_content=15846385270&utm_source=geoadv_maps",
-    "vk": "https://vk.com/id327262536",
-    "rating": 2.9,
-    "has_trial": false,
-    "scraped": true,
-    "pages_visited": 1,
-    "data_quality": 95,
-    "extra_photos": [
-      "https://thb.tildacdn.com/tild3865-3466-4663-a237-373130616564/-/resizeb/20x/4602.JPG",
-      "https://thb.tildacdn.com/tild3261-3361-4332-a636-626666333565/-/resizeb/20x/IMG-20210714-WA0033.jpg",
-      "https://thb.tildacdn.com/tild3265-3433-4466-b136-396664613833/-/resizeb/20x/IMG_7935.JPG",
-      "https://thb.tildacdn.com/tild3434-3530-4330-b634-623234363733/-/resizeb/20x/IMG_9646.JPG",
-      "https://thb.tildacdn.com/tild6166-6239-4537-b664-346464653532/-/resizeb/20x/8043.JPG",
-      "https://thb.tildacdn.com/tild3462-6134-4366-b764-313036343230/-/resizeb/20x/0483.jpg",
-      "https://thb.tildacdn.com/tild3639-6366-4135-a132-396664333437/-/resizeb/20x/1339.jpg",
-      "https://thb.tildacdn.com/tild6166-3937-4131-b961-363538396637/-/resizeb/20x/1444.JPG"
-    ],
-    "price_from": 5000,
-    "price_period": "месяц",
-    "price_source": "heuristic",
-    "care_type": "club"
-  },
-  {
     "id": 6,
     "name": "Студия живописи Рисоварка",
     "category": "творчество",
