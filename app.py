@@ -527,6 +527,27 @@ def _migrate_orgs_db():
         conn.commit()
     conn.close()
 
+_DIRECT_YA_RE = re.compile(r'^https?://avatars\.mds\.yandex|^https?://[^?]*yandex\.net/get-', re.I)
+_SKIP_JUNK_RE = re.compile(
+    r'whatsapp|pps\.whatsapp|static\.whatsapp|gweb-uniblog|ytimg|yt3\.ggpht|'
+    r'cdninstagram|fbcdn|fbsbx', re.I)
+_TINY_THUMB_RE = re.compile(r'/resizeb/[1-5]?\dx/', re.I)
+
+def _has_usable_photo(org_dict):
+    """Mirrors cardHTML()'s photo selection in static/orgs.html: only
+    extra_photos count (direct Yandex avatar hotlinks are blocked and never
+    shown), and a Tilda resize-proxy thumbnail under ~60px wide renders as
+    an invisible speck, not a real photo (found on org 111, 2026-08-22 —
+    see thoughts/projects/umkahub-junk-listing-cleanup-2026-08-22.md).
+    Used to hide photo-less orgs from the default catalog listing (Maxim's
+    request, same day) without deleting them -- a future enrichment pass
+    adding real photos makes the org reappear automatically, no manual
+    unhide step needed."""
+    for p in (org_dict.get('extra_photos') or []):
+        if p and not _DIRECT_YA_RE.search(p) and not _SKIP_JUNK_RE.search(p) and not _TINY_THUMB_RE.search(p):
+            return True
+    return False
+
 def _price_lte(org_dict, max_val):
     """Return True if org price_from <= max_val (or no price found)."""
     pf = org_dict.get('price_from')
@@ -673,6 +694,10 @@ def api_orgs():
     if price_max: items = [o for o in items if _price_lte(o, price_max)]
     if age_tier in ('preschool', 'school'):
         items = [o for o in items if _age_tier_match(o.get('age_range',''), age_tier)]
+    # Photo-less orgs hidden from the default catalog listing (Maxim,
+    # 2026-08-22) -- direct /org/<id> links are untouched, only browse/list
+    # results change, same as the care_type=kindergarten exclusion above.
+    items = [o for o in items if _has_usable_photo(o)]
 
     total = len(items)
     items = items[offset:offset+limit]
