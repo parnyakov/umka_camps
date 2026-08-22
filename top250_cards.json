@@ -35916,7 +35916,7 @@
     "metro": "Нагатинская",
     "district": "Москва ЮАО",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 7,
     "programs": [],
     "skills": [
       "Учит говорить на иностранном языке",
@@ -35937,7 +35937,15 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 20,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/234/01-class-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/234/02-reception-interior.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/234/03-classroom-interior.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/234/04-kids-event.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/234/05-outdoor-activity.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/234/06-group-outing.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/234/07-storefront-exterior.jpg"
+    ],
     "care_type": "club"
   },
   {
@@ -36237,7 +36245,7 @@
     "metro": "Зеленоград",
     "district": "Зеленоград",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 7,
     "programs": [],
     "skills": [
       "Учит говорить на иностранном языке",
@@ -36258,7 +36266,15 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 20,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/238/01-class-group-project.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/238/02-lesson-screen-halloween.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/238/03-lesson-screen-student.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/238/04-lesson-screen-question.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/238/05-student-project-poster.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/238/06-student-certificate.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/238/07-students-books.jpg"
+    ],
     "care_type": "club"
   },
   {
@@ -37351,7 +37367,7 @@
     "metro": "",
     "district": "Москва ЦАО",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 2,
     "programs": [],
     "skills": [
       "Даёт живое погружение в китайский язык",
@@ -37372,7 +37388,10 @@
     "scraped": false,
     "pages_visited": 0,
     "data_quality": 15,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/237/01-student-group-china.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/237/02-student-orientation.jpg"
+    ],
     "lat": 55.7491065,
     "lon": 37.5918152,
     "team": [
@@ -53691,8 +53710,16 @@
       "Праздник в студии",
       "Онлайн-уроки"
     ],
-    "photo_count": 0,
-    "extra_photos": [],
+    "photo_count": 7,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/345/01-studio-room.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/345/02-studio-interior.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/345/03-class-group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/345/04-class-painting.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/345/05-student-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/345/06-studio-space.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/345/07-lesson-artwork.jpg"
+    ],
     "care_type": "club"
   },
   {
@@ -65202,7 +65229,7 @@
     "metro": "Аэропорт",
     "district": "Москва САО",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 7,
     "programs": [
       "Вокал",
       "Гитара и бас-гитара",
@@ -65234,7 +65261,15 @@
     "scraped": true,
     "pages_visited": 1,
     "data_quality": 50,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/01-recital-stage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/02-vocal-performance.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/03-dance-performance.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/04-student-group-stage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/05-concert-performance.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/06-choir-performance.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/07-recital-host.jpg"
+    ],
     "featured": false,
     "price_from": null,
     "price_period": "",
@@ -65797,7 +65832,7 @@
     "metro": "Текстильщики",
     "district": "Москва ЮВАО",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 6,
     "programs": [
       "Комплексная логопедическая диагностика",
       "Экспресс-диагностика (от 5,5 лет)",
@@ -65830,7 +65865,14 @@
     "scraped": true,
     "pages_visited": 6,
     "data_quality": 78,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/418/01-playroom-interior.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/418/02-speech-therapy-session.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/418/03-materials-shelf.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/418/04-toy-corner.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/418/05-sensory-toys.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/418/06-office-hallway.jpg"
+    ],
     "featured": false,
     "price_from": 1300,
     "price_period": "занятие",
@@ -71672,7 +71714,7 @@
     "metro": null,
     "district": "Зеленоград",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 6,
     "programs": [
       "ЧУДО-занятия для детей 1–3 лет",
       "ЧУДО-занятия для детей 3–5 лет",
@@ -71704,7 +71746,14 @@
     "scraped": true,
     "pages_visited": 2,
     "data_quality": 55,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/471/01-crafts-sea-animals.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/471/02-group-walk-bridge.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/471/03-kitchen-play-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/471/04-classroom-math-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/471/05-graduation-blocks-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/471/06-group-excursion-indoor.jpg"
+    ],
     "featured": false,
     "price_from": null,
     "price_period": "",
@@ -71886,7 +71935,7 @@
     "metro": "Площадь Революции",
     "district": "Москва ЦАО",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 6,
     "programs": [
       "Guitar Kids — гитара для детей (электро/акустическая/классическая/бас)",
       "Vocal Kids — вокал для детей"
@@ -71914,7 +71963,14 @@
     "scraped": true,
     "pages_visited": 13,
     "data_quality": 74,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/473/01-vocal-lesson-singer.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/473/02-piano-lesson-photoshoot.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/473/03-piano-lesson-teacher.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/473/04-team-group-studio.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/473/05-concert-vocal-performance.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/473/06-vocal-performance-mic.jpg"
+    ],
     "featured": false,
     "price_from": 10990,
     "price_to": 36990,
@@ -72297,7 +72353,7 @@
     "metro": null,
     "district": "Химки",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 6,
     "programs": [
       "Развивающая гимнастика 1,5–3 года",
       "Гимнастика 3–4 года",
@@ -72327,7 +72383,14 @@
     "scraped": true,
     "pages_visited": 3,
     "data_quality": 72,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/477/01-gymnastics-kids-stretch.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/477/02-coach-toddler-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/477/03-gymnastics-stretch-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/477/04-coach-kids-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/477/05-coach-kids-celebrate.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/477/06-coach-girls-bars.jpg"
+    ],
     "featured": false,
     "price_from": 2300,
     "price_period": "занятие",
@@ -72386,7 +72449,7 @@
     "metro": null,
     "district": "Химки",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 6,
     "programs": [
       "Вокал",
       "Фортепиано",
@@ -72416,7 +72479,14 @@
     "scraped": true,
     "pages_visited": 2,
     "data_quality": 70,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/478/01-vocal-teacher-portrait.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/478/02-vocal-teacher-formal.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/478/03-vocal-teacher-blue.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/478/04-team-teachers-photo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/478/05-vocal-teacher-standing.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/478/06-vocal-teacher-seated.jpg"
+    ],
     "featured": false,
     "price_from": 2000,
     "price_period": "занятие",
@@ -74417,7 +74487,7 @@
     "metro": null,
     "district": "Мытищи",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 6,
     "programs": [
       "Вольная борьба, от 4 лет",
       "Бокс, от 5 лет",
@@ -74444,7 +74514,14 @@
     "scraped": true,
     "pages_visited": 3,
     "data_quality": 62,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/495/01-gym-boxing-photos-wall.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/495/02-boxing-pads-equipment.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/495/03-gym-equipment-room.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/495/04-boxing-ring-wide.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/495/05-boxing-ring-closeup.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/495/06-sparring-training-session.jpg"
+    ],
     "featured": false,
     "price_from": 1000,
     "price_period": "занятие",
@@ -75115,7 +75192,7 @@
     "metro": "Мытищи",
     "district": "Мытищи",
     "photos": [],
-    "photo_count": 0,
+    "photo_count": 6,
     "programs": [
       "Абонемент для детей",
       "Групповые мастер-классы по ручной лепке и гончарному кругу",
@@ -75141,7 +75218,14 @@
     "scraped": true,
     "pages_visited": 4,
     "data_quality": 58,
-    "extra_photos": [],
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/502/01-teacher-pottery-studio.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/502/02-studio-windowsill-crafts.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/502/03-kids-pottery-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/502/04-pottery-wheel-hands.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/502/05-pottery-class-wide.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/502/06-studio-lamps-interior.jpg"
+    ],
     "featured": false,
     "price_from": 7800,
     "price_period": "абонемент",
