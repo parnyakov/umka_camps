@@ -32,11 +32,18 @@ body {
   color: var(--text);
   line-height: 1.5;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 a { color: inherit; text-decoration: none; }
 
 /* ── Header ─────────────────────────────────────────────────────────────────── */
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
 .header {
   background: rgba(255,255,255,0.92);
@@ -47,9 +54,6 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   gap: 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
   box-shadow: 0 2px 12px rgba(80,120,200,0.07);
 }
 
@@ -72,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 
 .header-search input {
   width: 100%;
-  padding: 8px 16px 8px 40px;
+  padding: 8px 36px 8px 40px;
   border: 1.5px solid var(--border);
   border-radius: 10px;
   font-size: 14px;
@@ -95,6 +99,28 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
   font-size: 16px;
 }
+
+.header-search input::-webkit-search-cancel-button { display: none; }
+
+.search-clear {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: var(--border);
+  color: var(--text2);
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-clear:hover { background: var(--muted); color: #fff; }
 
 .back-btn {
   display: inline-flex;
@@ -330,6 +356,154 @@ a { color: inherit; text-decoration: none; }
 
 .cat-pill:hover { background: var(--bg3); }
 .cat-pill.active { border-color: var(--clr-primary); background: var(--clr-primary-glow); color: var(--clr-primary-d); font-weight: 600; }
+
+/* ── Mobile-only chrome (hidden on desktop by default) ── */
+.mobile-filter-bar, .active-chips, .bottom-sheet-overlay { display: none; }
+
+.filter-badge {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 9px;
+  background: var(--clr-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px 6px 12px;
+  background: var(--clr-primary-glow);
+  color: var(--clr-primary-d);
+  border: none;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.chip button {
+  border: none;
+  background: rgba(0,0,0,0.08);
+  color: inherit;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chip-reset-all {
+  background: none;
+  color: var(--muted);
+  text-decoration: underline;
+  padding: 6px 4px;
+  cursor: pointer;
+}
+
+/* ── Bottom sheet (mobile filters) ── */
+.bottom-sheet-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 450;
+  background: rgba(20,40,80,0.45);
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s ease;
+}
+.bottom-sheet-overlay.open {
+  display: flex;
+  opacity: 1;
+  pointer-events: auto;
+}
+.bottom-sheet {
+  background: var(--bg2);
+  width: 100%;
+  max-width: 560px;
+  max-height: 88dvh;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(100%);
+  transition: transform .25s ease;
+  box-shadow: 0 -8px 30px rgba(20,40,80,0.2);
+}
+.bottom-sheet-overlay.open .bottom-sheet { transform: translateY(0); }
+.bottom-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  margin: 10px auto 4px;
+  flex-shrink: 0;
+}
+.bottom-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px 12px;
+  font-size: 17px;
+  font-weight: 800;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.bottom-sheet-close {
+  border: none;
+  background: none;
+  font-size: 24px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.bottom-sheet-content {
+  padding: 16px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.bottom-sheet-footer {
+  display: flex;
+  gap: 10px;
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  background: var(--bg2);
+}
+.bs-reset-btn {
+  flex-shrink: 0;
+  padding: 0 18px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  background: none;
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.bs-show-btn {
+  flex: 1;
+  border: none;
+  border-radius: 12px;
+  background: var(--clr-primary);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.bs-show-btn:hover { background: var(--clr-primary-d); }
 
 .toggle-row {
   display: flex;
@@ -722,30 +896,112 @@ a { color: inherit; text-decoration: none; }
 /* ── Responsive ─────────────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) {
-  .sidebar {
-    display: none;
-    position: fixed;
-    z-index: 200;
-    height: 100vh;
-    top: 0;
-    width: 280px;
+  /* Sidebar is emptied by JS (filter groups relocate into the bottom sheet) —
+     hide the shell entirely on mobile instead of the old fixed-panel trap. */
+  .sidebar { display: none; }
+
+  /* ── Two-row header: logo+actions, then full-width search ── */
+  .header {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 8px 12px;
+    gap: 8px 10px;
   }
+  .logo span { display: none; }
+  .header-search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+  .header-search input { font-size: 16px; } /* prevents iOS auto-zoom on focus */
+  .btn-qa, .btn-contact { padding: 7px 12px; font-size: 12px; }
 
-  .sidebar.open { display: flex; }
-
-  .filter-toggle {
+  /* ── Sticky mobile filter bar: category ribbon + Filters(N) ── */
+  .mobile-filter-bar {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 16px;
+    gap: 8px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-cat-ribbon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    flex: 1;
+    min-width: 0;
+  }
+  .mobile-cat-ribbon::-webkit-scrollbar { display: none; }
+  .mobile-cat-ribbon .cat-pill {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+    white-space: nowrap;
+    min-height: 36px;
+  }
+  .mobile-filters-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 8px 14px;
+    min-height: 44px;
     background: var(--card);
     border: 1.5px solid var(--border);
     border-radius: 20px;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
     cursor: pointer;
-    margin: 16px 24px 0;
+    color: var(--text);
   }
 
+  .active-chips {
+    display: none; /* toggled to flex by JS only when chips exist */
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.7);
+    border-bottom: 1px solid var(--border);
+  }
+  .active-chips::-webkit-scrollbar { display: none; }
+
+  /* Subcategory pills only ever show on mobile (inside the bottom sheet) —
+     desktop uses the hover popover instead. */
+  .mobile-subcats.open { display: flex; }
+
   .cards-grid { padding: 16px; gap: 14px; }
+
+  /* ── Touch targets ≥44px ── */
+  .filter-group select,
+  .filter-group input[type="number"] { min-height: 44px; font-size: 16px; }
+  .mobile-sub-pill { min-height: 36px; display: inline-flex; align-items: center; padding: 6px 14px; }
+  .toggle { width: 46px; height: 26px; }
+  .toggle::after { width: 20px; height: 20px; }
+  .toggle.on::after { left: 23px; }
+  .qa-close { min-width: 44px; min-height: 44px; }
+}
+
+/* ── Two-column card grid on small phones ── */
+@media (max-width: 560px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px;
+  }
+  .card-photo { height: 110px; }
+  .card-body { padding: 10px 10px 12px; gap: 5px; }
+  .card-name { font-size: 13px; line-height: 1.25; }
+  .card-meta { font-size: 11px; }
+  .cat-badge { font-size: 10px; padding: 2px 8px; }
+  .card-price { font-size: 13px; }
+  .trial-badge { font-size: 10px; padding: 2px 6px; }
+  .card-rating { font-size: 11px; }
 }

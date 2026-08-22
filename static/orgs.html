@@ -10,11 +10,20 @@
 <meta property="og:description" content="250+ кружков и секций для детей в Москве — IT, языки, творчество, спорт, развитие. Фильтры по возрасту, метро и цене, бесплатная запись.">
 <meta property="og:url" content="https://umkahub.ru/orgs">
 <meta property="og:site_name" content="UmkaHub">
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+  m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}
+  k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+  (window,document,'script','https://mc.yandex.ru/metrika/tag.js?id=111728638','ym');
+  ym(111728638,'init',{ssr:true,webvisor:true,clickmap:true,ecommerce:"dataLayer",referrer:document.referrer,url:location.href,accurateTrackBounce:true,trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/111728638" style="position:absolute;left:-9999px" alt=""></div></noscript>
   <link rel="stylesheet" href="/static/orgs_style.css">
   <link rel="stylesheet" href="/static/quiz.css">
 </head>
 <body>
 
+<div class="sticky-top" id="stickyTop">
 <header class="header">
   <a href="/" class="logo">
     <svg viewBox="0 0 36 36" width="34" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +47,10 @@
   </a>
   <div class="header-search">
     <span class="icon">🔍</span>
-    <input id="searchInput" type="text" placeholder="Поиск по названию...">
+    <input id="searchInput" type="search" inputmode="search" enterkeyhint="search"
+           autocomplete="off" autocapitalize="off" autocorrect="off"
+           placeholder="Кружок, секция, направление...">
+    <button class="search-clear" id="searchClear" style="display:none" aria-label="Очистить поиск">×</button>
   </div>
   <button class="btn-qa" id="btnQA">Q&amp;A</button>
   <div style="position:relative">
@@ -55,52 +67,60 @@
   </div>
 </header>
 
+<div class="mobile-filter-bar" id="mobileFilterBar">
+  <div class="mobile-cat-ribbon" id="catPillsMobile"></div>
+  <button class="mobile-filters-btn" id="filterToggleBtn" onclick="openBottomSheet()">
+    <span>⚙️ Фильтры</span><span class="filter-badge" id="filterBadge" style="display:none">0</span>
+  </button>
+</div>
+
+<div class="active-chips" id="activeChips" style="display:none"></div>
+</div>
+
 <div class="layout">
 
   <!-- Sidebar фильтры -->
   <aside class="sidebar" id="sidebar">
 
-    <div class="filter-group">
+    <div class="filter-group" id="fgCategory">
       <label>Категория</label>
-      <div class="cat-pills" id="catPills">
-        <div class="cat-pill active" data-cat="" onclick="setCat(this, '')">Все направления</div>
-      </div>
+      <div class="cat-pills" id="catPills"></div>
       <!-- Мобильные подкатегории — появляются под категорией при выборе -->
       <div class="mobile-subcats" id="mobileSubcats"></div>
     </div>
 
-    <div class="filter-group">
+    <div class="filter-group" id="fgDistrict">
       <label>Округ / район</label>
       <select id="districtFilter" onchange="applyFilters()">
         <option value="">Любой округ</option>
       </select>
     </div>
 
-    <div class="filter-group">
+    <div class="filter-group" id="fgMetro">
       <label>Станция метро</label>
       <select id="metroFilter" onchange="applyFilters()">
         <option value="">Любая станция</option>
       </select>
     </div>
 
-    <div class="filter-group">
+    <div class="filter-group" id="fgAge">
       <label>Возраст ребёнка</label>
-      <input type="number" id="ageFilter" placeholder="Например: 7" min="2" max="18" onchange="applyFilters()">
+      <input type="number" inputmode="numeric" id="ageFilter" placeholder="Например: 7" min="2" max="18" oninput="applyFiltersDebounced()">
     </div>
 
-    <div class="filter-group">
+    <div class="filter-group" id="fgPrice">
       <label>Макс. цена (₽)</label>
-      <input type="number" id="priceFilter" placeholder="Например: 3000" step="500" onchange="applyFilters()">
+      <input type="number" inputmode="numeric" id="priceFilter" placeholder="Например: 3000" step="500" oninput="applyFiltersDebounced()">
     </div>
 
-    <div class="filter-group">
+    <div class="filter-group" id="fgTrial">
       <div class="toggle-row" onclick="toggleTrial()">
         <span>Только с пробным занятием</span>
         <div class="toggle" id="trialToggle"></div>
       </div>
     </div>
 
-    <button onclick="resetFilters()" style="
+    <button onclick="resetFilters()" id="sidebarResetBtn" style="
       margin-top:auto; padding:10px; border:1.5px solid var(--border);
       border-radius:8px; background:none; cursor:pointer; font-size:14px;
       color:var(--muted); transition: all .15s;
@@ -112,10 +132,6 @@
 
   <!-- Основной контент -->
   <main class="main">
-    <button class="filter-toggle" onclick="toggleSidebar()" style="display:none" id="filterToggleBtn">
-      ⚙️ Фильтры
-    </button>
-
     <div class="quiz-banner" onclick="openQuizOverlay()">
       <div>
         <div class="quiz-banner-text">Не знаете что выбрать?</div>
@@ -136,14 +152,35 @@
       <div class="emoji">🔍</div>
       <p>Ничего не найдено. Попробуйте изменить фильтры.</p>
     </div>
+
+    <div class="empty" id="fetchError" style="display:none">
+      <div class="emoji">⚠️</div>
+      <p>Не удалось загрузить список. Проверьте соединение.</p>
+      <button class="retry-btn" onclick="retryFetch()">Повторить</button>
+    </div>
   </main>
+</div>
+
+<div class="bottom-sheet-overlay" id="bottomSheetOverlay" onclick="if(event.target===this) closeBottomSheet()">
+  <div class="bottom-sheet" id="bottomSheet" role="dialog" aria-modal="true" aria-label="Фильтры">
+    <div class="bottom-sheet-handle"></div>
+    <div class="bottom-sheet-header">
+      <span>Фильтры</span>
+      <button class="bottom-sheet-close" onclick="closeBottomSheet()" aria-label="Закрыть">×</button>
+    </div>
+    <div class="bottom-sheet-content" id="bottomSheetContent"></div>
+    <div class="bottom-sheet-footer">
+      <button class="bs-reset-btn" onclick="resetFilters()">Сбросить</button>
+      <button class="bs-show-btn" id="bsShowBtn" onclick="closeBottomSheet()">Показать</button>
+    </div>
+  </div>
 </div>
 
 <style>
 .mobile-subcats {
   display:none; flex-wrap:wrap; gap:6px; margin-top:8px;
 }
-.mobile-subcats.open { display:flex; }
+/* .mobile-subcats.open → display:flex is gated to mobile only in orgs_style.css (desktop uses the hover popover instead) */
 .mobile-sub-pill {
   padding:5px 12px; border:1.5px solid var(--border); border-radius:20px;
   font-size:12px; color:var(--muted); cursor:pointer; background:#fff;
@@ -185,6 +222,20 @@
   color: var(--clr-primary-d);
   font-weight: 600;
 }
+
+/* ── Reliability: skeletons + error state ── */
+.card-skeleton { cursor: default; pointer-events: none; }
+.card-skeleton .card-photo { background: linear-gradient(90deg, var(--bg3) 25%, var(--bg) 37%, var(--bg3) 63%); background-size: 400% 100%; animation: skShimmer 1.4s ease infinite; }
+.sk-line { height: 12px; border-radius: 6px; background: linear-gradient(90deg, var(--bg3) 25%, var(--bg) 37%, var(--bg3) 63%); background-size: 400% 100%; animation: skShimmer 1.4s ease infinite; }
+.sk-w60 { width: 60%; height: 15px; }
+.sk-w90 { width: 90%; }
+.sk-w40 { width: 40%; margin-top: 4px; }
+@keyframes skShimmer { 0% { background-position: 100% 50%; } 100% { background-position: 0 50%; } }
+.retry-btn {
+  margin-top: 14px; padding: 10px 22px; background: var(--clr-primary); color: #fff;
+  border: none; border-radius: 20px; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.retry-btn:hover { background: var(--clr-primary-d); }
 </style>
 
 <script>
@@ -243,23 +294,36 @@ const SUB_PILLS = {
   ],
 };
 
+function ymGoal(name, params) {
+  if (typeof ym !== 'undefined') ym(111728638, 'reachGoal', name, params);
+}
+
 let state = {
   category: '', subcategory: '', metro: '', district: '', age: '', price_max: '',
   has_trial: false, q: '',
   offset: 0, limit: 24, total: 0, loading: false
 };
+let _reqId = 0;
 
 // ── Init ────────────────────────────────────────────────────────────────────
 
 async function init() {
-  // Читаем URL params
+  // Читаем URL params (все параметры фильтров, не только часть)
   const params = new URLSearchParams(location.search);
-  state.q        = params.get('q')        || '';
-  state.category = params.get('category') || '';
-  state.metro    = params.get('metro')    || '';
-  state.district = params.get('district') || '';
+  state.q          = params.get('q')          || '';
+  state.category   = params.get('category')   || '';
+  state.subcategory= params.get('subcategory')|| '';
+  state.metro      = params.get('metro')      || '';
+  state.district   = params.get('district')   || '';
+  state.age        = params.get('age')        || '';
+  state.price_max  = params.get('price_max')  || '';
+  state.has_trial  = params.get('has_trial') === '1';
 
   if (state.q) document.getElementById('searchInput').value = state.q;
+  document.getElementById('ageFilter').value = state.age;
+  document.getElementById('priceFilter').value = state.price_max;
+  if (state.has_trial) document.getElementById('trialToggle').classList.add('on');
+  updateSearchClearBtn();
 
   // Загружаем мета (категории, метро, округа/районы)
   const meta = await fetch('/api/orgs-meta').then(r => r.json());
@@ -267,21 +331,26 @@ async function init() {
   buildMetroSelect(meta.metros);
   buildDistrictSelect(meta.districts || []);
   addPillHoverBehavior();
+  syncActiveCatPills();
+  if (state.category) renderMobileSubcats(state.category);
 
-  // Выставляем активную категорию
-  if (state.category) {
-    document.querySelectorAll('.cat-pill').forEach(p => {
-      p.classList.toggle('active', p.dataset.cat === state.category);
-    });
-  }
+  relocateFilters();
+  window.addEventListener('resize', debounce(relocateFilters, 200));
 
+  restoreScrollState();
   await fetchOrgs(false);
+  applyPendingRestore();
 }
 
 // ── Filters ─────────────────────────────────────────────────────────────────
 
-function buildCatPills(categories) {
-  const container = document.getElementById('catPills');
+function buildCatPillsInto(container, categories) {
+  const allPill = document.createElement('div');
+  allPill.className = 'cat-pill active';
+  allPill.dataset.cat = '';
+  allPill.textContent = 'Все направления';
+  allPill.onclick = () => setCat(allPill, '');
+  container.appendChild(allPill);
   categories.forEach(cat => {
     const pill = document.createElement('div');
     pill.className = 'cat-pill';
@@ -290,6 +359,24 @@ function buildCatPills(categories) {
     pill.onclick = () => setCat(pill, cat);
     container.appendChild(pill);
   });
+}
+
+function buildCatPills(categories) {
+  buildCatPillsInto(document.getElementById('catPills'), categories);
+  buildCatPillsInto(document.getElementById('catPillsMobile'), categories);
+}
+
+function syncActiveCatPills() {
+  document.querySelectorAll('.cat-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.cat === state.category);
+  });
+  if (state.category) {
+    // scroll the active pill into view within the horizontal mobile ribbon
+    const activeMobile = document.querySelector('#catPillsMobile .cat-pill.active');
+    if (activeMobile && typeof activeMobile.scrollIntoView === 'function') {
+      try { activeMobile.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' }); } catch (e) {}
+    }
+  }
 }
 
 function buildDistrictSelect(districts) {
@@ -318,16 +405,15 @@ function setCat(el, cat) {
   if (state.category === cat && cat !== '') {
     state.category = '';
     state.subcategory = '';
-    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-    document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
+    syncActiveCatPills();
+    renderMobileSubcats('');
     fetchOrgs(false);
     return;
   }
   state.category = cat;
   state.subcategory = '';
   state.offset = 0;
-  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-  el.classList.add('active');
+  syncActiveCatPills();
   renderMobileSubcats(cat);
   fetchOrgs(false);
 }
@@ -372,12 +458,7 @@ function setSub(el, val) {
   state.category = cat;
   state.subcategory = val;
   state.offset = 0;
-
-  // Highlight the right cat-pill
-  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-  const catPill = document.querySelector(`.cat-pill[data-cat="${cat}"]`);
-  if (catPill) catPill.classList.add('active');
-
+  syncActiveCatPills();
   closeSubPopover();
   fetchOrgs(false);
 }
@@ -418,6 +499,13 @@ function applyFilters() {
   state.price_max= document.getElementById('priceFilter').value;
   state.offset   = 0;
   fetchOrgs(false);
+  ymGoal('filter_apply', { type: 'metro_district_age_price' });
+}
+
+let _applyDebounceTimer;
+function applyFiltersDebounced() {
+  clearTimeout(_applyDebounceTimer);
+  _applyDebounceTimer = setTimeout(applyFilters, 400);
 }
 
 function toggleTrial() {
@@ -425,6 +513,7 @@ function toggleTrial() {
   document.getElementById('trialToggle').classList.toggle('on', state.has_trial);
   state.offset = 0;
   fetchOrgs(false);
+  ymGoal('filter_apply', { type: 'has_trial' });
 }
 
 function renderMobileSubcats(cat) {
@@ -435,6 +524,184 @@ function renderMobileSubcats(cat) {
     `<div class="mobile-sub-pill${state.subcategory===s.val?' active':''}" onclick="setMobileSub('${s.val}')">${s.label}</div>`
   ).join('');
   box.classList.add('open');
+}
+
+// ── Mobile: bottom sheet + relocation of filter groups ─────────────────────
+
+function relocateFilters() {
+  const isMobile = window.innerWidth <= 768;
+  const groupIds = ['fgCategory', 'fgDistrict', 'fgMetro', 'fgAge', 'fgPrice', 'fgTrial'];
+  const sidebar  = document.getElementById('sidebar');
+  const sheet    = document.getElementById('bottomSheetContent');
+  const resetBtn = document.getElementById('sidebarResetBtn');
+  groupIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (isMobile) sheet.appendChild(el);
+    else sidebar.insertBefore(el, resetBtn);
+  });
+  if (resetBtn) resetBtn.style.display = isMobile ? 'none' : 'block';
+}
+
+function openBottomSheet() {
+  document.getElementById('bottomSheetOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const teaser = document.getElementById('quizTeaser');
+  if (teaser) teaser.classList.remove('open');
+  updateSheetShowBtn();
+  ymGoal('filters_open');
+}
+
+function closeBottomSheet() {
+  document.getElementById('bottomSheetOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeBottomSheet();
+});
+
+function updateSheetShowBtn() {
+  const btn = document.getElementById('bsShowBtn');
+  if (!btn) return;
+  btn.textContent = state.total ? `Показать ${state.total}` : 'Показать';
+}
+
+// ── Active filter count / chips ─────────────────────────────────────────────
+
+function countActiveFilters() {
+  let n = 0;
+  if (state.subcategory) n++;
+  else if (state.category) n++;
+  if (state.metro) n++;
+  if (state.district) n++;
+  if (state.age) n++;
+  if (state.price_max) n++;
+  if (state.has_trial) n++;
+  return n;
+}
+
+function updateActiveChipsAndBadge() {
+  const n = countActiveFilters();
+  const badge = document.getElementById('filterBadge');
+  if (badge) {
+    badge.textContent = n;
+    badge.style.display = n ? 'inline-flex' : 'none';
+  }
+  renderActiveChips();
+}
+
+function _subLabel() {
+  const subs = SUB_PILLS[state.category] || [];
+  const found = subs.find(s => s.val === state.subcategory);
+  return found ? found.label : state.subcategory;
+}
+
+function renderActiveChips() {
+  const box = document.getElementById('activeChips');
+  const chips = [];
+  if (state.category) {
+    chips.push({ key: 'category', label: state.subcategory ? _subLabel() : (state.category.charAt(0).toUpperCase() + state.category.slice(1)) });
+  }
+  if (state.metro)     chips.push({ key: 'metro',     label: 'м. ' + state.metro });
+  if (state.district)  chips.push({ key: 'district',  label: state.district });
+  if (state.age)       chips.push({ key: 'age',       label: state.age + ' лет' });
+  if (state.price_max) chips.push({ key: 'price_max', label: 'до ' + Number(state.price_max).toLocaleString('ru-RU') + ' ₽' });
+  if (state.has_trial) chips.push({ key: 'has_trial', label: 'Пробное занятие' });
+
+  if (!chips.length) { box.style.display = 'none'; box.innerHTML = ''; return; }
+  box.style.display = 'flex';
+  box.innerHTML = chips.map(c =>
+    `<span class="chip">${esc(c.label)}<button onclick="removeFilterChip('${c.key}')" aria-label="Убрать">×</button></span>`
+  ).join('') + `<button class="chip chip-reset-all" onclick="resetFilters()">Сбросить всё</button>`;
+}
+
+function removeFilterChip(key) {
+  if (key === 'category') {
+    state.category = ''; state.subcategory = '';
+    syncActiveCatPills();
+    renderMobileSubcats('');
+  } else if (key === 'metro') {
+    state.metro = ''; document.getElementById('metroFilter').value = '';
+  } else if (key === 'district') {
+    state.district = ''; document.getElementById('districtFilter').value = '';
+  } else if (key === 'age') {
+    state.age = ''; document.getElementById('ageFilter').value = '';
+  } else if (key === 'price_max') {
+    state.price_max = ''; document.getElementById('priceFilter').value = '';
+  } else if (key === 'has_trial') {
+    state.has_trial = false; document.getElementById('trialToggle').classList.remove('on');
+  }
+  state.offset = 0;
+  fetchOrgs(false);
+}
+
+// ── Search clear button ─────────────────────────────────────────────────────
+
+function updateSearchClearBtn() {
+  const input = document.getElementById('searchInput');
+  const btn = document.getElementById('searchClear');
+  if (btn) btn.style.display = input.value ? 'block' : 'none';
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  updateSearchClearBtn();
+  state.q = '';
+  state.offset = 0;
+  fetchOrgs(false);
+}
+
+// ── URL sync ─────────────────────────────────────────────────────────────────
+
+function syncUrl() {
+  const p = new URLSearchParams();
+  if (state.q)           p.set('q', state.q);
+  if (state.category)    p.set('category', state.category);
+  if (state.subcategory) p.set('subcategory', state.subcategory);
+  if (state.metro)       p.set('metro', state.metro);
+  if (state.district)    p.set('district', state.district);
+  if (state.age)         p.set('age', state.age);
+  if (state.price_max)   p.set('price_max', state.price_max);
+  if (state.has_trial)   p.set('has_trial', '1');
+  const qs = p.toString();
+  const url = qs ? ('/orgs?' + qs) : '/orgs';
+  history.replaceState(null, '', url);
+}
+
+// ── Scroll/offset restore on back-navigation ────────────────────────────────
+
+function saveScrollState() {
+  sessionStorage.setItem('orgs_scroll_state', JSON.stringify({
+    qs: location.search, offset: state.offset, scrollY: window.scrollY
+  }));
+}
+
+let _pendingRestore = null;
+
+function restoreScrollState() {
+  const raw = sessionStorage.getItem('orgs_scroll_state');
+  if (!raw) return;
+  sessionStorage.removeItem('orgs_scroll_state');
+  let saved;
+  try { saved = JSON.parse(raw); } catch (e) { return; }
+  if (saved.qs !== location.search || !saved.offset) return;
+  _pendingRestore = saved;
+  state.limit = saved.offset + 24; // fetch enough items in one request to restore position
+}
+
+function applyPendingRestore() {
+  if (!_pendingRestore) return;
+  const saved = _pendingRestore;
+  _pendingRestore = null;
+  state.limit = 24;
+  state.offset = saved.offset;
+  requestAnimationFrame(() => window.scrollTo(0, saved.scrollY));
+}
+
+function debounce(fn, ms) {
+  let t;
+  return (...args) => { clearTimeout(t); t = setTimeout(() => fn(...args), ms); };
 }
 
 function setMobileSub(val) {
@@ -452,35 +719,37 @@ function resetFilters() {
   document.getElementById('ageFilter').value = '';
   document.getElementById('priceFilter').value = '';
   document.getElementById('trialToggle').classList.remove('on');
-  document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
-  document.querySelector('.cat-pill[data-cat=""]').classList.add('active');
+  syncActiveCatPills();
+  updateSearchClearBtn();
   const box = document.getElementById('mobileSubcats');
   box.classList.remove('open'); box.innerHTML = '';
   closeSubPopover();
   fetchOrgs(false);
-}
-
-function toggleSidebar() {
-  document.getElementById('sidebar').classList.toggle('open');
+  ymGoal('filters_reset');
 }
 
 // ── Search ───────────────────────────────────────────────────────────────────
 
 let searchTimer;
 document.getElementById('searchInput').addEventListener('input', e => {
+  updateSearchClearBtn();
   clearTimeout(searchTimer);
   searchTimer = setTimeout(() => {
     state.q = e.target.value.trim();
     state.offset = 0;
     fetchOrgs(false);
+    if (state.q) ymGoal('search_input');
   }, 350);
 });
+document.getElementById('searchClear').addEventListener('click', clearSearch);
 
 // ── Fetch ────────────────────────────────────────────────────────────────────
 
 async function fetchOrgs(append = false) {
-  if (state.loading) return;
+  const myReq = ++_reqId;
   state.loading = true;
+  hideFetchError();
+  if (!append) showSkeleton();
 
   const p = new URLSearchParams();
   if (state.q)           p.set('q', state.q);
@@ -494,14 +763,57 @@ async function fetchOrgs(append = false) {
   if (state.has_trial)   p.set('has_trial', '1');
   p.set('limit', state.limit);
   p.set('offset', state.offset);
-  const data = await fetch('/api/orgs?' + p).then(r => r.json());
-  state.total = data.total;
 
-  renderCards(data.items, append);
-  state.loading = false;
+  try {
+    const resp = await fetch('/api/orgs?' + p);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    if (myReq !== _reqId) return; // a newer request already superseded this one
+    state.total = data.total;
+    renderCards(data.items, append);
+    syncUrl();
+    updateActiveChipsAndBadge();
+    updateSheetShowBtn();
+  } catch (err) {
+    if (myReq !== _reqId) return;
+    showFetchError();
+  } finally {
+    if (myReq === _reqId) state.loading = false;
+  }
+}
+
+function showSkeleton() {
+  const grid = document.getElementById('cardsGrid');
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('resultsBar').textContent = 'Загрузка...';
+  grid.innerHTML = Array.from({length: 6}).map(() => (
+    '<div class="card card-skeleton"><div class="card-photo"></div>' +
+    '<div class="card-body"><div class="sk-line sk-w60"></div><div class="sk-line sk-w90"></div><div class="sk-line sk-w40"></div></div></div>'
+  )).join('');
+}
+
+function showFetchError() {
+  document.getElementById('emptyState').style.display = 'none';
+  document.getElementById('fetchError').style.display = 'block';
+  document.getElementById('resultsBar').textContent = '';
+}
+
+function hideFetchError() {
+  document.getElementById('fetchError').style.display = 'none';
+}
+
+function retryFetch() {
+  fetchOrgs(false);
 }
 
 // ── Render ───────────────────────────────────────────────────────────────────
+
+function pluralOrgs(n) {
+  const n10 = n % 10, n100 = n % 100;
+  if (n10 === 1 && n100 !== 11) return 'организация';
+  if (n10 >= 2 && n10 <= 4 && (n100 < 12 || n100 > 14)) return 'организации';
+  return 'организаций';
+}
 
 function renderCards(items, append) {
   const grid   = document.getElementById('cardsGrid');
@@ -515,11 +827,12 @@ function renderCards(items, append) {
     empty.style.display = 'block';
     bar.textContent = 'Ничего не найдено';
     btn.style.display = 'none';
+    ymGoal('zero_results');
     return;
   }
 
   empty.style.display = 'none';
-  bar.textContent = `Найдено: ${state.total} организаций`;
+  bar.textContent = `Найдено: ${state.total} ${pluralOrgs(state.total)}`;
 
   items.forEach(org => {
     grid.insertAdjacentHTML('beforeend', cardHTML(org));
@@ -585,7 +898,7 @@ function cardHTML(org) {
   const age   = org.age_range ? `<span class="dot">·</span><span>${esc(org.age_range)}</span>` : '';
 
   return `
-    <div class="card" onclick="window.location='/org/${org.id}'">
+    <a class="card" href="/org/${org.id}" onclick="saveScrollState();ymGoal('card_click')">
       <div class="card-photo">${photo}</div>
       <div class="card-body">
         <span class="cat-badge">${esc(org.category)}</span>
@@ -597,7 +910,7 @@ function cardHTML(org) {
           ${rating}
         </div>
       </div>
-    </div>`;
+    </a>`;
 }
 
 function loadMore() {
@@ -607,11 +920,6 @@ function loadMore() {
 
 function esc(str) {
   return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-// Мобильная кнопка фильтров
-if (window.innerWidth <= 768) {
-  document.getElementById('filterToggleBtn').style.display = 'flex';
 }
 
 init();
@@ -800,10 +1108,12 @@ init();
 // ── Q&A modal ──
 (function() {
   const overlay = document.getElementById('qaOverlay');
-  document.getElementById('btnQA').addEventListener('click', () => overlay.classList.add('open'));
-  document.getElementById('qaClose').addEventListener('click', () => overlay.classList.remove('open'));
-  overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.classList.remove('open'); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') overlay.classList.remove('open'); });
+  const openQa  = () => { overlay.classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const closeQa = () => { overlay.classList.remove('open'); document.body.style.overflow = ''; };
+  document.getElementById('btnQA').addEventListener('click', openQa);
+  document.getElementById('qaClose').addEventListener('click', closeQa);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) closeQa(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeQa(); });
   document.querySelectorAll('.faq-q').forEach(btn => {
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
@@ -836,6 +1146,7 @@ let _quizInited = false;
 function openQuizOverlay() {
   const overlay = document.getElementById('quizOverlay');
   overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
   document.getElementById('quizTeaser').classList.remove('open');
   if (!_quizInited) {
     _quizInited = true;
@@ -845,6 +1156,7 @@ function openQuizOverlay() {
 }
 function closeQuizOverlay() {
   document.getElementById('quizOverlay').classList.remove('open');
+  document.body.style.overflow = '';
   // remembered only for this tab/session — never force the quiz back on
   // someone who already said no, but a fresh visit can still suggest it
   sessionStorage.setItem('quiz_dismissed', '1');
