@@ -824,8 +824,16 @@ function checkHeroSize(img, bg, emoji, ini) {
 }
 
 // ── Modal ─────────────────────────────────────────────────────────────────
+// Аналитика воронки лида (22.08, задача Максима — разобраться, почему
+// карточка организации почти никогда не конвертится в заявку): 3 новых
+// события ниже (открыл форму / тронул поле / закрыл без отправки) вместе
+// дают три чётких состояния воронки, не только факт финального сабмита.
+let leadFormSubmitted = false;
+let leadFormTouched = false;
 function openModal(programName) {
   if (typeof ym !== 'undefined') ym(111728638,'reachGoal','lead_form_open');
+  leadFormSubmitted = false;
+  leadFormTouched = false;
   document.getElementById('modalOrgName').textContent = orgName;
   document.getElementById('modalForm').style.display = 'block';
   document.getElementById('modalSuccess').style.display = 'none';
@@ -840,21 +848,53 @@ function openModal(programName) {
   }
   document.getElementById('modalOverlay').classList.add('open');
 }
-document.getElementById('modalClose').addEventListener('click', () =>
-  document.getElementById('modalOverlay').classList.remove('open'));
+function closeModalAndTrackAbandon() {
+  const wasOpen = document.getElementById('modalOverlay').classList.contains('open');
+  document.getElementById('modalOverlay').classList.remove('open');
+  if (wasOpen && !leadFormSubmitted && typeof ym !== 'undefined')
+    ym(111728638,'reachGoal','lead_form_abandon');
+}
+document.getElementById('modalClose').addEventListener('click', closeModalAndTrackAbandon);
 document.getElementById('modalOverlay').addEventListener('click', e => {
-  if (e.target === document.getElementById('modalOverlay'))
-    document.getElementById('modalOverlay').classList.remove('open');
+  if (e.target === document.getElementById('modalOverlay')) closeModalAndTrackAbandon();
+});
+['fName','fPhone'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('focus', () => {
+    if (leadFormTouched) return;
+    leadFormTouched = true;
+    if (typeof ym !== 'undefined') ym(111728638,'reachGoal','lead_form_field_touch');
+  });
 });
 
+let faqOpenTracked = false;
 document.addEventListener('click', e => {
   const btn = e.target.closest('.faq-q');
   if (!btn) return;
   const item = btn.closest('.faq-item');
   const wasOpen = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
+  if (!wasOpen) {
+    item.classList.add('open');
+    if (!faqOpenTracked) { faqOpenTracked = true; if (typeof ym !== 'undefined') ym(111728638,'reachGoal','org_faq_open'); }
+  }
 });
+
+// Скролл-глубина карточки — сигнал, долистал ли человек вообще до контактов/FAQ,
+// или ушёл в начале страницы.
+let scroll50Tracked = false, scroll90Tracked = false;
+window.addEventListener('scroll', () => {
+  const doc = document.documentElement;
+  const scrolled = (window.scrollY + window.innerHeight) / doc.scrollHeight;
+  if (!scroll50Tracked && scrolled >= 0.5) {
+    scroll50Tracked = true;
+    if (typeof ym !== 'undefined') ym(111728638,'reachGoal','org_scroll_50');
+  }
+  if (!scroll90Tracked && scrolled >= 0.9) {
+    scroll90Tracked = true;
+    if (typeof ym !== 'undefined') ym(111728638,'reachGoal','org_scroll_90');
+  }
+}, { passive: true });
 
 document.getElementById('btnSubmit').addEventListener('click', async () => {
   const name = document.getElementById('fName').value.trim();
@@ -883,6 +923,7 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
     });
     const d = await res.json();
     if (d.ok) {
+      leadFormSubmitted = true;
       if (typeof ym !== 'undefined') ym(111728638,'reachGoal','org_lead');
       document.getElementById('modalForm').style.display = 'none';
       document.getElementById('modalSuccess').style.display = 'block';
@@ -893,6 +934,7 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
 
 // ── Lightbox ──────────────────────────────────────────────────────────────
 let _lbIdx = 0;
+let galleryOpenTracked = false;
 function openLightbox(idx) {
   const photos = window._orgPhotos || [];
   if (!photos.length) return;
@@ -900,6 +942,7 @@ function openLightbox(idx) {
   document.getElementById('lbImg').src = photos[_lbIdx];
   document.getElementById('lbCounter').textContent = `${_lbIdx+1} / ${photos.length}`;
   document.getElementById('lightbox').classList.add('open');
+  if (!galleryOpenTracked) { galleryOpenTracked = true; if (typeof ym !== 'undefined') ym(111728638,'reachGoal','org_gallery_open'); }
 }
 function lbNav(dir) {
   const photos = window._orgPhotos || [];
