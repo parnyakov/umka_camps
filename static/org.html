@@ -825,6 +825,7 @@ function checkHeroSize(img, bg, emoji, ini) {
 
 // ── Modal ─────────────────────────────────────────────────────────────────
 function openModal(programName) {
+  if (typeof ym !== 'undefined') ym(111728638,'reachGoal','lead_form_open');
   document.getElementById('modalOrgName').textContent = orgName;
   document.getElementById('modalForm').style.display = 'block';
   document.getElementById('modalSuccess').style.display = 'none';
