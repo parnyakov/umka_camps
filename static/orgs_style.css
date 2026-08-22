@@ -961,7 +961,7 @@ a { color: inherit; text-decoration: none; }
   }
 
   .active-chips {
-    display: none; /* toggled to flex by JS only when chips exist */
+    display: none; /* shown only via .is-visible (JS renderActiveChips) */
     flex-wrap: nowrap;
     gap: 8px;
     overflow-x: auto;
@@ -971,6 +971,7 @@ a { color: inherit; text-decoration: none; }
     background: rgba(255,255,255,0.7);
     border-bottom: 1px solid var(--border);
   }
+  .active-chips.is-visible { display: flex; }
   .active-chips::-webkit-scrollbar { display: none; }
 
   /* Subcategory pills only ever show on mobile (inside the bottom sheet) —

@@ -262,9 +262,10 @@ nav {
 .modal-org-name { font-size:13px;color:var(--em);margin-bottom:20px;font-weight:500; }
 .form-group { margin-bottom:14px; }
 .form-group label { display:block;font-size:12px;color:var(--text2);margin-bottom:6px;font-weight:600; }
-.form-group input,.form-group textarea { width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s; }
-.form-group input:focus,.form-group textarea:focus { border-color:var(--em);box-shadow:0 0 0 3px var(--em-glow); }
+.form-group input,.form-group textarea,.form-group select { width:100%;padding:10px 12px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s; }
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus { border-color:var(--em);box-shadow:0 0 0 3px var(--em-glow); }
 .form-group textarea { resize:none;height:72px; }
+.form-group select { appearance:none;-webkit-appearance:none;cursor:pointer;padding-right:32px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238A9CB8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center; }
 .btn-submit { width:100%;padding:13px;background:var(--em);border:none;border-radius:10px;color:white;font-size:15px;font-weight:700;cursor:pointer;transition:background .2s;margin-top:4px;font-family:inherit; }
 .btn-submit:hover { background:var(--em-d); }
 .btn-submit:disabled { opacity:.5;cursor:default; }
@@ -857,7 +858,14 @@ document.addEventListener('click', e => {
 document.getElementById('btnSubmit').addEventListener('click', async () => {
   const name = document.getElementById('fName').value.trim();
   const phone = document.getElementById('fPhone').value.trim();
+  const telegram = document.getElementById('fTelegram').value.trim();
+  const contactMethod = document.getElementById('fContactMethod').value;
   if (!name || !phone) { alert('Укажите имя и телефон'); return; }
+  if (contactMethod === 'Telegram' && !telegram) {
+    alert('Укажите Telegram (username), раз выбрали связь через Telegram');
+    document.getElementById('fTelegram').focus();
+    return;
+  }
   const btn = document.getElementById('btnSubmit');
   btn.disabled = true; btn.textContent = 'Отправляем...';
   try {
@@ -865,8 +873,8 @@ document.getElementById('btnSubmit').addEventListener('click', async () => {
       method:'POST', headers:{'Content-Type':'application/json'},
       body: JSON.stringify({
         org_name: orgName, parent_name: name, phone,
-        telegram: document.getElementById('fTelegram').value.trim(),
-        contact_method: document.getElementById('fContactMethod').value,
+        telegram,
+        contact_method: contactMethod,
         child_age: document.getElementById('fAge').value.trim(),
         direction: document.getElementById('fDirection').value.trim(),
         comment: document.getElementById('fComment').value.trim(),

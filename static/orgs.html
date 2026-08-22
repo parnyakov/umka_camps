@@ -609,8 +609,14 @@ function renderActiveChips() {
   if (state.price_max) chips.push({ key: 'price_max', label: 'до ' + Number(state.price_max).toLocaleString('ru-RU') + ' ₽' });
   if (state.has_trial) chips.push({ key: 'has_trial', label: 'Пробное занятие' });
 
-  if (!chips.length) { box.style.display = 'none'; box.innerHTML = ''; return; }
-  box.style.display = 'flex';
+  // Desktop bug (2026-08-22): inline style.display used to override the
+  // ".active-chips { display:none }" desktop rule unconditionally, so this
+  // mobile-only bar popped up unstyled at the page edge on desktop whenever
+  // a filter was active. Toggling a class instead lets CSS keep it
+  // display:none on desktop (see orgs_style.css) while the mobile media
+  // query's own .is-visible rule still shows it there.
+  if (!chips.length) { box.classList.remove('is-visible'); box.innerHTML = ''; return; }
+  box.classList.add('is-visible');
   box.innerHTML = chips.map(c =>
     `<span class="chip">${esc(c.label)}<button onclick="removeFilterChip('${c.key}')" aria-label="Убрать">×</button></span>`
   ).join('') + `<button class="chip chip-reset-all" onclick="resetFilters()">Сбросить всё</button>`;

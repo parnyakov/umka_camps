@@ -289,7 +289,11 @@
   .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--em); box-shadow: 0 0 0 3px var(--em-glow); }
   .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text3); }
   .form-group textarea { resize: none; height: 72px; }
-  .form-group select { appearance: none; cursor: pointer; }
+  .form-group select {
+    appearance: none; -webkit-appearance: none; cursor: pointer; padding-right: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%238A9CB8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 10px center;
+  }
   .btn-submit {
     width: 100%; padding: 13px; background: var(--em); border: none;
     border-radius: 10px; color: white; font-size: 15px; font-weight: 700;

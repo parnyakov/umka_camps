@@ -396,6 +396,8 @@ def api_lead():
 
     if not parent_name or not phone:
         return jsonify({'ok': False, 'error': 'Укажите имя и телефон'}), 400
+    if contact_method == 'Telegram' and not telegram:
+        return jsonify({'ok': False, 'error': 'Укажите Telegram (username)'}), 400
 
     lines = ['🎨 Новая заявка на кружок!']
     if org_name:   lines.append(f'Кружок: {org_name}')
