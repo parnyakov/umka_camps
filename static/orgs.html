@@ -582,7 +582,12 @@ function renderMobileSubcats(cat) {
 
 function relocateFilters() {
   const isMobile = window.innerWidth <= 768;
-  const groupIds = ['fgCategory', 'fgDistrict', 'fgMetro', 'fgAge', 'fgPrice', 'fgTrial'];
+  // 2026-08-22 bug: fgCareType/fgAgeTier were added straight into the
+  // sidebar HTML but never registered here, so on mobile — where .sidebar
+  // is display:none and ONLY groups relocated into #bottomSheetContent are
+  // reachable — both new filters were invisible even though the markup and
+  // JS worked. Desktop was unaffected (sidebar stays visible in place).
+  const groupIds = ['fgCareType', 'fgCategory', 'fgAgeTier', 'fgDistrict', 'fgMetro', 'fgAge', 'fgPrice', 'fgTrial'];
   const sidebar  = document.getElementById('sidebar');
   const sheet    = document.getElementById('bottomSheetContent');
   const resetBtn = document.getElementById('sidebarResetBtn');
