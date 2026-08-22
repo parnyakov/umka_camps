@@ -89,6 +89,15 @@
       <div class="mobile-subcats" id="mobileSubcats"></div>
     </div>
 
+    <div class="filter-group" id="fgAgeTier">
+      <label>Для кого</label>
+      <div class="cat-pills" id="ageTierPills">
+        <div class="cat-pill active" data-tier="" onclick="setAgeTier('')">Все возраста</div>
+        <div class="cat-pill" data-tier="preschool" onclick="setAgeTier('preschool')">Дошкольники</div>
+        <div class="cat-pill" data-tier="school" onclick="setAgeTier('school')">Школьники</div>
+      </div>
+    </div>
+
     <div class="filter-group" id="fgDistrict">
       <label>Округ / район</label>
       <select id="districtFilter" onchange="applyFilters()">
@@ -300,7 +309,7 @@ function ymGoal(name, params) {
 
 let state = {
   category: '', subcategory: '', metro: '', district: '', age: '', price_max: '',
-  has_trial: false, q: '',
+  age_tier: '', has_trial: false, q: '',
   offset: 0, limit: 24, total: 0, loading: false
 };
 let _reqId = 0;
@@ -317,6 +326,7 @@ async function init() {
   state.district   = params.get('district')   || '';
   state.age        = params.get('age')        || '';
   state.price_max  = params.get('price_max')  || '';
+  state.age_tier   = params.get('age_tier')   || '';
   state.has_trial  = params.get('has_trial') === '1';
 
   if (state.q) document.getElementById('searchInput').value = state.q;
@@ -332,6 +342,7 @@ async function init() {
   buildDistrictSelect(meta.districts || []);
   addPillHoverBehavior();
   syncActiveCatPills();
+  syncAgeTierPills();
   if (state.category) renderMobileSubcats(state.category);
 
   relocateFilters();
@@ -416,6 +427,20 @@ function setCat(el, cat) {
   syncActiveCatPills();
   renderMobileSubcats(cat);
   fetchOrgs(false);
+}
+
+function setAgeTier(tier) {
+  state.age_tier = (state.age_tier === tier && tier !== '') ? '' : tier;
+  state.offset = 0;
+  syncAgeTierPills();
+  fetchOrgs(false);
+  ymGoal('filter_age_tier');
+}
+
+function syncAgeTierPills() {
+  document.querySelectorAll('#ageTierPills .cat-pill').forEach(p => {
+    p.classList.toggle('active', p.dataset.tier === state.age_tier);
+  });
 }
 
 const CAT_LABELS = {
@@ -577,6 +602,7 @@ function countActiveFilters() {
   if (state.district) n++;
   if (state.age) n++;
   if (state.price_max) n++;
+  if (state.age_tier) n++;
   if (state.has_trial) n++;
   return n;
 }
@@ -607,6 +633,7 @@ function renderActiveChips() {
   if (state.district)  chips.push({ key: 'district',  label: state.district });
   if (state.age)       chips.push({ key: 'age',       label: state.age + ' лет' });
   if (state.price_max) chips.push({ key: 'price_max', label: 'до ' + Number(state.price_max).toLocaleString('ru-RU') + ' ₽' });
+  if (state.age_tier)  chips.push({ key: 'age_tier',  label: state.age_tier === 'school' ? 'Школьники' : 'Дошкольники' });
   if (state.has_trial) chips.push({ key: 'has_trial', label: 'Пробное занятие' });
 
   // Desktop bug (2026-08-22): inline style.display used to override the
@@ -635,6 +662,8 @@ function removeFilterChip(key) {
     state.age = ''; document.getElementById('ageFilter').value = '';
   } else if (key === 'price_max') {
     state.price_max = ''; document.getElementById('priceFilter').value = '';
+  } else if (key === 'age_tier') {
+    state.age_tier = ''; syncAgeTierPills();
   } else if (key === 'has_trial') {
     state.has_trial = false; document.getElementById('trialToggle').classList.remove('on');
   }
@@ -669,6 +698,7 @@ function syncUrl() {
   if (state.district)    p.set('district', state.district);
   if (state.age)         p.set('age', state.age);
   if (state.price_max)   p.set('price_max', state.price_max);
+  if (state.age_tier)    p.set('age_tier', state.age_tier);
   if (state.has_trial)   p.set('has_trial', '1');
   const qs = p.toString();
   const url = qs ? ('/orgs?' + qs) : '/orgs';
@@ -718,7 +748,7 @@ function setMobileSub(val) {
 }
 
 function resetFilters() {
-  state = { ...state, category: '', subcategory: '', metro: '', district: '', age: '', price_max: '', has_trial: false, q: '', offset: 0 };
+  state = { ...state, category: '', subcategory: '', metro: '', district: '', age: '', price_max: '', age_tier: '', has_trial: false, q: '', offset: 0 };
   document.getElementById('searchInput').value = '';
   document.getElementById('metroFilter').value = '';
   document.getElementById('districtFilter').value = '';
@@ -726,6 +756,7 @@ function resetFilters() {
   document.getElementById('priceFilter').value = '';
   document.getElementById('trialToggle').classList.remove('on');
   syncActiveCatPills();
+  syncAgeTierPills();
   updateSearchClearBtn();
   const box = document.getElementById('mobileSubcats');
   box.classList.remove('open'); box.innerHTML = '';
@@ -766,6 +797,7 @@ async function fetchOrgs(append = false) {
 
   if (state.age)         p.set('age', state.age);
   if (state.price_max)   p.set('price_max', state.price_max);
+  if (state.age_tier)    p.set('age_tier', state.age_tier);
   if (state.has_trial)   p.set('has_trial', '1');
   p.set('limit', state.limit);
   p.set('offset', state.offset);

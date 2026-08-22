@@ -547,6 +547,46 @@ def _age_includes(age_str, target):
     if m: return int(m.group(1)) <= target
     return True
 
+_AGE_NUM = r'\d+(?:[.,]\d+)?'
+
+def _age_bounds(age_str):
+    """Best-effort (min, max) in years from a free-text age_range like
+    '8–11 лет' / '1,5–7 лет' / '0–3 года' / 'от 1,5 лет' / '2+ лет'.
+    max is None when the range is open-ended. Used for the school/preschool
+    age_tier filter (2026-08-22) — a decimal-aware sibling of _age_includes
+    above, which mishandles '1,5–7 лет' (matches '5–7', dropping the '1,')
+    since it wasn't built for a comma decimal; kept separate rather than
+    fixed in place to avoid touching the existing single-age filter's
+    behavior mid-season."""
+    if not age_str: return (None, None)
+    s = age_str.replace(',', '.')
+    m = re.search(rf'({_AGE_NUM})\s*[-–]\s*({_AGE_NUM})', s)
+    if m: return (float(m.group(1)), float(m.group(2)))
+    m = re.search(rf'от\s*({_AGE_NUM})', s)
+    if m: return (float(m.group(1)), None)
+    m = re.search(rf'({_AGE_NUM})\s*\+', s)
+    if m: return (float(m.group(1)), None)
+    m = re.search(rf'({_AGE_NUM})', s)
+    if m:
+        v = float(m.group(1))
+        return (v, v)
+    return (None, None)
+
+def _age_tier_match(age_str, tier):
+    """True if the org's age_range plausibly covers the given tier
+    ('preschool' <7yo, 'school' >=7yo). Unknown/unparseable age_range is
+    treated as matching both tiers rather than excluding the org — fusy
+    on purpose, per Maxim's 22.08 request (~95% right beats a hard filter
+    that silently drops organizations with messy age_range text)."""
+    lo, hi = _age_bounds(age_str)
+    if lo is None:
+        return True
+    if tier == 'preschool':
+        return lo < 7
+    if tier == 'school':
+        return hi is None or hi >= 7
+    return True
+
 def _orgs_conn():
     conn = sqlite3.connect(ORGS_DB)
     conn.row_factory = sqlite3.Row
@@ -583,6 +623,7 @@ def api_orgs():
     q           = request.args.get('q','')
     age         = request.args.get('age', type=int)
     price_max   = request.args.get('price_max', type=int)
+    age_tier    = request.args.get('age_tier','')
     limit       = min(int(request.args.get('limit',50)), 200)
     offset      = int(request.args.get('offset',0))
 
@@ -616,6 +657,8 @@ def api_orgs():
                  q_lower in _prog_detail_text(o).lower()]
     if age:       items = [o for o in items if _age_includes(o.get('age_range',''), age)]
     if price_max: items = [o for o in items if _price_lte(o, price_max)]
+    if age_tier in ('preschool', 'school'):
+        items = [o for o in items if _age_tier_match(o.get('age_range',''), age_tier)]
 
     total = len(items)
     items = items[offset:offset+limit]
