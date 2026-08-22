@@ -427,6 +427,12 @@ function buildMetroSelect(metros) {
 }
 
 function setCat(el, cat) {
+  // 2026-08-22: category and care_type=kindergarten are mutually exclusive
+  // modes (see toggleCareType) — picking a category means "browse regular
+  // clubs", so silently drop kindergarten mode instead of letting the two
+  // stack into a near-empty result (kindergartens barely overlap with any
+  // single activity category).
+  if (state.care_type === 'kindergarten') { state.care_type = ''; syncCareTypeToggle(); }
   if (state.category === cat && cat !== '') {
     state.category = '';
     state.subcategory = '';
@@ -444,6 +450,8 @@ function setCat(el, cat) {
 }
 
 function setAgeTier(tier) {
+  // See setCat's comment — same mutual-exclusivity with kindergarten mode.
+  if (state.care_type === 'kindergarten') { state.care_type = ''; syncCareTypeToggle(); }
   state.age_tier = (state.age_tier === tier && tier !== '') ? '' : tier;
   state.offset = 0;
   syncAgeTierPills();
@@ -458,7 +466,30 @@ function syncAgeTierPills() {
 }
 
 function toggleCareType() {
-  state.care_type = state.care_type === 'kindergarten' ? '' : 'kindergarten';
+  const turningOn = state.care_type !== 'kindergarten';
+  if (turningOn) {
+    // Kindergartens are a separate browsing mode, not a filter that
+    // composes with the regular club filters (Maxim, 22.08 voice request)
+    // — e.g. category "Спорт" + care_type kindergarten silently produced
+    // an empty result, since kindergartens barely exist in most activity
+    // categories. Entering kindergarten mode resets everything else, same
+    // as resetFilters(), just without also clearing care_type itself.
+    state = { ...state, category: '', subcategory: '', metro: '', district: '',
+              age: '', price_max: '', age_tier: '', has_trial: false, q: '', offset: 0 };
+    document.getElementById('searchInput').value = '';
+    document.getElementById('metroFilter').value = '';
+    document.getElementById('districtFilter').value = '';
+    document.getElementById('ageFilter').value = '';
+    document.getElementById('priceFilter').value = '';
+    document.getElementById('trialToggle').classList.remove('on');
+    syncActiveCatPills();
+    syncAgeTierPills();
+    updateSearchClearBtn();
+    const box = document.getElementById('mobileSubcats');
+    box.classList.remove('open'); box.innerHTML = '';
+    closeSubPopover();
+  }
+  state.care_type = turningOn ? 'kindergarten' : '';
   state.offset = 0;
   syncCareTypeToggle();
   fetchOrgs(false);
