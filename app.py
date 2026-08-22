@@ -452,10 +452,11 @@ def init_orgs_db():
         extra_photos TEXT, featured INTEGER DEFAULT 0,
         price_from INTEGER, price_to INTEGER, price_period TEXT,
         team TEXT, programs_detailed TEXT,
-        lat REAL, lon REAL, tags TEXT
+        lat REAL, lon REAL, tags TEXT,
+        care_type TEXT DEFAULT 'club'
     )''')
     for c in cards:
-        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+        conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
             c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
             c.get('address',''), c.get('metro',''), c.get('district',''),
             json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
@@ -473,6 +474,7 @@ def init_orgs_db():
             json.dumps(c.get('programs_detailed',[]), ensure_ascii=False),
             c.get('lat'), c.get('lon'),
             json.dumps(c.get('tags',[]), ensure_ascii=False),
+            c.get('care_type') or 'club',
         ))
     conn.commit()
     conn.close()
@@ -493,6 +495,7 @@ def _migrate_orgs_db():
         ("lat", "ALTER TABLE organizations ADD COLUMN lat REAL"),
         ("lon", "ALTER TABLE organizations ADD COLUMN lon REAL"),
         ("tags", "ALTER TABLE organizations ADD COLUMN tags TEXT DEFAULT '[]'"),
+        ("care_type", "ALTER TABLE organizations ADD COLUMN care_type TEXT DEFAULT 'club'"),
     ]
     for col, sql in migrations:
         try:
@@ -514,11 +517,12 @@ def _migrate_orgs_db():
             team = c.get('team', [])
             programs_detailed = c.get('programs_detailed', [])
             tags = c.get('tags', [])
+            care_type = c.get('care_type') or 'club'
             conn.execute(
-                "UPDATE organizations SET extra_photos=?, price_from=?, price_to=?, price_period=?, team=?, programs_detailed=?, lat=?, lon=?, tags=? WHERE id=?",
+                "UPDATE organizations SET extra_photos=?, price_from=?, price_to=?, price_period=?, team=?, programs_detailed=?, lat=?, lon=?, tags=?, care_type=? WHERE id=?",
                 (json.dumps(eps, ensure_ascii=False), c.get('price_from'), c.get('price_to'), c.get('price_period'),
                  json.dumps(team, ensure_ascii=False), json.dumps(programs_detailed, ensure_ascii=False),
-                 c.get('lat'), c.get('lon'), json.dumps(tags, ensure_ascii=False), cid)
+                 c.get('lat'), c.get('lon'), json.dumps(tags, ensure_ascii=False), care_type, cid)
             )
         conn.commit()
     conn.close()
@@ -624,6 +628,7 @@ def api_orgs():
     age         = request.args.get('age', type=int)
     price_max   = request.args.get('price_max', type=int)
     age_tier    = request.args.get('age_tier','')
+    care_type   = request.args.get('care_type','')
     limit       = min(int(request.args.get('limit',50)), 200)
     offset      = int(request.args.get('offset',0))
 
@@ -633,6 +638,15 @@ def api_orgs():
     if metro:          conds.append('metro=?');        params.append(metro)
     if district:       conds.append('district=?');     params.append(district)
     if has_trial=='1': conds.append('has_trial=1')
+    # care_type: default view is clubs/kружки only -- private kindergartens
+    # (детский сад / ясли / группа продлённого дня) are excluded unless the
+    # caller explicitly asks for care_type=kindergarten, per Maxim's 22.08
+    # request to stop mixing full-day childcare into the club catalog.
+    # Plain equality column, so filtered SQL-side like category/subcategory.
+    if care_type == 'kindergarten':
+        conds.append("care_type='kindergarten'")
+    else:
+        conds.append("care_type!='kindergarten'")
     # q, age, price_max are applied Python-side:
     # SQLite LIKE is case-insensitive only for ASCII, not Cyrillic.
     where = ('WHERE ' + ' AND '.join(conds)) if conds else ''
@@ -676,13 +690,15 @@ def api_org(org_id):
 
 @app.route('/api/orgs-meta')
 def api_orgs_meta():
-    if not os.path.exists(ORGS_DB): return jsonify({'categories':[],'metros':[],'districts':[]})
+    if not os.path.exists(ORGS_DB): return jsonify({'categories':[],'metros':[],'districts':[],'kindergarten_count':0})
     conn = _orgs_conn()
     cats      = [r[0] for r in conn.execute("SELECT DISTINCT category FROM organizations WHERE category!='' ORDER BY category").fetchall()]
     metros    = [r[0] for r in conn.execute("SELECT DISTINCT metro FROM organizations WHERE metro!='' ORDER BY metro").fetchall()]
     districts = [r[0] for r in conn.execute("SELECT DISTINCT district FROM organizations WHERE district!='' ORDER BY district").fetchall()]
+    kindergarten_count = conn.execute("SELECT COUNT(*) FROM organizations WHERE care_type='kindergarten'").fetchone()[0]
     conn.close()
-    return jsonify({'categories': cats, 'metros': metros, 'districts': districts})
+    return jsonify({'categories': cats, 'metros': metros, 'districts': districts,
+                     'kindergarten_count': kindergarten_count})
 
 # ─── STATIC FILES ────────────────────────────────────────────────────────────
 

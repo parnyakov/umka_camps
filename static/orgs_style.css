@@ -357,6 +357,35 @@ a { color: inherit; text-decoration: none; }
 .cat-pill:hover { background: var(--bg3); }
 .cat-pill.active { border-color: var(--clr-primary); background: var(--clr-primary-glow); color: var(--clr-primary-d); font-weight: 600; }
 
+/* Care-type entry point (детские сады vs кружки) — deliberately NOT a
+   .cat-pill: different shape (single row, not part of a pill list) and a
+   different accent color (purple, not the teal used for category/age_tier)
+   so it doesn't read as a 6th activity category. */
+.care-type-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1.5px dashed var(--border);
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--text2);
+  transition: all .15s;
+}
+.care-type-toggle:hover { border-color: var(--clr-purple); background: rgba(139,92,246,0.06); }
+.care-type-toggle.active {
+  border-style: solid;
+  border-color: var(--clr-purple);
+  background: rgba(139,92,246,0.1);
+  color: var(--clr-purple);
+  font-weight: 600;
+}
+.care-type-icon { font-size: 16px; line-height: 1; }
+.care-type-label { display: flex; align-items: baseline; gap: 4px; }
+.care-type-label span { font-weight: 400; color: var(--muted); font-size: 13px; }
+.care-type-toggle.active .care-type-label span { color: var(--clr-purple); opacity: .8; }
+
 /* ── Mobile-only chrome (hidden on desktop by default) ── */
 .mobile-filter-bar, .active-chips, .bottom-sheet-overlay { display: none; }
 

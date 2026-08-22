@@ -82,6 +82,16 @@
   <!-- Sidebar фильтры -->
   <aside class="sidebar" id="sidebar">
 
+    <!-- Не категория кружка, а другая ось — тип программы (кружок vs частный
+         детский сад). Нарочно вынесено отдельным блоком вне cat-pills, чтобы
+         не читалось как ещё одна категория. -->
+    <div class="filter-group" id="fgCareType">
+      <div class="care-type-toggle" id="careTypeToggle" onclick="toggleCareType()">
+        <span class="care-type-icon">🏫</span>
+        <span class="care-type-label">Частные детские сады<span id="careTypeCount"></span></span>
+      </div>
+    </div>
+
     <div class="filter-group" id="fgCategory">
       <label>Категория</label>
       <div class="cat-pills" id="catPills"></div>
@@ -309,7 +319,7 @@ function ymGoal(name, params) {
 
 let state = {
   category: '', subcategory: '', metro: '', district: '', age: '', price_max: '',
-  age_tier: '', has_trial: false, q: '',
+  age_tier: '', care_type: '', has_trial: false, q: '',
   offset: 0, limit: 24, total: 0, loading: false
 };
 let _reqId = 0;
@@ -327,6 +337,7 @@ async function init() {
   state.age        = params.get('age')        || '';
   state.price_max  = params.get('price_max')  || '';
   state.age_tier   = params.get('age_tier')   || '';
+  state.care_type  = params.get('care_type') === 'kindergarten' ? 'kindergarten' : '';
   state.has_trial  = params.get('has_trial') === '1';
 
   if (state.q) document.getElementById('searchInput').value = state.q;
@@ -343,6 +354,9 @@ async function init() {
   addPillHoverBehavior();
   syncActiveCatPills();
   syncAgeTierPills();
+  const kCount = document.getElementById('careTypeCount');
+  if (kCount) kCount.textContent = ' (' + (meta.kindergarten_count || 0) + ')';
+  syncCareTypeToggle();
   if (state.category) renderMobileSubcats(state.category);
 
   relocateFilters();
@@ -441,6 +455,19 @@ function syncAgeTierPills() {
   document.querySelectorAll('#ageTierPills .cat-pill').forEach(p => {
     p.classList.toggle('active', p.dataset.tier === state.age_tier);
   });
+}
+
+function toggleCareType() {
+  state.care_type = state.care_type === 'kindergarten' ? '' : 'kindergarten';
+  state.offset = 0;
+  syncCareTypeToggle();
+  fetchOrgs(false);
+  ymGoal('filter_care_type');
+}
+
+function syncCareTypeToggle() {
+  const el = document.getElementById('careTypeToggle');
+  if (el) el.classList.toggle('active', state.care_type === 'kindergarten');
 }
 
 const CAT_LABELS = {
@@ -603,6 +630,7 @@ function countActiveFilters() {
   if (state.age) n++;
   if (state.price_max) n++;
   if (state.age_tier) n++;
+  if (state.care_type) n++;
   if (state.has_trial) n++;
   return n;
 }
@@ -634,6 +662,7 @@ function renderActiveChips() {
   if (state.age)       chips.push({ key: 'age',       label: state.age + ' лет' });
   if (state.price_max) chips.push({ key: 'price_max', label: 'до ' + Number(state.price_max).toLocaleString('ru-RU') + ' ₽' });
   if (state.age_tier)  chips.push({ key: 'age_tier',  label: state.age_tier === 'school' ? 'Школьники' : 'Дошкольники' });
+  if (state.care_type) chips.push({ key: 'care_type', label: '🏫 Частные детские сады' });
   if (state.has_trial) chips.push({ key: 'has_trial', label: 'Пробное занятие' });
 
   // Desktop bug (2026-08-22): inline style.display used to override the
@@ -664,6 +693,8 @@ function removeFilterChip(key) {
     state.price_max = ''; document.getElementById('priceFilter').value = '';
   } else if (key === 'age_tier') {
     state.age_tier = ''; syncAgeTierPills();
+  } else if (key === 'care_type') {
+    state.care_type = ''; syncCareTypeToggle();
   } else if (key === 'has_trial') {
     state.has_trial = false; document.getElementById('trialToggle').classList.remove('on');
   }
@@ -699,6 +730,7 @@ function syncUrl() {
   if (state.age)         p.set('age', state.age);
   if (state.price_max)   p.set('price_max', state.price_max);
   if (state.age_tier)    p.set('age_tier', state.age_tier);
+  if (state.care_type)   p.set('care_type', state.care_type);
   if (state.has_trial)   p.set('has_trial', '1');
   const qs = p.toString();
   const url = qs ? ('/orgs?' + qs) : '/orgs';
@@ -748,7 +780,7 @@ function setMobileSub(val) {
 }
 
 function resetFilters() {
-  state = { ...state, category: '', subcategory: '', metro: '', district: '', age: '', price_max: '', age_tier: '', has_trial: false, q: '', offset: 0 };
+  state = { ...state, category: '', subcategory: '', metro: '', district: '', age: '', price_max: '', age_tier: '', care_type: '', has_trial: false, q: '', offset: 0 };
   document.getElementById('searchInput').value = '';
   document.getElementById('metroFilter').value = '';
   document.getElementById('districtFilter').value = '';
@@ -757,6 +789,7 @@ function resetFilters() {
   document.getElementById('trialToggle').classList.remove('on');
   syncActiveCatPills();
   syncAgeTierPills();
+  syncCareTypeToggle();
   updateSearchClearBtn();
   const box = document.getElementById('mobileSubcats');
   box.classList.remove('open'); box.innerHTML = '';
@@ -798,6 +831,7 @@ async function fetchOrgs(append = false) {
   if (state.age)         p.set('age', state.age);
   if (state.price_max)   p.set('price_max', state.price_max);
   if (state.age_tier)    p.set('age_tier', state.age_tier);
+  if (state.care_type)   p.set('care_type', state.care_type);
   if (state.has_trial)   p.set('has_trial', '1');
   p.set('limit', state.limit);
   p.set('offset', state.offset);
