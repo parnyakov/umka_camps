@@ -709,7 +709,8 @@ function render(org) {
         <span class="ct"><span class="cl">Адрес</span><span class="cv">${esc(org.address)}</span></span>
       </a>`,
     siteUrl && `
-      <a class="contact-row" href="${esc(siteUrl)}" target="_blank" rel="noopener">
+      <a class="contact-row" href="${esc(siteUrl)}" target="_blank" rel="noopener"
+         onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_website_click')">
         <span class="ci">🌐</span>
         <span class="ct"><span class="cl">Сайт</span><span class="cv">${esc(siteUrl.replace(/^https?:\/\//,''))}</span></span>
       </a>`,
