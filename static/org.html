@@ -695,7 +695,8 @@ function render(org) {
           <strong>Рейтинг на Яндекс Картах</strong>
           Оценки оставлены реальными посетителями. Чтобы прочитать отзывы или оставить свой — перейдите на страницу организации.
           <br>
-          <a class="reviews-link" href="${reviewsUrl}" target="_blank" rel="noopener">
+          <a class="reviews-link" href="${reviewsUrl}" target="_blank" rel="noopener"
+             onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_reviews_click')">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M5 7h4M7 5l2 2-2 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Читать отзывы на Яндекс Картах
           </a>
@@ -707,7 +708,8 @@ function render(org) {
   const siteUrl = isRealWebsite(org.website) ? org.website : null;
   const contactRows = [
     org.address && `
-      <a class="contact-row" href="${mapsUrl}" target="_blank" rel="noopener">
+      <a class="contact-row" href="${mapsUrl}" target="_blank" rel="noopener"
+         onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_maps_click')">
         <span class="ci">📍</span>
         <span class="ct"><span class="cl">Адрес</span><span class="cv">${esc(org.address)}</span></span>
       </a>`,
@@ -718,13 +720,15 @@ function render(org) {
         <span class="ct"><span class="cl">Сайт</span><span class="cv">${esc(siteUrl.replace(/^https?:\/\//,''))}</span></span>
       </a>`,
     org.vk && `
-      <a class="contact-row" href="${esc(org.vk)}" target="_blank" rel="noopener">
+      <a class="contact-row" href="${esc(org.vk)}" target="_blank" rel="noopener"
+         onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_vk_click')">
         <span class="ci">💬</span>
         <span class="ct"><span class="cl">ВКонтакте</span><span class="cv">Группа ВКонтакте</span></span>
       </a>`,
   ].filter(Boolean);
   const staticMapHtml = (org.lat && org.lon) ? `
-    <a class="map-widget" href="${mapsUrl}" target="_blank" rel="noopener">
+    <a class="map-widget" href="${mapsUrl}" target="_blank" rel="noopener"
+       onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_maps_click')">
       <img loading="lazy" src="https://static-maps.yandex.ru/1.x/?ll=${org.lon},${org.lat}&size=600,260&z=16&l=map&pt=${org.lon},${org.lat},pm2rdm" alt="${esc(org.name)} на карте">
     </a>` : '';
   const contactsHtml = contactRows.length ? `
@@ -834,6 +838,12 @@ function checkHeroSize(img, bg, emoji, ini) {
 // дают три чётких состояния воронки, не только факт финального сабмита.
 let leadFormSubmitted = false;
 let leadFormTouched = false;
+// closingViaHistory: guards against double-handling when the modal is
+// closed by the browser back button — popstate has already happened by
+// the time this runs, so we must not push another history.back() call
+// (found 24.08: mobile "назад" bypassed X/overlay handlers entirely and
+// never fired lead_form_abandon — modal state wasn't in browser history).
+let closingViaHistory = false;
 function openModal(programName) {
   if (typeof ym !== 'undefined') ym(111728638,'reachGoal','lead_form_open');
   leadFormSubmitted = false;
@@ -851,13 +861,24 @@ function openModal(programName) {
     document.getElementById('fDirection').value = CAT_LABELS[prefillCat] || prefillCat;
   }
   document.getElementById('modalOverlay').classList.add('open');
+  history.pushState({modalOpen:true}, '');
 }
 function closeModalAndTrackAbandon() {
   const wasOpen = document.getElementById('modalOverlay').classList.contains('open');
   document.getElementById('modalOverlay').classList.remove('open');
   if (wasOpen && !leadFormSubmitted && typeof ym !== 'undefined')
     ym(111728638,'reachGoal','lead_form_abandon');
+  if (wasOpen && !closingViaHistory && history.state && history.state.modalOpen) {
+    history.back();
+  }
 }
+window.addEventListener('popstate', () => {
+  if (document.getElementById('modalOverlay').classList.contains('open')) {
+    closingViaHistory = true;
+    closeModalAndTrackAbandon();
+    closingViaHistory = false;
+  }
+});
 document.getElementById('modalClose').addEventListener('click', closeModalAndTrackAbandon);
 document.getElementById('modalOverlay').addEventListener('click', e => {
   if (e.target === document.getElementById('modalOverlay')) closeModalAndTrackAbandon();
