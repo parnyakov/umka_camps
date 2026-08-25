@@ -708,17 +708,15 @@ function render(org) {
   const siteUrl = isRealWebsite(org.website) ? org.website : null;
   const contactRows = [
     org.address && `
-      <a class="contact-row" href="${mapsUrl}" target="_blank" rel="noopener"
-         onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_maps_click')">
+      <div class="contact-row">
         <span class="ci">📍</span>
         <span class="ct"><span class="cl">Адрес</span><span class="cv">${esc(org.address)}</span></span>
-      </a>`,
+      </div>`,
     siteUrl && `
-      <a class="contact-row" href="${esc(siteUrl)}" target="_blank" rel="noopener"
-         onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_website_click')">
+      <div class="contact-row">
         <span class="ci">🌐</span>
         <span class="ct"><span class="cl">Сайт</span><span class="cv">${esc(siteUrl.replace(/^https?:\/\//,''))}</span></span>
-      </a>`,
+      </div>`,
     org.vk && `
       <a class="contact-row" href="${esc(org.vk)}" target="_blank" rel="noopener"
          onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_vk_click')">
@@ -727,10 +725,9 @@ function render(org) {
       </a>`,
   ].filter(Boolean);
   const staticMapHtml = (org.lat && org.lon) ? `
-    <a class="map-widget" href="${mapsUrl}" target="_blank" rel="noopener"
-       onclick="if(typeof ym!=='undefined')ym(111728638,'reachGoal','org_maps_click')">
+    <div class="map-widget">
       <img loading="lazy" src="https://static-maps.yandex.ru/1.x/?ll=${org.lon},${org.lat}&size=600,260&z=16&l=map&pt=${org.lon},${org.lat},pm2rdm" alt="${esc(org.name)} на карте">
-    </a>` : '';
+    </div>` : '';
   const contactsHtml = contactRows.length ? `
     <div class="section anim anim-d3">
       <div class="section-title">Контакты</div>
