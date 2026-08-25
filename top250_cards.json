@@ -90132,5 +90132,1842 @@
       }
     ],
     "id": 695
+  },
+  {
+    "name": "Клуб единоборств «Ясенево»",
+    "category": "спорт",
+    "subcategory": "единоборства",
+    "address": "Ясногорская ул., 5, Москва",
+    "metro": "Ясенево",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Каратэ-до (шотокан)",
+      "Самооборона",
+      "Рукопашный бой",
+      "Первая помощь",
+      "Летний лагерь"
+    ],
+    "skills": [
+      "каратэ",
+      "шотокан",
+      "самооборона",
+      "рукопашный бой",
+      "первая помощь"
+    ],
+    "age_range": "4-99",
+    "price": "от 700 ₽",
+    "description": "Клуб единоборств «Ясенево» (Каратэ Клуб Ясенево, федерация NSKF) работает в Ясенево более 15 лет в собственном оборудованном зале в 5 минутах ходьбы от метро Ясенево. Направления: каратэ-до (стиль шотокан) для детей от 4 лет с делением групп по возрасту и уровню подготовки, самооборона и рукопашный бой с 12 лет, регулярные занятия по первой помощи на симуляционном оборудовании (манекены для СЛР, детский манекен). Руководитель и главный тренер — Буяков Сергей Александрович, 6 дан. Летом клуб вывозит воспитанников в летний лагерь в Подмосковье. Есть аттестации на пояса и участие в соревнованиях.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (909) 153-95-46",
+    "website": "http://www.nskf-moscow.ru/",
+    "vk": "https://vk.com/karateklubyasenevo",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 8,
+    "data_quality": 85,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/401/01-class-training.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/401/02-class-certificates.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/401/03-firstaid-lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/401/04-kata-competition.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/401/05-medal-award.jpg"
+    ],
+    "price_from": 700,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.609912,
+    "lon": 37.538334,
+    "team": [
+      {
+        "role": "руководитель клуба, главный тренер",
+        "detail": "Буяков Сергей Александрович — 6 дан каратэ"
+      },
+      {
+        "role": "тренер",
+        "detail": "Максимов Александр"
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "шотокан",
+      "единоборства",
+      "самооборона",
+      "рукопашный бой",
+      "первая помощь",
+      "ясенево"
+    ],
+    "programs_detailed": [
+      {
+        "name": "Каратэ-до (шотокан)",
+        "age_range": "4-17 лет",
+        "format": "группа, по возрасту и уровню подготовки",
+        "schedule": "Пн/Ср/Пт или Вт/Чт/Сб",
+        "description": "Тренировки по каратэ-до, аттестация на пояса, участие в соревнованиях",
+        "price": "от 7500 ₽/мес (абонемент на 1 месяц); индивидуально — 3000 ₽/занятие, мини-группа (2 чел.) — 1500 ₽/занятие"
+      },
+      {
+        "name": "Самооборона",
+        "age_range": "с 12 лет",
+        "format": "группа",
+        "schedule": "уточняется при записи",
+        "description": "Практическая самооборона, аттестация, соревнования",
+        "price": "по общему прайсу клуба"
+      },
+      {
+        "name": "Рукопашный бой",
+        "age_range": "уточняется при записи",
+        "format": "группа",
+        "schedule": "уточняется при записи",
+        "description": "Тренировки и соревнования по рукопашному бою",
+        "price": "по общему прайсу клуба"
+      },
+      {
+        "name": "Первая помощь",
+        "age_range": "с 12 лет / мастер-классы для всех возрастов",
+        "format": "мастер-класс 2-8 часов, на симуляционном оборудовании",
+        "schedule": "уточняется при записи",
+        "description": "Обучение первой помощи на манекенах для СЛР, включая детский манекен",
+        "price": "2000-8000 ₽ (мастер-класс)"
+      }
+    ],
+    "id": 696
+  },
+  {
+    "name": "Каратэ клуб «Ясенево» (секция при школе №1561)",
+    "category": "спорт",
+    "subcategory": "единоборства",
+    "address": "Голубинская ул., 23к3 (школа №1561, корпус 3), Москва",
+    "metro": "Ясенево",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Каратэ-до",
+      "Участие в соревнованиях",
+      "Аттестация на пояс",
+      "Летние спортивные сборы",
+      "Первая медицинская помощь"
+    ],
+    "skills": [
+      "каратэ",
+      "единоборства",
+      "самооборона"
+    ],
+    "age_range": "4-17 лет",
+    "price": "первое занятие бесплатно",
+    "description": "Частный каратэ-клуб «Ясенево» — занятия единоборствами для детей от 4 лет, тренировки проходят в спортзале корпуса №3 школы №1561 (Голубинская, 23к3). Тренер — Олешко Максим Валерьевич, чёрный пояс, 3 дан. Клуб организует участие в соревнованиях разного уровня, квалификационные экзамены на пояс дважды в год, летние спортивные сборы, посещение семинаров российских и зарубежных мастеров, выездные развлекательные мероприятия и обучение первой медицинской помощи. Первая пробная тренировка — бесплатно.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (916) 132-61-46",
+    "website": "",
+    "vk": "https://vk.ru/karateclubyasenevo",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/404/01-grading-ceremony.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/404/02-kata-competition.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/404/03-certificate-award.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/404/04-pad-training.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/404/05-forms-competition.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "heuristic",
+    "lat": 55.600176,
+    "lon": 37.533174,
+    "team": [
+      {
+        "role": "тренер",
+        "detail": "Олешко Максим Валерьевич — чёрный пояс, 3 дан"
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "единоборства",
+      "самооборона",
+      "ясенево",
+      "школа 1561"
+    ],
+    "programs_detailed": [
+      {
+        "name": "Каратэ-до",
+        "age_range": "4-17 лет",
+        "format": "группа, спортзал школы №1561",
+        "schedule": "уточняется при записи",
+        "description": "Занятия каратэ, участие в соревнованиях различного уровня, квалификационные экзамены на пояс дважды в год, летние спортивные сборы, семинары мастеров, обучение первой медицинской помощи",
+        "price": "первое занятие бесплатно, далее уточняется при записи"
+      }
+    ],
+    "id": 697
+  },
+  {
+    "name": "Клуб каратэ №1 (Коммунарка)",
+    "category": "спорт",
+    "subcategory": "каратэ",
+    "address": "Бачуринская ул., 17 (фитнес-студия «Fresh look»), пос. Коммунарка, Москва",
+    "metro": "Коммунарка",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Каратэ (Шотокан/Сётокан, формат WKF) 4-6 лет",
+      "Каратэ (Шотокан/Сётокан, формат WKF) 7-12 лет",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "каратэ",
+      "самооборона",
+      "дисциплина",
+      "растяжка",
+      "координация"
+    ],
+    "age_range": "4-12 лет",
+    "price": "от 8000 ₽",
+    "description": "Филиал сети детских спортивных секций каратэ «Клуб каратэ №1» в Коммунарке (Новомосковский округ), зал в помещении фитнес-студии «Fresh look» на Бачуринской ул., 17. Сеть работает по всей Москве и области (12+ филиалов), стиль — Сётокан (Shotokan) в формате WKF. Тренер зала в Коммунарке — Богданова А. Тренируют физическую подготовку, технику ударов и стоек, самооборону, дисциплину и восточную философию взросления. Дети участвуют в аттестациях на пояса, соревнованиях, семинарах и спортивных сборах клуба. Первые полгода можно заниматься в обычной спортивной форме, кимоно нужно только после первой аттестации.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (915) 129-35-37",
+    "website": "https://club-karate1.ru/",
+    "vk": "",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/405/01-certificate-ceremony.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/405/02-club-patches.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/405/03-group-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/405/04-training-session.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/405/05-summer-camp.jpg"
+    ],
+    "price_from": 8000,
+    "price_period": "месяц",
+    "price_source": "heuristic",
+    "lat": 55.57430522,
+    "lon": 37.4877542,
+    "team": [
+      {
+        "role": "тренер зала в Коммунарке",
+        "detail": "Богданова А."
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "единоборства",
+      "спортивная секция",
+      "сётокан",
+      "shotokan",
+      "wkf",
+      "коммунарка"
+    ],
+    "programs_detailed": [
+      {
+        "name": "Каратэ (Сётокан, WKF) 4-6 лет",
+        "age_range": "4-6 лет",
+        "format": "группа",
+        "schedule": "уточняется при записи",
+        "description": "Базовая физическая подготовка, техника каратэ для самых маленьких",
+        "price": "от 8000 ₽/месяц (общий прайс сети)"
+      },
+      {
+        "name": "Каратэ (Сётокан, WKF) 7-12 лет",
+        "age_range": "7-12 лет",
+        "format": "группа",
+        "schedule": "уточняется при записи",
+        "description": "Техника ударов и стоек, аттестации на пояса, участие в соревнованиях",
+        "price": "от 8000 ₽/месяц (общий прайс сети)"
+      },
+      {
+        "name": "Индивидуальные тренировки",
+        "age_range": "любой",
+        "format": "индивидуально",
+        "schedule": "по согласованию",
+        "description": "Персональные занятия с тренером",
+        "price": "уточняется при записи"
+      }
+    ],
+    "note_for_maxim": "Часть фото (лагерь у отеля/на природе, командное фото в чёрных футболках) — общесетевые фото франшизы «Клуб каратэ №1», не эксклюзивно этого зала в Коммунарке; помечено явно. Один снимок (кадр с детьми и грушами, на фото виден плакат с номером телефона +7-915-129-35-37) подтверждённо сделан именно в этом зале.",
+    "id": 698
+  },
+  {
+    "name": "Клуб боевого каратэ «Хэйси-До»",
+    "category": "спорт",
+    "subcategory": "карате (кёкусинкай)",
+    "address": "Ленинский проспект, 89/2, Москва",
+    "metro": "Новаторская",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Каратэ Кёкусинкай — младшая группа 4-6 лет",
+      "Каратэ Кёкусинкай — средняя группа 7-9 лет",
+      "Каратэ Кёкусинкай — старшая группа 9-12 лет",
+      "Каратэ Кёкусинкай — взрослая группа 14-55 лет",
+      "Индивидуальные занятия"
+    ],
+    "skills": [
+      "каратэ",
+      "кёкусинкай",
+      "самооборона",
+      "дисциплина"
+    ],
+    "age_range": "4-12 лет",
+    "price": "от 1500 ₽",
+    "description": "Клуб боевого каратэ «Хэйси-До» на Ленинском проспекте — секция кёкусинкай-каратэ для детей и взрослых, работает под эгидой Российского союза Сё-кёкусин каратэ. Группы разделены по возрасту и физиологическим возможностям: младшая (4-6 лет), средняя (7-9 лет), старшая (9-12 лет) и взрослая (14-55 лет). Тренировки развивают физическую подготовку, технику ударов и стоек, самооборону, дисциплину. Дети участвуют в аттестациях на пояс, соревнованиях, семинарах и открытых татами. Первое занятие бесплатное — ребёнок знакомится с коллективом, тренер оценивает уровень подготовки и обсуждает с родителями перспективы обучения.",
+    "schedule": "16:00–22:00, группы по расписанию клуба",
+    "group_size": "",
+    "duration": "60 мин (младшая группа), 90 мин (остальные группы)",
+    "phone": "+7 (985) 154-37-61",
+    "website": "https://heishido.ru/",
+    "vk": "https://vk.com/heisydo",
+    "rating": 4.5,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 82,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/406/01-karate-kids-certificates.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/406/02-karate-boys-certificate.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/406/03-karate-coach-kids-group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/406/04-karate-club-event.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/406/05-karate-competition-medal.jpg"
+    ],
+    "price_from": 1500,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.677069,
+    "lon": 37.531931,
+    "team": [
+      {
+        "role": "Основатель школы, тренер",
+        "detail": "Бутиков Алекс Юрьевич — чёрный пояс, Шихан 5 дан, более 35 лет практики каратэ, преподаватель дошкольной педагогики и психологии, педагог по физической культуре"
+      },
+      {
+        "role": "Преподаватель",
+        "detail": "Простокин Андрей Викторович — чёрный пояс, Сэмпай 1 дан, более 10 лет преподавательского опыта"
+      }
+    ],
+    "tags": [
+      "карате",
+      "кёкусин",
+      "киокушин",
+      "боевые искусства",
+      "единоборства",
+      "самооборона"
+    ],
+    "verification_notes": "Адрес и телефон подтверждены живым листингом Яндекс.Карт (Leninsky Avenue 89/2, Novatorskaya metro, тел. +7 985 154 37 61 — совпадает с кандидатом и с сайтом heishido.ru). Рейтинг Яндекс.Карт 4.5 (23 оценки, 11 отзывов) — выше порога 4.2. Фото — из собственного фотоальбома листинга Яндекс.Карт этой организации; отобраны только кадры с явным брендом «Клуб ХЭЙСИ-ДО» на сертификатах/вывеске или с прямым визуальным подтверждением (тренер Алекс с именной биркой B.Alex совпадает с сайтом). Один кадр в общем фотопуле (групповое фото под баннером «Маленький Самурай», другой клуб) отброшен как контаминация чужим брендом. Сайт — Tilda-шаблон с пустыми/заглушечными изображениями (не источник фото), но текст (миссия, возрастные группы, тренеры, цены) взят с сайта. Контактный адрес на самом сайте («Гарибальди д 6 к 3») разошёлся с адресом листинга Яндекс.Карт и адресом кандидата — доверился более сильному сигналу (точное совпадение адреса из выгрузки с живым Яндекс.Картами листингом + телефон), вероятно устаревшее поле на шаблонном сайте.",
+    "id": 699
+  },
+  {
+    "name": "Спортклуб каратэдо Сито-рю «МЭШ» (Сакура)",
+    "category": "спорт",
+    "subcategory": "карате (сито-рю)",
+    "address": "улица Херсонская, 30к2, Москва (Дворец УШУ «МЭШ»)",
+    "metro": "Зюзино",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Каратэдо Сито-рю — мальчики с 7 лет, девочки с 8 лет",
+      "Подготовка к соревнованиям (ката, кумитэ) для действующих спортсменов клуба"
+    ],
+    "skills": [
+      "каратэ",
+      "сито-рю",
+      "ката",
+      "кумитэ",
+      "самооборона"
+    ],
+    "age_range": "6-16 лет",
+    "price": "",
+    "description": "Спортивный клуб каратэдо Сито-рю «МЭШ» (Сакура) тренируется в спортивном комплексе Дворца УШУ «МЭШ» на Херсонской улице. Принимает мальчиков с 7 лет и девочек с 8 лет. Клуб активно выступает на соревнованиях — регулярно привозит медали с областных и всероссийских турнирах по восточным боевым единоборствам (Первенство России и Московской области по ВБЕ сито-рю, «Последний рубеж», турниры в Лобне, Всероссийские юношеские игры боевых искусств в Анапе), воспитанники сдают аттестации на пояса и спортивные разряды, участвуют в судейских семинарах Федерации каратэдо сито-рю Московской области.",
+    "schedule": "вторник, среда, четверг 19:30–21:00",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (926) 221-91-29",
+    "website": "https://mesh-shitoryu.orgs.biz/",
+    "vk": "https://vk.ru/mesh_shitoryu",
+    "rating": null,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 65,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/408/01-karate-dojo-group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/408/02-karate-dojo-belts.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/408/03-karate-podium-medal.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/408/04-karate-team-trophy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/408/05-karate-team-group.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "",
+    "lat": 55.654879,
+    "lon": 37.563664,
+    "team": [],
+    "tags": [
+      "карате",
+      "сито-рю",
+      "восточные единоборства",
+      "ката",
+      "кумитэ",
+      "боевые искусства"
+    ],
+    "verification_notes": "Адрес кандидата (Херсонская, 30к2) совпал с адресом клуба на его собственном сайте (orgs.biz-страница, автогенерируемая из ВК-группы) с точностью до корпуса; VK-группа отдельно указывает 'Херсонская, д.30, к.1' (соседний корпус того же комплекса Дворца УШУ «МЭШ») — не противоречие, тот же спортивный комплекс. Телефон кандидата (+7-926-434-35-30) НЕ совпал с телефоном сайта/VK (+7-926-221-91-29) — не блокирующее расхождение по правилам пайплайна, зафиксировано как открытый вопрос, вероятно смена номера. Название уточнено с 'Секция Каратэдо Сито-рю' (обобщённое название из sportschools.ru) на официальное 'Спортклуб каратэдо Сито-рю «МЭШ» (Сакура)' — с сайта и VK. Рейтинга на Яндекс.Картах для этой организации найти не удалось (общий поиск по адресу выдал другую, закрытую организацию 'Mash' по тому же адресу — вероятно смежный/предыдущий арендатор помещения, не тот же бизнес: другое название, нет признаков боевых искусств). Проверено, что клуб активен — регулярные посты VK по июль-декабрь 2025 с реальными результатами соревнований. Фото — из открытой VK-группы клуба (Googlebot UA), отобраны только кадры в додзё/на пьедестале с детьми в кимоно и клубными нашивками; кадры туристического типа (участники на фоне баннера соревнований в свободной одежде) и пустой татами без людей — отброшены.",
+    "id": 700
+  },
+  {
+    "name": "TITAN BJJ — Мосфильмовская",
+    "category": "спорт",
+    "subcategory": "бразильское джиу-джитсу (BJJ)",
+    "address": "улица Улофа Пальме, 1, Москва",
+    "metro": "Минская",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Джиу-джитсу — дети 2-4 года",
+      "Джиу-джитсу — дети 3-6 лет",
+      "Джиу-джитсу — дети 7-10 лет",
+      "Джиу-джитсу — дети 11-14 лет",
+      "Джиу-джитсу / Грэпплинг (BJJ NoGi) — подростки 15-18 и взрослые",
+      "Женская группа BJJ"
+    ],
+    "skills": [
+      "бразильское джиу-джитсу",
+      "bjj",
+      "грэпплинг",
+      "самооборона",
+      "борьба"
+    ],
+    "age_range": "2-18 лет",
+    "price": "от 8500 ₽",
+    "description": "TITAN BJJ (сеть клубов бразильского джиу-джитсу в Москве, основана в 2011 году) — филиал на Мосфильмовской, ул. Улофа Пальме, 1. Занятия для детей от 2 лет, подростков и взрослых мужчин и женщин, отдельная женская группа. Клуб и его главный инструктор аккредитованы IBJJF (Международной федерацией бразильского джиу-джитсу) и Федерацией джиу-джитсу России; воспитанники — призёры всероссийских и международных турниров по джиу-джитсу и грэпплингу. Первым тренером и одним из основателей школы в 2011 году был Чумаков Иван, сегодня обладатель чёрного пояса.",
+    "schedule": "группы по возрасту в будние дни, расписание уточняется на сайте клуба",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (499) 450-58-98",
+    "website": "https://www.titanbjj.ru/",
+    "vk": "https://vk.ru/titanbjj",
+    "rating": 4.7,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/409/01-bjj-kids-group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/409/02-bjj-technique-training.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/409/03-bjj-kids-medals.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/409/04-bjj-club-group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/409/05-bjj-team-lineup.jpg"
+    ],
+    "price_from": 8500,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.717524,
+    "lon": 37.5112,
+    "team": [
+      {
+        "role": "Главный инструктор сети, сооснователь (с 2011 года)",
+        "detail": "Чумаков Иван — чёрный пояс по бразильскому джиу-джитсу, официально аккредитован IBJJF"
+      }
+    ],
+    "tags": [
+      "bjj",
+      "джиу-джитсу",
+      "грэпплинг",
+      "борьба",
+      "единоборства",
+      "самооборона"
+    ],
+    "verification_notes": "Адрес и телефон кандидата совпали ТОЧНО с листингом Яндекс.Карт (Ulofa Palme Street 1, тел +7 499 450-58-98) и с официальным сайтом titanbjj.ru — рейтинг 4.7 (46 оценок, 25 отзывов), выше порога 4.2. TITAN BJJ — сеть из 6 филиалов по Москве и Солнечногорску; кандидат по адресу соответствует официально указанному филиалу «Мосфильмовская» (ул. Улофа Пальме, 1) в списке филиалов на сайте — имя карточки уточнено с «(Минская)» (метка кандидата, вероятно по ближайшему метро) на официальное название филиала. Расписание на сайте общее по всей сети без разбивки по филиалам, отдельное расписание конкретно для Мосфильмовской не найдено на сайте — не указано в карточке, чтобы не приписать чужому филиалу. Фото — из собственного фотоальбома организации на Яндекс.Картах (профессиональные фото, часть с водяным знаком фотографа danjaivanov.com — это подписанные, не ворованные кадры) и с witness-подтверждением бренда (нашивки TITAN на кимоно детей и взрослых на всех отобранных фото). Общий фотопул содержал явную контаминацию чужим контентом (соседний фитнес-клуб Onfit, детский футбольный турнир, бассейн жилого комплекса) — эти кадры исключены.",
+    "id": 701
+  },
+  {
+    "name": "«Клуб каратэ №1» Очаково-Матвеевский",
+    "category": "спорт",
+    "subcategory": "каратэ",
+    "address": "ул. Наташи Ковшовой, 8к1, 3 этаж (Фитнес-клуб «ЭЛИС»), Москва",
+    "metro": "Озёрная",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Группа 4-6 лет",
+      "Группа 7-12 лет",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "каратэ",
+      "самооборона",
+      "растяжка",
+      "дисциплина"
+    ],
+    "age_range": "4-12",
+    "price": "от 8000 руб/мес",
+    "description": "Филиал сети «Клуб каратэ №1» в Очаково-Матвеевском районе, на 3 этаже фитнес-клуба «ЭЛИС» (ул. Наташи Ковшовой, 8к1), рядом с метро «Озёрная». Секция каратэ для мальчиков и девочек с 4 лет — дошкольники и школьники 1-3 классов. Аттестационные экзамены на пояса, внутриклубные турниры, весёлые старты, спортивные сборы. Первая неделя тренировок — бесплатно.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 915 129-35-37",
+    "website": "https://club-karate1.ru/kruzhki-i-zanyatiya-ochakovo-matveevskij",
+    "vk": "https://vk.com/krikun.aleksey",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/01-gruppa-sertifikaty.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/02-udar-noga.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/03-attestatsiya.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/04-medali-diplomy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/05-turnir-lubercy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/412/06-letnie-sbory.jpg"
+    ],
+    "price_from": 8000,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.6814043,
+    "lon": 37.4489446,
+    "team": [
+      {
+        "role": "тренер, руководитель филиала",
+        "detail": "Колмыков Дмитрий — тренерский стаж 4 года, КМС по каратэ, чёрный пояс 1 дан, серебряный призёр Чемпионата Мира JSKA (Санкт-Петербург), неоднократный победитель региональных турниров"
+      },
+      {
+        "role": "тренер (сеть)",
+        "detail": "Гусейнов Рашадат — стаж более 10 лет, МС по каратэ, чёрный пояс 4 дан WSKF, чемпион мира WKUF"
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "единоборства",
+      "спортивная секция",
+      "самооборона",
+      "детский спорт",
+      "очаково-матвеевский",
+      "озёрная"
+    ],
+    "notes_for_orchestrator": "Same franchise as id 413 (Раменки), different branch/address — kept as a separate card per orchestrator's own rule for chain branches with branch qualifier in `name`. Site here explicitly states 'Цена за месяц: 8000 руб' (unlike Раменки page, which quotes per-abonement) — recorded price_period as месяц matching the site's own wording, not assumed to match the sibling branch. 3 of 6 gallery photos (group with certificates+banner, kick, exam-day trainer+girls) are unique to this branch page, not shared with Раменки; remaining 3 are franchise-wide but individually verified to show real kids in action, none empty-room/logo-only.",
+    "id": 702
+  },
+  {
+    "name": "«Клуб каратэ №1» Раменки",
+    "category": "спорт",
+    "subcategory": "каратэ",
+    "address": "Мосфильмовская ул., 53, 2 этаж (Центр развития «Ликана»), Москва",
+    "metro": "Ломоносовский проспект / Раменки",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 7,
+    "programs": [
+      "Группа 4-6 лет",
+      "Группа 7-12 лет",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "каратэ",
+      "самооборона",
+      "растяжка",
+      "дисциплина"
+    ],
+    "age_range": "4-12",
+    "price": "от 9000 руб",
+    "description": "Филиал сети «Клуб каратэ №1» в Раменках, на 2 этаже центра развития «Ликана» (ул. Мосфильмовская, 53), между метро «Ломоносовский проспект» и «Раменки». Секция каратэ для мальчиков и девочек с 4 лет — от дошкольных групп до школьников 1-3 классов. Клуб делает акцент на гармоничном развитии ребёнка: аттестации на пояса, внутриклубные турниры, весёлые старты, выездные соревнования и семейно-спортивные сборы (в т.ч. летние сборы у моря). Первая неделя тренировок — бесплатно.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 915 129-35-37",
+    "website": "https://club-karate1.ru/kruzhki-i-zanyatiya-ramenki",
+    "vk": "https://vk.com/public178343716",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/413/01-trener-krug.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/413/02-medali-diplomy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/413/03-kata-sorevnovaniya.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/413/04-gruppa-udar.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/413/05-turnir-lubercy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/413/06-turnir-alfa-budo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/413/07-letnie-sbory.jpg"
+    ],
+    "price_from": 9000,
+    "price_period": "абонемент",
+    "price_source": "site",
+    "lat": 55.7044231,
+    "lon": 37.4969375,
+    "team": [
+      {
+        "role": "тренер, руководитель филиала",
+        "detail": "Лабутин Максим — тренерский стаж более 10 лет, высшее педагогическое образование, чёрный пояс 2 дан Шотокан каратэ, 3-кратный чемпион России, призёр Европы"
+      },
+      {
+        "role": "тренер (сеть)",
+        "detail": "Мцитури Александр — стаж более 10 лет, чёрный пояс 1 дан, высшее физкультурное образование (РГУФК), КМС по каратэ и по боксу"
+      },
+      {
+        "role": "тренер (сеть)",
+        "detail": "Гусейнов Рашадат — стаж более 10 лет, МС по каратэ, чёрный пояс 4 дан WSKF, чемпион мира WKUF"
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "единоборства",
+      "спортивная секция",
+      "самооборона",
+      "детский спорт",
+      "раменки"
+    ],
+    "notes_for_orchestrator": "Franchise-wide photo pool: gallery photos (medal/podium/camp shots) are shared across all «Клуб каратэ №1» branch pages, not exclusive to Раменки — explicitly allowed per criteria since all show real kids in action (verified individually, no empty rooms, no logo-only shots). Trainer roster on branch page repeats the sitewide coaching pool 3x (site bug) — listed only the branch lead (Лабутин) + 2 well-documented sitewide trainers in `team`, not the full duplicated list. Price: site shows 9000 руб per abonement of 8-9 trainings (2x/week), not a monthly figure — recorded as price_from=9000, period=абонемент rather than invented 'за месяц'. NOT a duplicate of Очаково-Матвеевский (id 412) — different address/branch of same franchise, per orchestrator's own rule for chain branches keeping distinct cards with branch qualifiers in `name`.",
+    "id": 703
+  },
+  {
+    "name": "Спортивный клуб «Сюдзин» (Юго-Западная)",
+    "category": "спорт",
+    "subcategory": "каратэ",
+    "address": "проспект Вернадского, 95, корп. 4, 2 этаж, Москва",
+    "metro": "Юго-Западная (0.7 км)",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Детская группа каратэ WKF (с 5 лет)"
+    ],
+    "skills": [
+      "каратэ",
+      "самооборона",
+      "растяжка",
+      "дисциплина"
+    ],
+    "age_range": "5-17",
+    "price": "уточняется при записи",
+    "description": "Филиал сети детских секций каратэ «Сюдзин» на проспекте Вернадского, 95к4 (2 этаж, 0.7 км от метро «Юго-Западная»), один из четырёх московских филиалов сети (наравне с Крылатским, Люблино и Митино). Набор в детскую группу каратэ WKF (Олимпийский вид спорта) — мальчики и девочки с 5 лет. Тренеры — обладатели чёрных поясов 2-4 Дана стиля Сётокан со стажем 13-31 год, аттестованы у прямых учеников Масатоси Накаяма (JKA). Клуб — член Объединённой федерации каратэ Москвы (ОФКМ) в составе Федерации каратэ России, воспитанники выступают за сборные Москвы и России, сдают на спортивные разряды и мастера спорта. Регулярные соревнования, квалификационные экзамены на кю/даны, летние спортивные сборы на море. Первая тренировка — бесплатно.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 926 382-96-48",
+    "website": "https://karate-mos.ru/",
+    "vk": "https://vk.com/karatesyudzin",
+    "rating": 4.9,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/415/01-stoika-gruppa.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/415/02-razminka-zal.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/415/03-trener-stoika.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/415/04-kata-poyasa.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/415/05-rastyazhka.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/415/06-obshaya-trenirovka.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "heuristic",
+    "lat": 55.665343,
+    "lon": 37.493738,
+    "team": [
+      {
+        "role": "тренер по каратэ",
+        "detail": "Молодоженов Сергей Владимирович — стаж 13 лет"
+      },
+      {
+        "role": "тренер по каратэ",
+        "detail": "Овакимян Артур Варужанович — стаж 31 год"
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "wkf",
+      "единоборства",
+      "спортивная секция",
+      "самооборона",
+      "детский спорт",
+      "юго-западная",
+      "вернадского"
+    ],
+    "notes_for_orchestrator": "⚠️ Photo-source note: the org's Yandex Maps gallery (org id klub_syudzin/131888891485) at this address is HEAVILY cross-contaminated with unrelated tenants sharing the building/complex — sambo club «Витязь», a 'Lagarto Fight Club' gym, a rhythmic-gymnastics studio, and a 'Balance Club' beauty/yoga center all showed up in that gallery. Did NOT use any Yandex Maps gallery photo for this card. Instead sourced 6 photos from the org's own Zoon.ru listing (zoon.ru/msk/trainings/sportivnyj_klub_syudzin_na_metro_yugo-zapadnaya/, photo id prefix 57a82f7d4d643243408b4578, explicitly captioned as this org's own photos, not a shared pool) — all 6 show the same consistent dojo room (same mirror wall, ballet barre, clock, AC unit) with real kids/teens actively training, no empty rooms, no other brand's signage. Address/phone/name triple-confirmed via zoon.ru (phone +7 903 523-60-18 matches candidate's contact_raw exactly) and the franchise's own official site karate-mos.ru, which independently lists a 'Юго-западная' branch at this exact address. Rating 4.9 (14 ratings) is this specific branch's own Zoon rating, not a network-wide aggregate. Price genuinely not published anywhere found (site uses a lead-capture flow, not listed pricing) — wrote 'уточняется при записи' honestly rather than inventing a figure, price_from left null per pipeline rule against fabricating numbers.",
+    "id": 704
+  },
+  {
+    "name": "СК «Раменки» — Главный додзё",
+    "category": "спорт",
+    "subcategory": "карате",
+    "address": "Москва, ул. Раменки, 19 (СОК «Раменки»)",
+    "metro": "Проспект Вернадского",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Карате-до Сётокан для детей",
+      "ОФП для дошкольников (подготовка к карате)",
+      "Карате-до Сётокан для взрослых",
+      "Спортивное каратэ WKF"
+    ],
+    "skills": [
+      "карате",
+      "сётокан",
+      "ката",
+      "кумитэ",
+      "ОФП",
+      "самооборона"
+    ],
+    "age_range": "5-16 лет",
+    "price": "уточняется при записи",
+    "description": "Главный додзё старейшей в Москве сети клубов карате-до «Раменки» (РОО, основана в 1987-1989 гг. чемпионом СССР по карате Виктором Ханом) — расположен в спортивно-оздоровительном комплексе «Раменки». Дети и взрослые занимаются карате-до стиля Сётокан и спортивным карате WKF: изучают ката, кумитэ, готовятся к аттестациям на пояса и соревнованиям. Для малышей от 3 лет — подготовительная группа ОФП перед стартом в карате (с 5 лет). Клуб организует летние спортивные лагеря и принимает семинары ведущих мировых тренеров карате.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (495) 724-61-71",
+    "website": "https://sk-ramenki.ru",
+    "vk": "https://vk.com/ramenki19",
+    "rating": null,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/420/01-tournament-kick.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/420/02-medal-girl.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/420/03-coach-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/420/04-adult-seminar.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/420/05-adult-lineup.jpg"
+    ],
+    "price_from": null,
+    "price_period": null,
+    "price_source": "heuristic",
+    "lat": 55.6911441,
+    "lon": 37.4927795,
+    "team": [
+      {
+        "role": "Шеф-инструктор",
+        "detail": "Цой Олег Алексеевич — Мастер спорта СССР по карате, Чемпион Москвы 1991, призёр всесоюзных и международных турниров, призёр Кубка СССР 1991"
+      },
+      {
+        "role": "Председатель тренерского комитета",
+        "detail": "Ханзракян Артур Сергеевич"
+      }
+    ],
+    "tags": [
+      "карате",
+      "каратэ",
+      "сётокан",
+      "shotokan",
+      "wkf",
+      "единоборства",
+      "ОФП",
+      "боевые искусства"
+    ],
+    "_worker_notes": {
+      "source_candidate": "Спортивно-оздоровительный комплекс «Раменки», sportschools.ru, work_id 420, ул. Раменки, 19",
+      "identity_confirmation": "Candidate name from sportschools.ru is the shared venue itself (СОК «Раменки»). Investigated what actually operates there: the 'Главный Додзё' (main dojo) of the private karate chain «СК Раменки» (sk-ramenki.ru), confirmed via official site contacts page (address exactly 'ул. Раменки, дом 19', description 'СОК «Раменки»', named coaches Цой О.А. and Ханзракян А.С., phone +7 (495) 724-61-71, VK vk.com/ramenki19). This satisfies the 'specific instructional program with own coaches/curriculum' bar, not the bare venue.",
+      "chain_dedup": "Same chain already has one branch live in catalog: 'СК «Раменки» — Филиал №18 (Тульская)' at Малая Тульская ул., 16. This card is a DIFFERENT branch (main dojo, ул. Раменки 19) — not a duplicate, kept branch qualifier in name per chain rule.",
+      "legal_status_check": "РОО (региональная общественная организация), founded 1987-1989 by Victor Khan (USSR karate champion) — private nonprofit per rule 8 carve-out, not a state/municipal marker (ГБОУ/ГБУ/ДЮСШ etc). Note: the building itself ('СОК Раменки' complex) is also used by Moscow's municipal mossport subscription system (unrelated adult yoga/fitness classes via mso.mossport.ru/sport-center/ramenki, Telegram t.me/sportramenki) — this is a DIFFERENT tenant/program in the same building, not the karate club being carded here.",
+      "price": "No price found on official site (no pricing/tariff page in sitemap). Did not borrow price from other branches or from the shared complex's general subscription price (that's for pool/gym, not confirmed karate-specific). Left price_from null, price text honest 'уточняется при записи' per T8 no-invention rule.",
+      "rating": "No org-specific rating found tied precisely to this address/branch (other branches of the same chain show ratings 4.2-5.0 on Zoon/Yandex, but mixing branch ratings would be dishonest) — left null, not excluded, per rule 9 (no data != bad rating).",
+      "photos": "6 real photos harvested from sk-ramenki.ru official photo gallery (tournament/seminar galleries), full-size originals recovered by stripping the sorl-thumbnail crop suffix from the URL. 5 uploaded: teen sparring at tournament, coach placing medal on girl, coach instructing boy in class, adult seminar (x2, for team credibility). All confirmed to show real people actively practicing karate, none are empty rooms/logos/badges. Filenames avoided logo/brand/header_bg per known org.html filter trap.",
+      "liveness_confirmed": "Live official site (Django app, working forms/media galleries as of this session), active Telegram channel with posts from 'August 25' (2026), footer copyright '©1989 — 2025'."
+    },
+    "id": 705
+  },
+  {
+    "name": "Международная Академия Единоборств Кучмаева",
+    "category": "спорт",
+    "subcategory": "единоборства",
+    "address": "Москва, улица Багрицкого, 61, 1 этаж",
+    "metro": "Давыдково",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Боевое каратэ (практическое каратэ)",
+      "Боевое самбо",
+      "Кикбоксинг К-1 и бокс"
+    ],
+    "skills": [
+      "каратэ",
+      "самбо",
+      "кикбоксинг",
+      "бокс",
+      "ММА",
+      "самооборона"
+    ],
+    "age_range": "5-17 лет",
+    "price": "от 4500 ₽ за абонемент на 12 тренировок в месяц",
+    "description": "Международная Академия Единоборств Кучмаева — частный клуб боевого самбо и практического каратэ на западе Москвы (район Можайский, рядом метро Давыдково/Кунцевская/Славянский бульвар). Основана мастером Юрием Кучмаевым, филиал международной ассоциации ISKA (США, основана в 1986 году). Дети занимаются боевым каратэ с 5 лет, боевым самбо — с 10 лет, кикбоксингом и боксом — в мини-группах или индивидуально. Воспитанники академии регулярно участвуют в соревнованиях федерации практического каратэ России и получают разряды от 3-го юношеского до КМС/МС.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (495) 644-92-60",
+    "website": "http://sambo-karate.ru",
+    "vk": "",
+    "rating": null,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/421/up_421_01-group-hero.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/421/up_421_02-competition-kids.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/421/up_421_03-sambo-sparring.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/421/up_421_04-diplomas-kids.jpg"
+    ],
+    "price_from": 4500,
+    "price_period": "месяц",
+    "price_source": "heuristic",
+    "lat": 55.715594,
+    "lon": 37.438291,
+    "team": [
+      {
+        "role": "основатель, старший тренер",
+        "detail": "Юрий Вячеславович Кучмаев — экс-старший тренер по каратэ и рукопашному бою МОС ВФСО «Динамо» (1970-80-е), с 1998 г. руководитель Международной Академии Единоборств (США), с 2010 г. — филиал в Москве"
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "самбо",
+      "боевое самбо",
+      "кикбоксинг",
+      "бокс",
+      "единоборства",
+      "ММА",
+      "запад Москвы",
+      "Можайский район"
+    ],
+    "id": 706
+  },
+  {
+    "name": "Клуб единоборств «Ратмир» (филиал на Кировоградской)",
+    "category": "спорт",
+    "subcategory": "единоборства",
+    "address": "Москва, улица Кировоградская, дом 21, корпус 1, строение 2",
+    "metro": "Пражская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Тхэквондо ИТФ",
+      "Кикбоксинг",
+      "Самбо и боевое самбо",
+      "Художественная гимнастика",
+      "Спортивная гимнастика"
+    ],
+    "skills": [
+      "тхэквондо",
+      "кикбоксинг",
+      "самбо",
+      "боевое самбо",
+      "гимнастика",
+      "единоборства",
+      "самооборона"
+    ],
+    "age_range": "4-17 лет",
+    "price": "первая тренировка бесплатно, далее — уточняется при записи",
+    "description": "Спортивная школа «Ратмир» — частный клуб единоборств (АНО), работает в здании ГБПОУ «Спортивно-педагогический колледж» Москомспорта на Кировоградской улице (второй филиал — в фитнес-клубе «Фитнес Парк» в Чертаново). Более 250 воспитанников, среди них чемпионы Москвы и призёры первенств России по тхэквондо ИТФ, кикбоксингу и самбо. Дети от 4 лет занимаются тхэквондо, кикбоксингом, самбо/боевым самбо, художественной и спортивной гимнастикой; проходят регулярные аттестации на пояса с международным сертификатом, участвуют в турнирах и летних спортивных лагерях (Крым, Подмосковье, Европа).",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (910) 003-24-04",
+    "website": "https://ratmir-club.ru",
+    "vk": "https://vk.ru/club111211658",
+    "rating": 4.9,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 8,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/424/up_424_01-kick-training.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/424/up_424_02-group-certificates.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/424/up_424_03-group-stance.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/424/up_424_04-sparring.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "",
+    "lat": 55.602465,
+    "lon": 37.602887,
+    "team": [
+      {
+        "role": "международный инструктор",
+        "detail": "Сергей Владимирович Олейников — международный инструктор 4 дан, принимает аттестации на пояса по тхэквондо ИТФ"
+      },
+      {
+        "role": "тренер",
+        "detail": "Мурад Гаджиев — тренер и действующий спортсмен, чемпион Кубка руководителя ФТС России по служебному единоборству"
+      }
+    ],
+    "tags": [
+      "тхэквондо",
+      "итф",
+      "кикбоксинг",
+      "самбо",
+      "боевое самбо",
+      "художественная гимнастика",
+      "единоборства",
+      "юао",
+      "пражская"
+    ],
+    "id": 707
+  },
+  {
+    "name": "Спортивный клуб TAEKWON",
+    "category": "спорт",
+    "subcategory": "единоборства для детей",
+    "address": "Москва, Варшавское шоссе, 154А",
+    "metro": "Аннино",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Таэквон-до ИТФ",
+      "Хапкидо",
+      "Кикбоксинг",
+      "ММА"
+    ],
+    "skills": [
+      "Ставит технику таэквон-до ИТФ, ката и спарринг",
+      "Развивает координацию, гибкость и дисциплину",
+      "Готовит к аттестациям на пояса и соревнованиям"
+    ],
+    "age_range": "4-15 лет",
+    "price": "уточняется при записи",
+    "description": "Спортивный клуб TAEKWON — главный филиал РСОО «Федерация Таэквон-до «Юг»» на Варшавском шоссе (м. Аннино). Клуб работает с 1990-х годов, обучает таэквон-до ИТФ по возрастным группам от 4 лет, также есть секции хапкидо, кикбоксинга и ММА. Воспитанники регулярно выступают на городских и всероссийских соревнованиях и сдают аттестации на пояса. Есть бесплатное пробное занятие.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+74951340098",
+    "website": "https://taek-won-do.ru/",
+    "vk": "https://vk.com/taekwon_club",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/427/01-class-training.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/427/02-group-photo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/427/03-lesson-warmup.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/427/04-award-ceremony.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/427/05-diploma-boy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/427/06-diploma-girl.jpg"
+    ],
+    "price_from": null,
+    "price_period": null,
+    "price_source": "heuristic",
+    "lat": 55.586309,
+    "lon": 37.596618,
+    "team": [
+      {
+        "role": "Президент федерации, тренер",
+        "detail": "Ковешников Григорий Петрович"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Ким Эдуард Васильевич"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Аванесян Рубен Тигранович"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Гудова Любовь Романовна"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Марченков Максим Станиславович"
+      }
+    ],
+    "tags": [
+      "таэквон-до",
+      "тхэквондо",
+      "taekwondo",
+      "итф",
+      "itf",
+      "хапкидо",
+      "кикбоксинг",
+      "ммa",
+      "единоборства",
+      "Аннино",
+      "Варшавское шоссе"
+    ],
+    "id": 708
+  },
+  {
+    "name": "Студия единоборств Сергея Киенко",
+    "category": "спорт",
+    "subcategory": "единоборства для детей",
+    "address": "Москва, Гурьевский проезд, 23к3 (клуб «Викинг»)",
+    "metro": "Зябликово",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Тайский бокс (Муай Тай)",
+      "Кикбоксинг К-1",
+      "Рукопашный бой",
+      "Ушу (Кунг-фу)",
+      "ММА",
+      "Самбо",
+      "Спортивная борьба",
+      "Йога",
+      "Кроссфит"
+    ],
+    "skills": [
+      "Ставит базовую технику ударных и борцовских единоборств",
+      "Готовит к соревнованиям городского и всероссийского уровня",
+      "Развивает физическую форму и дисциплину с раннего возраста"
+    ],
+    "age_range": "от 4 лет",
+    "price": "уточняется при записи",
+    "description": "Студия единоборств Сергея Киенко работает с 2011 года на юге Москвы (м. Зябликово / Красногвардейская, клуб «Викинг»). Через студию прошло более 1000 воспитанников — дети от 4 лет, подростки и взрослые. Преподаются тайский бокс, кикбоксинг К-1, рукопашный бой, ушу, ММА, самбо, спортивная борьба, а также йога и кроссфит. Руководитель — Сергей Киенко, мастер спорта РФ, победитель всероссийского конкурса «Тренер года 2011», двукратный чемпион РФ и призёр кубка мира по ММА (Иран, 2010). Первая тренировка — бесплатно.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+79299602101",
+    "website": "http://www.kienko.ru/",
+    "vk": "https://vk.com/family_fitnes",
+    "rating": 4.4,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/428/01-class-audience.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/428/02-podium-medals.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/428/03-kids-sitting.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/428/04-victory-highfive.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/428/05-coach-athlete.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/428/06-coach-raises-arm.jpg"
+    ],
+    "price_from": null,
+    "price_period": null,
+    "price_source": "heuristic",
+    "lat": 55.60796436,
+    "lon": 37.753507,
+    "team": [
+      {
+        "role": "Основатель, главный тренер",
+        "detail": "Киенко Сергей Николаевич — мастер спорта РФ, победитель конкурса «Тренер года 2011», двукратный чемпион РФ, призёр кубка мира по ММА (Иран, 2010), судья союза ММА России"
+      }
+    ],
+    "tags": [
+      "единоборства",
+      "тайский бокс",
+      "муай тай",
+      "кикбоксинг",
+      "рукопашный бой",
+      "ушу",
+      "кунг-фу",
+      "ммa",
+      "самбо",
+      "борьба",
+      "йога",
+      "кроссфит",
+      "Зябликово",
+      "Красногвардейская"
+    ],
+    "id": 709
+  },
+  {
+    "name": "Фитнес клуб 18 (Club 18 Fight & Fitness)",
+    "category": "спорт",
+    "subcategory": "единоборства для детей",
+    "address": "Москва, 1-й Нагатинский проезд, 15",
+    "metro": "Нагатинская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Самбо и дзюдо",
+      "Бокс",
+      "Тайский бокс (Муай Тай)",
+      "Кикбоксинг",
+      "ММА",
+      "Тхэквондо ITF/GTF",
+      "Кунг-фу/ушу",
+      "Вин Чун",
+      "Рукопашный бой",
+      "Вольная борьба",
+      "Художественная гимнастика",
+      "Спортивная акробатика",
+      "Фехтование на шпагах",
+      "Современная хореография",
+      "ОФП",
+      "Настольный теннис"
+    ],
+    "skills": [
+      "Ставит базовую технику единоборств (борьба, ударные стили) под конкретный вид спорта",
+      "Готовит к соревнованиям и аттестациям, включая выездные турниры",
+      "Развивает физическую форму, дисциплину и самоконтроль с дошкольного возраста"
+    ],
+    "age_range": "3-18 лет",
+    "price": "от 1300 ₽ за занятие",
+    "description": "Club 18 (Фитнес клуб 18) — крупный многопрофильный спортивный клуб на 1-м Нагатинском проезде (м. Нагатинская/Коломенская), основан в 2005 году, площадь более 2000 кв.м: зал с рингом на 600 кв.м, четыре зала для единоборств, тренажёрный зал, зона SPA. Детские секции принимают с 3-4 лет: самбо и дзюдо, бокс, тайский бокс, кикбоксинг, ММА, тхэквондо ITF/GTF, кунг-фу, вин чун, рукопашный бой, вольная борьба, а также художественная гимнастика, спортивная акробатика, фехтование, хореография и настольный теннис. Дети участвуют в турнирах, аттестациях и выездных летних спортивных сборах. Работает круглосуточно.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+74956044347",
+    "website": "https://www.18fit.ru/",
+    "vk": "https://vk.ru/fightclub_18",
+    "rating": 4.9,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 85,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/429/01-kids-lineup.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/429/02-judo-lineup.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/429/03-judo-throw-technique.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/429/04-certificates-celebration.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/429/05-team-group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/429/06-locker-room-kid.jpg"
+    ],
+    "price_from": 1300,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.67416764,
+    "lon": 37.632846,
+    "team": [],
+    "tags": [
+      "самбо",
+      "дзюдо",
+      "бокс",
+      "тайский бокс",
+      "муай тай",
+      "кикбоксинг",
+      "ммa",
+      "тхэквондо",
+      "кунг-фу",
+      "ушу",
+      "вин чун",
+      "рукопашный бой",
+      "вольная борьба",
+      "гимнастика",
+      "акробатика",
+      "фехтование",
+      "единоборства",
+      "Нагатинская",
+      "Коломенская"
+    ],
+    "id": 710
+  },
+  {
+    "name": "Клуб единоборств «Штурм» (Южное Бутово)",
+    "category": "спорт",
+    "subcategory": "единоборства для детей",
+    "address": "Москва, ул. Скобелевская, 22 (3 этаж)",
+    "metro": "Улица Скобелевская",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Бокс",
+      "Кикбоксинг",
+      "Тайский бокс (Муай Тай)",
+      "ММА",
+      "Каратэ",
+      "Самбо и дзюдо",
+      "Крав-мага",
+      "Боевое самбо",
+      "Рукопашный бой"
+    ],
+    "skills": [
+      "Ставит ударную технику и технику борьбы по выбранной дисциплине",
+      "Готовит к любительским турнирам, в том числе к боям в клетке для детских групп",
+      "Развивает силу, ловкость, дисциплину и уверенность в себе"
+    ],
+    "age_range": "4-16 лет",
+    "price": "от 2000 ₽ за занятие",
+    "description": "Клуб единоборств «Штурм» в Южном Бутово (ул. Скобелевская, 22, 3 этаж, 300 м от м. Улица Скобелевская) — один из четырёх залов сети «Штурм» (Беляево, Черёмушки, Бутово, Чертаново). Детские группы от 4 лет (тайский бокс — от 6 лет, боевое самбо — от 7 лет) по боксу, кикбоксингу, тайскому боксу, ММА, каратэ, самбо и дзюдо, крав-мага, боевому самбо, рукопашному бою. Группы 10-15 человек, дети регулярно выступают на любительских турнирах, включая бои в клетке. Первая тренировка бесплатна при покупке абонемента в тот же день.",
+    "schedule": "",
+    "group_size": "10-15 человек",
+    "duration": "",
+    "phone": "+74951811185",
+    "website": "https://fightclub.su/butovo.html",
+    "vk": "https://vk.ru/shturmbutovo",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/430/01-kids-cage-match.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/430/02-kids-award-ceremony.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/430/03-kids-sparring.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/430/04-kids-grappling.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/430/05-coach-hand-wraps.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/430/06-ring-sparring.jpg"
+    ],
+    "price_from": 2000,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.54562491,
+    "lon": 37.554323,
+    "team": [],
+    "tags": [
+      "единоборства",
+      "бокс",
+      "кикбоксинг",
+      "тайский бокс",
+      "муай тай",
+      "ммa",
+      "каратэ",
+      "самбо",
+      "дзюдо",
+      "крав-мага",
+      "рукопашный бой",
+      "Бутово",
+      "Скобелевская"
+    ],
+    "id": 711
+  },
+  {
+    "name": "Клуб единоборств «Штурм» на Вавилова (Черёмушки)",
+    "category": "спорт",
+    "subcategory": "бокс, кикбоксинг, самбо, ММА",
+    "address": "ул. Вавилова, д. 81, корп. 1",
+    "metro": "Профсоюзная",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Бокс, кикбоксинг, тайский бокс — группы для детей и взрослых",
+      "ММА / рукопашный бой",
+      "Самбо и дзюдо, боевое самбо",
+      "Каратэ",
+      "Крав-мага (самооборона)",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "ударная техника руками и ногами",
+      "самостраховка и безопасное падение",
+      "борьба и контроль в партере",
+      "дисциплина и уверенность в себе",
+      "базовые навыки самообороны"
+    ],
+    "age_range": "4–16 лет",
+    "price": "от 1500 ₽",
+    "description": "Клуб единоборств «Штурм» — филиал сети боевых искусств на ул. Вавилова, 81к1 (метро Профсоюзная), один из четырёх клубов сети (Беляево, Чертановская, Скобелевская, Профсоюзная). Детские группы от 4 до 16 лет: малыши 4-6 лет осваивают координацию через боевое самбо-бокс-кикбоксинг в игровой форме, 6-8 лет переходят на самбо и рукопашный бой продвинутого уровня, 7-15 лет выбирают бокс/кикбоксинг/самбо, ММА-рукопашный бой или крав-магу. Тренеры — мастера спорта и чемпионы России, регулярные внутриклубные аттестации и выездные турниры. Зал 130 кв.м и 45 кв.м с боксёрским рингом, матами для борьбы, раздевалками и душевыми. Действующий, активно ведёт соцсети (более 1300 постов, публикации почти ежедневно), рейтинг на Яндекс.Картах 5.0 (248 оценок, 142 отзыва).",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (495) 181-11-85",
+    "website": "https://fightclub.su/vavilova.html",
+    "vk": "https://vk.ru/centralfitness",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 85,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/432/01-kids-medals-coach.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/432/02-kid-trophy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/432/03-adult-sparring-team.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/432/04-selfdefense-team.jpg"
+    ],
+    "price_from": 1500,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.679611,
+    "lon": 37.546181,
+    "team": [
+      {
+        "role": "Тренеры клуба",
+        "detail": "Мастера спорта, чемпионы России и мира — по данным официального сайта сети fightclub.su и постов VK-сообщества"
+      }
+    ],
+    "tags": [
+      "бокс",
+      "кикбоксинг",
+      "тайский бокс",
+      "ММА",
+      "рукопашный бой",
+      "самбо",
+      "дзюдо",
+      "боевое самбо",
+      "каратэ",
+      "крав-мага",
+      "самооборона",
+      "единоборства"
+    ],
+    "id": 712
+  },
+  {
+    "name": "Боксёрский клуб «Ломоносовъ»",
+    "category": "спорт",
+    "subcategory": "бокс, кикбоксинг, единоборства",
+    "address": "ул. Новаторов, 15",
+    "metro": "Новаторская",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Бокс — детские группы 4-6, 7-10 и 11+ лет",
+      "Кикбоксинг",
+      "Бокс, дзюдо, самбо — смешанная подготовка (по квалификации тренеров)",
+      "Индивидуальные тренировки",
+      "Летний спортивный лагерь (12-16 лет)"
+    ],
+    "skills": [
+      "координация и базовая стойка (4-6 лет)",
+      "удар по груше, ловкость, выносливость (7-10 лет)",
+      "работа на лапах, темп взрослого боксёра (11+)",
+      "дисциплина и уверенность в себе"
+    ],
+    "age_range": "4–16 лет",
+    "price": "от 2500 ₽",
+    "description": "Боксёрский клуб «Ломоносовъ» — школа бокса и единоборств в районе метро Новаторская (Обручевский район, ЮЗАО), работает больше 20 лет. Основатель — Артур Степанян, КМС по кикбоксингу, автор собственной методики тренировок для детей и подростков. В тренерский состав также входят Эдуард Кутундаев (Мастер спорта международного класса, КМС по боксу, дзюдо и самбо) и Сергей Загурский (чемпион Европы и Евразии по силовому спорту, КМС по боксу и вольной борьбе). Детская подготовка построена по возрастным ступеням: 4-6 лет — игра и ОФП без нагрузок, 7-10 лет — удары по груше в медленном темпе и работа станциями, 11+ лет — полноценные боксёрские станции в темпе взрослого спортсмена. Клуб организует открытые тренировки для родителей, ежегодный летний спортивный лагерь для подростков 12-16 лет и выездные турниры (воспитанники выступают на региональных соревнованиях). Активное VK-сообщество (561 подписчик, посты вплоть до текущего месяца).\n\nВажно: у клуба несколько адресов в открытых источниках (устаревшие данные упоминают просп. Вернадского, 21к3 и ул. Крупской 8к1) — актуальный адрес для записи взят из свежего (февраль 2026) события клуба в VK, телефон совпадает.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (962) 921-99-41",
+    "website": "https://lomonosov.moscow/glavnaya-universitet",
+    "vk": "https://vk.ru/lomonosov_boxclub",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 10,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/433/01-boy-coach-pads.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/433/02-coach-handshake-kid.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/433/03-champion-belt.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/433/04-coaches-ring.jpg"
+    ],
+    "price_from": 2500,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.66049,
+    "lon": 37.523555,
+    "team": [
+      {
+        "role": "Артур Степанян — основатель клуба, тренер по боксу",
+        "detail": "КМС по кикбоксингу, более 20 лет опыта, автор методики тренировок для детей и подростков"
+      },
+      {
+        "role": "Эдуард Кутундаев — тренер",
+        "detail": "Мастер спорта международного класса, Мастер спорта по силовым дисциплинам, КМС по боксу, дзюдо и самбо, экс-профессиональный боец ММА"
+      },
+      {
+        "role": "Сергей Загурский — тренер",
+        "detail": "Чемпион Европы и Евразии по силовому спорту, КМС по боксу и вольной борьбе"
+      }
+    ],
+    "tags": [
+      "бокс",
+      "кикбоксинг",
+      "самбо",
+      "дзюдо",
+      "единоборства",
+      "детский бокс",
+      "летний спортивный лагерь"
+    ],
+    "id": 713
+  },
+  {
+    "name": "Школа единоборств «Колизей» (киокушин карате)",
+    "category": "спорт",
+    "subcategory": "каратэ, киокушинкай",
+    "address": "ул. Нагорная, д. 11, корп. 1",
+    "metro": "Нагорная",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Киокусинкай карате — группа 4-5 лет",
+      "Киокусинкай карате — группа 6-8 лет",
+      "Киокусинкай карате — группа 9-13 лет",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "ударная техника киокушинкай карате",
+      "ката и базовая стойка",
+      "спарринг в защитной экипировке",
+      "аттестация на пояса и разряды",
+      "дисциплина и самооборона"
+    ],
+    "age_range": "4–16 лет",
+    "price": "от 6500 ₽/мес",
+    "description": "Частная школа единоборств «Колизей» — секция киокусинкай карате у метро Нагорная (второй зал — Хорошевское шоссе, 13к3). Название включает историческую отсылку к МЧС России, но клуб коммерческий, с рыночными ценами и первой бесплатной пробной тренировкой (не государственная/бюджетная секция). Бессменный тренер — Пономарева Елена Геннадьевна, Мастер спорта России, 5-кратная абсолютная чемпионка Казахстана по киокусинкай карате, главный секретарь Федерации Кайдо России и руководитель Московского регионального отделения Федерации всестилевого карате России. Группы по возрасту: 4-5, 6-8 и 9-13 лет, 3 занятия в неделю по 2 академических часа. Воспитанники выступают на соревнованиях (открытые первенства, «Золотой пояс. Москва Кремль»), клуб организует выездные спортивные сборы (Анапа). Рейтинг на Яндекс.Картах 4.3 (23 оценки, 10 отзывов) — родители отдельно отмечают тренера лично («Елена Геннадьевна лучший тренер», семьи занимаются по 7 лет подряд).\n\nОфициальный сайт (kolizey-club.ru) на момент проверки не отвечает (домен не резолвится) — актуальность подтверждена по архивной версии сайта (Wayback Machine, снимок 2025 года) и по действующей карточке на Яндекс.Картах с недавними отзывами и живой галереей.",
+    "schedule": "Группы: пн/ср/пт 17:00 (4-5 лет), 18:00 (6-8 лет), 19:15 (9-13 лет) — зал на Нагорной; вт/чт — зал на Хорошевском шоссе; сб — оба возраста, зал на Нагорной",
+    "group_size": "",
+    "duration": "2 академических часа",
+    "phone": "+7 (925) 860-25-75",
+    "website": "https://kolizey-club.ru",
+    "vk": "",
+    "rating": 4.3,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 8,
+    "data_quality": 78,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/435/01-group-class-hero.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/435/02-seiza-meditation.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/435/03-competition-sparring.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/435/04-kids-sparring-closeup.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/435/05-three-kids-smiling.jpg"
+    ],
+    "price_from": 6500,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.680522,
+    "lon": 37.60882,
+    "team": [
+      {
+        "role": "Пономарева Елена Геннадьевна — тренер по киокусинкай карате",
+        "detail": "Мастер спорта России, 5-кратная абсолютная чемпионка Республики Казахстан по киокусинкай карате, призёрка чемпионатов Казахстана и России по рукопашному бою, чёрный пояс (стаж занятий 19 лет, тренерский стаж 10 лет), главный секретарь Федерации Кайдо России, руководитель Московского регионального отделения Федерации всестилевого карате России, высшее спортивное образование"
+      }
+    ],
+    "tags": [
+      "каратэ",
+      "киокушинкай",
+      "киокусинкай",
+      "единоборства",
+      "самооборона",
+      "детское каратэ"
+    ],
+    "id": 714
+  },
+  {
+    "name": "МОСБОКС (Клуб бокса «Moscowboxing») — филиал Бутово",
+    "category": "спорт",
+    "subcategory": "бокс",
+    "address": "Москва, ул. Изюмская, 22к3",
+    "metro": "Улица Скобелевская",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Детский бокс — новички",
+      "Детский бокс — спортивная группа"
+    ],
+    "skills": [
+      "бокс",
+      "самооборона",
+      "физическая подготовка"
+    ],
+    "age_range": "5-16 лет",
+    "price": "от 6600 ₽/мес (с подпиской МОСБОКС+)",
+    "description": "Филиал сети боксёрских клубов «МОСБОКС» в Южном Бутово, рядом со станцией метро «Улица Скобелевская». Детские группы бокса для мальчиков и девочек от 5 до 16 лет — отдельно для новичков и отдельно спортивная группа для тех, кто готовится к соревнованиям. Оборудованный зал с рингом, боксёрскими мешками и татами. Воспитанники клуба ездят на сборы в спортивный лагерь и выступают на соревнованиях.",
+    "schedule": "",
+    "group_size": "7-30 человек",
+    "duration": "",
+    "phone": "+7 968 527-78-33",
+    "website": "https://moscowboxing.ru/zal-boksa/butovo/",
+    "vk": "https://vk.com/public220387280",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/436/01-boks-butovo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/436/02-boks-butovo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/436/03-boks-butovo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/436/04-boks-butovo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/436/05-boks-butovo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/436/06-boks-butovo.jpg"
+    ],
+    "price_from": 6600,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.5519487,
+    "lon": 37.557217,
+    "team": [
+      {
+        "role": "Тренер по боксу",
+        "detail": "Родион Витальевич Шишлов — тренер клуба Бутово, тренер чемпионов Москвы"
+      },
+      {
+        "role": "Тренер по боксу",
+        "detail": "Игорь Алексеевич Ханин — тренер в МОСБОКС Митино и Бутово"
+      },
+      {
+        "role": "Тренер по боксу",
+        "detail": "Артём Дмитриевич Огородник"
+      }
+    ],
+    "tags": [
+      "бокс",
+      "boxing",
+      "единоборства",
+      "спорт для детей",
+      "южное бутово"
+    ],
+    "programs_detailed": [
+      {
+        "name": "Детский бокс — новички",
+        "age_range": "5-16 лет",
+        "format": "группа",
+        "schedule": "вторник, четверг, 17:00",
+        "description": "Группа для начинающих, набор мальчиков и девочек от 5 лет.",
+        "price_note": "Цена общая для клуба (см. price)"
+      },
+      {
+        "name": "Детский бокс — спортивная группа",
+        "age_range": "5-16 лет",
+        "format": "группа",
+        "schedule": "понедельник, среда, пятница, 18:00",
+        "description": "Группа для детей, готовящихся к соревнованиям, тренеры вывозят на сборы и турниры.",
+        "price_note": "Цена общая для клуба (см. price)"
+      }
+    ],
+    "notes": "Франчайзинговая сеть МОСБОКС, филиал Бутово — подтверждён точным совпадением адреса (ул. Изюмская, 22к3) и телефона (+7 495 201-34-38 — общий колл-центр сети — совпал с исходной зацепкой worklist). Кандидат был помечен источником как «кикбоксинг», но по факту это классический бокс — подкатегория в карточке скорректирована по реальному содержанию сайта. Цена: безлимит на месяц 8800 ₽ без подписки / 6600 ₽ с подпиской МОСБОКС+; 8 занятий 7700 ₽ / 5500 ₽ с подпиской; разовое пробное занятие 999 ₽. Фото — из фотоальбома сайта филиала (группы albums/920-922, 1270, 1273, champ/41), все показывают реальных детей на тренировках/соревнованиях, есть фото с видимым брендингом «БУТОВО»/MoscowBoxing в кадре.",
+    "id": 715
+  },
+  {
+    "name": "Секция тайского бокса (кикбоксинг) для детей — ДелоСпорт Фили",
+    "category": "спорт",
+    "subcategory": "тайский бокс / кикбоксинг",
+    "address": "Москва, ул. Новозаводская, 27А стр.1",
+    "metro": "Фили",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Тайский бокс для детей 5-8 лет",
+      "Тайский бокс для детей 9-13 лет",
+      "Тайский бокс для подростков от 14 лет"
+    ],
+    "skills": [
+      "тайский бокс",
+      "кикбоксинг",
+      "самооборона",
+      "координация",
+      "дисциплина"
+    ],
+    "age_range": "5-15 лет",
+    "price": "от 800 ₽/занятие",
+    "description": "Секция тайского бокса (кикбоксинга) для детей от 6 лет в спортивном комплексе «ДелоСпорт» на Новозаводской улице (ЗАО, рядом с метро «Фили» и «Багратионовская»). Тренировки под руководством Александра Матвеева — тренера с педагогическим стажем с 2014-2015 года, аккредитованного Федерацией тайского бокса Москвы. Группы разделены по возрасту, есть возможность получать спортивные разряды и участвовать в официальных городских, всероссийских и международных соревнованиях (в т.ч. под эгидой Федерации К-1). Формат — групповые и индивидуальные занятия, для детей младшего школьного возраста тренировки адаптированы по возрасту.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 495 120-51-20",
+    "website": "https://делоспорт.рф/deti/kickbox",
+    "vk": "https://vk.com/delo_sport",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 82,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/438/01-kikbox-fili.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/438/02-kikbox-fili.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/438/03-kikbox-fili.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/438/04-kikbox-fili.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/438/05-kikbox-fili.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/438/06-trener-matveev.jpg"
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.7501623,
+    "lon": 37.497121,
+    "team": [
+      {
+        "role": "Тренер по тайскому боксу / кикбоксингу",
+        "detail": "Александр Матвеев — тренерский стаж с 2014 года, аккредитован Федерацией тайского бокса Москвы"
+      }
+    ],
+    "tags": [
+      "тайский бокс",
+      "кикбоксинг",
+      "муай тай",
+      "единоборства",
+      "спорт для детей",
+      "фили",
+      "багратионовская"
+    ],
+    "programs_detailed": [
+      {
+        "name": "Тайский бокс для детей 5-8 лет",
+        "age_range": "5-8 лет",
+        "format": "группа",
+        "schedule": "уточняется при записи",
+        "duration": "1 час",
+        "description": "Группа для младшего школьного возраста, тренировки в адаптированной форме.",
+        "price_from": 800,
+        "price_period": "занятие",
+        "price_note": "Абонемент, минимум 4 занятия в месяц"
+      },
+      {
+        "name": "Тайский бокс для детей 9-13 лет",
+        "age_range": "9-13 лет",
+        "format": "группа",
+        "schedule": "уточняется при записи",
+        "duration": "1.5 часа",
+        "description": "Группа для детей среднего школьного возраста.",
+        "price_from": 850,
+        "price_period": "занятие",
+        "price_note": "Абонемент, минимум 4 занятия в месяц"
+      },
+      {
+        "name": "Тайский бокс для подростков от 14 лет",
+        "age_range": "14+ лет",
+        "format": "группа",
+        "schedule": "уточняется при записи",
+        "duration": "1.5 часа",
+        "description": "Группа для подростков и взрослых.",
+        "price_from": 850,
+        "price_period": "занятие",
+        "price_note": "Абонемент, минимум 4 занятия в месяц"
+      }
+    ],
+    "notes": "Кандидат в worklist был указан по адресу «Большая Филёвская ул., 20» (СК «ДелоСпорт», категории sambo+kikboksing), но реальная секция тайского бокса/кикбоксинга сети «ДелоСпорт» с тренером Александром Матвеевым базируется по другому адресу того же городского района — ул. Новозаводская, 27А стр.1 (комплекс «Фили ДелоСпорт»). Адрес скорректирован по правилу «доверять сайту при точном совпадении телефона»: телефон +7 495 120-51-20, указанный на странице секции (tel:+74951205120), совпал с contact_raw кандидата ТОЧНО. Проверено, что это не сама площадка/комплекс целиком, а конкретная секция со своим тренером и расписанием (правило 10). Фото — 5 реальных кадров с тренировок/соревнований секции (в т.ч. с брендингом Федерации К-1 России и «ZAPADSPORT.RU» на форме тренера) + студийный портрет тренера Матвеева с логотипом «ДелоСпорт». Кандидат отдельно упоминал категорию «sambo» — на сайте есть отдельная секция самбо для детей (/deti/sambo), но эта карточка сфокусирована на кикбоксинге/тайском боксе, как было в исходной категоризации кандидата; секция самбо не заведена отдельной карточкой в этой партии.",
+    "id": 716
+  },
+  {
+    "name": "Спортивный клуб «9 ДАН» (Можайское шоссе)",
+    "category": "спорт",
+    "subcategory": "тхэквон-до ИТФ / кикбоксинг",
+    "address": "Москва, Можайское шоссе, 38к1",
+    "metro": "Кунцевская",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Тхэквон-до ИТФ",
+      "Кикбоксинг",
+      "Самбо",
+      "Дзюдо",
+      "Каратэ WKF"
+    ],
+    "skills": [
+      "тхэквондо",
+      "кикбоксинг",
+      "самооборона",
+      "дисциплина",
+      "координация"
+    ],
+    "age_range": "3-17 лет",
+    "price": "от 800 ₽/занятие",
+    "description": "АНО развития физической культуры и спорта «Спортивный клуб 9 ДАН» на Можайском шоссе — два зала (Большой и Малый) с занятиями по тхэквон-до ИТФ, кикбоксингу, самбо, дзюдо, каратэ WKF, а также цигун и суставной/волновой гимнастикой. Тренировки для дошкольников от 3,5 лет, школьников 7-17 лет и взрослых, включая подготовку к соревнованиям и аттестации на пояса. Воспитанники клуба — призёры и чемпионы соревнований Москвы и Московской области.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "1.5 часа (групповая тренировка)",
+    "phone": "+7 916 608-22-68",
+    "website": "https://9dan.ru/",
+    "vk": "https://vk.com/sk9dan",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 85,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/439/01-taekwondo-mozhaiskoe.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/439/02-taekwondo-mozhaiskoe.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/439/03-taekwondo-mozhaiskoe.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/439/04-taekwondo-mozhaiskoe.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/439/05-taekwondo-mozhaiskoe.jpg"
+    ],
+    "price_from": 800,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.7187473,
+    "lon": 37.4139578,
+    "team": [
+      {
+        "role": "Директор и главный тренер",
+        "detail": "Карпенко Дмитрий Сергеевич — чёрный пояс 3 дан, инструктор Московской федерации Тхэквондо ИТФ, судья 3-й Всероссийской категории, стаж тренировок более 30 лет, инструкторский стаж более 15 лет, тренирует дошкольников от 3,5 лет, школьников 7-17 лет и взрослых"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Королько Илья Александрович — чёрный пояс II дан (Международная федерация Тхэквондо ИТФ), судья 2-й категории, многократный чемпион Москвы и Санкт-Петербурга по тхэквондо ИТФ и кикбоксингу, ведёт кикбоксинг для детей 7-17 лет и взрослых, общий тренерский стаж более 12 лет"
+      }
+    ],
+    "tags": [
+      "тхэквондо",
+      "тхэквон-до итф",
+      "кикбоксинг",
+      "самбо",
+      "дзюдо",
+      "карате",
+      "единоборства",
+      "спорт для детей",
+      "кунцевская",
+      "можайское шоссе"
+    ],
+    "programs_detailed": [
+      {
+        "name": "Тхэквон-до ИТФ / Кикбоксинг",
+        "age_range": "3-17 лет",
+        "format": "группа, есть индивидуальные занятия",
+        "schedule": "уточняется при записи (Большой и Малый залы, расписание по будням)",
+        "duration": "1.5 часа",
+        "description": "Группы для дошкольников от 3,5 лет, школьников 7-17 лет и взрослых; кикбоксинг отдельно для детей 7-17 лет. Подготовка к аттестации на пояса и соревнованиям.",
+        "price_from": 800,
+        "price_period": "занятие",
+        "price_note": "Разовое занятие 800 ₽; абонемент 2 раза/нед от 5500 ₽/мес (8 тренировок), 3 раза/нед от 6500 ₽/мес (12 тренировок)"
+      }
+    ],
+    "notes": "У этой сети клубов «9 ДАН» тот же телефон (+7 916 608-22-68) фигурирует в двух записях worklist этой волны — work_id 439 (Можайское шоссе, 38к1) и work_id 440 (ул. Багрицкого, 61, филиал «Давыдково»). Адрес work_id 439 подтверждён напрямую: точное совпадение адреса и телефона с живым листингом Яндекс.Карт (рейтинг 5.0, 105 отзывов, «Хорошее место 2026») и с текущим расписанием на официальном сайте 9dan.ru (Можайское ш., д.38, к.1 — Большой и Малый залы). Актуальный сайт клуба сейчас перечисляет только ДВА действующих адреса — Можайское шоссе (этот) и ул. Коломенская, д.12, к.1 (программа тхэквон-до для детей 4-7 и 7-15 лет); адрес «Багрицкого, 61» из work_id 440 в этот список не входит и по этому адресу на Яндекс.Картах сейчас работает не связанный клуб «Lotus» с другим телефоном — похоже на закрытый/перенесённый старый филиал «9 ДАН» (Давыдково), см. отдельную пометку по work_id 440.",
+    "id": 717
+  },
+  {
+    "name": "VARYAG Молодёжная (сеть VARYAG FIGHT GYM, ТРК «Вегас» Кунцево)",
+    "category": "спорт",
+    "subcategory": "единоборства детские",
+    "address": "55-й км МКАД, ТРК «Вегас» (Кунцево), 4 этаж",
+    "metro": "Молодёжная",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Muay Thai (тайский бокс) для детей 6-16 лет",
+      "Бокс для детей 6-16 лет",
+      "Самбо для детей 6-16 лет",
+      "Рукопашный бой для детей 6-16 лет"
+    ],
+    "skills": [
+      "муай тай",
+      "тайский бокс",
+      "бокс",
+      "самбо",
+      "рукопашный бой",
+      "единоборства"
+    ],
+    "age_range": "6-16 лет",
+    "price": "от 1 950 ₽/мес",
+    "description": "VARYAG Молодёжная — филиал сети клубов единоборств VARYAG FIGHT GYM (5 клубов по Москве и области: Куркино, Митино, Мякинино, Молодёжная, Тверская), расположен в ТРК «Вегас» на 55-м км МКАД (Кунцево), 4 этаж. Детская секция набирает группы 6-16 лет по четырём направлениям: тайский бокс (муай тай), бокс, самбо, рукопашный бой. Тренировки ведут опытные наставники, учитывающие нагрузки для детского организма, занятия проходят в защитной амуниции. В клубе 2 зоны единоборств, 2 больших ринга, тренажёрный зал, парковка. Клуб регулярно проводит собственный турнир «Кубок Варяга» по тайскому боксу с участием воспитанников сети.",
+    "schedule": "уточняется при записи (расписание по клубам и направлениям — на сайте сети)",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (495) 236-14-67",
+    "website": "https://varyag-club.ru/clubs/varyag-molodezhnaya/",
+    "vk": "https://vk.ru/skbivaryagclub",
+    "rating": 4.7,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/442/01-medal-ceremony.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/442/02-muaythai-winner.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/442/03-medal-podium.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/442/04-thai-boxing-cup.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/442/05-teen-champions.jpg"
+    ],
+    "price_from": 1950,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.719706,
+    "lon": 37.379237,
+    "team": [
+      {
+        "role": "Тренерский состав",
+        "detail": "Опытные наставники клубной сети VARYAG FIGHT GYM, специализация на детских группах 6-16 лет по муай тай/боксу/самбо/рукопашному бою; поимённый состав тренеров конкретно филиала Молодёжная не опубликован на сайте, уточняется при записи."
+      }
+    ],
+    "tags": [
+      "кикбоксинг",
+      "муай тай",
+      "тайский бокс для детей",
+      "бокс для детей",
+      "самбо для детей",
+      "рукопашный бой",
+      "единоборства для детей",
+      "ТРК Вегас Кунцево"
+    ],
+    "_verification_notes": "Адрес и телефон подтверждены дословным совпадением на официальном сайте сети (varyag-club.ru/clubs/varyag-molodezhnaya) и на Яндекс.Картах (canonical https://yandex.com/maps/org/varyag/176170600085/, телефон +7 (495) 236-14-67 совпал точно, рейтинг 4.7 на 225 отзывов). ⚠️ Фотогалерея этого же объекта на Яндекс.Картах оказалась заражена чужими снимками всего ТРК «Вегас» (каток, вход в здание, реклама — ни одного реального фото самого клуба) — не использованы. Собственная галерея на сайте клуба (страница филиала Молодёжная) показывает только пустые помещения (ринг, тренажёрный зал, бар) без людей — не годится по жёсткому правилу фото. Фактически использованные 5 фото — из официальной VK-группы сети VARYAG FIGHT GYM (16.6K подписчиков, vk.ru/skbivaryagclub): подтверждённо реальные фото награждения подростков-воспитанников на турнире \"Кубок Варяга по тайскому боксу\" под брендингом VARYAG на баннере/эмблемах — сетевые (chain-wide), не эксклюзивно с филиала Молодёжная, использованы как допустимый последний вариант по правилу (реальные люди, занятые видом спорта, а не пустая комната), явно отмечено здесь.",
+    "id": 718
+  },
+  {
+    "name": "Молодёжная футбольная лига «Братеево» (МФЛ Братеево)",
+    "category": "спорт",
+    "subcategory": "футбол",
+    "address": "Москва, Братеевская ул., 21к2",
+    "metro": "Борисово",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Футбол",
+      "Мини-футбол/футзал"
+    ],
+    "skills": [
+      "футбол",
+      "мини-футбол",
+      "командная работа",
+      "физическая подготовка"
+    ],
+    "age_range": "4-16 лет",
+    "price": "уточняется при записи",
+    "description": "Детско-юношеский футбольный клуб «Молодёжная футбольная лига «Братеево»» — частный спортивный клуб в районе Братеево (ЮАО), работает с 2008 года (юридически зарегистрирован в 2012). Основатель — заслуженный тренер России Эльфрадо Фархадович Валеев. В братеевском отделении занимается более 400 детей от 4 до 16 лет — от групп начальной подготовки до соревновательных команд. Клуб — один из основателей и организаторов ДЮФЛ (Детской юношеской футбольной лиги Москвы), в которой соревнуются более 80 команд города и области; воспитанники — многократные чемпионы Москвы в первенстве «Кожаный мяч», участники городских, всероссийских и международных турниров. По указанному адресу (Братеевская, 21к2) расположен офис и досугово-спортивный клуб организации; тренировки также проходят на нескольких площадках района (крытый манеж, стадион в Братеевском парке, дополнительные адреса на Братеевской и Алма-Атинской). Клуб позиционирует себя как принимающий всех желающих детей без «отсева», характерного для спортшкол.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (926) 903-65-46, +7 (926) 467-46-69",
+    "website": "https://mirmfl.ru",
+    "vk": "https://vk.ru/club39133263",
+    "rating": 5.0,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/449/01-training-action.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/449/02-trophy-kid.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/449/03-coach-talk.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/449/04-team-huddle-park.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/449/05-team-medals-indoor.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/449/06-team-ceremony.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "heuristic",
+    "lat": 55.6347355298,
+    "lon": 37.7511538048,
+    "team": [
+      {
+        "role": "Основатель, главный тренер",
+        "detail": "Валеев Эльфрадо Фархадович — заслуженный тренер России"
+      },
+      {
+        "role": "Спортивный директор, соучредитель",
+        "detail": "Тумасян Артур Карлович"
+      },
+      {
+        "role": "Главный тренер команды МФЛ «Братеево»-2010",
+        "detail": "Андреев Владимир Николаевич"
+      },
+      {
+        "role": "Главный тренер команды МФЛ «Братеево»-2011, 2017",
+        "detail": "Кудрявцев Сергей Дмитриевич"
+      },
+      {
+        "role": "Главный тренер команд МФЛ «Братеево»-2014, 2015",
+        "detail": "Панченко Константин Владимирович"
+      },
+      {
+        "role": "Тренер команды МФЛ",
+        "detail": "Корзников Максим Николаевич"
+      }
+    ],
+    "tags": [
+      "футбол",
+      "мини-футбол",
+      "футзал",
+      "ДЮФЛ",
+      "детский футбол",
+      "спортивная секция",
+      "командные виды спорта"
+    ],
+    "id": 719
   }
 ]
