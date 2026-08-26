@@ -705,17 +705,11 @@ function render(org) {
     </div>` : '';
 
   // ── Contacts ─────────────────────────────────────────────────────────────
-  const siteUrl = isRealWebsite(org.website) ? org.website : null;
   const contactRows = [
     org.address && `
       <div class="contact-row">
         <span class="ci">📍</span>
         <span class="ct"><span class="cl">Адрес</span><span class="cv">${esc(org.address)}</span></span>
-      </div>`,
-    siteUrl && `
-      <div class="contact-row">
-        <span class="ci">🌐</span>
-        <span class="ct"><span class="cl">Сайт</span><span class="cv">${esc(siteUrl.replace(/^https?:\/\//,''))}</span></span>
       </div>`,
     org.vk && `
       <a class="contact-row" href="${esc(org.vk)}" target="_blank" rel="noopener"
