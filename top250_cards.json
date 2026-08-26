@@ -125585,5 +125585,1863 @@
         "price": "от 7 500 ₽"
       }
     ]
+  },
+  {
+    "id": 1484,
+    "name": "Спортивно-хореографический центр в «Царицыно»",
+    "category": "спорт",
+    "subcategory": "Акробатика",
+    "address": "Москва, 6-я Радиальная улица, 5к3",
+    "metro": "Царицыно",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Contemporary",
+      "Уличные танцы (Hip-Hop)",
+      "Гимнастика с элементами танца",
+      "Чирлидинг"
+    ],
+    "skills": [
+      "хореография",
+      "растяжка и гибкость",
+      "акробатические элементы",
+      "командная работа"
+    ],
+    "age_range": "7-15 лет",
+    "price": "от 3 800 ₽/месяц",
+    "description": "Филиал сети детских школ танцев «Звезда» в Царицыно (ЮАО) — сеть спортивной хореографии с более чем 100 филиалами по Москве, работающими на базе школ и детских садов. Программа объединяет классическую хореографию, растяжку и физподготовку с элементами акробатики: Hip-Hop, Contemporary, Чирлидинг (танец + акробатика + работа с помпонами) и Гимнастика с элементами танца, включающая акробатические элементы и связки. Первое занятие бесплатно, в течение года — отчётные концерты, баттлы и Чемпионат Звезды.",
+    "schedule": "занятия после уроков, 2 раза в неделю по 45-60 минут",
+    "group_size": "12-15 человек",
+    "duration": "45-60 минут",
+    "phone": "+7 (499) 450-50-71",
+    "website": "https://zvezdadance.ru/",
+    "vk": "https://vk.ru/zvezdadanceschool",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 62,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1484/zvezda_coach_with_students.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1484/zvezda_concert_stage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1484/zvezda_group_photo_yandexmaps.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1484/zvezda_stretching_class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1484/zvezda_students_portrait.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1484/zvezda_studio_class.jpg"
+    ],
+    "price_from": 3800,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.604407,
+    "lon": 37.659793,
+    "team": [],
+    "tags": [
+      "танцы",
+      "чирлидинг",
+      "акробатические элементы",
+      "царицыно"
+    ],
+    "activity_tags": [
+      "спорт::Акробатика"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-15 лет",
+        "format": "групповые занятия",
+        "schedule": "2 раза в неделю, после уроков",
+        "description": "Чирлидинг — танец, акробатика, работа с помпонами, синхронные построения",
+        "price": "450 ₽/занятие"
+      },
+      {
+        "age_range": "7-15 лет",
+        "format": "групповые занятия",
+        "schedule": "2 раза в неделю, после уроков",
+        "description": "Гимнастика с элементами танца — ОФП, растяжка, акробатические элементы и танцевальные связки",
+        "price": "450 ₽/занятие"
+      }
+    ]
+  },
+  {
+    "id": 1485,
+    "name": "СТО «Семья»",
+    "category": "спорт",
+    "subcategory": "Единоборства",
+    "address": "Москва, улица Покрышкина, 3",
+    "metro": "Юго-Западная",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "КУДО",
+      "Бокс"
+    ],
+    "skills": [
+      "ударная техника",
+      "борцовская техника",
+      "дисциплина",
+      "физическая подготовка"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 4 000 ₽/месяц",
+    "description": "Секция единоборств на базе ФОК «Семья» (район Тропарёво-Никулино, ЗАО) — спортивный клуб «Доберман», работающий с 2010 года. Тренируют КУДО (восточное боевое единоборство, сочетающее ударную технику и борьбу) и бокс, группы для всех возрастов, около 70 постоянных спортсменов, многие выступают на соревнованиях и сдают аттестации на пояса. Тренерский состав — мастера спорта России по КУДО и боксу. Первое занятие бесплатно.",
+    "schedule": "ежедневно с 9:00 до 21:00",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (926) 133-66-21",
+    "website": "http://doberman2010.ru/",
+    "vk": "https://vk.ru/club62320757",
+    "rating": 4.6,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 72,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1485/doberman_coach_mosin_kudo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1485/doberman_coach_shagdarov_kudo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1485/doberman_coach_trofimov_boxing.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1485/fok_semya_boxing_mma_signage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1485/fok_semya_building_entrance.jpg"
+    ],
+    "price_from": 4000,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.663653,
+    "lon": 37.470387,
+    "team": [
+      {
+        "role": "Тренер-преподаватель по КУДО",
+        "detail": "Мосин Константин Валерьевич — мастер спорта России по КУДО, чёрный пояс II дан"
+      },
+      {
+        "role": "Тренер-преподаватель по боксу",
+        "detail": "Трофимов Александр Игоревич — мастер спорта России по боксу"
+      }
+    ],
+    "tags": [
+      "кудо",
+      "бокс",
+      "единоборства",
+      "юго-западная"
+    ],
+    "activity_tags": [
+      "спорт::Единоборства"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия",
+        "schedule": "ежедневно 9:00-21:00",
+        "description": "КУДО — восточное боевое единоборство, сочетающее ударную технику и борьбу",
+        "price": "от 4 000 ₽/мес"
+      },
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия",
+        "schedule": "ежедневно 9:00-21:00",
+        "description": "Бокс — тренер Трофимов А.И., мастер спорта России",
+        "price": "от 4 000 ₽/мес"
+      }
+    ]
+  },
+  {
+    "id": 1520,
+    "name": "Центр гимнастики Foxy",
+    "category": "спорт",
+    "subcategory": "Художественная гимнастика",
+    "address": "Москва, 6-я Радиальная улица, 26",
+    "metro": "Царицыно",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Группа начальной подготовки",
+      "Группа спортивной подготовки",
+      "Любительская группа"
+    ],
+    "skills": [
+      "художественная гимнастика",
+      "гибкость",
+      "растяжка",
+      "работа с гимнастическими предметами"
+    ],
+    "age_range": "7-16 лет",
+    "price": "от 7 000 ₽/мес",
+    "description": "Центр художественной гимнастики Foxy на Царицыно (в фитнес-центре X-Fit) — аккредитованный центр Федерации художественной гимнастики Москвы. Тренерский состав — кандидаты и мастера спорта, группы до 15 человек, от общего физического развития до профессиональной спортивной подготовки с участием в соревнованиях и получением разрядов.",
+    "schedule": "ежедневно с 9:00 до 20:00, группы по расписанию",
+    "group_size": "до 15 человек",
+    "duration": "",
+    "phone": "+7 (495) 211-77-35",
+    "website": "https://foxxclub.ru",
+    "vk": "https://vk.com/foxyclub2022",
+    "rating": 4.9,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1520/foxy_1_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1520/foxy_2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1520/foxy_3.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1520/foxy_4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1520/foxy_5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1520/foxy_6.jpg"
+    ],
+    "price_from": 7000,
+    "price_period": "месяц",
+    "price_source": "yandex_maps",
+    "lat": 55.6109105,
+    "lon": 37.6563309,
+    "team": [
+      {
+        "role": "Руководитель центра, тренер",
+        "detail": "Неверовская Алина Станиславовна — КМС по художественной гимнастике"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Переносова Елизавета Алексеевна — Мастер спорта России"
+      }
+    ],
+    "tags": [
+      "художественная гимнастика",
+      "царицыно"
+    ],
+    "activity_tags": [
+      "спорт::Художественная гимнастика"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-16 лет",
+        "format": "групповые занятия, спортивная подготовка",
+        "schedule": "3-5 раз в неделю",
+        "description": "Спортивное развитие и совершенствование, участие в соревнованиях и получение спортивных разрядов",
+        "price": "от 11 900 ₽/мес"
+      },
+      {
+        "age_range": "7-16 лет",
+        "format": "групповые занятия, любительский уровень",
+        "schedule": "2-3 раза в неделю",
+        "description": "Занятия с лёгкой нагрузкой для общего спортивного развития",
+        "price": "от 7 000 ₽/мес"
+      }
+    ]
+  },
+  {
+    "id": 1521,
+    "name": "Центр единоборств «Белый Лотос» (Вернадского)",
+    "category": "спорт",
+    "subcategory": "Единоборства",
+    "address": "Москва, проспект Вернадского, 37, корп. 2",
+    "metro": "Проспект Вернадского",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Бокс",
+      "Тайский бокс / кикбоксинг",
+      "Самбо",
+      "Дзюдо",
+      "Джиу-джитсу",
+      "ММА"
+    ],
+    "skills": [
+      "ударная техника",
+      "борьба",
+      "самооборона",
+      "дисциплина"
+    ],
+    "age_range": "7-16 лет",
+    "price": "от 7 500 ₽/28 дней",
+    "description": "Крупный многопрофильный центр единоборств «Белый Лотос» в ТЦ Forum City у метро Проспект Вернадского. Более 10 направлений — бокс, тайский бокс, кикбоксинг, тхэквондо, самбо, дзюдо, джиу-джитсу, грэпплинг, рукопашный бой, ММА. Отдельные детские группы, аттестации и участие в межклубных турнирах.",
+    "schedule": "утренние, дневные и вечерние группы ежедневно",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (495) 136-36-81",
+    "website": "https://www.boxland.ru",
+    "vk": "http://vk.ru/club_belyilotos",
+    "rating": 5.0,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 72,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1521/lotos_1_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1521/lotos_2_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1521/lotos_3_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1521/lotos_4_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1521/lotos_5_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1521/lotos_6_landscape.jpg"
+    ],
+    "price_from": 7500,
+    "price_period": "28 дней",
+    "price_source": "site",
+    "lat": 55.6773333,
+    "lon": 37.5096183,
+    "team": [],
+    "tags": [
+      "единоборства",
+      "бокс",
+      "проспект вернадского"
+    ],
+    "activity_tags": [
+      "спорт::Единоборства"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-16 лет",
+        "format": "групповые занятия",
+        "schedule": "по расписанию клуба",
+        "description": "Изучение ударной техники и защиты, ОФП и СФП, участие в соревнованиях и аттестациях",
+        "price": "от 7 500 ₽/28 дней"
+      }
+    ]
+  },
+  {
+    "id": 1522,
+    "name": "Лабиринты шахмат (Ломоносовский)",
+    "category": "развитие",
+    "subcategory": "Шахматы",
+    "address": "Москва, улица Академика Пилюгина, 14, корп. 2",
+    "metro": "Новаторская",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 7,
+    "programs": [
+      "Групповые занятия шахматами",
+      "Индивидуальные занятия",
+      "Летний шахматный лагерь"
+    ],
+    "skills": [
+      "логическое мышление",
+      "стратегическое планирование",
+      "дисциплина"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 6 800 ₽/мес",
+    "description": "Филиал сети шахматных школ «Лабиринты шахмат» (работает с 2006 года, основатель — международный гроссмейстер Яна Мельникова) в Ломоносовском районе. Малые группы до 8 человек, регулярные внутренние и городские турниры, летние шахматные лагеря.",
+    "schedule": "группы формируются круглый год, занятия по расписанию филиала",
+    "group_size": "до 8 человек",
+    "duration": "",
+    "phone": "+7 (495) 774-14-76",
+    "website": "https://chesslabyrinth.ru",
+    "vk": "https://vk.ru/chesslabyrinth",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1522/chess_1_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1522/chess_2_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1522/chess_3_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1522/chess_4_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1522/chess_5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1522/chess_6_portrait.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1522/chess_7_portrait.jpg"
+    ],
+    "price_from": 6800,
+    "price_period": "месяц (8 занятий)",
+    "price_source": "yandex_maps",
+    "lat": 55.6703058,
+    "lon": 37.5357166,
+    "team": [
+      {
+        "role": "Основатель школы",
+        "detail": "Яна Мельникова — международный гроссмейстер"
+      }
+    ],
+    "tags": [
+      "шахматы",
+      "новаторская"
+    ],
+    "activity_tags": [
+      "развитие::Шахматы"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия",
+        "schedule": "абонемент на месяц, 8 занятий",
+        "description": "Изучение теории, решение шахматных задач, практическая игра, участие в турнирах",
+        "price": "6 800 ₽/мес"
+      }
+    ]
+  },
+  {
+    "id": 1488,
+    "name": "Cantera Angelovo",
+    "category": "спорт",
+    "subcategory": "Футбол",
+    "address": "Москва, Профсоюзная ул., 118Б",
+    "metro": "Коньково",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Футбол",
+      "Футзал / мини-футбол"
+    ],
+    "skills": [
+      "техника владения мячом",
+      "игровая тактика",
+      "физическая подготовка"
+    ],
+    "age_range": "7-12 лет",
+    "price": "от 650 ₽",
+    "description": "Футбольная академия Cantera Angelovo в районе Коньково — тренировки на базе школы №113 (паркетное покрытие, размер поля 24х12, есть душ и раздевалки). Дети занимаются в фирменной форме Cantera, тренируются с профессиональным инвентарём и участвуют в московских турнирах. Лучшие воспитанники по итогам сезона отправляются на просмотры в футбольные клубы России. Первое пробное занятие (просмотр) — бесплатно.",
+    "schedule": "Группы по возрастам, тренировки Пн, Ср, Пт 17:30-18:30",
+    "group_size": "",
+    "duration": "1 час",
+    "phone": "+7 (495) 991-09-33",
+    "website": "https://angelovo.academy/futbolnaya-shkola-konkovo",
+    "vk": "https://vk.com/angelovo.academy",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 72,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1488/01_match_action.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1488/02_building_exterior.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1488/03_gym_interior.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1488/04_team_photo.jpg"
+    ],
+    "price_from": 650,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.6377065,
+    "lon": 37.5167325,
+    "team": [],
+    "tags": [
+      "футбол",
+      "коньково",
+      "футбольная академия"
+    ],
+    "activity_tags": [
+      "спорт::Футбол"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "8-9 лет",
+        "format": "групповые занятия",
+        "schedule": "Пн, Ср, Пт 17:30-18:30",
+        "description": "Освоение базовой техники, участие в московских турнирах",
+        "price": "650 ₽ за занятие"
+      },
+      {
+        "age_range": "10-13 лет",
+        "format": "групповые занятия",
+        "schedule": "Пн, Ср, Пт 17:30-18:30",
+        "description": "Тренировочный процесс, подготовка к турнирам, возможность просмотра в футбольных клубах",
+        "price": "650 ₽ за занятие"
+      }
+    ]
+  },
+  {
+    "id": 1489,
+    "name": "Свобода (Svoboda)",
+    "category": "творчество",
+    "subcategory": "Музыкальные инструменты",
+    "address": "Москва, Чертановская ул., 43к3",
+    "metro": "Чертановская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Гитара",
+      "Фортепиано",
+      "Барабаны",
+      "Вокал"
+    ],
+    "skills": [
+      "постановка рук",
+      "чистое звукоизвлечение",
+      "ритмика",
+      "сценическая практика"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 1 745 ₽",
+    "description": "Студия музыки «Свобода» — филиал в Чертаново, один из 4 филиалов сети (Чертаново, Бирюлёво, Бутово, Видное). Все музыкальные занятия проходят индивидуально (гитара, фортепиано, барабаны, вокал), методика основана на практике зарубежных музыкальных школ. Работают без выходных с 10:00 до 22:00. Школа регулярно устраивает отчётные концерты.",
+    "schedule": "ежедневно с 10:00 до 22:00, по записи",
+    "group_size": "индивидуальные занятия",
+    "duration": "",
+    "phone": "+7 (996) 654-18-50",
+    "website": "https://svoboda.community/",
+    "vk": "https://vk.com/svoboda.community",
+    "rating": 5.0,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1489/01_piano_lesson.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1489/02_studio_wall_collage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1489/03_student_concert_stage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1489/04_studio_poster.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1489/05_piano_room_interior.jpg"
+    ],
+    "price_from": 1745,
+    "price_period": "занятие",
+    "price_source": "yandex_maps",
+    "lat": 55.608633,
+    "lon": 37.5927568,
+    "team": [],
+    "tags": [
+      "музыка",
+      "гитара",
+      "фортепиано",
+      "чертаново"
+    ],
+    "activity_tags": [
+      "творчество::Музыкальные инструменты"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "индивидуальные занятия",
+        "schedule": "по записи",
+        "description": "Гитара, фортепиано, барабаны или вокал — индивидуальная программа под уровень и цели ученика",
+        "price": "1 745 ₽ за занятие"
+      }
+    ]
+  },
+  {
+    "id": 1490,
+    "name": "Спортивный клуб FARTEAM",
+    "category": "спорт",
+    "subcategory": "Акробатика",
+    "address": "Москва, Северное Чертаново, 1А",
+    "metro": "Чертановская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Акробатика для детей",
+      "Спортивная акробатика"
+    ],
+    "skills": [
+      "гибкость",
+      "координация",
+      "баланс",
+      "дисциплина"
+    ],
+    "age_range": "7-12 лет",
+    "price": "от 1 200 ₽",
+    "description": "Семейный спортивный клуб FARTEAM в Северном Чертаново (внутри ЖК «Авеню 77») — более 12 направлений для детей и взрослых: акробатика, единоборства, йога, танцы, шахматы. Акробатика для детей — освоение акробатических элементов, гимнастических упражнений и общей физической подготовки; занятия ведёт тренер Евгений Николаенков (спортивная акробатика, кикбоксинг). Первое занятие бесплатное.",
+    "schedule": "групповые занятия по расписанию клуба",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (495) 157-26-27",
+    "website": "https://farteam.club/",
+    "vk": "https://vk.com/farteam_club",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1490/01_athlete_with_medals.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1490/02_kids_group_activity.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1490/03_kids_camp_outdoor.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1490/04_club_exterior_farteam_sign.jpg"
+    ],
+    "price_from": 1200,
+    "price_period": "занятие",
+    "price_source": "yandex_maps",
+    "lat": 55.6370076,
+    "lon": 37.5996904,
+    "team": [
+      {
+        "role": "Тренер по спортивной акробатике и кикбоксингу",
+        "detail": "Евгений Николаенков"
+      }
+    ],
+    "tags": [
+      "акробатика",
+      "семейный клуб",
+      "северное чертаново"
+    ],
+    "activity_tags": [
+      "спорт::Акробатика"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-12 лет",
+        "format": "разовое посещение",
+        "schedule": "по расписанию клуба",
+        "description": "Акробатика для детей — освоение акробатических элементов и общей физической подготовки",
+        "price": "1 200 ₽ за занятие"
+      },
+      {
+        "age_range": "7-12 лет",
+        "format": "абонемент на 12 занятий",
+        "schedule": "по расписанию клуба",
+        "description": "Групповые занятия по акробатике, пакет из 12 тренировок",
+        "price": "6 800 ₽ за 12 занятий"
+      }
+    ]
+  },
+  {
+    "id": 1492,
+    "name": "Moscow Chess School (Академический)",
+    "category": "развитие",
+    "subcategory": "Шахматы",
+    "address": "Москва, Новочерёмушкинская ул., 8",
+    "metro": "Академическая",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 3,
+    "programs": [
+      "Групповые занятия шахматами",
+      "Индивидуальные занятия",
+      "Шахматные турниры"
+    ],
+    "skills": [
+      "шахматная тактика",
+      "дебютный репертуар",
+      "турнирная практика"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 3 800 ₽",
+    "description": "Филиал шахматной школы Moscow Chess School в районе Академический (ЮЗАО). Групповые занятия шахматами для детей и подростков, группы до 6 человек, тренер — КМС Тимофей Пивоваров. Школа основана выпускниками школы олимпийского резерва, работает в Москве, Подмосковье и Санкт-Петербурге. Единая программа обучения с возможностью получения официального рейтинга ФИДЕ, собственные турниры.",
+    "schedule": "Вторник, четверг 18:00-18:55",
+    "group_size": "до 6 человек",
+    "duration": "55 мин",
+    "phone": "+7 (903) 271-76-82",
+    "website": "https://www.chessmos.ru/filialy/akademicheskaya",
+    "vk": "https://vk.com/chessmos",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 60,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1492/000c17_1f18b70ac048477697f52de79aa2dc88.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1492/000c17_7d082743a8a74a04b1485557b6df0c74.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1492/000c17_fd48a5dc17144353adae73c2ff6283b4.jpg"
+    ],
+    "price_from": 3800,
+    "price_period": "месяц, 1 занятие в неделю",
+    "price_source": "site",
+    "lat": 55.687813,
+    "lon": 37.584853,
+    "team": [
+      {
+        "role": "Тренер",
+        "detail": "КМС Пивоваров Тимофей"
+      }
+    ],
+    "tags": [
+      "шахматы",
+      "академический"
+    ],
+    "activity_tags": [
+      "развитие::Шахматы"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия (до 6 человек)",
+        "schedule": "вторник, четверг 18:00-18:55",
+        "description": "Шахматы для начинающих и продолжающих",
+        "price": "3 800 ₽/мес (1 раз/нед) / 5 600 ₽/мес (2 раза/нед)"
+      }
+    ]
+  },
+  {
+    "id": 1493,
+    "name": "Зелёный маяк",
+    "category": "творчество",
+    "subcategory": "Художественное искусство",
+    "address": "Москва, Молодогвардейская ул., 19к1",
+    "metro": "Молодёжная",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Живопись/рисунок/композиция",
+      "Гончарное искусство/керамика/лепка",
+      "Летний городской лагерь"
+    ],
+    "skills": [
+      "живопись",
+      "рисунок",
+      "композиция",
+      "гончарное дело"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 9 200 ₽",
+    "description": "Художественная студия «Зелёный маяк» в Кунцево (ЗАО) — рисунок, живопись и гончарное искусство/керамика для детей. Групповые занятия по живописи, графике, композиции и истории искусств, отдельно — гончарное дело и лепка из глины. Летний городской лагерь с художественными мастер-классами.",
+    "schedule": "по расписанию студии",
+    "group_size": "",
+    "duration": "60-120 мин",
+    "phone": "+7 (916) 799-93-32",
+    "website": "https://www.zmayak-studio.ru/",
+    "vk": "https://vk.com/zmayak",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1493/photo1.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1493/photo2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1493/photo3.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1493/photo4_ceramics.jpg"
+    ],
+    "price_from": 9200,
+    "price_period": "абонемент на 4 занятия",
+    "price_source": "yandex_maps",
+    "lat": 55.733427,
+    "lon": 37.422368,
+    "team": [],
+    "tags": [
+      "рисование",
+      "керамика",
+      "кунцево"
+    ],
+    "activity_tags": [
+      "творчество::Художественное искусство"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия, 120 мин",
+        "schedule": "по расписанию студии",
+        "description": "Живопись, графика, композиция, история искусств",
+        "price": "9 200 ₽ за 4 занятия"
+      },
+      {
+        "age_range": "7-18 лет",
+        "format": "дневной лагерь, 10:00-15:00",
+        "schedule": "будни, летние каникулы",
+        "description": "Летний городской лагерь: художественные мастер-классы",
+        "price": "4 990 ₽/день"
+      }
+    ]
+  },
+  {
+    "id": 1494,
+    "name": "Спортивный клуб «Авангард» (Коньково)",
+    "category": "спорт",
+    "subcategory": "Футбол",
+    "address": "Москва, Академика Капицы ул., 14А",
+    "metro": "Коньково",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Групповые тренировки по футболу",
+      "Индивидуальная техническая подготовка",
+      "Вратарское мастерство"
+    ],
+    "skills": [
+      "техника владения мячом",
+      "командная игра",
+      "вратарская техника"
+    ],
+    "age_range": "7-13 лет",
+    "price": "от 5 000 ₽",
+    "description": "Отделение «Коньково» футбольной академии «Авангард» (ЮЗАО). Тренировки на футбольном стадионе с искусственным газоном и в спортзале, тренеры с лицензией категории C. Возрастные группы 7-9 и 10-13 лет, тренировки три раза в неделю, участие в собственном Чемпионате «Авангард» по выходным.",
+    "schedule": "Пн/Ср/Пт: группа 7-9 лет 16:45-17:45, группа 10-13 лет 18:45-19:45",
+    "group_size": "",
+    "duration": "60 мин",
+    "phone": "+7 (495) 215-20-27",
+    "website": "https://avangard-football.ru/otdeleniya/konkovo/adres",
+    "vk": "https://vk.com/fa_avangard",
+    "rating": 4.3,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 78,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1494/x-6450ef2296211_920x680.abe.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1494/x-img_3487.eb4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1494/x-img_3488.eb4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1494/x-iw6p4ilraai.283.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1494/x-mooamtbhmh4.b67.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1494/x758-007.0e1.jpeg"
+    ],
+    "price_from": 5000,
+    "price_period": "уточняется (месяц/абонемент)",
+    "price_source": "yandex_maps",
+    "lat": 55.628434,
+    "lon": 37.522868,
+    "team": [
+      {
+        "role": "Тренерский состав",
+        "detail": "тренеры с лицензией категории C и высшим спортивным образованием"
+      }
+    ],
+    "tags": [
+      "футбол",
+      "коньково"
+    ],
+    "activity_tags": [
+      "спорт::Футбол"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-9 лет",
+        "format": "групповые тренировки",
+        "schedule": "Пн/Ср/Пт 16:45-17:45",
+        "description": "Групповые тренировки по футболу",
+        "price": "от 5 000 ₽"
+      },
+      {
+        "age_range": "10-13 лет",
+        "format": "групповые тренировки",
+        "schedule": "Пн/Ср/Пт 18:45-19:45",
+        "description": "Групповые тренировки по футболу",
+        "price": "от 5 000 ₽"
+      }
+    ]
+  },
+  {
+    "id": 1495,
+    "name": "Свобода (Svoboda, Бирюлёво)",
+    "category": "творчество",
+    "subcategory": "Музыкальные инструменты",
+    "address": "Москва, 6-я Радиальная ул., 3к1",
+    "metro": "Царицыно",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Вокал",
+      "Гитара",
+      "Барабаны",
+      "Фортепиано"
+    ],
+    "skills": [
+      "вокальная техника",
+      "игра на гитаре",
+      "игра на барабанах",
+      "игра на фортепиано"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 8 990 ₽",
+    "description": "Филиал школы интуитивной музыки «Свобода» в Бирюлёво (ЮАО). Индивидуальные занятия вокалом, гитарой, барабанами и фортепиано для детей и взрослых любого уровня. Авторская методика на основе исследований европейских и американских музыкальных школ. Отдельный, независимо подтверждённый филиал сети — не дубликат карточки на Чертановской улице (id1489).",
+    "schedule": "индивидуальное расписание по договорённости",
+    "group_size": "индивидуальные занятия",
+    "duration": "40-55 мин",
+    "phone": "+7 (996) 990-85-00",
+    "website": "https://svoboda.community/glavnaja-r",
+    "vk": "https://vk.com/svoboda.community",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 72,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1495/250524-12.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1495/250524-14.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1495/250524-4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1495/250524-5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1495/250524-8.jpg"
+    ],
+    "price_from": 8990,
+    "price_period": "абонемент на 4 занятия",
+    "price_source": "site",
+    "lat": 55.607036,
+    "lon": 37.664483,
+    "team": [],
+    "tags": [
+      "музыка",
+      "бирюлево"
+    ],
+    "activity_tags": [
+      "творчество::Музыкальные инструменты"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "индивидуальные занятия, 40-55 мин",
+        "schedule": "по договорённости",
+        "description": "Вокал, гитара, барабаны или фортепиано — интуитивная методика обучения",
+        "price": "пробное занятие 500 ₽ / 8 990 ₽ за 4 занятия"
+      }
+    ]
+  },
+  {
+    "id": 1498,
+    "name": "Moscow Chess School (Обручевский)",
+    "category": "развитие",
+    "subcategory": "Шахматы",
+    "address": "Москва, ул. Обручева, 11",
+    "metro": "Калужская",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Группа для начинающих",
+      "Группа среднего уровня",
+      "Сильная группа"
+    ],
+    "skills": [
+      "шахматная тактика",
+      "дебютная теория",
+      "стратегическое мышление"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 3 800 ₽/мес",
+    "description": "Филиал «Надежда» сети Moscow Chess School на ул. Обручева. Группы формируются по уровням: начинающие, средние, сильные. Занятия ведёт тренер КМС Николай Семенов. Школа основана выпускниками школы олимпийского резерва, работает по единой 4-годичной программе с участием в собственных ежемесячных турнирах и получением официального рейтинга.",
+    "schedule": "Среда 18:00-18:55, Суббота 11:00-11:55",
+    "group_size": "до 6 человек",
+    "duration": "55 мин",
+    "phone": "+7 (903) 271-76-82",
+    "website": "https://www.chessmos.ru/filialy/kaluzhskaya",
+    "vk": "https://vk.com/chessmos",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 62,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1498/mcs_1_class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1498/mcs_2_award.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1498/mcs_3_tournament.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1498/mcs_4_tournament2.jpg"
+    ],
+    "price_from": 3800,
+    "price_period": "1 раз в неделю, месяц",
+    "price_source": "site",
+    "lat": 55.660226,
+    "lon": 37.515146,
+    "team": [
+      {
+        "role": "Тренер",
+        "detail": "КМС Николай Семенов"
+      }
+    ],
+    "tags": [
+      "шахматы",
+      "обручева",
+      "калужская"
+    ],
+    "activity_tags": [
+      "развитие::Шахматы"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия (до 6 человек)",
+        "schedule": "Ср 18:00-18:55, Сб 11:00-11:55",
+        "description": "Группы разных уровней: начинающие, средние, сильные",
+        "price": "700 ₽ пробное, 3 800 ₽/мес (1 раз/нед.), 5 600 ₽/мес (2 раза/нед.)"
+      }
+    ]
+  },
+  {
+    "id": 1499,
+    "name": "АртВилль",
+    "category": "творчество",
+    "subcategory": "Художественное искусство",
+    "address": "Москва, Рублёвское ш., 91, корп. 1",
+    "metro": "Молодёжная",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Живопись",
+      "Академический рисунок",
+      "Акварель",
+      "Скульптура",
+      "Детская группа"
+    ],
+    "skills": [
+      "основы изобразительной грамоты",
+      "работа с цветом и композицией",
+      "академический рисунок",
+      "лепка"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 1 300 ₽",
+    "description": "Школа живописи и рисования «АртВилль» на Рублёвском шоссе — место для взрослых и детей, желающих учиться рисовать «с нуля». Свободная атмосфера, индивидуальный подход к каждому ученику, на первом же занятии ученик пишет свою первую картину. Направления: живопись, академический рисунок, акварель, фреска, роспись мебели, скульптура, детские группы. Также работает с мозаичными и реставрационными техниками.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "2 часа (детская группа)",
+    "phone": "+7 (925) 755-61-64",
+    "website": "https://www.artville-school.ru/",
+    "vk": "",
+    "rating": 4.3,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1499/artville_1_studio_cover.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1499/artville_2_class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1499/artville_3_watercolor.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1499/artville_4_mosaic.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1499/artville_5_mosaic2.jpg"
+    ],
+    "price_from": 1300,
+    "price_period": "занятие (дети, 2 часа)",
+    "price_source": "site",
+    "lat": 55.7408233,
+    "lon": 37.427253,
+    "team": [],
+    "tags": [
+      "живопись",
+      "рисование",
+      "кунцево"
+    ],
+    "activity_tags": [
+      "творчество::Художественное искусство"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия",
+        "schedule": "по расписанию, индивидуальный подбор",
+        "description": "Детская группа: рисование и живопись с нуля, индивидуальный подход",
+        "price": "1 300 ₽ / 2 часа, абонемент 4 500 ₽ / 4 занятия"
+      }
+    ]
+  },
+  {
+    "id": 1501,
+    "name": "Zasimov Studio",
+    "category": "творчество",
+    "subcategory": "Музыкальные инструменты",
+    "address": "Москва, 6-я Радиальная ул., 3к9",
+    "metro": "Царицыно",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 7,
+    "programs": [
+      "Акустическая гитара",
+      "Электрогитара",
+      "Укулеле",
+      "Фингерстайл",
+      "Сонграйтинг"
+    ],
+    "skills": [
+      "игра на гитаре",
+      "укулеле",
+      "фингерстайл",
+      "написание песен"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 800 ₽",
+    "description": "Гитарная студия Дениса Засимова в Бирюлёво Восточном — обучение игре на акустической и электрогитаре, укулеле, фингерстайлу и сонграйтингу. Занятия ведёт сам Денис Засимов — действующий музыкант, выступающий на фестивалях и работающий кавер-музыкантом на мероприятиях. Формат — индивидуально, в мини-группе или в группе (3-5 человек), курс рассчитан на 4-6 месяцев с подобранным репертуаром.",
+    "schedule": "1-2 занятия в неделю, расписание составляется индивидуально",
+    "group_size": "группа 3-5 человек / мини-группа 2 человека / индивидуально",
+    "duration": "50 минут",
+    "phone": "+7 926 795-91-20",
+    "website": "https://zasimov-studio.ru",
+    "vk": "",
+    "rating": 4.4,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1501/zasimov_1.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1501/zasimov_2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1501/zasimov_3.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1501/zasimov_4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1501/zasimov_5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1501/zasimov_6.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1501/zasimov_7.jpg"
+    ],
+    "price_from": 800,
+    "price_period": "занятие 50 минут (групповое)",
+    "price_source": "site",
+    "lat": 55.604753,
+    "lon": 37.664025,
+    "team": [
+      {
+        "role": "Преподаватель, основатель",
+        "detail": "Денис Засимов — профессиональный музыкант и педагог"
+      }
+    ],
+    "tags": [
+      "гитара",
+      "укулеле",
+      "царицыно"
+    ],
+    "activity_tags": [
+      "творчество::Музыкальные инструменты"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "группа/мини-группа/индивидуально",
+        "schedule": "1-2 раза в неделю",
+        "description": "Акустическая гитара, электрогитара, укулеле, фингерстайл, сонграйтинг — курс 4-6 месяцев с подобранным репертуаром",
+        "price": "от 800 ₽/50 мин (группа), 1 500 ₽/50 мин (индивидуально)"
+      }
+    ]
+  },
+  {
+    "id": 1502,
+    "name": "ТанцPole",
+    "category": "творчество",
+    "subcategory": "Танцы",
+    "address": "Москва, Электролитный проезд, 10",
+    "metro": "Нагорная",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Спортивный пилон (дети)",
+      "Воздушная гимнастика (дети)",
+      "Хип-хоп для детей"
+    ],
+    "skills": [
+      "сила и гибкость",
+      "координация",
+      "трюки на пилоне",
+      "воздушная акробатика"
+    ],
+    "age_range": "7-16 лет",
+    "price": "от 900 ₽",
+    "description": "ТанцPole у метро Нагорная — школа танцев на пилоне и воздушной гимнастики с отдельными детскими группами: спортивный пилон, воздушная гимнастика на полотнах и кольце, хип-хоп. Взрослое направление — pole sport, exotic pole dance, то есть это студия pole dance/pole sport, а не классическая акробатика (subcategory скорректирована с «Акробатика» на «Танцы»). Детские группы работают круглый год, набор без отбора при отсутствии противопоказаний, есть команда для соревнований.",
+    "schedule": "групповые занятия по расписанию, будни, вторая половина дня",
+    "group_size": "групповые занятия",
+    "duration": "1 час",
+    "phone": "+7 (994) 506-34-65",
+    "website": "https://www.dancepole.moscow",
+    "vk": "https://vk.ru/dancepole_msk",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 8,
+    "data_quality": 65,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1502/tancpole_2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1502/tancpole_hiphop.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1502/tancpole_kids_aerial.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1502/tancpole_kids_groups.jpg"
+    ],
+    "price_from": 900,
+    "price_period": "первое занятие",
+    "price_source": "yandex_maps",
+    "lat": 55.672448,
+    "lon": 37.61388,
+    "team": [],
+    "tags": [
+      "pole sport",
+      "воздушная гимнастика",
+      "хип-хоп",
+      "нагорная"
+    ],
+    "activity_tags": [
+      "творчество::Танцы"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-16 лет",
+        "format": "группа",
+        "schedule": "по расписанию",
+        "description": "Спортивный пилон для детей — набор с нуля, развивает силу, гибкость и координацию",
+        "price": "1 400 ₽/занятие, абонемент на 4 занятия 4 500 ₽"
+      },
+      {
+        "age_range": "7-14 лет",
+        "format": "группа",
+        "schedule": "с июня — пн/чт 16:00 и 17:00",
+        "description": "Воздушная гимнастика на полотнах и кольце для детей",
+        "price": "1 400 ₽/занятие, абонемент на 4 занятия 4 500 ₽"
+      }
+    ]
+  },
+  {
+    "id": 1503,
+    "name": "СОК «Раменки»",
+    "category": "спорт",
+    "subcategory": "Единоборства",
+    "address": "Москва, ул. Раменки, 19, стр. 1",
+    "metro": "Мичуринский проспект",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Самбо",
+      "Дзюдо",
+      "Тхэквондо",
+      "Бокс",
+      "Каратэ (ОФП)"
+    ],
+    "skills": [
+      "борцовская техника",
+      "ударная техника",
+      "физическая подготовка"
+    ],
+    "age_range": "7-16 лет",
+    "price": "от 700 ₽",
+    "description": "Спортивный комплекс «Раменки» (ГБУ «МосСпортОбъект») — крупный муниципальный спортивный центр. В комплексе есть выделенный «Зал единоборств», а также два отдельных зала «Для борьбы» и зал бокса с рингом. Групповые и индивидуальные занятия ведут дипломированные тренеры: мастер спорта по самбо и дзюдо, кандидат в мастера спорта по тхэквондо, тренер с квалификацией КМС по каратэ.",
+    "schedule": "ежедневно 07:00-23:00",
+    "group_size": "",
+    "duration": "~45 минут",
+    "phone": "+7 (499) 444-14-78",
+    "website": "https://mso.mossport.ru/sport-center/ramenki",
+    "vk": "https://vk.com/sportramenki",
+    "rating": 4.9,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 8,
+    "data_quality": 62,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1503/ramenki_1.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1503/ramenki_2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1503/ramenki_4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1503/ramenki_hall2_borba.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1503/ramenki_hall3_borba.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1503/ramenki_hall5_boxing.jpg"
+    ],
+    "price_from": 700,
+    "price_period": "разовое групповое занятие",
+    "price_source": "site",
+    "lat": 55.691141,
+    "lon": 37.492743,
+    "team": [
+      {
+        "role": "Тренер по самбо/дзюдо",
+        "detail": "Маркова Дарья Дмитриевна — мастер спорта по самбо и дзюдо"
+      },
+      {
+        "role": "Тренер по тхэквондо",
+        "detail": "Денисова Полина Александровна — КМС по тхэквондо, чёрный пояс"
+      }
+    ],
+    "tags": [
+      "самбо",
+      "дзюдо",
+      "бокс",
+      "каратэ",
+      "раменки"
+    ],
+    "activity_tags": [
+      "спорт::Единоборства"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-16 лет",
+        "format": "группа/индивидуально",
+        "schedule": "по расписанию",
+        "description": "Самбо/дзюдо — групповые и индивидуальные занятия",
+        "price": "от 700 ₽"
+      },
+      {
+        "age_range": "7-16 лет",
+        "format": "зал бокса с рингом",
+        "schedule": "по расписанию",
+        "description": "Бокс — тренировки в отдельном зале с рингом",
+        "price": "от 700 ₽"
+      }
+    ]
+  },
+  {
+    "id": 1505,
+    "name": "Etud в Крылатском",
+    "category": "творчество",
+    "subcategory": "Художественное искусство",
+    "address": "Москва, Осенняя ул., 4, корп. 1",
+    "metro": "Крылатское",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 7,
+    "programs": [
+      "Обучение рисованию с нуля"
+    ],
+    "skills": [
+      "живопись",
+      "графика",
+      "рисунок",
+      "композиция"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 750 ₽",
+    "description": "Студия живописи «Этюд» в Крылатском работает под руководством Надежды Сосновиковой. Обучение рисованию с нуля по авторской методике: живопись, графика, развитие ассоциативного и образного мышления. Группы формируются по возрасту, есть отдельные группы для школьников 7-10, 11-15 и 15-18 лет. Независимая студия от Etud на ул. Кедрова (id1418) — другой филиал похожей по названию сети.",
+    "schedule": "не указано",
+    "group_size": "",
+    "duration": "1.5 часа",
+    "phone": "+7 (916) 582-47-16",
+    "website": "https://sosnovikova-nadezda.clients.site/",
+    "vk": "https://vk.com/studiaetud",
+    "rating": 4.9,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1505/photo1_ymaps.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1505/photo2_ymaps.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1505/photo3_ymaps.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1505/photo4_vk_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1505/photo5_vk.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1505/photo6_vk.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1505/photo7_vk.jpg"
+    ],
+    "price_from": 750,
+    "price_period": "занятие (1.5 часа)",
+    "price_source": "yandex_maps",
+    "lat": 55.7573489,
+    "lon": 37.4001888,
+    "team": [
+      {
+        "role": "Руководитель студии / преподаватель",
+        "detail": "Надежда Сосновикова"
+      }
+    ],
+    "tags": [
+      "рисование",
+      "живопись",
+      "крылатское"
+    ],
+    "activity_tags": [
+      "творчество::Художественное искусство"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия",
+        "schedule": "не указано",
+        "description": "Обучение рисованию с нуля: живопись и графика по авторской методике студии",
+        "price": "от 750 ₽ / 1.5 часа"
+      }
+    ]
+  },
+  {
+    "id": 1508,
+    "name": "Творческий центр «Артист»",
+    "category": "творчество",
+    "subcategory": "Театр",
+    "address": "Москва, проспект Андропова, 22",
+    "metro": "Коломенская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Актёрское мастерство",
+      "Вокал",
+      "Хореография",
+      "Сценическая речь",
+      "Брейк-данс и акробатика"
+    ],
+    "skills": [
+      "актёрское мастерство",
+      "вокал",
+      "хореография",
+      "сценическая речь",
+      "публичные выступления"
+    ],
+    "age_range": "7-17 лет",
+    "price": "от 2 800 ₽",
+    "description": "Театральная студия «Артист» в бизнес-центре «Нагатинский» работает больше 15 лет под руководством актрисы и режиссёра Светланы Лариной. Дети занимаются актёрским мастерством, вокалом, хореографией и сценической речью (в старшей группе — по системе Станиславского), участвуют в спектаклях и театральных фестивалях. Есть отдельная программа брейк-данса и акробатики, летние творческие смены «Кино и Театр». Subcategory скорректирована с ошибочной «Акробатика» на «Театр» — основной профиль студии театральный.",
+    "schedule": "группы по возрастам, занятия 1-2 раза в неделю",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (985) 220-03-32",
+    "website": "https://tcartist.ru/",
+    "vk": "https://vk.com/tc_artist",
+    "rating": 4.8,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 72,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1508/photo_1_stage_800.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1508/photo_2_stage_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1508/photo_3_stage_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1508/photo_4_stage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1508/photo_5_stage.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1508/photo_6_stage.jpg"
+    ],
+    "price_from": 2800,
+    "price_period": "",
+    "price_source": "yandex_maps",
+    "lat": 55.6830169,
+    "lon": 37.6626566,
+    "team": [
+      {
+        "role": "Художественный руководитель",
+        "detail": "Светлана Ларина — актриса, режиссёр, телеведущая"
+      },
+      {
+        "role": "Педагог по актёрскому мастерству",
+        "detail": "Анастасия Камма"
+      },
+      {
+        "role": "Хореограф",
+        "detail": "Мария Дружинина"
+      }
+    ],
+    "tags": [
+      "театральная студия",
+      "актёрское мастерство",
+      "вокал"
+    ],
+    "activity_tags": [
+      "творчество::Театр"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-12 лет",
+        "format": "комплексная театральная программа",
+        "schedule": "2 раза в неделю",
+        "description": "Актёрская техника, сценическая речь, вокал, танец, импровизация",
+        "price": "уточняйте"
+      },
+      {
+        "age_range": "13-17 лет",
+        "format": "продвинутый театральный курс",
+        "schedule": "2 раза в неделю",
+        "description": "Углублённое актёрское мастерство по системе Станиславского",
+        "price": "уточняйте"
+      }
+    ]
+  },
+  {
+    "id": 1510,
+    "name": "Лабиринты шахмат (Островитянова)",
+    "category": "развитие",
+    "subcategory": "Шахматы",
+    "address": "Москва, улица Островитянова, 19/22",
+    "metro": "Коньково",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Групповые занятия шахматами",
+      "Индивидуальные занятия"
+    ],
+    "skills": [
+      "шахматная тактика",
+      "стратегическое мышление",
+      "дебютная подготовка"
+    ],
+    "age_range": "7-16 лет",
+    "price": "от 6 800 ₽",
+    "description": "Филиал сети шахматных школ «Лабиринты шахмат» на ул. Островитянова, 19/22 (район Коньково, ЮЗАО). Группы для начинающих («Новички») и продолжающих школьников («Старшая группа»), отработка тактики и стратегии, участие в турнирах. Все материалы включены в стоимость абонемента.",
+    "schedule": "группы до 8 человек, занятия по расписанию",
+    "group_size": "до 8 человек",
+    "duration": "",
+    "phone": "+7 (495) 774-14-76",
+    "website": "https://chesslabyrinth.ru/",
+    "vk": "https://vk.ru/chesslabyrinth",
+    "rating": null,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 60,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1510/photo_1_kids_playing_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1510/photo_2_classroom_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1510/photo_3_entrance_portrait.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1510/photo_4_storefront_landscape.jpg"
+    ],
+    "price_from": 6800,
+    "price_period": "месяц (8 занятий)",
+    "price_source": "yandex_maps",
+    "lat": 55.6384982,
+    "lon": 37.5107562,
+    "team": [],
+    "tags": [
+      "шахматы",
+      "коньково"
+    ],
+    "activity_tags": [
+      "развитие::Шахматы"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-9 лет",
+        "format": "группа «Новички»",
+        "schedule": "1 раз в неделю",
+        "description": "Основы шахматной игры для начинающих",
+        "price": "от 6 800 ₽/мес (8 занятий)"
+      },
+      {
+        "age_range": "10-16 лет",
+        "format": "группа «Старшая»",
+        "schedule": "1 раз в неделю",
+        "description": "Развитие тактики и стратегии для играющих детей",
+        "price": "от 6 800 ₽/мес (8 занятий)"
+      }
+    ]
+  },
+  {
+    "id": 1511,
+    "name": "Кисточка (филиал Крылатские Холмы)",
+    "category": "творчество",
+    "subcategory": "Художественное искусство",
+    "address": "Москва, улица Крылатские Холмы, 15к2",
+    "metro": "Крылатское",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Рисование для детей (младшая группа)",
+      "Рисование для детей (старшая группа)",
+      "Индивидуальные занятия"
+    ],
+    "skills": [
+      "рисование акварелью",
+      "рисование гуашью",
+      "основы композиции"
+    ],
+    "age_range": "7-14 лет",
+    "price": "от 4 500 ₽",
+    "description": "Второй адрес сети детских изостудий «Кисточка» (наравне со студией на Вавилова, id1425) — на ул. Крылатские Холмы, 15к2. Групповые и индивидуальные занятия рисованием для детей: работа с акварелью, гуашью, акрилом, пластилином, основы рисунка и живописи. Также проводятся творческие мастер-классы для взрослых. Первое пробное занятие бесплатно.",
+    "schedule": "занятия по 60-90 минут, группы 4-9 человек",
+    "group_size": "4-9 человек",
+    "duration": "60-90 минут",
+    "phone": "+7 (495) 142-89-07",
+    "website": "https://kistochka-studio.ru/",
+    "vk": "https://vk.ru/kistochkastudio",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1511/photo_1_pillow_painting.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1511/photo_3_studio_interior_landscape.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1511/photo_4_adults_group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1511/photo_5_kids_easels.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1511/photo_6_painting_gold.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1511/photo_7_brushes_closeup.jpg"
+    ],
+    "price_from": 4500,
+    "price_period": "месяц (4 занятия)",
+    "price_source": "site",
+    "lat": 55.7590741,
+    "lon": 37.4203002,
+    "team": [],
+    "tags": [
+      "рисование",
+      "изостудия",
+      "крылатское"
+    ],
+    "activity_tags": [
+      "творчество::Художественное искусство"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-9 лет",
+        "format": "младшая группа",
+        "schedule": "1-2 раза в неделю",
+        "description": "Основы рисунка и живописи, работа с акварелью, гуашью, пластилином",
+        "price": "от 4 500 ₽/мес (4 занятия)"
+      },
+      {
+        "age_range": "10-14 лет",
+        "format": "старшая группа",
+        "schedule": "1-2 раза в неделю",
+        "description": "Углублённые техники рисования: натюрморт, портрет, пейзаж",
+        "price": "от 4 500 ₽/мес (4 занятия)"
+      }
+    ]
+  },
+  {
+    "id": 1513,
+    "name": "Muz Like",
+    "category": "творчество",
+    "subcategory": "Музыкальные инструменты",
+    "address": "Москва, Шипиловский проезд, 39к2",
+    "metro": "Орехово",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Гитара",
+      "Фортепиано",
+      "Вокал",
+      "Укулеле"
+    ],
+    "skills": [
+      "игра на гитаре",
+      "игра на фортепиано",
+      "вокал и постановка голоса"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 7 000 ₽",
+    "description": "Музыкальная студия детского клуба «Ладушки» в Орехово-Борисово. Индивидуальные и групповые занятия на гитаре, фортепиано и вокал для детей и взрослых, любой уровень — с нуля и до продвинутого. Педагоги с высшим профессиональным образованием, классический и современный репертуар, работа над техникой, слухом и сценической подачей.",
+    "schedule": "круглый год, занятия по записи (в т.ч. онлайн)",
+    "group_size": "",
+    "duration": "45-60 мин",
+    "phone": "+7 (926) 656-44-95",
+    "website": "http://dkladushki.ru/",
+    "vk": "https://vk.com/dkladushki",
+    "rating": 4.7,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 62,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1513/guitar2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1513/guitar3.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1513/guitar5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1513/guitar6.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1513/guitar7.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1513/piano1.jpg"
+    ],
+    "price_from": 7000,
+    "price_period": "4 занятия",
+    "price_source": "yandex_maps",
+    "lat": 55.6091,
+    "lon": 37.7128,
+    "team": [],
+    "tags": [
+      "музыкальная школа",
+      "гитара",
+      "фортепиано",
+      "орехово-борисово"
+    ],
+    "activity_tags": [
+      "творчество::Музыкальные инструменты"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "индивидуально/группа",
+        "schedule": "по записи",
+        "description": "Обучение игре на гитаре и укулеле, классический и современный стиль",
+        "price": "от 7 000 ₽ / 4 занятия"
+      },
+      {
+        "age_range": "7-18 лет",
+        "format": "индивидуально",
+        "schedule": "по записи",
+        "description": "Фортепиано и синтезатор: музыкальная грамота, развитие слуха и памяти",
+        "price": "от 7 000 ₽ / 4 занятия"
+      }
+    ]
+  },
+  {
+    "id": 1517,
+    "name": "Зелёный маяк (Крылатское)",
+    "category": "творчество",
+    "subcategory": "Художественное искусство",
+    "address": "Москва, Рублёвское шоссе, 121",
+    "metro": "Крылатское",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 7,
+    "programs": [
+      "Основы изобразительного искусства",
+      "Живопись",
+      "Керамика",
+      "Батик"
+    ],
+    "skills": [
+      "рисование",
+      "живопись",
+      "композиция",
+      "лепка",
+      "керамика"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 11 000 ₽ за абонемент (8 занятий)",
+    "description": "Филиал сети арт-студий «Зелёный маяк», работает на территории частной школы «Олимп-плюс» у метро Крылатское. Сеть основала художник Наталья Свинцова; более 400 детей занимаются ежемесячно во всех филиалах. Групповые занятия по живописи, графике, композиции и истории искусств, художественные материалы включены в стоимость абонемента. В конце полугодия проводится отчётная выставка работ учеников. Отдельный, независимо подтверждённый филиал сети от студии на Молодогвардейской (id1493).",
+    "schedule": "уточняется по телефону",
+    "group_size": "",
+    "duration": "60 минут",
+    "phone": "+7 (916) 799-93-32",
+    "website": "https://www.zmayak-studio.ru/",
+    "vk": "https://vk.com/zmayak",
+    "rating": 4.5,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1517/photo_1.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1517/photo_2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1517/photo_4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1517/photo_5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1517/photo_7.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1517/photo_8.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1517/photo_9.jpg"
+    ],
+    "price_from": 11000,
+    "price_period": "абонемент, 8 занятий",
+    "price_source": "yandex_maps",
+    "lat": 55.747496,
+    "lon": 37.412152,
+    "team": [
+      {
+        "role": "Основатель сети",
+        "detail": "Наталья Свинцова"
+      },
+      {
+        "role": "Преподаватель (филиал)",
+        "detail": "Щербакова Елена"
+      }
+    ],
+    "tags": [
+      "изобразительное искусство",
+      "керамика",
+      "крылатское"
+    ],
+    "activity_tags": [
+      "творчество::Художественное искусство"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия",
+        "schedule": "уточняется",
+        "description": "Живопись, графика, композиция, история искусств; материалы включены в стоимость",
+        "price": "11 000 ₽ за 8 занятий"
+      }
+    ]
+  },
+  {
+    "id": 1518,
+    "name": "Футбольный клуб «Армада»",
+    "category": "спорт",
+    "subcategory": "Футбол",
+    "address": "Москва, Новоясеневский проспект, 30",
+    "metro": "Ясенево",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Групповые тренировки по футболу"
+    ],
+    "skills": [
+      "техника владения мячом",
+      "тактика",
+      "командная игра"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 400 ₽ за тренировку",
+    "description": "Детский футбольный клуб «Армада» тренируется на базе спортивного комплекса «Содружество» в Ясеневе — независимый клуб, площадку с другими футбольными школами (в т.ч. уже заведённым ДФК «Викинг», id1452) делит на общих основаниях, но имеет собственный телефон, отдельное VK-сообщество и руководителя. Набор детей, групповые тренировки 1 или 1,5 часа, участие в турнирах, в т.ч. Чемпионате Москвы по мини-футболу 6х6.",
+    "schedule": "уточняется по телефону",
+    "group_size": "",
+    "duration": "60-90 минут",
+    "phone": "+7 (916) 527-07-10",
+    "website": "",
+    "vk": "https://vk.com/club109244323",
+    "rating": 4.7,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1518/photo_1.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1518/photo_3.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1518/photo_4.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1518/photo_5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1518/photo_7.jpg"
+    ],
+    "price_from": 400,
+    "price_period": "разовая тренировка (1 час)",
+    "price_source": "yandex_maps",
+    "lat": 55.604551,
+    "lon": 37.536657,
+    "team": [
+      {
+        "role": "Руководитель клуба",
+        "detail": "Лягин Максим Владимирович"
+      }
+    ],
+    "tags": [
+      "футбол",
+      "ясенево",
+      "мини-футбол"
+    ],
+    "activity_tags": [
+      "спорт::Футбол"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые тренировки",
+        "schedule": "по расписанию клуба",
+        "description": "Групповые тренировки по футболу для детей и подростков на базе СК «Содружество»",
+        "price": "400 ₽ (1 ч) / 600 ₽ (1,5 ч)"
+      }
+    ]
+  },
+  {
+    "id": 1519,
+    "name": "Music school Muzkursy.rf",
+    "category": "творчество",
+    "subcategory": "Музыкальные инструменты",
+    "address": "Москва, 1-й Кожевнический переулок, 6, стр. 15",
+    "metro": "Павелецкая",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Гитара",
+      "Фортепиано",
+      "Вокал",
+      "Сольфеджио"
+    ],
+    "skills": [
+      "игра на гитаре",
+      "игра на фортепиано",
+      "вокал",
+      "сольфеджио"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 1 490 ₽",
+    "description": "Сеть музыкальных школ «Музкурсы.рф» существует 13 лет, филиал у метро Павелецкая. Индивидуальные и групповые занятия на гитаре, фортепиано, вокале и сольфеджио для детей и взрослых по авторской системной методике. Ученики выступают на концертах и конкурсах, поступают в профильные вузы и специализированные школы (в т.ч. Гнесинскую десятилетку). Пробный урок — полноценное занятие.",
+    "schedule": "с 10:00, по записи",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (967) 239-00-39",
+    "website": "https://музкурсы.рф/",
+    "vk": "https://vk.com/muzkursi",
+    "rating": 4.7,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 9,
+    "data_quality": 78,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1519/site_photo_1.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1519/site_photo_2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1519/vk_photo_5.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1519/vk_photo_6.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/1519/vk_photo_7.jpg"
+    ],
+    "price_from": 1490,
+    "price_period": "вводное занятие",
+    "price_source": "site",
+    "lat": 55.727064,
+    "lon": 37.647329,
+    "team": [
+      {
+        "role": "Преподаватель фортепиано / руководитель",
+        "detail": "Татьяна Безменова"
+      },
+      {
+        "role": "Преподаватель гитары",
+        "detail": "Павел Поляков"
+      }
+    ],
+    "tags": [
+      "музыкальная школа",
+      "гитара",
+      "фортепиано",
+      "вокал",
+      "павелецкая"
+    ],
+    "activity_tags": [
+      "творчество::Музыкальные инструменты"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "индивидуальные занятия",
+        "schedule": "по записи",
+        "description": "Гитара, фортепиано, вокал, сольфеджио. Абонементы на 12/24/36/48 уроков",
+        "price": "от 3 470 до 4 025 ₽ за урок"
+      },
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия",
+        "schedule": "по записи",
+        "description": "Групповые занятия по абонементам на 12-96 уроков",
+        "price": "от 1 894 до 2 474 ₽ за урок"
+      }
+    ]
   }
 ]
