@@ -570,6 +570,17 @@ document.addEventListener('click', e => {
 }, true);
 
 function applyFilters() {
+  // Округ и станция метро взаимоисключающие -- выбор одного сбрасывает
+  // другой (по запросу Максима, 26.08): оба одновременно сужают
+  // выдачу непредсказуемо (станция может быть в другом округе, чем
+  // выбранный), проще и понятнее держать активным один гео-фильтр.
+  const newDistrict = document.getElementById('districtFilter').value;
+  const newMetro    = document.getElementById('metroFilter').value;
+  if (newDistrict && newDistrict !== state.district) {
+    document.getElementById('metroFilter').value = '';
+  } else if (newMetro && newMetro !== state.metro) {
+    document.getElementById('districtFilter').value = '';
+  }
   state.metro    = document.getElementById('metroFilter').value;
   state.district = document.getElementById('districtFilter').value;
   state.age      = document.getElementById('ageFilter').value;
