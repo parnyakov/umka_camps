@@ -306,6 +306,22 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 10px;
 }
 
+.metro-nearby-badge {
+  font-size: 10px;
+  color: var(--muted);
+  background: #F1F5F9;
+  border-radius: 6px;
+  padding: 1px 6px;
+  margin-left: 4px;
+}
+
+.filter-hint {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
 .filter-group select,
 .filter-group input[type="number"],
 .filter-group input[type="text"] {

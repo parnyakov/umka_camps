@@ -1,6 +1,7 @@
 import os
 import re
 import json
+import math
 import sqlite3
 import datetime
 import requests
@@ -644,6 +645,51 @@ def _age_tier_match(age_str, tier):
         return hi is None or hi >= 7
     return True
 
+# ─── Metro proximity ────────────────────────────────────────────────────────
+# Station coordinates: OSM Overpass (railway=station, station=subway) inside
+# Москва admin boundary, 2026-08-26, 237 unique station names (some
+# interchange complexes share a name across lines -- coords averaged).
+METRO_STATIONS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'moscow-metro-stations.json')
+try:
+    with open(METRO_STATIONS_PATH, encoding='utf-8') as f:
+        _METRO_STATIONS = json.load(f)
+except FileNotFoundError:
+    _METRO_STATIONS = []
+
+def _metro_norm(s):
+    s = re.sub(r'\s*\([^)]*\)', '', s or '')  # strip "(0.7 км)"-style notes
+    return s.strip().lower().replace('ё', 'е')
+
+_METRO_BY_NORM = {_metro_norm(s['name']): s for s in _METRO_STATIONS}
+
+def _resolve_metro_station(query):
+    """First matching station for a (possibly composite, e.g. "Коломенская /
+    Нагатинский затон") org metro string. None if no part matches our
+    dataset (MCD stops, out-of-city suburbs like Балашиха/Мытищи, or a
+    handful of naming mismatches not worth chasing further -- ~86% of the
+    catalog's distinct metro strings resolve, checked 2026-08-26)."""
+    for part in re.split(r'[/,]', query or ''):
+        hit = _METRO_BY_NORM.get(_metro_norm(part))
+        if hit:
+            return hit
+    return None
+
+def _haversine_km(lat1, lon1, lat2, lon2):
+    R = 6371.0
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    dphi, dlambda = math.radians(lat2 - lat1), math.radians(lon2 - lon1)
+    a = math.sin(dphi/2)**2 + math.cos(p1)*math.cos(p2)*math.sin(dlambda/2)**2
+    return 2 * R * math.asin(math.sqrt(a))
+
+# "~20 minutes by surface transport" is an approximation, not a real transit
+# isochrone (no routing API wired up) -- straight-line distance is smaller
+# than actual street/route distance (which runs ~1.3-1.5x longer due to the
+# street grid), so a straight-line radius has to undershoot the naive
+# speed*time estimate to stay honest. 3.0 km is that undershoot from a
+# rough ~15 km/h effective ground-transport speed (stops/boarding/wait
+# included) over 20 minutes.
+METRO_NEARBY_RADIUS_KM = 3.0
+
 def _orgs_conn():
     conn = sqlite3.connect(ORGS_DB)
     conn.row_factory = sqlite3.Row
@@ -696,7 +742,6 @@ def api_orgs():
         if subcategory: tag_conds.append('subcategory=?'); tag_params.append(subcategory)
         conds.append(f"id IN (SELECT org_id FROM org_activity_tags WHERE {' AND '.join(tag_conds)})")
         params.extend(tag_params)
-    if metro:          conds.append('metro=?');        params.append(metro)
     if district:       conds.append('district=?');     params.append(district)
     if has_trial=='1': conds.append('has_trial=1')
     # care_type: default view is clubs/kружки only -- private kindergartens
@@ -708,13 +753,41 @@ def api_orgs():
         conds.append("care_type='kindergarten'")
     else:
         conds.append("care_type!='kindergarten'")
-    # q, age, price_max are applied Python-side:
-    # SQLite LIKE is case-insensitive only for ASCII, not Cyrillic.
+    # q, age, price_max, metro are applied Python-side:
+    # SQLite LIKE is case-insensitive only for ASCII, not Cyrillic; metro
+    # needs the haversine nearby-station check, not a plain column compare.
     where = ('WHERE ' + ' AND '.join(conds)) if conds else ''
 
     rows  = conn.execute(f'SELECT * FROM organizations {where} ORDER BY featured DESC, data_quality DESC, rating DESC', params).fetchall()
     conn.close()
     items = [_org_dict(r) for r in rows]
+
+    if metro:
+        # Exact station-name match always counts. If the queried name
+        # resolves to a known station, orgs within METRO_NEARBY_RADIUS_KM
+        # (straight-line, see constant above) also count -- "~20 min by
+        # transport" per Maxim's 2026-08-26 request. Unresolved station
+        # names (MCD stops, out-of-city suburbs, ~14% of distinct metro
+        # strings in the catalog) fall back to exact-match only, same as
+        # before this feature existed.
+        target = _resolve_metro_station(metro)
+        filtered = []
+        for o in items:
+            if o.get('metro') == metro:
+                o['metro_match'] = 'exact'
+                filtered.append(o)
+            elif target and o.get('lat') and o.get('lon'):
+                d = _haversine_km(o['lat'], o['lon'], target['lat'], target['lon'])
+                if d <= METRO_NEARBY_RADIUS_KM:
+                    o['metro_match'] = 'nearby'
+                    o['metro_distance_km'] = round(d, 2)
+                    filtered.append(o)
+        # Exact-station matches first, then nearby ones nearest-first
+        # (stable sort keeps each group's existing featured/quality/rating
+        # order otherwise).
+        filtered.sort(key=lambda o: (0 if o.get('metro_match') == 'exact' else 1,
+                                      o.get('metro_distance_km', 0)))
+        items = filtered
 
     if q:
         q_lower = q.lower()

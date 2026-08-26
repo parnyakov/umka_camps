@@ -120,6 +120,7 @@
       <select id="metroFilter" onchange="applyFilters()">
         <option value="">Любая станция</option>
       </select>
+      <div class="filter-hint">Покажем у самой станции и в ~20 минутах на транспорте</div>
     </div>
 
     <div class="filter-group" id="fgAge">
@@ -995,7 +996,9 @@ function cardHTML(org) {
   const trial = org.has_trial
     ? `<span class="trial-badge">Пробное занятие</span>` : '';
 
-  const metro = org.metro ? `<span>${esc(org.metro)}</span>` : '';
+  const metroNearby = org.metro_match === 'nearby'
+    ? ` <span class="metro-nearby-badge">~20 мин от м. ${esc(state.metro)}</span>` : '';
+  const metro = org.metro ? `<span>${esc(org.metro)}${metroNearby}</span>` : '';
   const age   = org.age_range ? `<span class="dot">·</span><span>${esc(org.age_range)}</span>` : '';
 
   return `
