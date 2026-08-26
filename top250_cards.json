@@ -103162,5 +103162,1466 @@
         "price": "1150 ₽ разовое / 950 ₽ по абонементу"
       }
     ]
+  },
+  {
+    "id": 929,
+    "name": "Lira (Лира)",
+    "category": "творчество",
+    "subcategory": "Музыкальные инструменты",
+    "address": "Москва, Востряковский проезд, 11А",
+    "metro": "",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Фортепиано",
+      "Хореография (танцы)",
+      "ИЗО (рисование)"
+    ],
+    "skills": [
+      "музыкальный слух",
+      "постановка рук",
+      "пластика и осанка",
+      "основы рисунка"
+    ],
+    "age_range": "7-17 лет",
+    "price": "уточняйте по телефону",
+    "description": "Школа искусств «Лира» работает на территории школы №667 в Бирюлёво Западном. Многопрофильный детский центр творчества: обучение игре на музыкальных инструментах, хореография и изобразительное искусство. По отзывам родителей — уютная творческая атмосфера, внимательные педагоги.",
+    "schedule": "Пн-Сб, 13:00-21:00",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (966) 093-14-53",
+    "website": "",
+    "vk": "",
+    "rating": 4.3,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 50,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/929/01-exterior.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/929/02-entrance.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/929/03-building.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/929/04-facade.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/929/05-front.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "reviews",
+    "lat": 55.579338,
+    "lon": 37.647088,
+    "team": [
+      {
+        "role": "Преподаватель фортепиано",
+        "detail": "Анна Николаевна — по отзывам родителей, профессионал своего дела"
+      },
+      {
+        "role": "Хореограф",
+        "detail": "Анна Жукова — ставит осанку, походку и грацию"
+      }
+    ],
+    "tags": [
+      "музыкальная школа",
+      "школа искусств",
+      "детское творчество"
+    ],
+    "activity_tags": [
+      "творчество::Музыкальные инструменты",
+      "творчество::Танцы"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-17 лет",
+        "format": "групповые и индивидуальные занятия",
+        "schedule": "Пн-Сб, 13:00-21:00",
+        "description": "Обучение игре на музыкальных инструментах, хореография и ИЗО",
+        "price": "уточняйте по телефону"
+      }
+    ]
+  },
+  {
+    "id": 930,
+    "name": "Club 18 fight & fitness",
+    "category": "спорт",
+    "subcategory": "Акробатика",
+    "address": "Москва, 1-й Нагатинский проезд, 15 (3 этаж)",
+    "metro": "Нагатинская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Акробатика",
+      "Дзюдо",
+      "Самбо",
+      "Вольная борьба",
+      "Бокс",
+      "Тайский бокс",
+      "Кикбоксинг",
+      "MMA",
+      "Кунг-фу",
+      "Тхэквондо"
+    ],
+    "skills": [
+      "самооборона",
+      "дисциплина",
+      "координация и гибкость",
+      "выносливость"
+    ],
+    "age_range": "7-17 лет",
+    "price": "от 1300 ₽/занятие",
+    "description": "Крупный спортивный клуб единоборств и фитнеса CLUB 18 fight & fitness у метро Нагатинская. Просторные светлые залы, ковры для борьбы, боксёрские груши. Большой выбор секций для детей: акробатика, дзюдо, самбо, вольная борьба, бокс, тайский бокс, кикбоксинг, MMA, кунг-фу, тхэквондо. По многочисленным отзывам — тренеры мастера спорта, дружелюбная атмосфера, есть бесплатное пробное занятие.",
+    "schedule": "Ежедневно, детские группы — по расписанию, запись через ресепшен",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (904) 567-29-73",
+    "website": "",
+    "vk": "",
+    "rating": 4.9,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/930/01-judo-boys.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/930/02-girl-gi.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/930/03-girls-team.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/930/04-studio.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/930/05-gym.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/930/06-team.jpg"
+    ],
+    "price_from": 1300,
+    "price_period": "занятие",
+    "price_source": "yandex_business_card",
+    "lat": 55.67417,
+    "lon": 37.632846,
+    "team": [
+      {
+        "role": "Тренер по дзюдо и самбо",
+        "detail": "Яков Борисович Йоган"
+      },
+      {
+        "role": "Тренер по тайскому боксу",
+        "detail": "Станислав Макеев"
+      }
+    ],
+    "tags": [
+      "единоборства",
+      "акробатика",
+      "дзюдо",
+      "самбо",
+      "нагатинская"
+    ],
+    "activity_tags": [
+      "спорт::Акробатика",
+      "спорт::Единоборства"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-17 лет",
+        "format": "групповые занятия",
+        "schedule": "по расписанию",
+        "description": "Акробатика — базовая физическая подготовка, гибкость и координация",
+        "price": "1300 ₽/занятие"
+      },
+      {
+        "age_range": "7-17 лет",
+        "format": "групповые занятия, абонемент для начинающих",
+        "schedule": "по расписанию",
+        "description": "Дзюдо, самбо, вольная борьба, бокс, кикбоксинг, тайский бокс, MMA, кунг-фу, тхэквондо",
+        "price": "7000 ₽ абонемент"
+      }
+    ]
+  },
+  {
+    "id": 964,
+    "name": "Детский клуб «Ладушки» (Орехово-Борисово)",
+    "category": "спорт",
+    "subcategory": "Настольный теннис",
+    "address": "Москва, Шипиловский проезд, 39к2",
+    "metro": "Орехово",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Настольный теннис",
+      "Настольный теннис (взрослые)",
+      "Робототехника",
+      "Шахматы",
+      "Ментальная арифметика"
+    ],
+    "skills": [
+      "координация движений",
+      "скорость реакции",
+      "вестибулярный аппарат",
+      "концентрация внимания"
+    ],
+    "age_range": "7-14 лет",
+    "price": "от 6000 ₽/месяц",
+    "description": "Многопрофильный детский клуб «Ладушки» работает у метро Орехово с отдельной студией настольного тенниса — индивидуальные и групповые занятия для детей и взрослых. Кроме тенниса в клубе также работают студии робототехники, шахмат, раннего развития и иностранных языков.",
+    "schedule": "по расписанию клуба",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (925) 974-48-04",
+    "website": "http://dkladushki.ru/",
+    "vk": "",
+    "rating": 4.7,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/964/02-chinese-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/964/03-robotics-boys.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/964/01-group-fastfood-party.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/964/04-kids-table.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/964/05-mental-math-siblings.jpg"
+    ],
+    "price_from": 6000,
+    "price_period": "месяц",
+    "price_source": "yandex",
+    "lat": 55.612829,
+    "lon": 37.697296,
+    "team": [],
+    "tags": [
+      "настольный теннис",
+      "детский клуб",
+      "орехово-борисово"
+    ],
+    "activity_tags": [
+      "спорт::Настольный теннис"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-14 лет",
+        "format": "групповые занятия",
+        "schedule": "по расписанию",
+        "description": "Настольный теннис для детей — развитие координации, реакции и вестибулярного аппарата",
+        "price": "от 6000 ₽/месяц"
+      }
+    ]
+  },
+  {
+    "id": 965,
+    "name": "XP Academy (Академия Киберспорта XP), точка «Николы Теслы»",
+    "category": "IT",
+    "subcategory": "Техника и робототехника",
+    "address": "Москва, ул. Николы Теслы, 1с1 (Сколково, Можайский р-н)",
+    "metro": "",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Dota 2",
+      "Counter-Strike 2",
+      "Standoff 2",
+      "League of Legends",
+      "Minecraft",
+      "Разработка на Python"
+    ],
+    "skills": [
+      "стратегическое мышление",
+      "реакция и концентрация",
+      "командная коммуникация"
+    ],
+    "age_range": "8-17 лет",
+    "price": "от 4990 ₽/занятие",
+    "description": "Академия киберспорта XP в Сколково — обучение Dota 2, CS2, Standoff 2, League of Legends и Minecraft с профессиональными тренерами (экс-игроки FORZE, Faceit Top 500-1000). Есть детские группы, направление физподготовки и работа с киберспортивным психологом; перед зачислением — собеседование родителей с ребёнком.",
+    "schedule": "Пн-Пт 10:00-22:00, Сб-Вс 10:00-00:00",
+    "group_size": "",
+    "duration": "90-180 мин",
+    "phone": "8 800 250 03 34",
+    "website": "https://www.xpacademy.ru/",
+    "vk": "https://vk.ru/xpacademy",
+    "rating": 4.3,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/965/01-coach-xp-polo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/965/02-coach-xp-polo2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/965/03-coach-cs2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/965/04-coach-cs2-2.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/965/05-coach-portrait.jpg"
+    ],
+    "price_from": 4990,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.695357,
+    "lon": 37.345944,
+    "team": [
+      {
+        "role": "Тренер CS2",
+        "detail": "Алмаз Асадулин (Almazer) — экс-игрок FORZE, чемпион IeSF World 2017"
+      },
+      {
+        "role": "Тренер Dota 2",
+        "detail": "Назар Мамчур (Believe) — менеджер сборной Москвы по Dota 2"
+      }
+    ],
+    "tags": [
+      "киберспорт",
+      "esports",
+      "cs2",
+      "dota2",
+      "сколково"
+    ],
+    "activity_tags": [
+      "IT::Техника и робототехника"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "8-17 лет",
+        "format": "LIGHT — групповые занятия до 90 мин",
+        "schedule": "по записи",
+        "description": "Базовая образовательная программа Академии XP, подходит новичкам",
+        "price": "от 4990 ₽/занятие"
+      },
+      {
+        "age_range": "8-17 лет",
+        "format": "HARD — групповые занятия до 180 мин",
+        "schedule": "по записи",
+        "description": "Углублённая программа: тренер по коммуникации, психолог, экзамены и турнирные игры",
+        "price": "от 11 990 ₽/месяц"
+      }
+    ]
+  },
+  {
+    "id": 966,
+    "name": "Скалодром Rock Zona",
+    "category": "спорт",
+    "subcategory": "Скалолазание",
+    "address": "Москва, просп. Андропова, 22",
+    "metro": "Коломенская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Детская школа скалолазания (боулдеринг)",
+      "Спортивная акробатика",
+      "Персональные тренировки",
+      "Семейная тренировка"
+    ],
+    "skills": [
+      "сила и гибкость",
+      "координация",
+      "уверенность в себе",
+      "работа в связке"
+    ],
+    "age_range": "7-15 лет",
+    "price": "от 2000 ₽/занятие",
+    "description": "Клубный скалодром Rock Zona у метро Коломенская — боулдеринг без верёвки на невысокой стене, безопасно и для новичков. Детская школа скалолазания работает четырьмя возрастными группами (в т.ч. 7-10 и 11-15 лет), также есть спортивная акробатика для детей 7+. Часть детской программы курирует школа скалолазания O'Skal, работающая на этой площадке.",
+    "schedule": "ежедневно; 7-10 лет — 90 мин, 11-15 лет — 120 мин",
+    "group_size": "",
+    "duration": "90-120 мин",
+    "phone": "+7 (499) 450-25-26",
+    "website": "https://rzclimbing.ru/",
+    "vk": "",
+    "rating": 5.0,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/966/02-kids-group-climbing.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/966/01-climbing-girl-coach.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/966/03-kids-exercise.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/966/04-climber-dynamic.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/966/05-reception-staff.jpg"
+    ],
+    "price_from": 2000,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.683444,
+    "lon": 37.661899,
+    "team": [
+      {
+        "role": "Тренер детских групп",
+        "detail": "Евгения Николаевская"
+      },
+      {
+        "role": "Тренер детских групп, тренер по спортивной акробатике",
+        "detail": "Алексей Борисович Бородин"
+      }
+    ],
+    "tags": [
+      "скалолазание",
+      "боулдеринг",
+      "коломенская"
+    ],
+    "activity_tags": [
+      "спорт::Скалолазание",
+      "спорт::Акробатика"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-10 лет",
+        "format": "групповые, «начальная школа»",
+        "schedule": "по расписанию, 90 мин",
+        "description": "Боулдеринг для младших школьников",
+        "price": "от 7200 ₽ за 4 тренировки"
+      },
+      {
+        "age_range": "11-15 лет",
+        "format": "групповые, «подростки»",
+        "schedule": "по расписанию, 120 мин",
+        "description": "Боулдеринг для подростков",
+        "price": "от 8000 ₽ за 4 тренировки"
+      }
+    ]
+  },
+  {
+    "id": 967,
+    "name": "Клуб синхронного плавания «Волна Успеха» (Тёплый Стан)",
+    "category": "спорт",
+    "subcategory": "Синхронное плавание",
+    "address": "Москва, ул. Тёплый Стан, 9, корп. 9 (бассейн «Союз»)",
+    "metro": "Тёплый Стан",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Синхронное плавание — группа 5-8 лет",
+      "Синхронное плавание — группа 7-12 лет",
+      "Синхронное плавание — группа 4-10 лет",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "грация и артистизм",
+      "командная синхронность",
+      "выносливость",
+      "музыкальность"
+    ],
+    "age_range": "4-12 лет",
+    "price": "от 12 800 ₽ за 8 занятий",
+    "description": "Клуб синхронного плавания «Волна Успеха» основан в 2012 году, сотрудничает с федерацией синхронного плавания Москвы, вырастил 40+ мастеров спорта. На площадке бассейна «Союз» (Тёплый Стан/Ясенево) работают 5 групп разного возраста и уровня с двумя тренерами — мастерами спорта РФ.",
+    "schedule": "группы по пн/пт, ср/вс или пн/сб, занятия «зал+вода» по 2-3 часа",
+    "group_size": "",
+    "duration": "2-3 часа",
+    "phone": "+7 (916) 589-01-16",
+    "website": "http://www.volna-yspeha.ru/",
+    "vk": "",
+    "rating": 4.8,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 5,
+    "data_quality": 88,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/967/01-group-synchro.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/967/02-duo-synchro.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/967/03-swimmer-splash.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/967/04-awards-ceremony.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/967/05-team-poolside.jpg"
+    ],
+    "price_from": 12800,
+    "price_period": "8 занятий",
+    "price_source": "site",
+    "lat": 55.61855,
+    "lon": 37.492933,
+    "team": [
+      {
+        "role": "Тренер, Мастер спорта РФ",
+        "detail": "Чупова Ксения Сергеевна"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Демина Юлия Дмитриевна"
+      }
+    ],
+    "tags": [
+      "синхронное плавание",
+      "теплый стан",
+      "ясенево"
+    ],
+    "activity_tags": [
+      "спорт::Синхронное плавание",
+      "спорт::Плавание"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "5-8 лет",
+        "format": "группа №1",
+        "schedule": "пн 16:00-19:00, пт 16:00-18:00",
+        "description": "Тренер Чупова К.С.",
+        "price": "15 800 ₽ за 8 занятий/месяц"
+      },
+      {
+        "age_range": "7-12 лет",
+        "format": "группа №2",
+        "schedule": "пн/пт вечер",
+        "description": "Тренер Чупова К.С.",
+        "price": "20 600 ₽ за 8 занятий/месяц"
+      }
+    ]
+  },
+  {
+    "id": 932,
+    "name": "FLY ZONE (Ново-Переделкино)",
+    "category": "спорт",
+    "subcategory": "Воркаут",
+    "address": "Москва, Боровское шоссе, 43",
+    "metro": "Новопеределкино",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Воркаут"
+    ],
+    "skills": [
+      "сила",
+      "гибкость",
+      "координация",
+      "равновесие"
+    ],
+    "age_range": "7-18 лет",
+    "price": "",
+    "description": "Спортивный центр FLY ZONE — сеть залов в Москве для тренировок по воркауту, паркуру и гимнастике для детей и взрослых. На филиале в Ново-Переделкино проходят групповые и индивидуальные занятия воркаутом с 7 лет: тренировки с весом собственного тела на турниках, брусьях, шведских стенках и рукоходах.",
+    "schedule": "",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (499) 302-54-71",
+    "website": "https://msk.fly-z-one.ru",
+    "vk": "https://vk.com/flyzone_msk",
+    "rating": 4.9,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 65,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/932/01-coach.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/932/02-coach.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/932/03-training.png",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/932/04-group.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/932/05-family-day.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/932/06-family-day.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "",
+    "lat": 55.6394298,
+    "lon": 37.356801,
+    "team": [
+      {
+        "role": "тренер по воркауту",
+        "detail": "Дмитрий Кузнецов — чемпион России по воркауту (2013-2014)"
+      }
+    ],
+    "tags": [
+      "воркаут",
+      "турники",
+      "паркур"
+    ],
+    "activity_tags": [
+      "спорт::Воркаут"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые и индивидуальные занятия",
+        "schedule": "уточняется по записи",
+        "description": "Тренировки с весом собственного тела на турниках, брусьях, рукоходах",
+        "price": "уточняется по телефону"
+      }
+    ]
+  },
+  {
+    "id": 933,
+    "name": "RollerSchool.ru",
+    "category": "спорт",
+    "subcategory": "Ролики",
+    "address": "Москва, Винницкая улица, 4 (здание МГТС, 5 этаж)",
+    "metro": "Раменки",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Обучение катанию на роликах",
+      "Фристайл-слалом",
+      "Фрискейт",
+      "Индивидуальные занятия"
+    ],
+    "skills": [
+      "катание на роликах",
+      "равновесие",
+      "координация",
+      "торможение"
+    ],
+    "age_range": "6-16 лет",
+    "price": "10000 ₽ за курс из 8 занятий",
+    "description": "RollerSchool.ru — старейшая школа роллер-спорта в Москве (с 2002 года), обучившая кататься более 17 800 человек. Занятия проходят в крытом роллердроме AllRide Arena рядом с м. Раменки. Детские группы делятся по уровню, курс — 8 занятий по 1,5 часа, основной упор на практику.",
+    "schedule": "Группы формируются на будни и выходные, расписание уточняется при записи",
+    "group_size": "до 10 человек",
+    "duration": "1,5 часа",
+    "phone": "+7-926-290-05-55",
+    "website": "https://www.rollerschool.ru",
+    "vk": "https://vk.com/rollerschool_ru",
+    "rating": 5.0,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/933/01-family-skating.png",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/933/02-rink.png",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/933/03-coach-lesson.png",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/933/04-gear-up.png",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/933/05-longboard.png"
+    ],
+    "price_from": 1600,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.7003607,
+    "lon": 37.4980519,
+    "team": [
+      {
+        "role": "старший инструктор",
+        "detail": "Ващук Виталий — с 2012 г."
+      },
+      {
+        "role": "старший инструктор",
+        "detail": "Вороничева Екатерина — с 2002 г."
+      }
+    ],
+    "tags": [
+      "ролики",
+      "роллердром",
+      "фристайл-слалом"
+    ],
+    "activity_tags": [
+      "спорт::Ролики"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "6-16 лет",
+        "format": "групповые занятия, до 10 человек",
+        "schedule": "8 занятий по 1,5 часа",
+        "description": "Курс с нуля: техника падения, отталкивание, торможение, повороты",
+        "price": "10000 ₽ за курс из 8 занятий"
+      }
+    ]
+  },
+  {
+    "id": 934,
+    "name": "ТИМКАРТ",
+    "category": "спорт",
+    "subcategory": "Картинг",
+    "address": "Москва, ул. Поклонная, д. 16",
+    "metro": "Парк Победы",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 2,
+    "programs": [
+      "Картинг"
+    ],
+    "skills": [
+      "вождение картинга",
+      "гоночная тактика",
+      "техника безопасности"
+    ],
+    "age_range": "4-16 лет",
+    "price": "6300 ₽/мес (1 раз в неделю)",
+    "description": "ТИМКАРТ — детско-юношеская школа по картингу на базе ГБОУ Школа №67 на Поклонной улице (только обучение вождению, без свободного проката). Приём детей от 4 до 16 лет, занятия 1-2 раза в неделю по 1 часу, в мини-группах по 1-2 ученика. Воспитанники школы регулярно участвуют в соревнованиях по картингу.",
+    "schedule": "Занятия по пятницам, субботам и воскресеньям; расписание уточняется по телефону",
+    "group_size": "1-2 ученика",
+    "duration": "1 час",
+    "phone": "+7 (968) 913-18-33",
+    "website": "",
+    "vk": "",
+    "rating": 4.6,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 45,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/934/01-track.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/934/02-podium.jpg"
+    ],
+    "price_from": 6300,
+    "price_period": "месяц",
+    "price_source": "archived_site_2021_unconfirmed",
+    "lat": 55.7344209,
+    "lon": 37.5213764,
+    "team": [
+      {
+        "role": "руководитель школы",
+        "detail": "Стариков Константин Геннадьевич"
+      }
+    ],
+    "tags": [
+      "картинг",
+      "автоспорт",
+      "гонки"
+    ],
+    "activity_tags": [
+      "спорт::Картинг"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "4-16 лет",
+        "format": "мини-группы, 1-2 ученика",
+        "schedule": "1-2 раза в неделю по 1 часу",
+        "description": "Практическое вождение картинга с адаптированной под возраст теорией",
+        "price": "6300 ₽/мес — по архивным данным, уточнять по телефону"
+      }
+    ]
+  },
+  {
+    "id": 935,
+    "name": "CODDY Профсоюзная (АДАНТ)",
+    "category": "IT",
+    "subcategory": "Программирование",
+    "address": "Москва, Нахимовский проспект, д. 32, офис 1226 (АДАНТ)",
+    "metro": "Профсоюзная",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Программирование (Python, Java, C#, Kotlin, Swift)",
+      "Создание игр (Unity, Godot, Scratch, Roblox)",
+      "Веб-разработка",
+      "Робототехника и ИИ"
+    ],
+    "skills": [
+      "программирование",
+      "алгоритмическое мышление",
+      "создание игр",
+      "веб-разработка"
+    ],
+    "age_range": "7-16 лет",
+    "price": "",
+    "description": "CODDY — международная сеть школ программирования для детей. Площадка на Нахимовском проспекте работает на базе бизнес-центра АДАНТ рядом с м. Профсоюзная. Дети от 7 до 16 лет изучают программирование на Python, Java, C#, Kotlin, Swift, создание игр, веб- и мобильную разработку, робототехнику и ИИ. Занятия очно и онлайн, индивидуально или в группах до 10 человек. Есть бесплатное пробное занятие.",
+    "schedule": "Пн-Пт 10:00-19:00, Сб-Вс 09:00-20:00",
+    "group_size": "до 10 человек",
+    "duration": "модуль курса — 8 часов",
+    "phone": "+7 (495) 106-60-11",
+    "website": "https://coddyschool.com",
+    "vk": "",
+    "rating": 4.7,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/935/01-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/935/02-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/935/03-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/935/04-teacher.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/935/05-class.jpg"
+    ],
+    "price_from": null,
+    "price_period": "",
+    "price_source": "",
+    "lat": 55.6761016,
+    "lon": 37.5714704,
+    "team": [
+      {
+        "role": "преподаватели",
+        "detail": "Практикующие специалисты из IT-компаний"
+      }
+    ],
+    "tags": [
+      "программирование",
+      "it",
+      "python",
+      "робототехника"
+    ],
+    "activity_tags": [
+      "IT::Программирование",
+      "IT::Техника и робототехника"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-16 лет",
+        "format": "групповые и индивидуальные занятия, очно и онлайн",
+        "schedule": "уточняется при записи",
+        "description": "Базовый блок «Программирование для детей»: основы программирования, создание игр, веб-разработка",
+        "price": "не опубликована на сайте"
+      }
+    ]
+  },
+  {
+    "id": 939,
+    "name": "Детский клуб скалолазания О'Скал (Коломенская)",
+    "category": "спорт",
+    "subcategory": "Скалолазание",
+    "address": "Москва, просп. Андропова, 22 (цокольный этаж)",
+    "metro": "Коломенская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Боулдеринг 7-10 лет (начальная школа)",
+      "Боулдеринг 11-15 лет (подростки)",
+      "Группа 14+",
+      "Продвинутые группы PRO",
+      "Персональные тренировки"
+    ],
+    "skills": [
+      "скалолазание",
+      "боулдеринг",
+      "координация",
+      "выносливость",
+      "гибкость",
+      "дисциплина"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 2000 ₽",
+    "description": "«Рок Зона» на Коломенской — основная тренировочная площадка клуба скалолазания О'Скал с 2014 года, боулдеринг-зал площадью 650 м² лазательной поверхности. Клуб основан в 2009 году мастером спорта Михаилом Пекаревым, в нём занимаются более 500 детей от 3 до 18 лет и взрослые. Для школьников 7-10 лет упор на скалолазную технику и знакомство с правилами соревнований; для подростков 11-15 лет — усложнение движений, соревнования и выезды на естественные скалы.",
+    "schedule": "Расписание группы уточняется по телефону, сайту или в Telegram клуба",
+    "group_size": "до 12 человек",
+    "duration": "1 час 25 минут",
+    "phone": "+7 (495) 150-04-46",
+    "website": "https://o-skal.ru",
+    "vk": "https://vk.com/oskalclub",
+    "rating": 5.0,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 7,
+    "data_quality": 90,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/939/01-climbing-action.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/939/02-coach-kid-wall.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/939/03-kid-obstacle.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/939/04-group-bouldering.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/939/05-family-climbing.jpg"
+    ],
+    "price_from": 2000,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.6830169,
+    "lon": 37.6626566,
+    "team": [
+      {
+        "role": "Старший тренер клуба",
+        "detail": "Ващенко Илья Александрович — детские группы (7+)"
+      },
+      {
+        "role": "Основатель и руководитель клуба",
+        "detail": "Пекарев Михаил Юрьевич, мастер спорта"
+      }
+    ],
+    "tags": [
+      "скалолазание",
+      "боулдеринг",
+      "коломенская",
+      "рокзона",
+      "юао"
+    ],
+    "activity_tags": [
+      "спорт::Скалолазание"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-10 лет",
+        "format": "групповые занятия, боулдеринг, до 12 человек",
+        "schedule": "по расписанию",
+        "description": "Начальная школа: скалолазная техника, отработка движений, знакомство с правилами соревнований",
+        "price": "от 2000 ₽ разово; абонемент 4 занятия 7200-8000 ₽"
+      },
+      {
+        "age_range": "11-15 лет",
+        "format": "групповые занятия, боулдеринг, до 12 человек",
+        "schedule": "по расписанию",
+        "description": "Подростковая группа: усложнение движений, соревнования и выезды на естественные скалы",
+        "price": "от 2000 ₽ разово"
+      }
+    ]
+  },
+  {
+    "id": 940,
+    "name": "Клуб синхронного плавания «Ибис» (Чертаново)",
+    "category": "спорт",
+    "subcategory": "Синхронное плавание",
+    "address": "Москва, ул. Чертановская, 45Б (бассейн «СК Волна»)",
+    "metro": "Пражская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Синхронное (артистическое) плавание — групповые занятия",
+      "ОФП и растяжка",
+      "Индивидуальные занятия"
+    ],
+    "skills": [
+      "синхронное плавание",
+      "координация",
+      "растяжка",
+      "работа в команде"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 10 200 ₽ / 8 занятий",
+    "description": "Филиал клуба синхронного (артистического) плавания «Ибис» на базе бассейна «СК Волна» в Чертаново — один из четырёх бассейнов клуба в Москве. Клуб основан мастером спорта международного класса Маргаритой Поздняковой. Тренировка состоит из двух частей: час в зале — ОФП, координация и растяжка, и время в воде — отработка плавательных навыков и элементов синхронного плавания. Умение плавать не требуется, клуб берёт детей с нуля.",
+    "schedule": "Пн, ср: зал 18:15-19:15, вода 19:30-20:15",
+    "group_size": "",
+    "duration": "90 мин",
+    "phone": "+7 (933) 405-52-41",
+    "website": "ibis-synchro.ru",
+    "vk": "",
+    "rating": 4.6,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 4,
+    "data_quality": 80,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/940/01-pool-team.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/940/02-group-coach.jpeg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/940/03-competition-duet.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/940/04-competition-solo.jpeg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/940/05-team-outdoor.jpeg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/940/06-poolside-lineup.jpeg"
+    ],
+    "price_from": 10200,
+    "price_period": "8 занятий",
+    "price_source": "site",
+    "lat": 55.607163,
+    "lon": 37.593624,
+    "team": [
+      {
+        "role": "Тренер (бассейн «СК Волна»)",
+        "detail": "Черных Анна Олеговна — мастер спорта международного класса по синхронному плаванию"
+      },
+      {
+        "role": "Главный тренер, основатель клуба",
+        "detail": "Позднякова Маргарита Александровна — мастер спорта международного класса"
+      }
+    ],
+    "tags": [
+      "синхронное плавание",
+      "бассейн",
+      "спорт для девочек"
+    ],
+    "activity_tags": [
+      "спорт::Синхронное плавание"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7+ лет",
+        "format": "групповые занятия синхронным плаванием",
+        "schedule": "Пн, ср: зал 18:15-19:15, вода 19:30-20:15",
+        "description": "Тренировка из двух частей: ОФП в зале, отработка навыков в воде. Уровень для начинающих. Первое занятие бесплатное.",
+        "price": "10 200 ₽ / 8 занятий"
+      }
+    ]
+  },
+  {
+    "id": 943,
+    "name": "Керамическая студия «Глинка» (филиал Юго-Западная)",
+    "category": "творчество",
+    "subcategory": "Ремесленное искусство",
+    "address": "Москва, ул. Покрышкина, 8к3",
+    "metro": "Юго-Западная",
+    "district": "ЮЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Лепка для детей",
+      "Гончарный круг с росписью ангобами",
+      "Роспись цветной глазурью",
+      "Мозаика",
+      "Семейный мастер-класс"
+    ],
+    "skills": [
+      "лепка",
+      "гончарное дело",
+      "роспись керамики",
+      "мозаика"
+    ],
+    "age_range": "7-16 лет",
+    "price": "от 2500 ₽",
+    "description": "Филиал сети семейных гончарных студий «Глинка» на Юго-Западной — один из семи филиалов сети по Москве и Красногорску. Дети и подростки пробуют лепку из глины, работу на гончарном круге, а также мозаику — без специальной подготовки. Все материалы и обжиг в печи включены в стоимость, готовое изделие забирают через 4-6 недель.",
+    "schedule": "Мозаика: пн 19:00, ср 19:00, пт 17:00/19:00, вс 11:00/18:00; остальные программы — по записи",
+    "group_size": "до 10 гончарных кругов, до 25 мест за столами",
+    "duration": "60-120 мин",
+    "phone": "+7 (915) 118-39-59",
+    "website": "glinkastudio.ru",
+    "vk": "vk.ru/glinkastudio",
+    "rating": 5.0,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 70,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/943/01-studio-toast.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/943/02-pottery-class.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/943/03-child-wheel.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/943/04-group-table.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/943/05-class-scene.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/943/06-wheel-hands.jpg"
+    ],
+    "price_from": 2500,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.665259,
+    "lon": 37.471937,
+    "team": [],
+    "tags": [
+      "керамика",
+      "гончарный круг",
+      "лепка",
+      "мозаика"
+    ],
+    "activity_tags": [
+      "творчество::Ремесленное искусство"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-16 лет",
+        "format": "гончарный круг",
+        "schedule": "по записи",
+        "description": "Центровка и формовка глины на гончарном круге, роспись ангобами или цветной глазурью",
+        "price": "уточняется по телефону"
+      },
+      {
+        "age_range": "7-16 лет",
+        "format": "мозаика",
+        "schedule": "пн/ср 19:00, пт 17:00/19:00, вс 11:00/18:00",
+        "description": "Создание мозаичного панно из керамических элементов",
+        "price": "1 час — 2500 ₽, 1,5 часа — 3000 ₽"
+      }
+    ]
+  },
+  {
+    "id": 949,
+    "name": "Бойцовский клуб Instinct (бокс, кикбоксинг)",
+    "category": "спорт",
+    "subcategory": "Единоборства",
+    "address": "Москва, ул. Домодедовская, д. 28, 3 этаж",
+    "metro": "Домодедовская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Кикбоксинг (дети)",
+      "Бокс",
+      "Тайский бокс",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "ударная техника руками и ногами",
+      "работа на снарядах",
+      "физическая подготовка",
+      "основы самообороны"
+    ],
+    "age_range": "7-14 лет",
+    "price": "от 900 ₽/занятие",
+    "description": "Зал сети «Instinct» у метро Домодедовская — один из трёх залов клуба, детские группы по кикбоксингу набираются с 7 лет. Клуб регулярно проводит внутренние соревнования и аттестации в ринге. Есть бесплатная пробная тренировка по заявке на сайте.",
+    "schedule": "Кикбоксинг (дети): вт, чт 18:00-19:00; сб 10:30-11:30",
+    "group_size": "групповые от 2 человек",
+    "duration": "60 мин",
+    "phone": "+7 (925) 532-92-93",
+    "website": "https://www.instinkt-club.ru",
+    "vk": "https://vk.com/instinct_club",
+    "rating": 4.8,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 8,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/949/01-boxing-strike.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/949/02-sparring-ring.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/949/03-group-coach.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/949/04-group-training.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/949/05-winner-hand-raised.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/949/06-winners-podium.jpg"
+    ],
+    "price_from": 900,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.604758,
+    "lon": 37.712345,
+    "team": [
+      {
+        "role": "Тренер по боксу и кикбоксингу",
+        "detail": "Александр Александрович Устинов — тайский, классический бокс и кикбоксинг"
+      }
+    ],
+    "tags": [
+      "бокс",
+      "кикбоксинг",
+      "единоборства",
+      "домодедовская"
+    ],
+    "activity_tags": [
+      "спорт::Единоборства"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "дети от 7 лет",
+        "format": "групповые занятия",
+        "schedule": "вт, чт 18:00-19:00; сб 10:30-11:30",
+        "description": "Кикбоксинг для детей: базовая ударная техника, работа в парах и на снарядах, регулярные внутренние турниры",
+        "price": "900 ₽/занятие, 5500 ₽/12 занятий"
+      }
+    ]
+  },
+  {
+    "id": 951,
+    "name": "Клуб тенниса MAJOR",
+    "category": "спорт",
+    "subcategory": "Большой теннис",
+    "address": "Москва, Электролитный проезд, 3с2",
+    "metro": "Нагорная",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Теннисная школа для детей и взрослых",
+      "Групповые тренировки",
+      "Индивидуальные тренировки"
+    ],
+    "skills": [
+      "техника ударов",
+      "тактика игры",
+      "физическая подготовка",
+      "соревновательный опыт"
+    ],
+    "age_range": "7-18 лет",
+    "price": "от 2000 ₽/час",
+    "description": "Теннисный клуб MAJOR в 5 минутах от метро Нагорная — 4 крытых корта с профессиональным покрытием HARD Cushion. Школа принимает и детей, и взрослых: часть тренеров специализируется на занятиях с детьми (в том числе по программе Tennis 10S для начинающих). В команде — 9 тренеров, среди них мастера и кандидаты в мастера спорта, участники международных турниров ITF. Есть пробное занятие.",
+    "schedule": "Групповые занятия: будни 11:00-16:00, выходные 14:00-21:00",
+    "group_size": "от 2 человек",
+    "duration": "60-90 мин",
+    "phone": "+7-916-780-65-65",
+    "website": "http://major-tennis.ru",
+    "vk": "https://vk.com/majortennisclub",
+    "rating": 4.2,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 6,
+    "data_quality": 65,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/951/01-tennis-court.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/951/02-coach-kharlampiy.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/951/03-coach-alexander.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/951/04-coach-viktoria.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/951/05-coach-nikita.jpg"
+    ],
+    "price_from": 2000,
+    "price_period": "час",
+    "price_source": "site",
+    "lat": 55.676768,
+    "lon": 37.61485,
+    "team": [
+      {
+        "role": "Главный тренер",
+        "detail": "Харлампий Иванович Кивелиди — Мастер спорта СССР, 20+ лет тренерского опыта"
+      },
+      {
+        "role": "Тренер",
+        "detail": "Виктория Игоревна Кожина — экс топ-20 России, 10+ лет тренерского опыта"
+      }
+    ],
+    "tags": [
+      "теннис",
+      "большой теннис",
+      "корты",
+      "нагорная"
+    ],
+    "activity_tags": [
+      "спорт::Большой теннис"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-18 лет",
+        "format": "групповые занятия (от 2 человек)",
+        "schedule": "будни 11:00-16:00, выходные 14:00-21:00",
+        "description": "Теннисная школа для детей и подростков на 4 крытых кортах",
+        "price": "от 2000 ₽/час на человека"
+      }
+    ]
+  },
+  {
+    "id": 953,
+    "name": "Шахматная школа (Очаково-Матвеевское)",
+    "category": "развитие",
+    "subcategory": "Шахматы",
+    "address": "Москва, Нежинская ул., 13",
+    "metro": "Аминьевская",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 4,
+    "programs": [
+      "Шахматы"
+    ],
+    "skills": [
+      "стратегическое мышление",
+      "логика",
+      "память и внимание",
+      "усидчивость"
+    ],
+    "age_range": "7-16 лет",
+    "price": "от 600 ₽ (пробное), абонемент 4600-8500 ₽",
+    "description": "Программа обучения шахматам для младших школьников и подростков на базе «Семейной академии» в ЖК «Нежинский Ковчег» (Очаково-Матвеевское). Занятия развивают абстрактное, образное и логическое мышление, тренируют память и внимание. Ведёт занятия кандидат в мастера спорта, многократный победитель шахматных турниров Копытин Андрей Валерьевич.",
+    "schedule": "уточняется по телефону",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (495) 369-00-62",
+    "website": "https://7akadem.ru",
+    "vk": "https://vk.ru/7akademia",
+    "rating": 4.9,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 65,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/953/01-chess-board.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/953/02-teen-studying.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/953/03-kids-classroom.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/953/04-kids-writing.jpg"
+    ],
+    "price_from": 600,
+    "price_period": "пробное занятие",
+    "price_source": "site",
+    "lat": 55.7072,
+    "lon": 37.4723,
+    "team": [
+      {
+        "role": "Тренер по шахматам",
+        "detail": "Копытин Андрей Валерьевич — кандидат в мастера спорта"
+      }
+    ],
+    "tags": [
+      "шахматы",
+      "развитие мышления",
+      "очаково-матвеевское"
+    ],
+    "activity_tags": [
+      "развитие::Шахматы"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-16 лет",
+        "format": "групповые занятия",
+        "schedule": "уточняется по телефону",
+        "description": "Занятия шахматами: логическое мышление, память, внимание, усидчивость",
+        "price": "пробное 600 ₽, пакет 4 занятия 4600 ₽"
+      }
+    ]
+  },
+  {
+    "id": 955,
+    "name": "ДФК «Викинг» (Братеево)",
+    "category": "спорт",
+    "subcategory": "Футбол",
+    "address": "Москва, ул. Борисовские Пруды, 20к3А",
+    "metro": "Борисово / Алма-Атинская",
+    "district": "ЮАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Футбол — групповые тренировки",
+      "Индивидуальные тренировки",
+      "Вратарская подготовка",
+      "Летний футбольный лагерь"
+    ],
+    "skills": [
+      "техника владения мячом",
+      "командная игра",
+      "физическая подготовка"
+    ],
+    "age_range": "4-16 лет",
+    "price": "от 6000 ₽/мес (8 тренировок)",
+    "description": "Филиал детской футбольной академии ДФК «Викинг» в Братеево. Профессиональные тренировки с сертифицированными тренерами для детей и подростков 3.5-16 лет, подготовка к отбору в ведущие футбольные клубы, ежемесячные турниры. Часть сети из 19 филиалов по Москве. Тренеры — высшее педагогическое образование, категории «C» и «B» РФС, КМС.",
+    "schedule": "уточняется по филиалу",
+    "group_size": "",
+    "duration": "",
+    "phone": "+7 (925) 735-76-85",
+    "website": "https://dfcviking.ru/filials/football-brateevo/",
+    "vk": "https://vk.ru/footballviking",
+    "rating": 4.8,
+    "has_trial": true,
+    "scraped": true,
+    "pages_visited": 3,
+    "data_quality": 75,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/955/01-team-photo.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/955/02-training-field.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/955/03-team-photo-full.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/955/04-training-indoor.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/955/05-training-kick.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/955/06-training-drill.jpg"
+    ],
+    "price_from": 6000,
+    "price_period": "месяц",
+    "price_source": "site",
+    "lat": 55.638,
+    "lon": 37.7517,
+    "team": [
+      {
+        "role": "Главный тренер сети",
+        "detail": "Александр Багратович"
+      }
+    ],
+    "tags": [
+      "футбол",
+      "дети",
+      "братеево"
+    ],
+    "activity_tags": [
+      "спорт::Футбол"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "4-16 лет",
+        "format": "групповые тренировки, 8 занятий в месяц",
+        "schedule": "уточняется по филиалу",
+        "description": "Профессиональные тренировки по футболу, подготовка к отбору в ведущие клубы",
+        "price": "абонемент от 6000 ₽/мес"
+      }
+    ]
+  },
+  {
+    "id": 961,
+    "name": "Sky Karting — детская школа картинга Red Racing (ТРЦ «Филион»)",
+    "category": "спорт",
+    "subcategory": "Картинг",
+    "address": "Москва, Багратионовский проезд, 5, ТРЦ «Филион»",
+    "metro": "Фили",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 6,
+    "programs": [
+      "Групповые тренировки по картингу (младшая и старшая группы)",
+      "Разовые тренировочные заезды",
+      "Внутренние соревнования и мини-гонки"
+    ],
+    "skills": [
+      "пилотирование карта",
+      "взаимодействие в спортивной команде",
+      "тактика обгона",
+      "прохождение квалификационных заездов"
+    ],
+    "age_range": "5-14 лет",
+    "price": "от 1300 ₽",
+    "description": "Детская школа картинга Red Racing работает на крытой трассе картинг-клуба Sky Karting в ТРЦ «Филион». Учебные планы разработаны с учётом возрастной специфики учеников от 5 до 14 лет. Дети занимаются в группах до 6 человек на специальных детских болидах, с полной защитной экипировкой. В течение года проходят циклы практических и теоретических занятий, внутренние соревнования и переход между группами по мере роста мастерства.",
+    "schedule": "Группы формируются в начале учебного года; можно присоединиться в течение года при наличии места",
+    "group_size": "до 6 человек",
+    "duration": "",
+    "phone": "+7 (495) 120-57-57",
+    "website": "https://skykarting.ru",
+    "vk": "https://vk.com/sky_karting",
+    "rating": 4.9,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 8,
+    "data_quality": 78,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/961/01-group-start.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/961/02-race-corner.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/961/03-kid-helmet.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/961/04-instructor-child.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/961/05-two-karts.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/961/06-solo-kart.jpg"
+    ],
+    "price_from": 1300,
+    "price_period": "заезд",
+    "price_source": "site",
+    "lat": 55.742831,
+    "lon": 37.507686,
+    "team": [
+      {
+        "role": "Тренеры детской школы картинга",
+        "detail": "Действующие пилоты и тренеры с многолетним стажем преподавания у детей"
+      }
+    ],
+    "tags": [
+      "картинг",
+      "автоспорт",
+      "дети",
+      "трц филион"
+    ],
+    "activity_tags": [
+      "спорт::Картинг"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "5-8 лет",
+        "format": "групповые занятия на детских мини-картах",
+        "schedule": "формирование групп в начале учебного года",
+        "description": "Базовое обучение пилотированию, техника безопасности",
+        "price": "уточняется по телефону"
+      },
+      {
+        "age_range": "9-14 лет",
+        "format": "групповые занятия на взрослых моделях картов",
+        "schedule": "по расписанию",
+        "description": "Совершенствование техники, обгоны, квалификационные заезды, соревнования",
+        "price": "уточняется по телефону"
+      }
+    ]
+  },
+  {
+    "id": 963,
+    "name": "Ледовая арена «Снежный барс» — Центр хоккейной подготовки",
+    "category": "спорт",
+    "subcategory": "Хоккей",
+    "address": "Москва, Большая Очаковская ул., 2, стр. 23",
+    "metro": "Аминьевская",
+    "district": "ЗАО",
+    "photos": [],
+    "photo_count": 5,
+    "programs": [
+      "Бросковая тренировка",
+      "Техника рук (дриблинг)",
+      "ОФП",
+      "Комплексная тренировка"
+    ],
+    "skills": [
+      "техника катания",
+      "владение клюшкой",
+      "техника броска шайбы",
+      "силовое катание",
+      "игровое мышление"
+    ],
+    "age_range": "7-17 лет",
+    "price": "от 1000 ₽/чел",
+    "description": "Центр хоккейной подготовки работает на базе крытой ледовой арены «Снежный барс» на Большой Очаковской. Три бросковые зоны для индивидуальной работы с тренером, отдельная зона ОФП и тренажёрный зал. В центре разработаны программы для детей и подростков разных возрастных групп — от базовой техники катания и владения клюшкой до бросковой техники и игрового мышления.",
+    "schedule": "По предварительной записи; арена работает ежедневно 9:00-23:00",
+    "group_size": "до 6-8 человек",
+    "duration": "60-90 мин",
+    "phone": "+7 (495) 208-50-10",
+    "website": "https://arenabars.ru",
+    "vk": "",
+    "rating": 4.4,
+    "has_trial": false,
+    "scraped": true,
+    "pages_visited": 11,
+    "data_quality": 68,
+    "extra_photos": [
+      "https://umkahub.s3.cloud.ru/org_photos_v2/963/01-rink.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/963/02-players-ice.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/963/03-gym-zone.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/963/04-locker-room.jpg",
+      "https://umkahub.s3.cloud.ru/org_photos_v2/963/05-hallway.jpg"
+    ],
+    "price_from": 1000,
+    "price_period": "занятие",
+    "price_source": "site",
+    "lat": 55.691347,
+    "lon": 37.464881,
+    "team": [
+      {
+        "role": "Тренеры Центра хоккейной подготовки",
+        "detail": "Индивидуальный подход, работа над техникой катания, бросков и ОФП"
+      }
+    ],
+    "tags": [
+      "хоккей",
+      "каток",
+      "лёд",
+      "западный округ"
+    ],
+    "activity_tags": [
+      "спорт::Хоккей"
+    ],
+    "programs_detailed": [
+      {
+        "age_range": "7-17 лет",
+        "format": "групповая тренировка (до 6 чел) / индивидуально",
+        "schedule": "по предварительной записи",
+        "description": "Бросковая тренировка + разминка: кистевой бросок, щелчок, бросок с ходу",
+        "price": "1000 ₽/чел групповая; абонемент на 4 занятия — 4800 ₽"
+      }
+    ]
   }
 ]
