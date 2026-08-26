@@ -435,6 +435,7 @@ ORGS_JSON = os.path.join(os.path.dirname(__file__), 'top250_cards.json')
 _DISTRICT_SYNONYMS = {
     'зелао': 'ЗелАО', 'зеленоград': 'ЗелАО', 'зеленоградский ао': 'ЗелАО',
     'нао': 'НАО', 'новомосковский ао': 'НАО', 'тинао': 'НАО',
+    'некрасовка': 'ЮВАО',  # raion of ЮВАО -- Maxim, 2026-08-26
 }
 
 def _normalize_district(raw):
