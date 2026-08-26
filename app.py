@@ -432,6 +432,25 @@ def api_lead():
 ORGS_DB   = os.path.join(os.path.dirname(__file__), 'orgs.db')
 ORGS_JSON = os.path.join(os.path.dirname(__file__), 'top250_cards.json')
 
+_DISTRICT_SYNONYMS = {
+    'зелао': 'ЗелАО', 'зеленоград': 'ЗелАО', 'зеленоградский ао': 'ЗелАО',
+    'нао': 'НАО', 'новомосковский ао': 'НАО', 'тинао': 'НАО',
+}
+
+def _normalize_district(raw):
+    """Collapse duplicate district spellings so the filter dropdown and
+    district=? matching see one canonical value per okrug/city, not several
+    (found live 2026-08-26: "ЮАО" and "Москва ЮАО" were two separate,
+    non-matching dropdown entries for the same district). "Москва X" / "Москва,
+    X" -> "X"; a few okrug-name variants (Зеленоград cluster, НАО/ТиНАО) fold
+    into one canonical short code, same style as ЮАО/ЦАО/etc."""
+    d = (raw or '').strip()
+    d = re.sub(r'^Москва,?\s*', '', d).strip()
+    if d.startswith('(') and d.endswith(')'):
+        d = d[1:-1].strip()
+    canon = _DISTRICT_SYNONYMS.get(d.lower())
+    return canon or d
+
 def init_orgs_db():
     if os.path.exists(ORGS_DB):
         return
@@ -459,7 +478,7 @@ def init_orgs_db():
     for c in cards:
         conn.execute('INSERT OR REPLACE INTO organizations VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
             c.get('id'), c.get('name',''), c.get('category',''), c.get('subcategory',''),
-            c.get('address',''), c.get('metro',''), c.get('district',''),
+            c.get('address',''), c.get('metro',''), _normalize_district(c.get('district','')),
             json.dumps(c.get('photos',[]), ensure_ascii=False), c.get('photo_count',0),
             json.dumps(c.get('programs',[]), ensure_ascii=False),
             json.dumps(c.get('skills',[]), ensure_ascii=False),
@@ -479,6 +498,7 @@ def init_orgs_db():
         ))
     conn.commit()
     _rebuild_activity_tags(conn, cards)
+    _rebuild_metro_stations(conn, cards)
     conn.close()
     print(f'Orgs DB ready: {len(cards)} organizations')
 
@@ -558,6 +578,7 @@ def _migrate_orgs_db():
             )
         conn.commit()
         _rebuild_activity_tags(conn, cards)
+    _rebuild_metro_stations(conn, cards)
     conn.close()
 
 _DIRECT_YA_RE = re.compile(r'^https?://avatars\.mds\.yandex|^https?://[^?]*yandex\.net/get-', re.I)
@@ -674,6 +695,42 @@ def _resolve_metro_station(query):
             return hit
     return None
 
+def _resolve_all_metro_stations(query):
+    """All matching stations for a (possibly composite) org metro string --
+    e.g. "Юго-Западная / Озёрная" resolves to both, so the org shows up
+    under either filter, not just under the ugly composite string as its
+    own phantom dropdown entry (found live 2026-08-26: exact-match filtering
+    used to compare the RAW string, so a composite-metro org matched neither
+    individual station)."""
+    seen, out = set(), []
+    for part in re.split(r'[/,]', query or ''):
+        hit = _METRO_BY_NORM.get(_metro_norm(part))
+        if hit and hit['name'] not in seen:
+            seen.add(hit['name'])
+            out.append(hit['name'])
+    return out
+
+def _rebuild_metro_stations(conn, cards):
+    """org_metro_stations: many-to-many (org_id, station_name), resolved from
+    each card's raw `metro` field via _resolve_all_metro_stations(). Powers
+    both the metro filter dropdown (real station names only, no composite
+    "A / B" strings, no "(0.7 км)"-style parsing artifacts) and exact-match
+    filtering (an org spanning two stations matches both)."""
+    conn.execute('''CREATE TABLE IF NOT EXISTS org_metro_stations (
+        org_id INTEGER, station_name TEXT
+    )''')
+    conn.execute('CREATE INDEX IF NOT EXISTS idx_metro_station ON org_metro_stations(station_name)')
+    conn.execute('DELETE FROM org_metro_stations')
+    rows = []
+    for c in cards:
+        cid = c.get('id')
+        if not cid:
+            continue
+        for station in _resolve_all_metro_stations(c.get('metro', '')):
+            rows.append((cid, station))
+    conn.executemany('INSERT INTO org_metro_stations VALUES (?,?)', rows)
+    conn.commit()
+
 def _haversine_km(lat1, lon1, lat2, lon2):
     R = 6371.0
     p1, p2 = math.radians(lat1), math.radians(lat2)
@@ -771,9 +828,13 @@ def api_orgs():
         # strings in the catalog) fall back to exact-match only, same as
         # before this feature existed.
         target = _resolve_metro_station(metro)
+        exact_conn = _orgs_conn()
+        exact_ids = {r[0] for r in exact_conn.execute(
+            'SELECT org_id FROM org_metro_stations WHERE station_name=?', (metro,)).fetchall()}
+        exact_conn.close()
         filtered = []
         for o in items:
-            if o.get('metro') == metro:
+            if o['id'] in exact_ids or o.get('metro') == metro:
                 o['metro_match'] = 'exact'
                 filtered.append(o)
             elif target and o.get('lat') and o.get('lon'):
@@ -831,7 +892,7 @@ def api_orgs_meta():
     if not os.path.exists(ORGS_DB): return jsonify({'categories':[],'metros':[],'districts':[],'kindergarten_count':0})
     conn = _orgs_conn()
     cats      = [r[0] for r in conn.execute("SELECT DISTINCT category FROM organizations WHERE category!='' ORDER BY category").fetchall()]
-    metros    = [r[0] for r in conn.execute("SELECT DISTINCT metro FROM organizations WHERE metro!='' ORDER BY metro").fetchall()]
+    metros    = [r[0] for r in conn.execute("SELECT DISTINCT station_name FROM org_metro_stations ORDER BY station_name").fetchall()]
     districts = [r[0] for r in conn.execute("SELECT DISTINCT district FROM organizations WHERE district!='' ORDER BY district").fetchall()]
     kindergarten_count = conn.execute("SELECT COUNT(*) FROM organizations WHERE care_type='kindergarten'").fetchone()[0]
     conn.close()
