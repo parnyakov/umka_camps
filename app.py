@@ -477,8 +477,39 @@ def init_orgs_db():
             c.get('care_type') or 'club',
         ))
     conn.commit()
+    _rebuild_activity_tags(conn, cards)
     conn.close()
     print(f'Orgs DB ready: {len(cards)} organizations')
+
+def _rebuild_activity_tags(conn, cards):
+    """org_activity_tags: many-to-many (org_id, category, subcategory), built
+    from each card's `activity_tags` field (["категория::подкатегория", ...]).
+    Lets an org with several real activities (e.g. football + basketball)
+    match a subcategory filter on ANY of them, not just its primary
+    category/subcategory column. Falls back to the primary pair for cards
+    without activity_tags (pre-2026-08-26 data shape)."""
+    conn.execute('''CREATE TABLE IF NOT EXISTS org_activity_tags (
+        org_id INTEGER, category TEXT, subcategory TEXT
+    )''')
+    conn.execute('CREATE INDEX IF NOT EXISTS idx_tags_cat_sub ON org_activity_tags(category, subcategory)')
+    conn.execute('DELETE FROM org_activity_tags')
+    rows = []
+    for c in cards:
+        cid = c.get('id')
+        if not cid:
+            continue
+        tags = c.get('activity_tags') or []
+        if not tags:
+            if c.get('category') and c.get('subcategory'):
+                rows.append((cid, c['category'], c['subcategory']))
+            continue
+        for t in tags:
+            if '::' not in t:
+                continue
+            cat, sub = t.split('::', 1)
+            rows.append((cid, cat, sub))
+    conn.executemany('INSERT INTO org_activity_tags VALUES (?,?,?)', rows)
+    conn.commit()
 
 def _migrate_orgs_db():
     """Add new columns if missing (safe to call on existing DB)."""
@@ -525,6 +556,7 @@ def _migrate_orgs_db():
                  c.get('lat'), c.get('lon'), json.dumps(tags, ensure_ascii=False), care_type, cid)
             )
         conn.commit()
+        _rebuild_activity_tags(conn, cards)
     conn.close()
 
 _DIRECT_YA_RE = re.compile(r'^https?://avatars\.mds\.yandex|^https?://[^?]*yandex\.net/get-', re.I)
@@ -654,8 +686,16 @@ def api_orgs():
     offset      = int(request.args.get('offset',0))
 
     conds, params = [], []
-    if category:       conds.append('category=?');     params.append(category)
-    if subcategory:    conds.append('subcategory=?');  params.append(subcategory)
+    if category or subcategory:
+        # Match via org_activity_tags, not the primary category/subcategory
+        # columns -- an org with several real activities (e.g. football AND
+        # basketball) must show up under EACH of its subcategory filters, not
+        # just its primary one. See _rebuild_activity_tags().
+        tag_conds, tag_params = [], []
+        if category:    tag_conds.append('category=?');    tag_params.append(category)
+        if subcategory: tag_conds.append('subcategory=?'); tag_params.append(subcategory)
+        conds.append(f"id IN (SELECT org_id FROM org_activity_tags WHERE {' AND '.join(tag_conds)})")
+        params.extend(tag_params)
     if metro:          conds.append('metro=?');        params.append(metro)
     if district:       conds.append('district=?');     params.append(district)
     if has_trial=='1': conds.append('has_trial=1')
