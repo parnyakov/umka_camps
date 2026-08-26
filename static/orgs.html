@@ -964,12 +964,22 @@ function formatPrice(org) {
     const range = hi ? `${lo} – ${hi} ₽` : `от ${lo} ₽`;
     return label ? `${range} <span class="price-period">${label}</span>` : range;
   }
-  // Фоллбэк: исходная строка price + period если есть
+  // Фоллбэк: исходная строка price + period если есть -- но карточка
+  // каталога не место для развёрнутых внутренних пояснений вроде
+  // "уточняется при записи (публичного прайса на сайте нет, оплата по
+  // QR/реквизитам после консультации)" (найдено Максимом на скриншоте
+  // 26.08 -- ломало вёрстку карточки в 3+ строки). Отсекаем скобочные
+  // уточнения и коротко режем то, что осталось; если после этого
+  // ничего внятного не остаётся -- тот же нейтральный лейбл, что и при
+  // полном отсутствии цены.
   if (org.price) {
-    const label = org.price_period ? PERIOD_LABEL[org.price_period] || ('/' + org.price_period) : '';
-    return label
-      ? `${esc(org.price)} <span class="price-period">${label}</span>`
-      : esc(org.price);
+    const short = org.price.replace(/\s*\([^)]*\)/g, '').trim();
+    if (short && short.length <= 40) {
+      const label = org.price_period ? PERIOD_LABEL[org.price_period] || ('/' + org.price_period) : '';
+      return label
+        ? `${esc(short)} <span class="price-period">${label}</span>`
+        : esc(short);
+    }
   }
   return '<span class="price-unknown">цена по запросу</span>';
 }
