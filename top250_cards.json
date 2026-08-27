@@ -73573,7 +73573,7 @@
     "phone": "+7 (915) 219-05-62",
     "website": "https://moscow-sc.kiber-one.com/",
     "vk": "",
-    "rating": null,
+    "rating": 4.5,
     "has_trial": true,
     "scraped": true,
     "pages_visited": 8,
@@ -106364,81 +106364,6 @@
         "schedule": "по расписанию филиала",
         "description": "Классический балетный экзерсис у станка и на середине зала",
         "price": "от 1250 ₽/занятие"
-      }
-    ]
-  },
-  {
-    "id": 1028,
-    "name": "KIBERone — Северное Чертаново",
-    "category": "IT",
-    "subcategory": "ИИ",
-    "address": "Москва, Чертановская улица, 1Вк1",
-    "metro": "Чертановская",
-    "district": "ЮАО",
-    "photos": [],
-    "photo_count": 5,
-    "programs": [
-      "Программирование (Scratch, Python, JavaScript, C#)",
-      "Нейросети и работа с ИИ",
-      "Промпт-инжиниринг",
-      "3D-моделирование",
-      "Веб-дизайн",
-      "Разработка игр (Unity, Roblox)"
-    ],
-    "skills": [
-      "программирование",
-      "работа с нейросетями",
-      "промпт-инжиниринг",
-      "создание игр"
-    ],
-    "age_range": "6-14 лет",
-    "price": "по запросу",
-    "description": "Филиал международной ИТ-школы KIBERone в Северном Чертаново. Дети и подростки от 6 до 14 лет последовательно осваивают модули: от первых шагов в визуальном кодинге и Scratch до Python, JavaScript, C#, работы с нейросетями и разработки игр. Мини-группы до 12 человек, у каждого ребёнка отдельное рабочее место. Занятия ведут практикующие программисты с опытом от 3 лет.",
-    "schedule": "Пробное занятие — суббота 10:00; учебные группы — сб/вс 11:00, 13:30, 16:00",
-    "group_size": "мини-группы до 12 человек",
-    "duration": "120 мин",
-    "phone": "+7 915 219-05-62",
-    "website": "https://moscow-sc.kiber-one.com/",
-    "vk": "",
-    "rating": 4.5,
-    "has_trial": true,
-    "scraped": true,
-    "pages_visited": 6,
-    "data_quality": 70,
-    "extra_photos": [
-      "https://umkahub.s3.cloud.ru/org_photos_v2/1028/01-class.jpg",
-      "https://umkahub.s3.cloud.ru/org_photos_v2/1028/02-students-laptop.jpg",
-      "https://umkahub.s3.cloud.ru/org_photos_v2/1028/03-classroom-group.jpg",
-      "https://umkahub.s3.cloud.ru/org_photos_v2/1028/04-tutor-lesson.jpg",
-      "https://umkahub.s3.cloud.ru/org_photos_v2/1028/05-tutor-presentation.jpg"
-    ],
-    "price_from": null,
-    "price_period": "",
-    "price_source": "not_published",
-    "lat": 55.6399210366,
-    "lon": 37.6065400493,
-    "team": [
-      {
-        "role": "Тьюторы",
-        "detail": "Практикующие программисты с опытом работы от 3 лет"
-      }
-    ],
-    "tags": [
-      "kiberone",
-      "программирование для детей",
-      "искусственный интеллект"
-    ],
-    "activity_tags": [
-      "IT::ИИ",
-      "IT::Программирование"
-    ],
-    "programs_detailed": [
-      {
-        "age_range": "6-14 лет",
-        "format": "мини-группа до 12 человек",
-        "schedule": "сб/вс 11:00, 13:30, 16:00",
-        "description": "Работа с нейросетями: генерируем изображения и тексты, создаём 3D-объекты по описанию",
-        "price": "по запросу"
       }
     ]
   },
